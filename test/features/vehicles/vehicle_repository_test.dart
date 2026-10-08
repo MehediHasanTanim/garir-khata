@@ -19,22 +19,30 @@ void main() {
     await db.close();
   });
 
-  test('upsert and getActiveVehicles round-trip', () async {
+  Vehicle buildVehicle({
+    required String id,
+    required String nickname,
+    bool archived = false,
+  }) {
     final DateTime now = DateTime.utc(2026, 10, 8);
-    final Vehicle vehicle = Vehicle(
-      id: 'v1',
-      nickname: 'My Bike',
+    return Vehicle(
+      id: id,
+      nickname: nickname,
       vehicleType: VehicleType.motorcycle,
       fuelType: FuelType.petrol,
       currentOdometer: 1000,
-      isArchived: false,
+      isArchived: archived,
       createdAt: now,
       updatedAt: now,
       brand: 'Yamaha',
       model: 'FZS',
     );
+  }
 
-    final Result<Vehicle> saveResult = await repository.upsert(vehicle);
+  test('upsert and getActiveVehicles round-trip', () async {
+    final Result<Vehicle> saveResult = await repository.upsert(
+      buildVehicle(id: 'v1', nickname: 'My Bike'),
+    );
     expect(saveResult.isSuccess, isTrue);
 
     final Result<List<Vehicle>> listResult = await repository
@@ -43,21 +51,23 @@ void main() {
     expect(listResult.dataOrNull!.single.nickname, 'My Bike');
   });
 
-  test('archive excludes vehicle from active list', () async {
-    final DateTime now = DateTime.utc(2026, 10, 8);
-    await repository.upsert(
-      Vehicle(
-        id: 'v2',
-        nickname: 'Family Car',
-        vehicleType: VehicleType.car,
-        fuelType: FuelType.octane,
-        currentOdometer: 5000,
-        isArchived: false,
-        createdAt: now,
-        updatedAt: now,
-      ),
+  test('createWithInitialOdometer stores vehicle and odometer entry', () async {
+    final Vehicle vehicle = buildVehicle(id: 'v3', nickname: 'Hornet');
+    final Result<Vehicle> result = await repository.createWithInitialOdometer(
+      vehicle: vehicle,
+      odometerEntryId: 'odo-1',
     );
+    expect(result.isSuccess, isTrue);
 
+    final odometer = await (db.select(
+      db.odometerEntries,
+    )..where((t) => t.vehicleId.equals('v3'))).getSingle();
+    expect(odometer.odometer, 1000);
+    expect(odometer.sourceType, 'manual');
+  });
+
+  test('archive excludes vehicle from active list', () async {
+    await repository.upsert(buildVehicle(id: 'v2', nickname: 'Family Car'));
     final Result<void> archiveResult = await repository.archive('v2');
     expect(archiveResult.isSuccess, isTrue);
 

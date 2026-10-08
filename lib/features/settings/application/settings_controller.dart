@@ -7,6 +7,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 const String _localeKey = 'settings.locale';
 const String _themeKey = 'settings.themeMode';
 const String _selectedVehicleKey = 'settings.selectedVehicleId';
+const String _onboardingKey = 'settings.onboardingCompleted';
+const String _languageConfirmedKey = 'settings.languageConfirmed';
 
 class SettingsController extends Notifier<AppSettings> {
   SharedPreferences get _prefs => ref.read(sharedPreferencesProvider);
@@ -25,12 +27,20 @@ class SettingsController extends Notifier<AppSettings> {
         orElse: () => ThemeMode.system,
       ),
       selectedVehicleId: selectedVehicleId,
+      onboardingCompleted: _prefs.getBool(_onboardingKey) ?? false,
+      languageConfirmed: _prefs.getBool(_languageConfirmedKey) ?? false,
     );
   }
 
-  Future<void> setLocale(Locale locale) async {
+  Future<void> setLocale(Locale locale, {bool confirm = false}) async {
     await _prefs.setString(_localeKey, locale.languageCode);
-    state = state.copyWith(locale: locale);
+    if (confirm) {
+      await _prefs.setBool(_languageConfirmedKey, true);
+    }
+    state = state.copyWith(
+      locale: locale,
+      languageConfirmed: confirm ? true : null,
+    );
   }
 
   Future<void> setThemeMode(ThemeMode themeMode) async {
@@ -46,6 +56,11 @@ class SettingsController extends Notifier<AppSettings> {
     }
     await _prefs.setString(_selectedVehicleKey, vehicleId);
     state = state.copyWith(selectedVehicleId: vehicleId);
+  }
+
+  Future<void> completeOnboarding() async {
+    await _prefs.setBool(_onboardingKey, true);
+    state = state.copyWith(onboardingCompleted: true);
   }
 }
 

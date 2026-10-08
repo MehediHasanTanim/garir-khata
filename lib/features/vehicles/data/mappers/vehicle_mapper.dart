@@ -23,7 +23,9 @@ abstract final class VehicleMapper {
       chassisNumber: row.chassisNumber,
       color: row.color,
       photoPath: row.photoPath,
-      ownershipType: row.ownershipType,
+      ownershipType: row.ownershipType == null
+          ? null
+          : OwnershipType.values.byName(row.ownershipType!),
       isArchived: row.isArchived,
       createdAt: row.createdAt,
       updatedAt: row.updatedAt,
@@ -49,7 +51,7 @@ abstract final class VehicleMapper {
       chassisNumber: Value(vehicle.chassisNumber),
       color: Value(vehicle.color),
       photoPath: Value(vehicle.photoPath),
-      ownershipType: Value(vehicle.ownershipType),
+      ownershipType: Value(vehicle.ownershipType?.name),
       isArchived: Value(vehicle.isArchived),
       createdAt: vehicle.createdAt,
       updatedAt: vehicle.updatedAt,

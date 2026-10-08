@@ -1,5 +1,4 @@
 import 'package:drift/native.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:garir_khata/app/app.dart';
@@ -11,23 +10,51 @@ import 'package:shared_preferences/shared_preferences.dart';
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  setUp(() {
-    SharedPreferences.setMockInitialValues({});
-  });
-
-  testWidgets('app starts and shows home navigation', (tester) async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
+  Future<ProviderContainer> pumpApp(
+    WidgetTester tester, {
+    Map<String, Object> prefs = const {},
+  }) async {
+    SharedPreferences.setMockInitialValues(prefs);
+    final SharedPreferences preferences = await SharedPreferences.getInstance();
     final AppDatabase db = AppDatabase(NativeDatabase.memory());
     addTearDown(db.close);
 
+    final ProviderContainer container = ProviderContainer(
+      overrides: [
+        sharedPreferencesProvider.overrideWithValue(preferences),
+        appDatabaseProvider.overrideWithValue(db),
+      ],
+    );
+    addTearDown(container.dispose);
+
     await tester.pumpWidget(
-      ProviderScope(
-        overrides: [
-          sharedPreferencesProvider.overrideWithValue(prefs),
-          appDatabaseProvider.overrideWithValue(db),
-        ],
+      UncontrolledProviderScope(
+        container: container,
         child: const GarirKhataApp(),
       ),
+    );
+    return container;
+  }
+
+  testWidgets('fresh install starts on splash then language', (tester) async {
+    await pumpApp(tester);
+    await tester.pump();
+    expect(find.textContaining('Garir Khata'), findsWidgets);
+
+    await tester.pump(const Duration(milliseconds: 1000));
+    await tester.pumpAndSettle();
+
+    expect(find.textContaining('language'), findsWidgets);
+  });
+
+  testWidgets('completed onboarding shows home navigation', (tester) async {
+    await pumpApp(
+      tester,
+      prefs: {
+        'settings.onboardingCompleted': true,
+        'settings.languageConfirmed': true,
+        'settings.locale': 'en',
+      },
     );
     await tester.pumpAndSettle();
 
@@ -38,18 +65,13 @@ void main() {
   });
 
   testWidgets('language switching updates navigation labels', (tester) async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-    final AppDatabase db = AppDatabase(NativeDatabase.memory());
-    addTearDown(db.close);
-
-    await tester.pumpWidget(
-      ProviderScope(
-        overrides: [
-          sharedPreferencesProvider.overrideWithValue(prefs),
-          appDatabaseProvider.overrideWithValue(db),
-        ],
-        child: const GarirKhataApp(),
-      ),
+    await pumpApp(
+      tester,
+      prefs: {
+        'settings.onboardingCompleted': true,
+        'settings.languageConfirmed': true,
+        'settings.locale': 'en',
+      },
     );
     await tester.pumpAndSettle();
 
@@ -63,27 +85,20 @@ void main() {
     expect(find.text('ইতিহাস'), findsOneWidget);
   });
 
-  testWidgets('unknown route shows not found page', (tester) async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-    final AppDatabase db = AppDatabase(NativeDatabase.memory());
-    addTearDown(db.close);
-
-    await tester.pumpWidget(
-      ProviderScope(
-        overrides: [
-          sharedPreferencesProvider.overrideWithValue(prefs),
-          appDatabaseProvider.overrideWithValue(db),
-        ],
-        child: const GarirKhataApp(),
-      ),
-    );
+  testWidgets('onboarding can reach vehicle type selection', (tester) async {
+    await pumpApp(tester);
+    await tester.pump(const Duration(milliseconds: 1000));
     await tester.pumpAndSettle();
 
-    // Navigate via GoRouter through a non-existent path by rebuilding with
-    // a temporary router is heavy; validate error page widget rendering instead.
-    await tester.pumpWidget(
-      const MaterialApp(home: Scaffold(body: Text('Page not found'))),
-    );
-    expect(find.text('Page not found'), findsOneWidget);
+    await tester.tap(find.text('Continue').first);
+    await tester.pumpAndSettle();
+
+    expect(find.textContaining('vehicle records'), findsWidgets);
+
+    await tester.tap(find.text('Add Vehicle'));
+    await tester.pumpAndSettle();
+
+    expect(find.textContaining('drive'), findsWidgets);
+    expect(find.text('Motorcycle'), findsOneWidget);
   });
 }

@@ -55,4 +55,5 @@ lib/
 ## Sprint status
 
 - ✅ Sprint 1 — Project foundation & core infrastructure
-- ⏳ Sprint 2 — Onboarding & vehicle management
+- ✅ Sprint 2 — Onboarding & vehicle management
+- ⏳ Sprint 3 — Odometer & fuel tracking

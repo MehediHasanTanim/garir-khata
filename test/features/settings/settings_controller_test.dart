@@ -19,27 +19,28 @@ void main() {
     );
   }
 
-  test('defaults to English and system theme', () async {
+  test('defaults to English, system theme, incomplete onboarding', () async {
     final ProviderContainer container = await createContainer();
     addTearDown(container.dispose);
 
     final settings = container.read(settingsControllerProvider);
     expect(settings.locale.languageCode, 'en');
     expect(settings.themeMode, ThemeMode.system);
+    expect(settings.onboardingCompleted, isFalse);
+    expect(settings.languageConfirmed, isFalse);
   });
 
-  test('language switching persists', () async {
+  test('language switching persists and can confirm', () async {
     final ProviderContainer container = await createContainer();
     addTearDown(container.dispose);
 
     await container
         .read(settingsControllerProvider.notifier)
-        .setLocale(const Locale('bn'));
+        .setLocale(const Locale('bn'), confirm: true);
 
-    expect(
-      container.read(settingsControllerProvider).locale.languageCode,
-      'bn',
-    );
+    final settings = container.read(settingsControllerProvider);
+    expect(settings.locale.languageCode, 'bn');
+    expect(settings.languageConfirmed, isTrue);
   });
 
   test('theme switching persists', () async {
@@ -53,6 +54,20 @@ void main() {
     expect(
       container.read(settingsControllerProvider).themeMode,
       ThemeMode.dark,
+    );
+  });
+
+  test('completeOnboarding persists', () async {
+    final ProviderContainer container = await createContainer();
+    addTearDown(container.dispose);
+
+    await container
+        .read(settingsControllerProvider.notifier)
+        .completeOnboarding();
+
+    expect(
+      container.read(settingsControllerProvider).onboardingCompleted,
+      isTrue,
     );
   });
 }

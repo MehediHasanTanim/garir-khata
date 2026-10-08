@@ -109,10 +109,17 @@ class AppLocalizationsBn extends AppLocalizations {
   String get languageBangla => 'বাংলা';
 
   @override
+  String get languageEnglishHint => 'Continue in English';
+
+  @override
+  String get languageBanglaHint => 'বাংলায় চালিয়ে যান';
+
+  @override
   String get homeTitle => 'হোম';
 
   @override
-  String get homePlaceholder => 'অনবোর্ডিংয়ের পর ড্যাশবোর্ড এখানে দেখা যাবে।';
+  String get homePlaceholder =>
+      'জ্বালানি, সার্ভিস ও খরচ যোগ করলে ড্যাশবোর্ডে তথ্য বাড়বে।';
 
   @override
   String get historyTitle => 'ইতিহাস';
@@ -175,4 +182,242 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get preparingRecords => 'আপনার গাড়ির হিসাব প্রস্তুত হচ্ছে…';
+
+  @override
+  String get mileage => 'মাইলেজ';
+
+  @override
+  String get documents => 'কাগজপত্র';
+
+  @override
+  String get repairs => 'মেরামত';
+
+  @override
+  String get chooseLanguageTitle => 'ভাষা নির্বাচন করুন';
+
+  @override
+  String get chooseLanguageSubtitle => 'Choose your language';
+
+  @override
+  String get chooseLanguageHint =>
+      'আপনার সুবিধার জন্য পছন্দের ভাষা নির্বাচন করুন।';
+
+  @override
+  String get welcomeTitle => 'স্বাগতম';
+
+  @override
+  String get welcomeSubtitle => 'Garir Khata';
+
+  @override
+  String get welcomeHeadline => 'গাড়ির সব হিসাব এক জায়গায়';
+
+  @override
+  String get welcomeBody =>
+      'জ্বালানি, মাইলেজ, সার্ভিস, মেরামত ও কাগজপত্রের তারিখ সহজে রাখুন।';
+
+  @override
+  String get addVehicle => 'গাড়ি যোগ করুন';
+
+  @override
+  String get addVehicleBasicTitle => 'গাড়ির তথ্য';
+
+  @override
+  String get whatDoYouDrive => 'আপনি কী চালান?';
+
+  @override
+  String get vehicleDetailsSubtitle => 'মূল তথ্য';
+
+  @override
+  String get currentOdometerTitle => 'বর্তমান ওডোমিটার';
+
+  @override
+  String get currentOdometerHint => 'গাড়িতে দেখানো বর্তমান রিডিং লিখুন।';
+
+  @override
+  String get finishSetup => 'সেটআপ শেষ করুন';
+
+  @override
+  String get setupCompleteTitle => 'সেটআপ সম্পন্ন';
+
+  @override
+  String get setupCompleteSubtitle => 'প্রস্তুত';
+
+  @override
+  String get setupCompleteHeadline => 'আপনার গাড়ি প্রস্তুত';
+
+  @override
+  String get goToDashboard => 'ড্যাশবোর্ডে যান';
+
+  @override
+  String get myVehicles => 'আমার গাড়ি';
+
+  @override
+  String get vehicleProfile => 'গাড়ির প্রোফাইল';
+
+  @override
+  String get editVehicle => 'গাড়ি সম্পাদনা';
+
+  @override
+  String get addNewVehicle => 'নতুন গাড়ি যোগ করুন';
+
+  @override
+  String get selectVehicle => 'গাড়ি নির্বাচন করুন';
+
+  @override
+  String get select => 'নির্বাচন';
+
+  @override
+  String get active => 'সক্রিয়';
+
+  @override
+  String get archive => 'আর্কাইভ';
+
+  @override
+  String get archiveVehicle => 'গাড়ি আর্কাইভ করুন';
+
+  @override
+  String get archiveVehicleTitle => 'এই গাড়ি আর্কাইভ করবেন?';
+
+  @override
+  String get archiveVehicleMessage =>
+      'ইতিহাস থাকবে, কিন্তু সক্রিয় তালিকায় আর দেখা যাবে না।';
+
+  @override
+  String get overviewSection => 'সারাংশ';
+
+  @override
+  String get technicalSection => 'প্রযুক্তিগত';
+
+  @override
+  String get ownershipSection => 'মালিকানা';
+
+  @override
+  String get registrationSection => 'রেজিস্ট্রেশন ও প্রযুক্তিগত';
+
+  @override
+  String get sensitiveDataNote =>
+      'সংবেদনশীল তথ্য আপনার ডিভাইসেই সংরক্ষিত থাকে।';
+
+  @override
+  String get fieldNickname => 'গাড়ির ডাকনাম';
+
+  @override
+  String get fieldNicknameHint => 'যেমন: My Hornet';
+
+  @override
+  String get fieldBrand => 'ব্র্যান্ড';
+
+  @override
+  String get fieldModel => 'মডেল';
+
+  @override
+  String get fieldVariant => 'ভ্যারিয়েন্ট';
+
+  @override
+  String get fieldModelYear => 'মডেল বছর';
+
+  @override
+  String get fieldFuelType => 'জ্বালানির ধরন';
+
+  @override
+  String get fieldColor => 'রঙ';
+
+  @override
+  String get fieldRegistration => 'রেজিস্ট্রেশন নম্বর';
+
+  @override
+  String get fieldEngineCapacity => 'ইঞ্জিন ক্যাপাসিটি';
+
+  @override
+  String get fieldEngineNumber => 'ইঞ্জিন নম্বর';
+
+  @override
+  String get fieldChassisNumber => 'চ্যাসিস নম্বর';
+
+  @override
+  String get fieldOwnership => 'মালিকানার ধরন';
+
+  @override
+  String get fieldPurchasePrice => 'কেনার মূল্য';
+
+  @override
+  String get fieldPurchaseDate => 'কেনার তারিখ';
+
+  @override
+  String get fieldCurrentOdometer => 'বর্তমান ওডোমিটার';
+
+  @override
+  String get fieldVehicleType => 'গাড়ির ধরন';
+
+  @override
+  String get fieldBrandModel => 'ব্র্যান্ড / মডেল';
+
+  @override
+  String get optionalNotSet => 'নির্ধারিত নয়';
+
+  @override
+  String get validationNicknameOrModel => 'ডাকনাম বা মডেল লিখুন';
+
+  @override
+  String get validationOdometer => 'সঠিক ওডোমিটার রিডিং লিখুন (০ বা তার বেশি)';
+
+  @override
+  String get vehicleTypeMotorcycle => 'মোটরসাইকেল';
+
+  @override
+  String get vehicleTypeScooter => 'স্কুটার';
+
+  @override
+  String get vehicleTypeCar => 'কার';
+
+  @override
+  String get vehicleTypeSuv => 'এসইউভি';
+
+  @override
+  String get vehicleTypeCng => 'সিএনজি';
+
+  @override
+  String get vehicleTypeMicrobus => 'মাইক্রোবাস';
+
+  @override
+  String get vehicleTypePickup => 'পিকআপ';
+
+  @override
+  String get vehicleTypeOther => 'অন্যান্য';
+
+  @override
+  String get fuelTypePetrol => 'পেট্রোল';
+
+  @override
+  String get fuelTypeOctane => 'অকটেন';
+
+  @override
+  String get fuelTypeDiesel => 'ডিজেল';
+
+  @override
+  String get fuelTypeCng => 'সিএনজি';
+
+  @override
+  String get fuelTypeLpg => 'এলপিজি';
+
+  @override
+  String get fuelTypeElectric => 'ইলেকট্রিক';
+
+  @override
+  String get fuelTypeHybrid => 'হাইব্রিড';
+
+  @override
+  String get fuelTypeOther => 'অন্যান্য';
+
+  @override
+  String get ownershipPersonal => 'ব্যক্তিগত';
+
+  @override
+  String get ownershipFamily => 'পারিবারিক';
+
+  @override
+  String get ownershipCompany => 'কোম্পানি';
+
+  @override
+  String get ownershipOther => 'অন্যান্য';
 }

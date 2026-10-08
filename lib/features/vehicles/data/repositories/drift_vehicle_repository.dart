@@ -57,6 +57,35 @@ class DriftVehicleRepository implements VehicleRepository {
   }
 
   @override
+  Future<Result<Vehicle>> createWithInitialOdometer({
+    required Vehicle vehicle,
+    required String odometerEntryId,
+  }) async {
+    try {
+      await _db.transaction(() async {
+        await _db.into(_db.vehicles).insert(VehicleMapper.toCompanion(vehicle));
+        await _db
+            .into(_db.odometerEntries)
+            .insert(
+              OdometerEntriesCompanion.insert(
+                id: odometerEntryId,
+                vehicleId: vehicle.id,
+                recordedAt: vehicle.createdAt,
+                odometer: vehicle.currentOdometer,
+                sourceType: 'manual',
+                createdAt: vehicle.createdAt,
+              ),
+            );
+      });
+      return Success(vehicle);
+    } on Object catch (error) {
+      return Failure(
+        DatabaseError(message: 'Failed to create vehicle', cause: error),
+      );
+    }
+  }
+
+  @override
   Future<Result<void>> archive(String id) async {
     try {
       await (_db.update(_db.vehicles)..where((t) => t.id.equals(id))).write(

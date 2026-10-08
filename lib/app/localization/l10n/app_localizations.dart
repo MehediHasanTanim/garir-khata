@@ -296,6 +296,18 @@ abstract class AppLocalizations {
   /// **'Bangla'**
   String get languageBangla;
 
+  /// No description provided for @languageEnglishHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue in English'**
+  String get languageEnglishHint;
+
+  /// No description provided for @languageBanglaHint.
+  ///
+  /// In en, this message translates to:
+  /// **'বাংলায় চালিয়ে যান'**
+  String get languageBanglaHint;
+
   /// No description provided for @homeTitle.
   ///
   /// In en, this message translates to:
@@ -305,7 +317,7 @@ abstract class AppLocalizations {
   /// No description provided for @homePlaceholder.
   ///
   /// In en, this message translates to:
-  /// **'Dashboard will appear here after onboarding.'**
+  /// **'Dashboard insights will grow as you add fuel, service, and expenses.'**
   String get homePlaceholder;
 
   /// No description provided for @historyTitle.
@@ -427,6 +439,474 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Preparing your vehicle records…'**
   String get preparingRecords;
+
+  /// No description provided for @mileage.
+  ///
+  /// In en, this message translates to:
+  /// **'Mileage'**
+  String get mileage;
+
+  /// No description provided for @documents.
+  ///
+  /// In en, this message translates to:
+  /// **'Documents'**
+  String get documents;
+
+  /// No description provided for @repairs.
+  ///
+  /// In en, this message translates to:
+  /// **'Repairs'**
+  String get repairs;
+
+  /// No description provided for @chooseLanguageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose your language'**
+  String get chooseLanguageTitle;
+
+  /// No description provided for @chooseLanguageSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'ভাষা নির্বাচন করুন'**
+  String get chooseLanguageSubtitle;
+
+  /// No description provided for @chooseLanguageHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Select your preferred language for a better experience.'**
+  String get chooseLanguageHint;
+
+  /// No description provided for @welcomeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome'**
+  String get welcomeTitle;
+
+  /// No description provided for @welcomeSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Garir Khata'**
+  String get welcomeSubtitle;
+
+  /// No description provided for @welcomeHeadline.
+  ///
+  /// In en, this message translates to:
+  /// **'Your vehicle records, all in one place'**
+  String get welcomeHeadline;
+
+  /// No description provided for @welcomeBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Track fuel, mileage, service, repairs and document dates — easily and hassle-free.'**
+  String get welcomeBody;
+
+  /// No description provided for @addVehicle.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Vehicle'**
+  String get addVehicle;
+
+  /// No description provided for @addVehicleBasicTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Vehicle'**
+  String get addVehicleBasicTitle;
+
+  /// No description provided for @whatDoYouDrive.
+  ///
+  /// In en, this message translates to:
+  /// **'What do you drive?'**
+  String get whatDoYouDrive;
+
+  /// No description provided for @vehicleDetailsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Basic info'**
+  String get vehicleDetailsSubtitle;
+
+  /// No description provided for @currentOdometerTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Current odometer'**
+  String get currentOdometerTitle;
+
+  /// No description provided for @currentOdometerHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the current reading shown on your vehicle.'**
+  String get currentOdometerHint;
+
+  /// No description provided for @finishSetup.
+  ///
+  /// In en, this message translates to:
+  /// **'Finish Setup'**
+  String get finishSetup;
+
+  /// No description provided for @setupCompleteTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Setup complete'**
+  String get setupCompleteTitle;
+
+  /// No description provided for @setupCompleteSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re ready'**
+  String get setupCompleteSubtitle;
+
+  /// No description provided for @setupCompleteHeadline.
+  ///
+  /// In en, this message translates to:
+  /// **'Your vehicle is ready'**
+  String get setupCompleteHeadline;
+
+  /// No description provided for @goToDashboard.
+  ///
+  /// In en, this message translates to:
+  /// **'Go to Dashboard'**
+  String get goToDashboard;
+
+  /// No description provided for @myVehicles.
+  ///
+  /// In en, this message translates to:
+  /// **'My Vehicles'**
+  String get myVehicles;
+
+  /// No description provided for @vehicleProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Vehicle Profile'**
+  String get vehicleProfile;
+
+  /// No description provided for @editVehicle.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Vehicle'**
+  String get editVehicle;
+
+  /// No description provided for @addNewVehicle.
+  ///
+  /// In en, this message translates to:
+  /// **'Add New Vehicle'**
+  String get addNewVehicle;
+
+  /// No description provided for @selectVehicle.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Vehicle'**
+  String get selectVehicle;
+
+  /// No description provided for @select.
+  ///
+  /// In en, this message translates to:
+  /// **'Select'**
+  String get select;
+
+  /// No description provided for @active.
+  ///
+  /// In en, this message translates to:
+  /// **'Active'**
+  String get active;
+
+  /// No description provided for @archive.
+  ///
+  /// In en, this message translates to:
+  /// **'Archive'**
+  String get archive;
+
+  /// No description provided for @archiveVehicle.
+  ///
+  /// In en, this message translates to:
+  /// **'Archive vehicle'**
+  String get archiveVehicle;
+
+  /// No description provided for @archiveVehicleTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Archive this vehicle?'**
+  String get archiveVehicleTitle;
+
+  /// No description provided for @archiveVehicleMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'History will remain available, but the vehicle will no longer appear in active lists.'**
+  String get archiveVehicleMessage;
+
+  /// No description provided for @overviewSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Overview'**
+  String get overviewSection;
+
+  /// No description provided for @technicalSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Technical'**
+  String get technicalSection;
+
+  /// No description provided for @ownershipSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Ownership'**
+  String get ownershipSection;
+
+  /// No description provided for @registrationSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Registration & technical'**
+  String get registrationSection;
+
+  /// No description provided for @sensitiveDataNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Sensitive details are stored on your device.'**
+  String get sensitiveDataNote;
+
+  /// No description provided for @fieldNickname.
+  ///
+  /// In en, this message translates to:
+  /// **'Vehicle nickname'**
+  String get fieldNickname;
+
+  /// No description provided for @fieldNicknameHint.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. My Hornet'**
+  String get fieldNicknameHint;
+
+  /// No description provided for @fieldBrand.
+  ///
+  /// In en, this message translates to:
+  /// **'Brand'**
+  String get fieldBrand;
+
+  /// No description provided for @fieldModel.
+  ///
+  /// In en, this message translates to:
+  /// **'Model'**
+  String get fieldModel;
+
+  /// No description provided for @fieldVariant.
+  ///
+  /// In en, this message translates to:
+  /// **'Variant'**
+  String get fieldVariant;
+
+  /// No description provided for @fieldModelYear.
+  ///
+  /// In en, this message translates to:
+  /// **'Model year'**
+  String get fieldModelYear;
+
+  /// No description provided for @fieldFuelType.
+  ///
+  /// In en, this message translates to:
+  /// **'Fuel type'**
+  String get fieldFuelType;
+
+  /// No description provided for @fieldColor.
+  ///
+  /// In en, this message translates to:
+  /// **'Color'**
+  String get fieldColor;
+
+  /// No description provided for @fieldRegistration.
+  ///
+  /// In en, this message translates to:
+  /// **'Registration number'**
+  String get fieldRegistration;
+
+  /// No description provided for @fieldEngineCapacity.
+  ///
+  /// In en, this message translates to:
+  /// **'Engine capacity'**
+  String get fieldEngineCapacity;
+
+  /// No description provided for @fieldEngineNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Engine number'**
+  String get fieldEngineNumber;
+
+  /// No description provided for @fieldChassisNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Chassis number'**
+  String get fieldChassisNumber;
+
+  /// No description provided for @fieldOwnership.
+  ///
+  /// In en, this message translates to:
+  /// **'Ownership type'**
+  String get fieldOwnership;
+
+  /// No description provided for @fieldPurchasePrice.
+  ///
+  /// In en, this message translates to:
+  /// **'Purchase price'**
+  String get fieldPurchasePrice;
+
+  /// No description provided for @fieldPurchaseDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Purchase date'**
+  String get fieldPurchaseDate;
+
+  /// No description provided for @fieldCurrentOdometer.
+  ///
+  /// In en, this message translates to:
+  /// **'Current odometer'**
+  String get fieldCurrentOdometer;
+
+  /// No description provided for @fieldVehicleType.
+  ///
+  /// In en, this message translates to:
+  /// **'Vehicle type'**
+  String get fieldVehicleType;
+
+  /// No description provided for @fieldBrandModel.
+  ///
+  /// In en, this message translates to:
+  /// **'Brand / model'**
+  String get fieldBrandModel;
+
+  /// No description provided for @optionalNotSet.
+  ///
+  /// In en, this message translates to:
+  /// **'Not set'**
+  String get optionalNotSet;
+
+  /// No description provided for @validationNicknameOrModel.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a nickname or model'**
+  String get validationNicknameOrModel;
+
+  /// No description provided for @validationOdometer.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a valid odometer reading (0 or greater)'**
+  String get validationOdometer;
+
+  /// No description provided for @vehicleTypeMotorcycle.
+  ///
+  /// In en, this message translates to:
+  /// **'Motorcycle'**
+  String get vehicleTypeMotorcycle;
+
+  /// No description provided for @vehicleTypeScooter.
+  ///
+  /// In en, this message translates to:
+  /// **'Scooter'**
+  String get vehicleTypeScooter;
+
+  /// No description provided for @vehicleTypeCar.
+  ///
+  /// In en, this message translates to:
+  /// **'Car'**
+  String get vehicleTypeCar;
+
+  /// No description provided for @vehicleTypeSuv.
+  ///
+  /// In en, this message translates to:
+  /// **'SUV'**
+  String get vehicleTypeSuv;
+
+  /// No description provided for @vehicleTypeCng.
+  ///
+  /// In en, this message translates to:
+  /// **'CNG'**
+  String get vehicleTypeCng;
+
+  /// No description provided for @vehicleTypeMicrobus.
+  ///
+  /// In en, this message translates to:
+  /// **'Microbus'**
+  String get vehicleTypeMicrobus;
+
+  /// No description provided for @vehicleTypePickup.
+  ///
+  /// In en, this message translates to:
+  /// **'Pickup'**
+  String get vehicleTypePickup;
+
+  /// No description provided for @vehicleTypeOther.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get vehicleTypeOther;
+
+  /// No description provided for @fuelTypePetrol.
+  ///
+  /// In en, this message translates to:
+  /// **'Petrol'**
+  String get fuelTypePetrol;
+
+  /// No description provided for @fuelTypeOctane.
+  ///
+  /// In en, this message translates to:
+  /// **'Octane'**
+  String get fuelTypeOctane;
+
+  /// No description provided for @fuelTypeDiesel.
+  ///
+  /// In en, this message translates to:
+  /// **'Diesel'**
+  String get fuelTypeDiesel;
+
+  /// No description provided for @fuelTypeCng.
+  ///
+  /// In en, this message translates to:
+  /// **'CNG'**
+  String get fuelTypeCng;
+
+  /// No description provided for @fuelTypeLpg.
+  ///
+  /// In en, this message translates to:
+  /// **'LPG'**
+  String get fuelTypeLpg;
+
+  /// No description provided for @fuelTypeElectric.
+  ///
+  /// In en, this message translates to:
+  /// **'Electric'**
+  String get fuelTypeElectric;
+
+  /// No description provided for @fuelTypeHybrid.
+  ///
+  /// In en, this message translates to:
+  /// **'Hybrid'**
+  String get fuelTypeHybrid;
+
+  /// No description provided for @fuelTypeOther.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get fuelTypeOther;
+
+  /// No description provided for @ownershipPersonal.
+  ///
+  /// In en, this message translates to:
+  /// **'Personal'**
+  String get ownershipPersonal;
+
+  /// No description provided for @ownershipFamily.
+  ///
+  /// In en, this message translates to:
+  /// **'Family'**
+  String get ownershipFamily;
+
+  /// No description provided for @ownershipCompany.
+  ///
+  /// In en, this message translates to:
+  /// **'Company'**
+  String get ownershipCompany;
+
+  /// No description provided for @ownershipOther.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get ownershipOther;
 }
 
 class _AppLocalizationsDelegate

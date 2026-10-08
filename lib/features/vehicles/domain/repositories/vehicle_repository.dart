@@ -5,5 +5,9 @@ abstract interface class VehicleRepository {
   Future<Result<List<Vehicle>>> getActiveVehicles();
   Future<Result<Vehicle?>> getById(String id);
   Future<Result<Vehicle>> upsert(Vehicle vehicle);
+  Future<Result<Vehicle>> createWithInitialOdometer({
+    required Vehicle vehicle,
+    required String odometerEntryId,
+  });
   Future<Result<void>> archive(String id);
 }

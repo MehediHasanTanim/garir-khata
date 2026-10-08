@@ -3,20 +3,83 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:garir_khata/features/history/presentation/history_page.dart';
 import 'package:garir_khata/features/home/presentation/home_page.dart';
 import 'package:garir_khata/features/more/presentation/more_page.dart';
+import 'package:garir_khata/features/onboarding/presentation/language_page.dart';
+import 'package:garir_khata/features/onboarding/presentation/odometer_page.dart';
+import 'package:garir_khata/features/onboarding/presentation/setup_complete_page.dart';
+import 'package:garir_khata/features/onboarding/presentation/splash_page.dart';
+import 'package:garir_khata/features/onboarding/presentation/vehicle_details_page.dart';
+import 'package:garir_khata/features/onboarding/presentation/vehicle_type_page.dart';
+import 'package:garir_khata/features/onboarding/presentation/welcome_page.dart';
 import 'package:garir_khata/features/reports/presentation/reports_page.dart';
+import 'package:garir_khata/features/settings/application/settings_controller.dart';
 import 'package:garir_khata/features/shell/presentation/main_shell.dart';
 import 'package:garir_khata/features/shell/presentation/route_not_found_page.dart';
+import 'package:garir_khata/features/vehicles/presentation/vehicle_form_page.dart';
+import 'package:garir_khata/features/vehicles/presentation/vehicle_profile_page.dart';
 import 'package:garir_khata/features/vehicles/presentation/vehicles_page.dart';
 import 'package:go_router/go_router.dart';
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'root');
 
 final appRouterProvider = Provider<GoRouter>((ref) {
-  return GoRouter(
+  final GoRouter router = GoRouter(
     navigatorKey: _rootNavigatorKey,
-    initialLocation: '/home',
+    initialLocation: '/splash',
     debugLogDiagnostics: false,
+    redirect: (context, state) {
+      final settings = ref.read(settingsControllerProvider);
+      final String path = state.uri.path;
+      final bool onboardingRoute =
+          path.startsWith('/onboarding') || path == '/splash';
+      final bool completed = settings.onboardingCompleted;
+
+      if (!completed && !onboardingRoute) {
+        return '/splash';
+      }
+      if (completed &&
+          onboardingRoute &&
+          path != '/onboarding/complete' &&
+          path != '/splash') {
+        return '/home';
+      }
+      return null;
+    },
     routes: [
+      GoRoute(
+        path: '/splash',
+        name: 'splash',
+        builder: (context, state) => const SplashPage(),
+      ),
+      GoRoute(
+        path: '/onboarding/language',
+        name: 'onboardingLanguage',
+        builder: (context, state) => const LanguagePage(),
+      ),
+      GoRoute(
+        path: '/onboarding/welcome',
+        name: 'onboardingWelcome',
+        builder: (context, state) => const WelcomePage(),
+      ),
+      GoRoute(
+        path: '/onboarding/vehicle-type',
+        name: 'onboardingVehicleType',
+        builder: (context, state) => const VehicleTypePage(),
+      ),
+      GoRoute(
+        path: '/onboarding/vehicle-details',
+        name: 'onboardingVehicleDetails',
+        builder: (context, state) => const VehicleDetailsPage(),
+      ),
+      GoRoute(
+        path: '/onboarding/odometer',
+        name: 'onboardingOdometer',
+        builder: (context, state) => const OdometerPage(),
+      ),
+      GoRoute(
+        path: '/onboarding/complete',
+        name: 'onboardingComplete',
+        builder: (context, state) => const SetupCompletePage(),
+      ),
       StatefulShellRoute.indexedStack(
         builder: (context, state, navigationShell) {
           return MainShell(navigationShell: navigationShell);
@@ -55,25 +118,46 @@ final appRouterProvider = Provider<GoRouter>((ref) {
                 path: '/more',
                 name: 'more',
                 builder: (context, state) => const MorePage(),
-                routes: [
-                  GoRoute(
-                    path: 'vehicles',
-                    name: 'vehicles',
-                    parentNavigatorKey: _rootNavigatorKey,
-                    builder: (context, state) => const VehiclesPage(),
-                  ),
-                ],
               ),
             ],
           ),
         ],
       ),
-      // Absolute deep link friendly alias used by More page.
       GoRoute(
         path: '/vehicles',
-        redirect: (context, state) => '/more/vehicles',
+        name: 'vehicles',
+        parentNavigatorKey: _rootNavigatorKey,
+        builder: (context, state) => const VehiclesPage(),
+        routes: [
+          GoRoute(
+            path: 'add',
+            name: 'vehicleAdd',
+            builder: (context, state) => const VehicleFormPage(),
+          ),
+          GoRoute(
+            path: ':id',
+            name: 'vehicleProfile',
+            builder: (context, state) =>
+                VehicleProfilePage(vehicleId: state.pathParameters['id']!),
+            routes: [
+              GoRoute(
+                path: 'edit',
+                name: 'vehicleEdit',
+                builder: (context, state) =>
+                    VehicleFormPage(vehicleId: state.pathParameters['id']),
+              ),
+            ],
+          ),
+        ],
       ),
     ],
     errorBuilder: (context, state) => const RouteNotFoundPage(),
   );
+
+  ref.listen(settingsControllerProvider, (_, _) {
+    router.refresh();
+  });
+  ref.onDispose(router.dispose);
+
+  return router;
 });
