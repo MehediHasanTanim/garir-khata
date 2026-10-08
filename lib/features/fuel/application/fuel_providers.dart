@@ -1,8 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import 'package:garir_khata/core/database/database_provider.dart';
 import 'package:garir_khata/core/providers/core_providers.dart';
 import 'package:garir_khata/core/result/result.dart';
+import 'package:garir_khata/features/expenses/application/expense_providers.dart';
 import 'package:garir_khata/features/fuel/application/use_cases/add_fuel_entry.dart';
 import 'package:garir_khata/features/fuel/application/use_cases/delete_fuel_entry.dart';
 import 'package:garir_khata/features/fuel/application/use_cases/update_fuel_entry.dart';
@@ -17,7 +17,7 @@ final fuelRepositoryProvider = Provider<FuelRepository>((ref) {
 });
 
 final fuelExpenseLinkProvider = Provider<FuelExpenseLinkService>((ref) {
-  return const NoOpFuelExpenseLinkService();
+  return ref.watch(fuelExpenseLinkServiceProvider);
 });
 
 final addFuelEntryProvider = Provider<AddFuelEntry>((ref) {

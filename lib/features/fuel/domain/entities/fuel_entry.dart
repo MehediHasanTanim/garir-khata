@@ -1,6 +1,7 @@
+import 'package:garir_khata/core/domain/payment_method.dart';
 import 'package:garir_khata/features/vehicles/domain/entities/vehicle.dart';
 
-enum PaymentMethod { cash, card, mobileBanking, other }
+export 'package:garir_khata/core/domain/payment_method.dart';
 
 class FuelEntry {
   const FuelEntry({

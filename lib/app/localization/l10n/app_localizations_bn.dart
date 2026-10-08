@@ -557,4 +557,119 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get odometerSourceImport => 'ইমপোর্ট';
+
+  @override
+  String get currentOdometer => 'বর্তমান মিটার রিডিং';
+
+  @override
+  String get thisMonthExpenses => 'এই মাসের খরচ';
+
+  @override
+  String get maintenance => 'রক্ষণাবেক্ষণ';
+
+  @override
+  String get other => 'অন্যান্য';
+
+  @override
+  String get totalExpense => 'মোট খরচ';
+
+  @override
+  String get drivingSummary => 'ড্রাইভিং সারাংশ';
+
+  @override
+  String get distance => 'দূরত্ব';
+
+  @override
+  String get fuelUsed => 'জ্বালানি খরচ';
+
+  @override
+  String get costPerKm => 'প্রতি কিমিতে খরচ';
+
+  @override
+  String get notEnoughData => 'পর্যাপ্ত তথ্য নেই';
+
+  @override
+  String get upcoming => 'আসন্ন';
+
+  @override
+  String get upcomingPlaceholder =>
+      'অয়েল, সার্ভিস ও ডকুমেন্টের রিমাইন্ডার এখানে দেখা যাবে।';
+
+  @override
+  String get quickActions => 'দ্রুত কাজ';
+
+  @override
+  String get recentActivity => 'সাম্প্রতিক কার্যক্রম';
+
+  @override
+  String get recentActivityEmpty => 'এখনো কোনো সাম্প্রতিক কার্যক্রম নেই';
+
+  @override
+  String get seeAll => 'সব দেখুন';
+
+  @override
+  String get comingSoon => 'শীঘ্রই আসছে';
+
+  @override
+  String get dashboardEmptyTitle => 'এই গাড়ির হিসাব শুরু করুন';
+
+  @override
+  String get dashboardEmptyHint =>
+      'মাইলেজ ও মাসিক খরচ দেখতে প্রথম জ্বালানি এন্ট্রি যোগ করুন।';
+
+  @override
+  String get expenseHistory => 'খরচের ইতিহাস';
+
+  @override
+  String get expenseDetails => 'খরচের বিবরণ';
+
+  @override
+  String get editExpense => 'খরচ সম্পাদনা';
+
+  @override
+  String get expenseHistoryEmpty => 'এখনো কোনো খরচ নেই';
+
+  @override
+  String get expenseHistoryEmptyHint =>
+      'জ্বালানি, সার্ভিস ও অন্যান্য খরচ যোগ করলে মাসিক মোট দেখা যাবে।';
+
+  @override
+  String get expenseCategory => 'ক্যাটাগরি';
+
+  @override
+  String get expenseCategoryRequired => 'একটি ক্যাটাগরি বেছে নিন';
+
+  @override
+  String get fieldDate => 'তারিখ';
+
+  @override
+  String get fieldOdometer => 'ওডোমিটার';
+
+  @override
+  String get fieldOdometerOptional => 'ওডোমিটার (ঐচ্ছিক)';
+
+  @override
+  String get fieldExpenseTitle => 'খরচের শিরোনাম';
+
+  @override
+  String get fieldAmount => 'পরিমাণ';
+
+  @override
+  String get fieldVendor => 'ভেন্ডর';
+
+  @override
+  String get fieldVendorOptional => 'ভেন্ডর / সার্ভিস সেন্টার (ঐচ্ছিক)';
+
+  @override
+  String get fieldNotes => 'নোট';
+
+  @override
+  String get expenseLinkedFuelHint =>
+      'এই খরচ জ্বালানি এন্ট্রির সাথে যুক্ত। সম্পাদনা বা মুছতে জ্বালানি স্ক্রিন ব্যবহার করুন।';
+
+  @override
+  String get deleteExpenseTitle => 'এই খরচ মুছবেন?';
+
+  @override
+  String get deleteExpenseMessage => 'এটি আর ফেরানো যাবে না।';
 }

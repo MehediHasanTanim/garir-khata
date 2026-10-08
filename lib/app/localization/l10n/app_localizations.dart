@@ -1171,6 +1171,228 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Import'**
   String get odometerSourceImport;
+
+  /// No description provided for @currentOdometer.
+  ///
+  /// In en, this message translates to:
+  /// **'Current odometer'**
+  String get currentOdometer;
+
+  /// No description provided for @thisMonthExpenses.
+  ///
+  /// In en, this message translates to:
+  /// **'This Month'**
+  String get thisMonthExpenses;
+
+  /// No description provided for @maintenance.
+  ///
+  /// In en, this message translates to:
+  /// **'Maintenance'**
+  String get maintenance;
+
+  /// No description provided for @other.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get other;
+
+  /// No description provided for @totalExpense.
+  ///
+  /// In en, this message translates to:
+  /// **'Total Expense'**
+  String get totalExpense;
+
+  /// No description provided for @drivingSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'Driving Summary'**
+  String get drivingSummary;
+
+  /// No description provided for @distance.
+  ///
+  /// In en, this message translates to:
+  /// **'Distance'**
+  String get distance;
+
+  /// No description provided for @fuelUsed.
+  ///
+  /// In en, this message translates to:
+  /// **'Fuel used'**
+  String get fuelUsed;
+
+  /// No description provided for @costPerKm.
+  ///
+  /// In en, this message translates to:
+  /// **'Cost/km'**
+  String get costPerKm;
+
+  /// No description provided for @notEnoughData.
+  ///
+  /// In en, this message translates to:
+  /// **'Not enough data'**
+  String get notEnoughData;
+
+  /// No description provided for @upcoming.
+  ///
+  /// In en, this message translates to:
+  /// **'Upcoming'**
+  String get upcoming;
+
+  /// No description provided for @upcomingPlaceholder.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminders for oil, service, and documents will appear here.'**
+  String get upcomingPlaceholder;
+
+  /// No description provided for @quickActions.
+  ///
+  /// In en, this message translates to:
+  /// **'Quick Actions'**
+  String get quickActions;
+
+  /// No description provided for @recentActivity.
+  ///
+  /// In en, this message translates to:
+  /// **'Recent Activity'**
+  String get recentActivity;
+
+  /// No description provided for @recentActivityEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No recent activity yet'**
+  String get recentActivityEmpty;
+
+  /// No description provided for @seeAll.
+  ///
+  /// In en, this message translates to:
+  /// **'See all'**
+  String get seeAll;
+
+  /// No description provided for @comingSoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Coming soon'**
+  String get comingSoon;
+
+  /// No description provided for @dashboardEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Start tracking this vehicle'**
+  String get dashboardEmptyTitle;
+
+  /// No description provided for @dashboardEmptyHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Add your first fuel entry to unlock mileage and monthly insight.'**
+  String get dashboardEmptyHint;
+
+  /// No description provided for @expenseHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Expense History'**
+  String get expenseHistory;
+
+  /// No description provided for @expenseDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Expense Details'**
+  String get expenseDetails;
+
+  /// No description provided for @editExpense.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Expense'**
+  String get editExpense;
+
+  /// No description provided for @expenseHistoryEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No expenses yet'**
+  String get expenseHistoryEmpty;
+
+  /// No description provided for @expenseHistoryEmptyHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Log fuel, service, and other costs to see monthly totals.'**
+  String get expenseHistoryEmptyHint;
+
+  /// No description provided for @expenseCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Category'**
+  String get expenseCategory;
+
+  /// No description provided for @expenseCategoryRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Select a category'**
+  String get expenseCategoryRequired;
+
+  /// No description provided for @fieldDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Date'**
+  String get fieldDate;
+
+  /// No description provided for @fieldOdometer.
+  ///
+  /// In en, this message translates to:
+  /// **'Odometer'**
+  String get fieldOdometer;
+
+  /// No description provided for @fieldOdometerOptional.
+  ///
+  /// In en, this message translates to:
+  /// **'Odometer (optional)'**
+  String get fieldOdometerOptional;
+
+  /// No description provided for @fieldExpenseTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Expense title'**
+  String get fieldExpenseTitle;
+
+  /// No description provided for @fieldAmount.
+  ///
+  /// In en, this message translates to:
+  /// **'Amount'**
+  String get fieldAmount;
+
+  /// No description provided for @fieldVendor.
+  ///
+  /// In en, this message translates to:
+  /// **'Vendor'**
+  String get fieldVendor;
+
+  /// No description provided for @fieldVendorOptional.
+  ///
+  /// In en, this message translates to:
+  /// **'Vendor / service center (optional)'**
+  String get fieldVendorOptional;
+
+  /// No description provided for @fieldNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'Note'**
+  String get fieldNotes;
+
+  /// No description provided for @expenseLinkedFuelHint.
+  ///
+  /// In en, this message translates to:
+  /// **'This expense is linked to a fuel entry. Edit or delete it from Fuel.'**
+  String get expenseLinkedFuelHint;
+
+  /// No description provided for @deleteExpenseTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete this expense?'**
+  String get deleteExpenseTitle;
+
+  /// No description provided for @deleteExpenseMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'This cannot be undone.'**
+  String get deleteExpenseMessage;
 }
 
 class _AppLocalizationsDelegate

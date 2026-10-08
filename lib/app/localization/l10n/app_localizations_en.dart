@@ -561,4 +561,119 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get odometerSourceImport => 'Import';
+
+  @override
+  String get currentOdometer => 'Current odometer';
+
+  @override
+  String get thisMonthExpenses => 'This Month';
+
+  @override
+  String get maintenance => 'Maintenance';
+
+  @override
+  String get other => 'Other';
+
+  @override
+  String get totalExpense => 'Total Expense';
+
+  @override
+  String get drivingSummary => 'Driving Summary';
+
+  @override
+  String get distance => 'Distance';
+
+  @override
+  String get fuelUsed => 'Fuel used';
+
+  @override
+  String get costPerKm => 'Cost/km';
+
+  @override
+  String get notEnoughData => 'Not enough data';
+
+  @override
+  String get upcoming => 'Upcoming';
+
+  @override
+  String get upcomingPlaceholder =>
+      'Reminders for oil, service, and documents will appear here.';
+
+  @override
+  String get quickActions => 'Quick Actions';
+
+  @override
+  String get recentActivity => 'Recent Activity';
+
+  @override
+  String get recentActivityEmpty => 'No recent activity yet';
+
+  @override
+  String get seeAll => 'See all';
+
+  @override
+  String get comingSoon => 'Coming soon';
+
+  @override
+  String get dashboardEmptyTitle => 'Start tracking this vehicle';
+
+  @override
+  String get dashboardEmptyHint =>
+      'Add your first fuel entry to unlock mileage and monthly insight.';
+
+  @override
+  String get expenseHistory => 'Expense History';
+
+  @override
+  String get expenseDetails => 'Expense Details';
+
+  @override
+  String get editExpense => 'Edit Expense';
+
+  @override
+  String get expenseHistoryEmpty => 'No expenses yet';
+
+  @override
+  String get expenseHistoryEmptyHint =>
+      'Log fuel, service, and other costs to see monthly totals.';
+
+  @override
+  String get expenseCategory => 'Category';
+
+  @override
+  String get expenseCategoryRequired => 'Select a category';
+
+  @override
+  String get fieldDate => 'Date';
+
+  @override
+  String get fieldOdometer => 'Odometer';
+
+  @override
+  String get fieldOdometerOptional => 'Odometer (optional)';
+
+  @override
+  String get fieldExpenseTitle => 'Expense title';
+
+  @override
+  String get fieldAmount => 'Amount';
+
+  @override
+  String get fieldVendor => 'Vendor';
+
+  @override
+  String get fieldVendorOptional => 'Vendor / service center (optional)';
+
+  @override
+  String get fieldNotes => 'Note';
+
+  @override
+  String get expenseLinkedFuelHint =>
+      'This expense is linked to a fuel entry. Edit or delete it from Fuel.';
+
+  @override
+  String get deleteExpenseTitle => 'Delete this expense?';
+
+  @override
+  String get deleteExpenseMessage => 'This cannot be undone.';
 }

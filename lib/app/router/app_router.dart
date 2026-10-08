@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:garir_khata/features/expenses/presentation/add_edit_expense_page.dart';
+import 'package:garir_khata/features/expenses/presentation/expense_details_page.dart';
+import 'package:garir_khata/features/expenses/presentation/expense_history_page.dart';
 import 'package:garir_khata/features/fuel/presentation/add_edit_fuel_page.dart';
 import 'package:garir_khata/features/fuel/presentation/fuel_details_page.dart';
 import 'package:garir_khata/features/fuel/presentation/fuel_history_page.dart';
@@ -193,6 +196,35 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         name: 'odometerHistory',
         parentNavigatorKey: _rootNavigatorKey,
         builder: (context, state) => const OdometerHistoryPage(),
+      ),
+      GoRoute(
+        path: '/expenses',
+        name: 'expenseHistory',
+        parentNavigatorKey: _rootNavigatorKey,
+        builder: (context, state) => const ExpenseHistoryPage(),
+        routes: [
+          GoRoute(
+            path: 'add',
+            name: 'expenseAdd',
+            builder: (context, state) => AddEditExpensePage(
+              initialCategoryCode: state.uri.queryParameters['category'],
+            ),
+          ),
+          GoRoute(
+            path: ':id',
+            name: 'expenseDetails',
+            builder: (context, state) =>
+                ExpenseDetailsPage(expenseId: state.pathParameters['id']!),
+            routes: [
+              GoRoute(
+                path: 'edit',
+                name: 'expenseEdit',
+                builder: (context, state) =>
+                    AddEditExpensePage(expenseId: state.pathParameters['id']),
+              ),
+            ],
+          ),
+        ],
       ),
     ],
     errorBuilder: (context, state) => const RouteNotFoundPage(),

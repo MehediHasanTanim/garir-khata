@@ -57,4 +57,5 @@ lib/
 - ✅ Sprint 1 — Project foundation & core infrastructure
 - ✅ Sprint 2 — Onboarding & vehicle management
 - ✅ Sprint 3 — Odometer & fuel tracking
-- ⏳ Sprint 4 — Mileage, expenses & dashboard
+- ✅ Sprint 4 — Mileage, expenses & dashboard
+- ⏳ Sprint 5 — Maintenance & engine oil

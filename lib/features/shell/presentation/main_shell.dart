@@ -55,7 +55,10 @@ class MainShell extends ConsumerWidget {
                 ListTile(
                   leading: const Icon(Icons.payments_outlined),
                   title: Text(l10n.addExpense),
-                  onTap: () => Navigator.of(context).pop(),
+                  onTap: () {
+                    Navigator.of(context).pop();
+                    context.push('/expenses/add');
+                  },
                 ),
                 ListTile(
                   leading: const Icon(Icons.build_outlined),
@@ -65,7 +68,10 @@ class MainShell extends ConsumerWidget {
                 ListTile(
                   leading: const Icon(Icons.settings_suggest_outlined),
                   title: Text(l10n.addRepair),
-                  onTap: () => Navigator.of(context).pop(),
+                  onTap: () {
+                    Navigator.of(context).pop();
+                    context.push('/expenses/add?category=repair');
+                  },
                 ),
                 ListTile(
                   leading: const Icon(Icons.speed_outlined),

@@ -6,6 +6,8 @@ import 'package:garir_khata/app/theme/app_colors.dart';
 import 'package:garir_khata/app/theme/app_spacing.dart';
 import 'package:garir_khata/core/errors/app_error.dart';
 import 'package:garir_khata/core/result/result.dart';
+import 'package:garir_khata/features/dashboard/application/dashboard_providers.dart';
+import 'package:garir_khata/features/expenses/application/expense_providers.dart';
 import 'package:garir_khata/features/fuel/application/fuel_providers.dart';
 import 'package:garir_khata/features/fuel/application/use_cases/add_fuel_entry.dart';
 import 'package:garir_khata/features/fuel/domain/entities/fuel_entry.dart';
@@ -185,6 +187,9 @@ class _AddEditFuelPageState extends ConsumerState<AddEditFuelPage> {
         success: (_) {
           ref.invalidate(selectedVehicleProvider);
           ref.invalidate(fuelHistoryProvider(vehicle.id));
+          ref.invalidate(selectedVehicleFuelHistoryProvider);
+          ref.invalidate(selectedVehicleExpenseHistoryProvider);
+          ref.invalidate(dashboardSummaryProvider);
           ref.invalidate(fuelEntryProvider(widget.fuelId!));
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(content: Text(context.l10n.commonSuccess)),
@@ -252,6 +257,9 @@ class _AddEditFuelPageState extends ConsumerState<AddEditFuelPage> {
     ref.invalidate(selectedVehicleProvider);
     ref.invalidate(activeVehiclesProvider);
     ref.invalidate(fuelHistoryProvider(vehicle.id));
+    ref.invalidate(selectedVehicleFuelHistoryProvider);
+    ref.invalidate(selectedVehicleExpenseHistoryProvider);
+    ref.invalidate(dashboardSummaryProvider);
     if (mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(context.l10n.commonSuccess)),
