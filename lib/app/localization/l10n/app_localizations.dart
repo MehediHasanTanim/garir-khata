@@ -2077,6 +2077,282 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Expired'**
   String get warrantyExpired;
+
+  /// No description provided for @documentsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Documents'**
+  String get documentsTitle;
+
+  /// No description provided for @documentDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Document Details'**
+  String get documentDetails;
+
+  /// No description provided for @saveDocument.
+  ///
+  /// In en, this message translates to:
+  /// **'Save Document'**
+  String get saveDocument;
+
+  /// No description provided for @documentsEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No documents yet'**
+  String get documentsEmpty;
+
+  /// No description provided for @documentsEmptyHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Track tax token, fitness, insurance and more.'**
+  String get documentsEmptyHint;
+
+  /// No description provided for @documentType.
+  ///
+  /// In en, this message translates to:
+  /// **'Document type'**
+  String get documentType;
+
+  /// No description provided for @fieldDocumentNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Number / reference'**
+  String get fieldDocumentNumber;
+
+  /// No description provided for @fieldIssueDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Issue date'**
+  String get fieldIssueDate;
+
+  /// No description provided for @fieldExpiryDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Expiry date'**
+  String get fieldExpiryDate;
+
+  /// No description provided for @fieldFee.
+  ///
+  /// In en, this message translates to:
+  /// **'Fee'**
+  String get fieldFee;
+
+  /// No description provided for @fieldAuthority.
+  ///
+  /// In en, this message translates to:
+  /// **'Authority / issuer'**
+  String get fieldAuthority;
+
+  /// No description provided for @fieldProvider.
+  ///
+  /// In en, this message translates to:
+  /// **'Provider'**
+  String get fieldProvider;
+
+  /// No description provided for @fieldPolicyNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Policy number'**
+  String get fieldPolicyNumber;
+
+  /// No description provided for @fieldCoverageType.
+  ///
+  /// In en, this message translates to:
+  /// **'Coverage type'**
+  String get fieldCoverageType;
+
+  /// No description provided for @fieldOwnerName.
+  ///
+  /// In en, this message translates to:
+  /// **'Owner name'**
+  String get fieldOwnerName;
+
+  /// No description provided for @createExpiryReminder.
+  ///
+  /// In en, this message translates to:
+  /// **'Create expiry reminder'**
+  String get createExpiryReminder;
+
+  /// No description provided for @remindersTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminders'**
+  String get remindersTitle;
+
+  /// No description provided for @reminderDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminder Details'**
+  String get reminderDetails;
+
+  /// No description provided for @addReminder.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Reminder'**
+  String get addReminder;
+
+  /// No description provided for @editReminder.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Reminder'**
+  String get editReminder;
+
+  /// No description provided for @saveReminder.
+  ///
+  /// In en, this message translates to:
+  /// **'Save Reminder'**
+  String get saveReminder;
+
+  /// No description provided for @remindersEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No reminders'**
+  String get remindersEmpty;
+
+  /// No description provided for @reminderFilterAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get reminderFilterAll;
+
+  /// No description provided for @reminderUpcoming.
+  ///
+  /// In en, this message translates to:
+  /// **'Upcoming'**
+  String get reminderUpcoming;
+
+  /// No description provided for @reminderDue.
+  ///
+  /// In en, this message translates to:
+  /// **'Due'**
+  String get reminderDue;
+
+  /// No description provided for @reminderSkipped.
+  ///
+  /// In en, this message translates to:
+  /// **'Skipped'**
+  String get reminderSkipped;
+
+  /// No description provided for @completedReminders.
+  ///
+  /// In en, this message translates to:
+  /// **'Completed'**
+  String get completedReminders;
+
+  /// No description provided for @reminderType.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminder type'**
+  String get reminderType;
+
+  /// No description provided for @reminderTypeDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Date'**
+  String get reminderTypeDate;
+
+  /// No description provided for @reminderTypeOdometer.
+  ///
+  /// In en, this message translates to:
+  /// **'Odometer'**
+  String get reminderTypeOdometer;
+
+  /// No description provided for @reminderTypeCombined.
+  ///
+  /// In en, this message translates to:
+  /// **'Combined'**
+  String get reminderTypeCombined;
+
+  /// No description provided for @fieldReminderTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Title'**
+  String get fieldReminderTitle;
+
+  /// No description provided for @fieldDueDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Due date'**
+  String get fieldDueDate;
+
+  /// No description provided for @fieldDueOdometer.
+  ///
+  /// In en, this message translates to:
+  /// **'Due odometer'**
+  String get fieldDueOdometer;
+
+  /// No description provided for @fieldAdvanceDays.
+  ///
+  /// In en, this message translates to:
+  /// **'Advance days'**
+  String get fieldAdvanceDays;
+
+  /// No description provided for @fieldAdvanceKm.
+  ///
+  /// In en, this message translates to:
+  /// **'Advance km'**
+  String get fieldAdvanceKm;
+
+  /// No description provided for @enableNotifications.
+  ///
+  /// In en, this message translates to:
+  /// **'Enable notifications'**
+  String get enableNotifications;
+
+  /// No description provided for @snoozeReminder.
+  ///
+  /// In en, this message translates to:
+  /// **'Snooze'**
+  String get snoozeReminder;
+
+  /// No description provided for @snoozedUntil.
+  ///
+  /// In en, this message translates to:
+  /// **'Snoozed until'**
+  String get snoozedUntil;
+
+  /// No description provided for @completeReminder.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark complete'**
+  String get completeReminder;
+
+  /// No description provided for @skipReminder.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip'**
+  String get skipReminder;
+
+  /// No description provided for @snoozeOneHour.
+  ///
+  /// In en, this message translates to:
+  /// **'1 hour'**
+  String get snoozeOneHour;
+
+  /// No description provided for @snoozeFourHours.
+  ///
+  /// In en, this message translates to:
+  /// **'4 hours'**
+  String get snoozeFourHours;
+
+  /// No description provided for @snoozeOneDay.
+  ///
+  /// In en, this message translates to:
+  /// **'1 day'**
+  String get snoozeOneDay;
+
+  /// No description provided for @snoozeThreeDays.
+  ///
+  /// In en, this message translates to:
+  /// **'3 days'**
+  String get snoozeThreeDays;
+
+  /// No description provided for @snoozeOneWeek.
+  ///
+  /// In en, this message translates to:
+  /// **'1 week'**
+  String get snoozeOneWeek;
 }
 
 class _AppLocalizationsDelegate

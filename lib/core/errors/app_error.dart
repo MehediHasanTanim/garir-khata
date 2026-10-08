@@ -53,3 +53,11 @@ final class PermissionError extends AppError {
     super.cause,
   });
 }
+
+final class NotFoundError extends AppError {
+  const NotFoundError({
+    super.message = 'Not found',
+    super.code = 'not_found',
+    super.cause,
+  });
+}

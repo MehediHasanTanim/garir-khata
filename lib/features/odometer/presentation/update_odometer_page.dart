@@ -9,6 +9,7 @@ import 'package:garir_khata/core/result/result.dart';
 import 'package:garir_khata/features/odometer/application/odometer_providers.dart';
 import 'package:garir_khata/features/odometer/domain/entities/odometer_entry.dart';
 import 'package:garir_khata/features/odometer/presentation/widgets/odometer_lower_dialog.dart';
+import 'package:garir_khata/features/reminders/application/reminder_providers.dart';
 import 'package:garir_khata/features/vehicles/application/vehicle_providers.dart';
 import 'package:go_router/go_router.dart';
 
@@ -82,6 +83,8 @@ class _UpdateOdometerPageState extends ConsumerState<UpdateOdometerPage> {
     ref.invalidate(selectedVehicleProvider);
     ref.invalidate(activeVehiclesProvider);
     ref.invalidate(odometerHistoryProvider(vehicle.id));
+    await ref.read(reminderEngineProvider).evaluateForVehicle(vehicle.id);
+    ref.invalidate(upcomingDashboardRemindersProvider);
     if (mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(context.l10n.commonSuccess)),

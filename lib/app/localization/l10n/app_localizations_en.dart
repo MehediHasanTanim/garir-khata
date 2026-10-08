@@ -1027,4 +1027,143 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get warrantyExpired => 'Expired';
+
+  @override
+  String get documentsTitle => 'Documents';
+
+  @override
+  String get documentDetails => 'Document Details';
+
+  @override
+  String get saveDocument => 'Save Document';
+
+  @override
+  String get documentsEmpty => 'No documents yet';
+
+  @override
+  String get documentsEmptyHint =>
+      'Track tax token, fitness, insurance and more.';
+
+  @override
+  String get documentType => 'Document type';
+
+  @override
+  String get fieldDocumentNumber => 'Number / reference';
+
+  @override
+  String get fieldIssueDate => 'Issue date';
+
+  @override
+  String get fieldExpiryDate => 'Expiry date';
+
+  @override
+  String get fieldFee => 'Fee';
+
+  @override
+  String get fieldAuthority => 'Authority / issuer';
+
+  @override
+  String get fieldProvider => 'Provider';
+
+  @override
+  String get fieldPolicyNumber => 'Policy number';
+
+  @override
+  String get fieldCoverageType => 'Coverage type';
+
+  @override
+  String get fieldOwnerName => 'Owner name';
+
+  @override
+  String get createExpiryReminder => 'Create expiry reminder';
+
+  @override
+  String get remindersTitle => 'Reminders';
+
+  @override
+  String get reminderDetails => 'Reminder Details';
+
+  @override
+  String get addReminder => 'Add Reminder';
+
+  @override
+  String get editReminder => 'Edit Reminder';
+
+  @override
+  String get saveReminder => 'Save Reminder';
+
+  @override
+  String get remindersEmpty => 'No reminders';
+
+  @override
+  String get reminderFilterAll => 'All';
+
+  @override
+  String get reminderUpcoming => 'Upcoming';
+
+  @override
+  String get reminderDue => 'Due';
+
+  @override
+  String get reminderSkipped => 'Skipped';
+
+  @override
+  String get completedReminders => 'Completed';
+
+  @override
+  String get reminderType => 'Reminder type';
+
+  @override
+  String get reminderTypeDate => 'Date';
+
+  @override
+  String get reminderTypeOdometer => 'Odometer';
+
+  @override
+  String get reminderTypeCombined => 'Combined';
+
+  @override
+  String get fieldReminderTitle => 'Title';
+
+  @override
+  String get fieldDueDate => 'Due date';
+
+  @override
+  String get fieldDueOdometer => 'Due odometer';
+
+  @override
+  String get fieldAdvanceDays => 'Advance days';
+
+  @override
+  String get fieldAdvanceKm => 'Advance km';
+
+  @override
+  String get enableNotifications => 'Enable notifications';
+
+  @override
+  String get snoozeReminder => 'Snooze';
+
+  @override
+  String get snoozedUntil => 'Snoozed until';
+
+  @override
+  String get completeReminder => 'Mark complete';
+
+  @override
+  String get skipReminder => 'Skip';
+
+  @override
+  String get snoozeOneHour => '1 hour';
+
+  @override
+  String get snoozeFourHours => '4 hours';
+
+  @override
+  String get snoozeOneDay => '1 day';
+
+  @override
+  String get snoozeThreeDays => '3 days';
+
+  @override
+  String get snoozeOneWeek => '1 week';
 }

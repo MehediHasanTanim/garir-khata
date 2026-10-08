@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:garir_khata/app/localization/l10n_extension.dart';
 import 'package:garir_khata/app/router/app_router.dart';
 import 'package:garir_khata/app/theme/app_theme.dart';
+import 'package:garir_khata/features/reminders/presentation/reminder_lifecycle_host.dart';
 import 'package:garir_khata/features/settings/application/settings_controller.dart';
 
 class GarirKhataApp extends ConsumerWidget {
@@ -24,6 +25,11 @@ class GarirKhataApp extends ConsumerWidget {
       supportedLocales: AppLocalizations.supportedLocales,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       routerConfig: router,
+      builder: (context, child) {
+        return ReminderLifecycleHost(
+          child: child ?? const SizedBox.shrink(),
+        );
+      },
     );
   }
 }

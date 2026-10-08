@@ -111,7 +111,18 @@ class MainShell extends ConsumerWidget {
                 ListTile(
                   leading: const Icon(Icons.description_outlined),
                   title: Text(l10n.addDocument),
-                  onTap: () => Navigator.of(context).pop(),
+                  onTap: () {
+                    Navigator.of(context).pop();
+                    context.push('/documents/add');
+                  },
+                ),
+                ListTile(
+                  leading: const Icon(Icons.notification_add_outlined),
+                  title: Text(l10n.addReminder),
+                  onTap: () {
+                    Navigator.of(context).pop();
+                    context.push('/reminders/add');
+                  },
                 ),
               ],
             ),

@@ -13,6 +13,7 @@ import 'package:garir_khata/features/maintenance/domain/entities/maintenance_tem
 import 'package:garir_khata/features/maintenance/domain/entities/service_record.dart';
 import 'package:garir_khata/features/maintenance/domain/next_due_calculator.dart';
 import 'package:garir_khata/features/maintenance/domain/validation/service_validator.dart';
+import 'package:garir_khata/features/reminders/application/reminder_providers.dart';
 import 'package:garir_khata/features/vehicles/application/vehicle_providers.dart';
 import 'package:go_router/go_router.dart';
 
@@ -244,22 +245,23 @@ class _AddEditServicePageState extends ConsumerState<AddEditServicePage> {
     if (!mounted) {
       return;
     }
-    result.when(
-      success: (_) {
-        ref.invalidate(selectedVehicleServiceHistoryProvider);
-        ref.invalidate(selectedVehicleExpenseHistoryProvider);
-        ref.invalidate(selectedVehicleProvider);
-        ref.invalidate(dashboardSummaryProvider);
-        ref.invalidate(dueServicesProvider);
+    if (result.isSuccess) {
+      ref.invalidate(selectedVehicleServiceHistoryProvider);
+      ref.invalidate(selectedVehicleExpenseHistoryProvider);
+      ref.invalidate(selectedVehicleProvider);
+      ref.invalidate(dashboardSummaryProvider);
+      ref.invalidate(dueServicesProvider);
+      await ref.read(reminderEngineProvider).evaluateForVehicle(vehicle.id);
+      ref.invalidate(upcomingDashboardRemindersProvider);
+      if (mounted) {
         context.pop();
-      },
-      failure: (error) {
-        setState(() {
-          _saving = false;
-          _error = error.message;
-        });
-      },
-    );
+      }
+      return;
+    }
+    setState(() {
+      _saving = false;
+      _error = result.errorOrNull?.message ?? context.l10n.commonError;
+    });
   }
 
   @override

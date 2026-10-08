@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:garir_khata/features/documents/presentation/add_document_page.dart';
+import 'package:garir_khata/features/documents/presentation/document_details_page.dart';
+import 'package:garir_khata/features/documents/presentation/documents_page.dart';
 import 'package:garir_khata/features/expenses/presentation/add_edit_expense_page.dart';
 import 'package:garir_khata/features/expenses/presentation/expense_details_page.dart';
 import 'package:garir_khata/features/expenses/presentation/expense_history_page.dart';
@@ -36,6 +39,9 @@ import 'package:garir_khata/features/parts/presentation/tyre_details_page.dart';
 import 'package:garir_khata/features/parts/presentation/tyre_overview_page.dart';
 import 'package:garir_khata/features/parts/presentation/vehicle_part_details_page.dart';
 import 'package:garir_khata/features/parts/presentation/vehicle_parts_page.dart';
+import 'package:garir_khata/features/reminders/presentation/add_edit_reminder_page.dart';
+import 'package:garir_khata/features/reminders/presentation/reminder_details_page.dart';
+import 'package:garir_khata/features/reminders/presentation/reminders_page.dart';
 import 'package:garir_khata/features/reports/presentation/reports_page.dart';
 import 'package:garir_khata/features/settings/application/settings_controller.dart';
 import 'package:garir_khata/features/shell/presentation/main_shell.dart';
@@ -367,6 +373,55 @@ final appRouterProvider = Provider<GoRouter>((ref) {
             name: 'batteryDetails',
             builder: (context, state) =>
                 BatteryDetailsPage(batteryId: state.pathParameters['id']!),
+          ),
+        ],
+      ),
+      GoRoute(
+        path: '/documents',
+        name: 'documents',
+        parentNavigatorKey: _rootNavigatorKey,
+        builder: (context, state) => const DocumentsPage(),
+        routes: [
+          GoRoute(
+            path: 'add',
+            name: 'documentAdd',
+            builder: (context, state) => AddDocumentPage(
+              initialType: state.uri.queryParameters['type'],
+            ),
+          ),
+          GoRoute(
+            path: ':id',
+            name: 'documentDetails',
+            builder: (context, state) =>
+                DocumentDetailsPage(documentId: state.pathParameters['id']!),
+          ),
+        ],
+      ),
+      GoRoute(
+        path: '/reminders',
+        name: 'reminders',
+        parentNavigatorKey: _rootNavigatorKey,
+        builder: (context, state) => const RemindersPage(),
+        routes: [
+          GoRoute(
+            path: 'add',
+            name: 'reminderAdd',
+            builder: (context, state) => const AddEditReminderPage(),
+          ),
+          GoRoute(
+            path: ':id',
+            name: 'reminderDetails',
+            builder: (context, state) =>
+                ReminderDetailsPage(reminderId: state.pathParameters['id']!),
+            routes: [
+              GoRoute(
+                path: 'edit',
+                name: 'reminderEdit',
+                builder: (context, state) => AddEditReminderPage(
+                  reminderId: state.pathParameters['id'],
+                ),
+              ),
+            ],
           ),
         ],
       ),

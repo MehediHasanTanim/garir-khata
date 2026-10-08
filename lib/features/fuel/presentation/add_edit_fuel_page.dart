@@ -14,6 +14,7 @@ import 'package:garir_khata/features/fuel/domain/entities/fuel_entry.dart';
 import 'package:garir_khata/features/fuel/domain/validation/fuel_calculator.dart';
 import 'package:garir_khata/features/fuel/domain/validation/fuel_validator.dart';
 import 'package:garir_khata/features/odometer/presentation/widgets/odometer_lower_dialog.dart';
+import 'package:garir_khata/features/reminders/application/reminder_providers.dart';
 import 'package:garir_khata/features/vehicles/application/vehicle_providers.dart';
 import 'package:garir_khata/features/vehicles/domain/entities/vehicle.dart';
 import 'package:garir_khata/features/vehicles/presentation/widgets/vehicle_labels.dart';
@@ -183,21 +184,27 @@ class _AddEditFuelPageState extends ConsumerState<AddEditFuelPage> {
         return;
       }
       setState(() => _saving = false);
-      result.when(
-        success: (_) {
-          ref.invalidate(selectedVehicleProvider);
-          ref.invalidate(fuelHistoryProvider(vehicle.id));
-          ref.invalidate(selectedVehicleFuelHistoryProvider);
-          ref.invalidate(selectedVehicleExpenseHistoryProvider);
-          ref.invalidate(dashboardSummaryProvider);
-          ref.invalidate(fuelEntryProvider(widget.fuelId!));
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text(context.l10n.commonSuccess)),
-          );
-          context.pop();
-        },
-        failure: (error) => setState(() => _error = error.message),
-      );
+      if (result.isSuccess) {
+        ref.invalidate(selectedVehicleProvider);
+        ref.invalidate(fuelHistoryProvider(vehicle.id));
+        ref.invalidate(selectedVehicleFuelHistoryProvider);
+        ref.invalidate(selectedVehicleExpenseHistoryProvider);
+        ref.invalidate(dashboardSummaryProvider);
+        ref.invalidate(fuelEntryProvider(widget.fuelId!));
+        await ref
+            .read(reminderEngineProvider)
+            .evaluateForVehicle(vehicle.id);
+        ref.invalidate(upcomingDashboardRemindersProvider);
+        if (!mounted) {
+          return;
+        }
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(context.l10n.commonSuccess)),
+        );
+        context.pop();
+      } else {
+        setState(() => _error = result.errorOrNull?.message);
+      }
       return;
     }
 
@@ -260,6 +267,8 @@ class _AddEditFuelPageState extends ConsumerState<AddEditFuelPage> {
     ref.invalidate(selectedVehicleFuelHistoryProvider);
     ref.invalidate(selectedVehicleExpenseHistoryProvider);
     ref.invalidate(dashboardSummaryProvider);
+    await ref.read(reminderEngineProvider).evaluateForVehicle(vehicle.id);
+    ref.invalidate(upcomingDashboardRemindersProvider);
     if (mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(context.l10n.commonSuccess)),

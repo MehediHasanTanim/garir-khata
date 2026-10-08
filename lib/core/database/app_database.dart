@@ -10,6 +10,7 @@ import 'package:garir_khata/core/database/tables/fuel_entries_table.dart';
 import 'package:garir_khata/core/database/tables/maintenance_templates_table.dart';
 import 'package:garir_khata/core/database/tables/odometer_entries_table.dart';
 import 'package:garir_khata/core/database/tables/oil_changes_table.dart';
+import 'package:garir_khata/core/database/tables/reminders_table.dart';
 import 'package:garir_khata/core/database/tables/repair_parts_table.dart';
 import 'package:garir_khata/core/database/tables/repairs_table.dart';
 import 'package:garir_khata/core/database/tables/service_items_table.dart';
@@ -17,6 +18,7 @@ import 'package:garir_khata/core/database/tables/service_records_table.dart';
 import 'package:garir_khata/core/database/tables/settings_table.dart';
 import 'package:garir_khata/core/database/tables/tyre_events_table.dart';
 import 'package:garir_khata/core/database/tables/tyres_table.dart';
+import 'package:garir_khata/core/database/tables/vehicle_documents_table.dart';
 import 'package:garir_khata/core/database/tables/vehicle_parts_table.dart';
 import 'package:garir_khata/core/database/tables/vehicles_table.dart';
 
@@ -40,13 +42,15 @@ part 'app_database.g.dart';
     Tyres,
     TyreEvents,
     Batteries,
+    VehicleDocuments,
+    Reminders,
   ],
 )
 class AppDatabase extends _$AppDatabase {
   AppDatabase([QueryExecutor? executor]) : super(executor ?? _openConnection());
 
   @override
-  int get schemaVersion => 5;
+  int get schemaVersion => 6;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
@@ -80,6 +84,10 @@ class AppDatabase extends _$AppDatabase {
             await m.createTable(tyres);
             await m.createTable(tyreEvents);
             await m.createTable(batteries);
+          }
+          if (from < 6) {
+            await m.createTable(vehicleDocuments);
+            await m.createTable(reminders);
           }
         },
         beforeOpen: (details) async {

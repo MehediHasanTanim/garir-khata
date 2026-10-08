@@ -1022,4 +1022,143 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get warrantyExpired => 'মেয়াদোত্তীর্ণ';
+
+  @override
+  String get documentsTitle => 'ডকুমেন্টস';
+
+  @override
+  String get documentDetails => 'ডকুমেন্ট বিস্তারিত';
+
+  @override
+  String get saveDocument => 'ডকুমেন্ট সেভ করুন';
+
+  @override
+  String get documentsEmpty => 'এখনো কোনো ডকুমেন্ট নেই';
+
+  @override
+  String get documentsEmptyHint =>
+      'ট্যাক্স টোকেন, ফিটনেস, ইনস্যুরেন্স ট্র্যাক করুন।';
+
+  @override
+  String get documentType => 'ডকুমেন্টের ধরন';
+
+  @override
+  String get fieldDocumentNumber => 'নম্বর / রেফারেন্স';
+
+  @override
+  String get fieldIssueDate => 'ইস্যু তারিখ';
+
+  @override
+  String get fieldExpiryDate => 'মেয়াদ শেষ';
+
+  @override
+  String get fieldFee => 'ফি';
+
+  @override
+  String get fieldAuthority => 'কর্তৃপক্ষ / ইস্যুয়ার';
+
+  @override
+  String get fieldProvider => 'প্রোভাইডার';
+
+  @override
+  String get fieldPolicyNumber => 'পলিসি নম্বর';
+
+  @override
+  String get fieldCoverageType => 'কভারেজ ধরন';
+
+  @override
+  String get fieldOwnerName => 'মালিকের নাম';
+
+  @override
+  String get createExpiryReminder => 'মেয়াদ শেষের রিমাইন্ডার তৈরি করুন';
+
+  @override
+  String get remindersTitle => 'রিমাইন্ডার';
+
+  @override
+  String get reminderDetails => 'রিমাইন্ডার বিস্তারিত';
+
+  @override
+  String get addReminder => 'রিমাইন্ডার যোগ করুন';
+
+  @override
+  String get editReminder => 'রিমাইন্ডার সম্পাদনা';
+
+  @override
+  String get saveReminder => 'রিমাইন্ডার সেভ করুন';
+
+  @override
+  String get remindersEmpty => 'কোনো রিমাইন্ডার নেই';
+
+  @override
+  String get reminderFilterAll => 'সব';
+
+  @override
+  String get reminderUpcoming => 'আসন্ন';
+
+  @override
+  String get reminderDue => 'ডিউ';
+
+  @override
+  String get reminderSkipped => 'স্কিপড';
+
+  @override
+  String get completedReminders => 'সম্পন্ন';
+
+  @override
+  String get reminderType => 'রিমাইন্ডার ধরন';
+
+  @override
+  String get reminderTypeDate => 'তারিখ';
+
+  @override
+  String get reminderTypeOdometer => 'ওডোমিটার';
+
+  @override
+  String get reminderTypeCombined => 'কম্বাইন্ড';
+
+  @override
+  String get fieldReminderTitle => 'শিরোনাম';
+
+  @override
+  String get fieldDueDate => 'ডিউ তারিখ';
+
+  @override
+  String get fieldDueOdometer => 'ডিউ ওডোমিটার';
+
+  @override
+  String get fieldAdvanceDays => 'আগে থেকে (দিন)';
+
+  @override
+  String get fieldAdvanceKm => 'আগে থেকে (কিমি)';
+
+  @override
+  String get enableNotifications => 'নোটিফিকেশন চালু';
+
+  @override
+  String get snoozeReminder => 'স্নুজ';
+
+  @override
+  String get snoozedUntil => 'স্নুজ পর্যন্ত';
+
+  @override
+  String get completeReminder => 'সম্পন্ন করুন';
+
+  @override
+  String get skipReminder => 'স্কিপ';
+
+  @override
+  String get snoozeOneHour => '১ ঘণ্টা';
+
+  @override
+  String get snoozeFourHours => '৪ ঘণ্টা';
+
+  @override
+  String get snoozeOneDay => '১ দিন';
+
+  @override
+  String get snoozeThreeDays => '৩ দিন';
+
+  @override
+  String get snoozeOneWeek => '১ সপ্তাহ';
 }

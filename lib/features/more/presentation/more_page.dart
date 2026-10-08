@@ -65,6 +65,16 @@ class MorePage extends ConsumerWidget {
             onTap: () => context.push('/batteries'),
           ),
           ListTile(
+            leading: const Icon(Icons.description_outlined),
+            title: Text(l10n.documentsTitle),
+            onTap: () => context.push('/documents'),
+          ),
+          ListTile(
+            leading: const Icon(Icons.notifications_outlined),
+            title: Text(l10n.remindersTitle),
+            onTap: () => context.push('/reminders'),
+          ),
+          ListTile(
             leading: const Icon(Icons.speed_outlined),
             title: Text(l10n.odometerHistory),
             onTap: () => context.push('/odometer/history'),

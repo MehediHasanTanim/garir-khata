@@ -10,6 +10,9 @@ import 'package:garir_khata/features/maintenance/application/maintenance_provide
 import 'package:garir_khata/features/maintenance/domain/entities/service_record.dart';
 import 'package:garir_khata/features/mileage/domain/cost_per_km_calculator.dart';
 import 'package:garir_khata/features/mileage/domain/mileage_result.dart';
+import 'package:garir_khata/features/reminders/application/reminder_providers.dart';
+import 'package:garir_khata/features/reminders/domain/entities/reminder.dart';
+import 'package:garir_khata/features/reminders/domain/reminder_enums.dart';
 import 'package:garir_khata/features/vehicles/application/vehicle_providers.dart';
 import 'package:garir_khata/features/vehicles/domain/entities/vehicle.dart';
 import 'package:garir_khata/features/vehicles/presentation/widgets/vehicle_switcher_sheet.dart';
@@ -34,8 +37,8 @@ class HomePage extends ConsumerWidget {
         title: Text(l10n.homeTitle),
         actions: [
           IconButton(
-            tooltip: l10n.navMore,
-            onPressed: () {},
+            tooltip: l10n.remindersTitle,
+            onPressed: () => context.push('/reminders'),
             icon: const Badge(
               smallSize: 8,
               child: Icon(Icons.notifications_outlined),
@@ -488,6 +491,7 @@ class _UpcomingSection extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final dueAsync = ref.watch(dueServicesProvider);
+    final remindersAsync = ref.watch(upcomingDashboardRemindersProvider);
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(AppSpacing.md),
@@ -502,31 +506,86 @@ class _UpcomingSection extends ConsumerWidget {
                 ),
                 const Spacer(),
                 TextButton(
-                  onPressed: () => context.push('/services'),
+                  onPressed: () => context.push('/reminders'),
                   child: Text(l10n.seeAll),
                 ),
               ],
             ),
             const SizedBox(height: AppSpacing.sm),
+            remindersAsync.when(
+              loading: () => const SizedBox.shrink(),
+              error: (_, _) => const SizedBox.shrink(),
+              data: (reminders) {
+                if (reminders.isEmpty) {
+                  return const SizedBox.shrink();
+                }
+                return Column(
+                  children: reminders.take(3).map((Reminder reminder) {
+                    final bool overdue =
+                        reminder.status == ReminderStatus.overdue;
+                    final bool isDocument =
+                        reminder.relatedEntityType ==
+                        ReminderEntityType.document;
+                    return ListTile(
+                      contentPadding: EdgeInsets.zero,
+                      leading: Icon(
+                        isDocument
+                            ? Icons.description_outlined
+                            : Icons.notifications_outlined,
+                        color: overdue
+                            ? AppColors.destructive
+                            : AppColors.warning,
+                      ),
+                      title: Text(reminder.title),
+                      subtitle: Text(
+                        [
+                          if (reminder.dueDate != null)
+                            MaterialLocalizations.of(context)
+                                .formatMediumDate(reminder.dueDate!),
+                          if (reminder.dueOdometer != null)
+                            '${reminder.dueOdometer} km',
+                        ].join(' · '),
+                      ),
+                      trailing: Text(
+                        overdue
+                            ? l10n.overdue
+                            : reminder.status == ReminderStatus.due
+                                ? l10n.reminderDue
+                                : l10n.dueSoon,
+                      ),
+                      onTap: () => context.push('/reminders/${reminder.id}'),
+                    );
+                  }).toList(),
+                );
+              },
+            ),
             dueAsync.when(
               loading: () => const LinearProgressIndicator(),
               error: (_, _) => Text(l10n.commonError),
               data: (items) {
-                if (items.isEmpty) {
+                final reminders =
+                    remindersAsync.asData?.value ?? const <Reminder>[];
+                if (items.isEmpty && reminders.isEmpty) {
                   return Text(l10n.noMaintenanceDue);
+                }
+                if (items.isEmpty) {
+                  return const SizedBox.shrink();
                 }
                 return Column(
                   children: items.take(3).map((DueServiceItem item) {
                     final bool overdue =
                         (item.remainingKm != null && item.remainingKm! <= 0) ||
-                        (item.remainingDays != null && item.remainingDays! <= 0);
+                        (item.remainingDays != null &&
+                            item.remainingDays! <= 0);
                     return ListTile(
                       contentPadding: EdgeInsets.zero,
                       leading: Icon(
                         item.sourceType == 'oil'
                             ? Icons.water_drop
                             : Icons.build_circle_outlined,
-                        color: overdue ? AppColors.destructive : AppColors.warning,
+                        color: overdue
+                            ? AppColors.destructive
+                            : AppColors.warning,
                       ),
                       title: Text(item.title),
                       subtitle: Text(
