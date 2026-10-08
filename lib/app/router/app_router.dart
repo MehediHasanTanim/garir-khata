@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:garir_khata/features/fuel/presentation/add_edit_fuel_page.dart';
+import 'package:garir_khata/features/fuel/presentation/fuel_details_page.dart';
+import 'package:garir_khata/features/fuel/presentation/fuel_history_page.dart';
 import 'package:garir_khata/features/history/presentation/history_page.dart';
 import 'package:garir_khata/features/home/presentation/home_page.dart';
 import 'package:garir_khata/features/more/presentation/more_page.dart';
+import 'package:garir_khata/features/odometer/presentation/odometer_history_page.dart';
+import 'package:garir_khata/features/odometer/presentation/update_odometer_page.dart';
 import 'package:garir_khata/features/onboarding/presentation/language_page.dart';
 import 'package:garir_khata/features/onboarding/presentation/odometer_page.dart';
 import 'package:garir_khata/features/onboarding/presentation/setup_complete_page.dart';
@@ -149,6 +154,45 @@ final appRouterProvider = Provider<GoRouter>((ref) {
             ],
           ),
         ],
+      ),
+      GoRoute(
+        path: '/fuel',
+        name: 'fuelHistory',
+        parentNavigatorKey: _rootNavigatorKey,
+        builder: (context, state) => const FuelHistoryPage(),
+        routes: [
+          GoRoute(
+            path: 'add',
+            name: 'fuelAdd',
+            builder: (context, state) => const AddEditFuelPage(),
+          ),
+          GoRoute(
+            path: ':id',
+            name: 'fuelDetails',
+            builder: (context, state) =>
+                FuelDetailsPage(fuelId: state.pathParameters['id']!),
+            routes: [
+              GoRoute(
+                path: 'edit',
+                name: 'fuelEdit',
+                builder: (context, state) =>
+                    AddEditFuelPage(fuelId: state.pathParameters['id']),
+              ),
+            ],
+          ),
+        ],
+      ),
+      GoRoute(
+        path: '/odometer/update',
+        name: 'odometerUpdate',
+        parentNavigatorKey: _rootNavigatorKey,
+        builder: (context, state) => const UpdateOdometerPage(),
+      ),
+      GoRoute(
+        path: '/odometer/history',
+        name: 'odometerHistory',
+        parentNavigatorKey: _rootNavigatorKey,
+        builder: (context, state) => const OdometerHistoryPage(),
       ),
     ],
     errorBuilder: (context, state) => const RouteNotFoundPage(),

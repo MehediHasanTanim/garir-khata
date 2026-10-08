@@ -420,4 +420,141 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get ownershipOther => 'অন্যান্য';
+
+  @override
+  String get fuelHistory => 'জ্বালানির ইতিহাস';
+
+  @override
+  String get fuelDetails => 'জ্বালানির বিবরণ';
+
+  @override
+  String get editFuel => 'জ্বালানি সম্পাদনা';
+
+  @override
+  String get fuelHistoryEmpty => 'এখনও কোনো জ্বালানির হিসাব নেই';
+
+  @override
+  String get fuelHistoryEmptyHint =>
+      'মাইলেজ ট্র্যাক করতে প্রথম রিফিল যোগ করুন।';
+
+  @override
+  String get saveFuelEntry => 'জ্বালানি সেভ করুন';
+
+  @override
+  String get fullTankLabel => 'ফুল ট্যাংক ছিল?';
+
+  @override
+  String get fullTankHelper =>
+      'সঠিক মাইলেজ হিসাবের জন্য ফুল ট্যাংক এন্ট্রি ব্যবহার করুন।';
+
+  @override
+  String get fullTankBadge => 'ফুল ট্যাংক';
+
+  @override
+  String get moreDetails => 'আরো বিবরণ';
+
+  @override
+  String get fieldDateTime => 'তারিখ ও সময়';
+
+  @override
+  String get fieldLiters => 'জ্বালানির পরিমাণ';
+
+  @override
+  String get fieldTotalAmount => 'মোট টাকা';
+
+  @override
+  String get fieldPricePerLiter => 'প্রতি লিটার দাম';
+
+  @override
+  String get fieldStation => 'ফুয়েল স্টেশন';
+
+  @override
+  String get fieldLocation => 'স্থান';
+
+  @override
+  String get fieldPayment => 'পেমেন্ট পদ্ধতি';
+
+  @override
+  String get fieldNotesOptional => 'নোট (ঐচ্ছিক)';
+
+  @override
+  String get fieldNewOdometer => 'নতুন রিডিং';
+
+  @override
+  String get calculated => 'হিসাবকৃত';
+
+  @override
+  String get totalFuelSpend => 'মোট জ্বালানি খরচ';
+
+  @override
+  String get totalLiters => 'মোট লিটার';
+
+  @override
+  String get paymentCash => 'নগদ';
+
+  @override
+  String get paymentCard => 'কার্ড';
+
+  @override
+  String get paymentMobile => 'মোবাইল ব্যাংকিং';
+
+  @override
+  String get paymentOther => 'অন্যান্য';
+
+  @override
+  String get duplicateFuelTitle => 'অনুরূপ এন্ট্রি পাওয়া গেছে';
+
+  @override
+  String get duplicateFuelMessage =>
+      'অনুরূপ একটি জ্বালানি এন্ট্রি আগেই আছে। তবুও সেভ করবেন?';
+
+  @override
+  String get saveAnyway => 'তবুও সেভ করুন';
+
+  @override
+  String get deleteFuelTitle => 'এই জ্বালানি এন্ট্রি মুছবেন?';
+
+  @override
+  String get deleteFuelMessage => 'ওডোমিটার ও মাইলেজ হিসাবও আপডেট হবে।';
+
+  @override
+  String get odometerHistory => 'ওডোমিটার ইতিহাস';
+
+  @override
+  String get odometerHistoryEmpty => 'এখনো কোনো ওডোমিটার রিডিং নেই';
+
+  @override
+  String get odometerLowerTitle => 'এই রিডিং আগেরটির চেয়ে কম';
+
+  @override
+  String odometerLowerMessage(String previous, String entered) {
+    return 'আগের: $previous কিমি\nলেখা: $entered কিমি';
+  }
+
+  @override
+  String get odometerCorrectValue => 'মান ঠিক করুন';
+
+  @override
+  String get odometerWasReset => 'ওডোমিটার রিসেট/বদলানো হয়েছে';
+
+  @override
+  String get odometerSourceManual => 'ম্যানুয়াল';
+
+  @override
+  String get odometerSourceFuel => 'জ্বালানি';
+
+  @override
+  String get odometerSourceService => 'সার্ভিস';
+
+  @override
+  String get odometerSourceRepair => 'মেরামত';
+
+  @override
+  String get odometerSourceOil => 'অয়েল চেঞ্জ';
+
+  @override
+  String get odometerSourceReset => 'রিসেট';
+
+  @override
+  String get odometerSourceImport => 'ইমপোর্ট';
 }

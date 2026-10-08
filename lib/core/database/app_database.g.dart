@@ -1562,6 +1562,21 @@ class $OdometerEntriesTable extends OdometerEntries
     ),
     defaultValue: const Constant(false),
   );
+  static const VerificationMeta _isDiscontinuityMeta = const VerificationMeta(
+    'isDiscontinuity',
+  );
+  @override
+  late final GeneratedColumn<bool> isDiscontinuity = GeneratedColumn<bool>(
+    'is_discontinuity',
+    aliasedName,
+    false,
+    type: DriftSqlType.bool,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'CHECK ("is_discontinuity" IN (0, 1))',
+    ),
+    defaultValue: const Constant(false),
+  );
   static const VerificationMeta _createdAtMeta = const VerificationMeta(
     'createdAt',
   );
@@ -1583,6 +1598,7 @@ class $OdometerEntriesTable extends OdometerEntries
     sourceRecordId,
     note,
     isManualCorrection,
+    isDiscontinuity,
     createdAt,
   ];
   @override
@@ -1658,6 +1674,15 @@ class $OdometerEntriesTable extends OdometerEntries
         ),
       );
     }
+    if (data.containsKey('is_discontinuity')) {
+      context.handle(
+        _isDiscontinuityMeta,
+        isDiscontinuity.isAcceptableOrUnknown(
+          data['is_discontinuity']!,
+          _isDiscontinuityMeta,
+        ),
+      );
+    }
     if (data.containsKey('created_at')) {
       context.handle(
         _createdAtMeta,
@@ -1707,6 +1732,10 @@ class $OdometerEntriesTable extends OdometerEntries
         DriftSqlType.bool,
         data['${effectivePrefix}is_manual_correction'],
       )!,
+      isDiscontinuity: attachedDatabase.typeMapping.read(
+        DriftSqlType.bool,
+        data['${effectivePrefix}is_discontinuity'],
+      )!,
       createdAt: attachedDatabase.typeMapping.read(
         DriftSqlType.dateTime,
         data['${effectivePrefix}created_at'],
@@ -1730,6 +1759,9 @@ class OdometerEntryRow extends DataClass
   final String? sourceRecordId;
   final String? note;
   final bool isManualCorrection;
+
+  /// Marks odometer reset/replacement discontinuities for reports.
+  final bool isDiscontinuity;
   final DateTime createdAt;
   const OdometerEntryRow({
     required this.id,
@@ -1740,6 +1772,7 @@ class OdometerEntryRow extends DataClass
     this.sourceRecordId,
     this.note,
     required this.isManualCorrection,
+    required this.isDiscontinuity,
     required this.createdAt,
   });
   @override
@@ -1757,6 +1790,7 @@ class OdometerEntryRow extends DataClass
       map['note'] = Variable<String>(note);
     }
     map['is_manual_correction'] = Variable<bool>(isManualCorrection);
+    map['is_discontinuity'] = Variable<bool>(isDiscontinuity);
     map['created_at'] = Variable<DateTime>(createdAt);
     return map;
   }
@@ -1773,6 +1807,7 @@ class OdometerEntryRow extends DataClass
           : Value(sourceRecordId),
       note: note == null && nullToAbsent ? const Value.absent() : Value(note),
       isManualCorrection: Value(isManualCorrection),
+      isDiscontinuity: Value(isDiscontinuity),
       createdAt: Value(createdAt),
     );
   }
@@ -1791,6 +1826,7 @@ class OdometerEntryRow extends DataClass
       sourceRecordId: serializer.fromJson<String?>(json['sourceRecordId']),
       note: serializer.fromJson<String?>(json['note']),
       isManualCorrection: serializer.fromJson<bool>(json['isManualCorrection']),
+      isDiscontinuity: serializer.fromJson<bool>(json['isDiscontinuity']),
       createdAt: serializer.fromJson<DateTime>(json['createdAt']),
     );
   }
@@ -1806,6 +1842,7 @@ class OdometerEntryRow extends DataClass
       'sourceRecordId': serializer.toJson<String?>(sourceRecordId),
       'note': serializer.toJson<String?>(note),
       'isManualCorrection': serializer.toJson<bool>(isManualCorrection),
+      'isDiscontinuity': serializer.toJson<bool>(isDiscontinuity),
       'createdAt': serializer.toJson<DateTime>(createdAt),
     };
   }
@@ -1819,6 +1856,7 @@ class OdometerEntryRow extends DataClass
     Value<String?> sourceRecordId = const Value.absent(),
     Value<String?> note = const Value.absent(),
     bool? isManualCorrection,
+    bool? isDiscontinuity,
     DateTime? createdAt,
   }) => OdometerEntryRow(
     id: id ?? this.id,
@@ -1831,6 +1869,7 @@ class OdometerEntryRow extends DataClass
         : this.sourceRecordId,
     note: note.present ? note.value : this.note,
     isManualCorrection: isManualCorrection ?? this.isManualCorrection,
+    isDiscontinuity: isDiscontinuity ?? this.isDiscontinuity,
     createdAt: createdAt ?? this.createdAt,
   );
   OdometerEntryRow copyWithCompanion(OdometerEntriesCompanion data) {
@@ -1851,6 +1890,9 @@ class OdometerEntryRow extends DataClass
       isManualCorrection: data.isManualCorrection.present
           ? data.isManualCorrection.value
           : this.isManualCorrection,
+      isDiscontinuity: data.isDiscontinuity.present
+          ? data.isDiscontinuity.value
+          : this.isDiscontinuity,
       createdAt: data.createdAt.present ? data.createdAt.value : this.createdAt,
     );
   }
@@ -1866,6 +1908,7 @@ class OdometerEntryRow extends DataClass
           ..write('sourceRecordId: $sourceRecordId, ')
           ..write('note: $note, ')
           ..write('isManualCorrection: $isManualCorrection, ')
+          ..write('isDiscontinuity: $isDiscontinuity, ')
           ..write('createdAt: $createdAt')
           ..write(')'))
         .toString();
@@ -1881,6 +1924,7 @@ class OdometerEntryRow extends DataClass
     sourceRecordId,
     note,
     isManualCorrection,
+    isDiscontinuity,
     createdAt,
   );
   @override
@@ -1895,6 +1939,7 @@ class OdometerEntryRow extends DataClass
           other.sourceRecordId == this.sourceRecordId &&
           other.note == this.note &&
           other.isManualCorrection == this.isManualCorrection &&
+          other.isDiscontinuity == this.isDiscontinuity &&
           other.createdAt == this.createdAt);
 }
 
@@ -1907,6 +1952,7 @@ class OdometerEntriesCompanion extends UpdateCompanion<OdometerEntryRow> {
   final Value<String?> sourceRecordId;
   final Value<String?> note;
   final Value<bool> isManualCorrection;
+  final Value<bool> isDiscontinuity;
   final Value<DateTime> createdAt;
   final Value<int> rowid;
   const OdometerEntriesCompanion({
@@ -1918,6 +1964,7 @@ class OdometerEntriesCompanion extends UpdateCompanion<OdometerEntryRow> {
     this.sourceRecordId = const Value.absent(),
     this.note = const Value.absent(),
     this.isManualCorrection = const Value.absent(),
+    this.isDiscontinuity = const Value.absent(),
     this.createdAt = const Value.absent(),
     this.rowid = const Value.absent(),
   });
@@ -1930,6 +1977,7 @@ class OdometerEntriesCompanion extends UpdateCompanion<OdometerEntryRow> {
     this.sourceRecordId = const Value.absent(),
     this.note = const Value.absent(),
     this.isManualCorrection = const Value.absent(),
+    this.isDiscontinuity = const Value.absent(),
     required DateTime createdAt,
     this.rowid = const Value.absent(),
   }) : id = Value(id),
@@ -1947,6 +1995,7 @@ class OdometerEntriesCompanion extends UpdateCompanion<OdometerEntryRow> {
     Expression<String>? sourceRecordId,
     Expression<String>? note,
     Expression<bool>? isManualCorrection,
+    Expression<bool>? isDiscontinuity,
     Expression<DateTime>? createdAt,
     Expression<int>? rowid,
   }) {
@@ -1960,6 +2009,7 @@ class OdometerEntriesCompanion extends UpdateCompanion<OdometerEntryRow> {
       if (note != null) 'note': note,
       if (isManualCorrection != null)
         'is_manual_correction': isManualCorrection,
+      if (isDiscontinuity != null) 'is_discontinuity': isDiscontinuity,
       if (createdAt != null) 'created_at': createdAt,
       if (rowid != null) 'rowid': rowid,
     });
@@ -1974,6 +2024,7 @@ class OdometerEntriesCompanion extends UpdateCompanion<OdometerEntryRow> {
     Value<String?>? sourceRecordId,
     Value<String?>? note,
     Value<bool>? isManualCorrection,
+    Value<bool>? isDiscontinuity,
     Value<DateTime>? createdAt,
     Value<int>? rowid,
   }) {
@@ -1986,6 +2037,7 @@ class OdometerEntriesCompanion extends UpdateCompanion<OdometerEntryRow> {
       sourceRecordId: sourceRecordId ?? this.sourceRecordId,
       note: note ?? this.note,
       isManualCorrection: isManualCorrection ?? this.isManualCorrection,
+      isDiscontinuity: isDiscontinuity ?? this.isDiscontinuity,
       createdAt: createdAt ?? this.createdAt,
       rowid: rowid ?? this.rowid,
     );
@@ -2018,6 +2070,9 @@ class OdometerEntriesCompanion extends UpdateCompanion<OdometerEntryRow> {
     if (isManualCorrection.present) {
       map['is_manual_correction'] = Variable<bool>(isManualCorrection.value);
     }
+    if (isDiscontinuity.present) {
+      map['is_discontinuity'] = Variable<bool>(isDiscontinuity.value);
+    }
     if (createdAt.present) {
       map['created_at'] = Variable<DateTime>(createdAt.value);
     }
@@ -2038,7 +2093,960 @@ class OdometerEntriesCompanion extends UpdateCompanion<OdometerEntryRow> {
           ..write('sourceRecordId: $sourceRecordId, ')
           ..write('note: $note, ')
           ..write('isManualCorrection: $isManualCorrection, ')
+          ..write('isDiscontinuity: $isDiscontinuity, ')
           ..write('createdAt: $createdAt, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
+class $FuelEntriesTable extends FuelEntries
+    with TableInfo<$FuelEntriesTable, FuelEntryRow> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $FuelEntriesTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<String> id = GeneratedColumn<String>(
+    'id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _vehicleIdMeta = const VerificationMeta(
+    'vehicleId',
+  );
+  @override
+  late final GeneratedColumn<String> vehicleId = GeneratedColumn<String>(
+    'vehicle_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'REFERENCES vehicles (id)',
+    ),
+  );
+  static const VerificationMeta _entryDateTimeMeta = const VerificationMeta(
+    'entryDateTime',
+  );
+  @override
+  late final GeneratedColumn<DateTime> entryDateTime =
+      GeneratedColumn<DateTime>(
+        'entry_date_time',
+        aliasedName,
+        false,
+        type: DriftSqlType.dateTime,
+        requiredDuringInsert: true,
+      );
+  static const VerificationMeta _odometerMeta = const VerificationMeta(
+    'odometer',
+  );
+  @override
+  late final GeneratedColumn<int> odometer = GeneratedColumn<int>(
+    'odometer',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _fuelTypeMeta = const VerificationMeta(
+    'fuelType',
+  );
+  @override
+  late final GeneratedColumn<String> fuelType = GeneratedColumn<String>(
+    'fuel_type',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _quantityMlMeta = const VerificationMeta(
+    'quantityMl',
+  );
+  @override
+  late final GeneratedColumn<int> quantityMl = GeneratedColumn<int>(
+    'quantity_ml',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _pricePerUnitPaisaMeta = const VerificationMeta(
+    'pricePerUnitPaisa',
+  );
+  @override
+  late final GeneratedColumn<int> pricePerUnitPaisa = GeneratedColumn<int>(
+    'price_per_unit_paisa',
+    aliasedName,
+    true,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _totalCostPaisaMeta = const VerificationMeta(
+    'totalCostPaisa',
+  );
+  @override
+  late final GeneratedColumn<int> totalCostPaisa = GeneratedColumn<int>(
+    'total_cost_paisa',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _isFullTankMeta = const VerificationMeta(
+    'isFullTank',
+  );
+  @override
+  late final GeneratedColumn<bool> isFullTank = GeneratedColumn<bool>(
+    'is_full_tank',
+    aliasedName,
+    false,
+    type: DriftSqlType.bool,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'CHECK ("is_full_tank" IN (0, 1))',
+    ),
+    defaultValue: const Constant(false),
+  );
+  static const VerificationMeta _vendorIdMeta = const VerificationMeta(
+    'vendorId',
+  );
+  @override
+  late final GeneratedColumn<String> vendorId = GeneratedColumn<String>(
+    'vendor_id',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _stationNameMeta = const VerificationMeta(
+    'stationName',
+  );
+  @override
+  late final GeneratedColumn<String> stationName = GeneratedColumn<String>(
+    'station_name',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _locationTextMeta = const VerificationMeta(
+    'locationText',
+  );
+  @override
+  late final GeneratedColumn<String> locationText = GeneratedColumn<String>(
+    'location_text',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _paymentMethodMeta = const VerificationMeta(
+    'paymentMethod',
+  );
+  @override
+  late final GeneratedColumn<String> paymentMethod = GeneratedColumn<String>(
+    'payment_method',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _noteMeta = const VerificationMeta('note');
+  @override
+  late final GeneratedColumn<String> note = GeneratedColumn<String>(
+    'note',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _createdAtMeta = const VerificationMeta(
+    'createdAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> createdAt = GeneratedColumn<DateTime>(
+    'created_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _updatedAtMeta = const VerificationMeta(
+    'updatedAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> updatedAt = GeneratedColumn<DateTime>(
+    'updated_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [
+    id,
+    vehicleId,
+    entryDateTime,
+    odometer,
+    fuelType,
+    quantityMl,
+    pricePerUnitPaisa,
+    totalCostPaisa,
+    isFullTank,
+    vendorId,
+    stationName,
+    locationText,
+    paymentMethod,
+    note,
+    createdAt,
+    updatedAt,
+  ];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'fuel_entries';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<FuelEntryRow> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    } else if (isInserting) {
+      context.missing(_idMeta);
+    }
+    if (data.containsKey('vehicle_id')) {
+      context.handle(
+        _vehicleIdMeta,
+        vehicleId.isAcceptableOrUnknown(data['vehicle_id']!, _vehicleIdMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_vehicleIdMeta);
+    }
+    if (data.containsKey('entry_date_time')) {
+      context.handle(
+        _entryDateTimeMeta,
+        entryDateTime.isAcceptableOrUnknown(
+          data['entry_date_time']!,
+          _entryDateTimeMeta,
+        ),
+      );
+    } else if (isInserting) {
+      context.missing(_entryDateTimeMeta);
+    }
+    if (data.containsKey('odometer')) {
+      context.handle(
+        _odometerMeta,
+        odometer.isAcceptableOrUnknown(data['odometer']!, _odometerMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_odometerMeta);
+    }
+    if (data.containsKey('fuel_type')) {
+      context.handle(
+        _fuelTypeMeta,
+        fuelType.isAcceptableOrUnknown(data['fuel_type']!, _fuelTypeMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_fuelTypeMeta);
+    }
+    if (data.containsKey('quantity_ml')) {
+      context.handle(
+        _quantityMlMeta,
+        quantityMl.isAcceptableOrUnknown(data['quantity_ml']!, _quantityMlMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_quantityMlMeta);
+    }
+    if (data.containsKey('price_per_unit_paisa')) {
+      context.handle(
+        _pricePerUnitPaisaMeta,
+        pricePerUnitPaisa.isAcceptableOrUnknown(
+          data['price_per_unit_paisa']!,
+          _pricePerUnitPaisaMeta,
+        ),
+      );
+    }
+    if (data.containsKey('total_cost_paisa')) {
+      context.handle(
+        _totalCostPaisaMeta,
+        totalCostPaisa.isAcceptableOrUnknown(
+          data['total_cost_paisa']!,
+          _totalCostPaisaMeta,
+        ),
+      );
+    } else if (isInserting) {
+      context.missing(_totalCostPaisaMeta);
+    }
+    if (data.containsKey('is_full_tank')) {
+      context.handle(
+        _isFullTankMeta,
+        isFullTank.isAcceptableOrUnknown(
+          data['is_full_tank']!,
+          _isFullTankMeta,
+        ),
+      );
+    }
+    if (data.containsKey('vendor_id')) {
+      context.handle(
+        _vendorIdMeta,
+        vendorId.isAcceptableOrUnknown(data['vendor_id']!, _vendorIdMeta),
+      );
+    }
+    if (data.containsKey('station_name')) {
+      context.handle(
+        _stationNameMeta,
+        stationName.isAcceptableOrUnknown(
+          data['station_name']!,
+          _stationNameMeta,
+        ),
+      );
+    }
+    if (data.containsKey('location_text')) {
+      context.handle(
+        _locationTextMeta,
+        locationText.isAcceptableOrUnknown(
+          data['location_text']!,
+          _locationTextMeta,
+        ),
+      );
+    }
+    if (data.containsKey('payment_method')) {
+      context.handle(
+        _paymentMethodMeta,
+        paymentMethod.isAcceptableOrUnknown(
+          data['payment_method']!,
+          _paymentMethodMeta,
+        ),
+      );
+    }
+    if (data.containsKey('note')) {
+      context.handle(
+        _noteMeta,
+        note.isAcceptableOrUnknown(data['note']!, _noteMeta),
+      );
+    }
+    if (data.containsKey('created_at')) {
+      context.handle(
+        _createdAtMeta,
+        createdAt.isAcceptableOrUnknown(data['created_at']!, _createdAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_createdAtMeta);
+    }
+    if (data.containsKey('updated_at')) {
+      context.handle(
+        _updatedAtMeta,
+        updatedAt.isAcceptableOrUnknown(data['updated_at']!, _updatedAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_updatedAtMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  FuelEntryRow map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return FuelEntryRow(
+      id: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}id'],
+      )!,
+      vehicleId: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}vehicle_id'],
+      )!,
+      entryDateTime: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}entry_date_time'],
+      )!,
+      odometer: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}odometer'],
+      )!,
+      fuelType: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}fuel_type'],
+      )!,
+      quantityMl: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}quantity_ml'],
+      )!,
+      pricePerUnitPaisa: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}price_per_unit_paisa'],
+      ),
+      totalCostPaisa: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}total_cost_paisa'],
+      )!,
+      isFullTank: attachedDatabase.typeMapping.read(
+        DriftSqlType.bool,
+        data['${effectivePrefix}is_full_tank'],
+      )!,
+      vendorId: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}vendor_id'],
+      ),
+      stationName: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}station_name'],
+      ),
+      locationText: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}location_text'],
+      ),
+      paymentMethod: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}payment_method'],
+      ),
+      note: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}note'],
+      ),
+      createdAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}created_at'],
+      )!,
+      updatedAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}updated_at'],
+      )!,
+    );
+  }
+
+  @override
+  $FuelEntriesTable createAlias(String alias) {
+    return $FuelEntriesTable(attachedDatabase, alias);
+  }
+}
+
+class FuelEntryRow extends DataClass implements Insertable<FuelEntryRow> {
+  final String id;
+  final String vehicleId;
+
+  /// Named entryDateTime so the getter does not shadow Table.dateTime().
+  final DateTime entryDateTime;
+  final int odometer;
+  final String fuelType;
+
+  /// Quantity stored as milliliters for fixed precision.
+  final int quantityMl;
+
+  /// Unit price stored as paisa per liter.
+  final int? pricePerUnitPaisa;
+
+  /// Total cost stored as paisa.
+  final int totalCostPaisa;
+  final bool isFullTank;
+  final String? vendorId;
+  final String? stationName;
+  final String? locationText;
+  final String? paymentMethod;
+  final String? note;
+  final DateTime createdAt;
+  final DateTime updatedAt;
+  const FuelEntryRow({
+    required this.id,
+    required this.vehicleId,
+    required this.entryDateTime,
+    required this.odometer,
+    required this.fuelType,
+    required this.quantityMl,
+    this.pricePerUnitPaisa,
+    required this.totalCostPaisa,
+    required this.isFullTank,
+    this.vendorId,
+    this.stationName,
+    this.locationText,
+    this.paymentMethod,
+    this.note,
+    required this.createdAt,
+    required this.updatedAt,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<String>(id);
+    map['vehicle_id'] = Variable<String>(vehicleId);
+    map['entry_date_time'] = Variable<DateTime>(entryDateTime);
+    map['odometer'] = Variable<int>(odometer);
+    map['fuel_type'] = Variable<String>(fuelType);
+    map['quantity_ml'] = Variable<int>(quantityMl);
+    if (!nullToAbsent || pricePerUnitPaisa != null) {
+      map['price_per_unit_paisa'] = Variable<int>(pricePerUnitPaisa);
+    }
+    map['total_cost_paisa'] = Variable<int>(totalCostPaisa);
+    map['is_full_tank'] = Variable<bool>(isFullTank);
+    if (!nullToAbsent || vendorId != null) {
+      map['vendor_id'] = Variable<String>(vendorId);
+    }
+    if (!nullToAbsent || stationName != null) {
+      map['station_name'] = Variable<String>(stationName);
+    }
+    if (!nullToAbsent || locationText != null) {
+      map['location_text'] = Variable<String>(locationText);
+    }
+    if (!nullToAbsent || paymentMethod != null) {
+      map['payment_method'] = Variable<String>(paymentMethod);
+    }
+    if (!nullToAbsent || note != null) {
+      map['note'] = Variable<String>(note);
+    }
+    map['created_at'] = Variable<DateTime>(createdAt);
+    map['updated_at'] = Variable<DateTime>(updatedAt);
+    return map;
+  }
+
+  FuelEntriesCompanion toCompanion(bool nullToAbsent) {
+    return FuelEntriesCompanion(
+      id: Value(id),
+      vehicleId: Value(vehicleId),
+      entryDateTime: Value(entryDateTime),
+      odometer: Value(odometer),
+      fuelType: Value(fuelType),
+      quantityMl: Value(quantityMl),
+      pricePerUnitPaisa: pricePerUnitPaisa == null && nullToAbsent
+          ? const Value.absent()
+          : Value(pricePerUnitPaisa),
+      totalCostPaisa: Value(totalCostPaisa),
+      isFullTank: Value(isFullTank),
+      vendorId: vendorId == null && nullToAbsent
+          ? const Value.absent()
+          : Value(vendorId),
+      stationName: stationName == null && nullToAbsent
+          ? const Value.absent()
+          : Value(stationName),
+      locationText: locationText == null && nullToAbsent
+          ? const Value.absent()
+          : Value(locationText),
+      paymentMethod: paymentMethod == null && nullToAbsent
+          ? const Value.absent()
+          : Value(paymentMethod),
+      note: note == null && nullToAbsent ? const Value.absent() : Value(note),
+      createdAt: Value(createdAt),
+      updatedAt: Value(updatedAt),
+    );
+  }
+
+  factory FuelEntryRow.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return FuelEntryRow(
+      id: serializer.fromJson<String>(json['id']),
+      vehicleId: serializer.fromJson<String>(json['vehicleId']),
+      entryDateTime: serializer.fromJson<DateTime>(json['entryDateTime']),
+      odometer: serializer.fromJson<int>(json['odometer']),
+      fuelType: serializer.fromJson<String>(json['fuelType']),
+      quantityMl: serializer.fromJson<int>(json['quantityMl']),
+      pricePerUnitPaisa: serializer.fromJson<int?>(json['pricePerUnitPaisa']),
+      totalCostPaisa: serializer.fromJson<int>(json['totalCostPaisa']),
+      isFullTank: serializer.fromJson<bool>(json['isFullTank']),
+      vendorId: serializer.fromJson<String?>(json['vendorId']),
+      stationName: serializer.fromJson<String?>(json['stationName']),
+      locationText: serializer.fromJson<String?>(json['locationText']),
+      paymentMethod: serializer.fromJson<String?>(json['paymentMethod']),
+      note: serializer.fromJson<String?>(json['note']),
+      createdAt: serializer.fromJson<DateTime>(json['createdAt']),
+      updatedAt: serializer.fromJson<DateTime>(json['updatedAt']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<String>(id),
+      'vehicleId': serializer.toJson<String>(vehicleId),
+      'entryDateTime': serializer.toJson<DateTime>(entryDateTime),
+      'odometer': serializer.toJson<int>(odometer),
+      'fuelType': serializer.toJson<String>(fuelType),
+      'quantityMl': serializer.toJson<int>(quantityMl),
+      'pricePerUnitPaisa': serializer.toJson<int?>(pricePerUnitPaisa),
+      'totalCostPaisa': serializer.toJson<int>(totalCostPaisa),
+      'isFullTank': serializer.toJson<bool>(isFullTank),
+      'vendorId': serializer.toJson<String?>(vendorId),
+      'stationName': serializer.toJson<String?>(stationName),
+      'locationText': serializer.toJson<String?>(locationText),
+      'paymentMethod': serializer.toJson<String?>(paymentMethod),
+      'note': serializer.toJson<String?>(note),
+      'createdAt': serializer.toJson<DateTime>(createdAt),
+      'updatedAt': serializer.toJson<DateTime>(updatedAt),
+    };
+  }
+
+  FuelEntryRow copyWith({
+    String? id,
+    String? vehicleId,
+    DateTime? entryDateTime,
+    int? odometer,
+    String? fuelType,
+    int? quantityMl,
+    Value<int?> pricePerUnitPaisa = const Value.absent(),
+    int? totalCostPaisa,
+    bool? isFullTank,
+    Value<String?> vendorId = const Value.absent(),
+    Value<String?> stationName = const Value.absent(),
+    Value<String?> locationText = const Value.absent(),
+    Value<String?> paymentMethod = const Value.absent(),
+    Value<String?> note = const Value.absent(),
+    DateTime? createdAt,
+    DateTime? updatedAt,
+  }) => FuelEntryRow(
+    id: id ?? this.id,
+    vehicleId: vehicleId ?? this.vehicleId,
+    entryDateTime: entryDateTime ?? this.entryDateTime,
+    odometer: odometer ?? this.odometer,
+    fuelType: fuelType ?? this.fuelType,
+    quantityMl: quantityMl ?? this.quantityMl,
+    pricePerUnitPaisa: pricePerUnitPaisa.present
+        ? pricePerUnitPaisa.value
+        : this.pricePerUnitPaisa,
+    totalCostPaisa: totalCostPaisa ?? this.totalCostPaisa,
+    isFullTank: isFullTank ?? this.isFullTank,
+    vendorId: vendorId.present ? vendorId.value : this.vendorId,
+    stationName: stationName.present ? stationName.value : this.stationName,
+    locationText: locationText.present ? locationText.value : this.locationText,
+    paymentMethod: paymentMethod.present
+        ? paymentMethod.value
+        : this.paymentMethod,
+    note: note.present ? note.value : this.note,
+    createdAt: createdAt ?? this.createdAt,
+    updatedAt: updatedAt ?? this.updatedAt,
+  );
+  FuelEntryRow copyWithCompanion(FuelEntriesCompanion data) {
+    return FuelEntryRow(
+      id: data.id.present ? data.id.value : this.id,
+      vehicleId: data.vehicleId.present ? data.vehicleId.value : this.vehicleId,
+      entryDateTime: data.entryDateTime.present
+          ? data.entryDateTime.value
+          : this.entryDateTime,
+      odometer: data.odometer.present ? data.odometer.value : this.odometer,
+      fuelType: data.fuelType.present ? data.fuelType.value : this.fuelType,
+      quantityMl: data.quantityMl.present
+          ? data.quantityMl.value
+          : this.quantityMl,
+      pricePerUnitPaisa: data.pricePerUnitPaisa.present
+          ? data.pricePerUnitPaisa.value
+          : this.pricePerUnitPaisa,
+      totalCostPaisa: data.totalCostPaisa.present
+          ? data.totalCostPaisa.value
+          : this.totalCostPaisa,
+      isFullTank: data.isFullTank.present
+          ? data.isFullTank.value
+          : this.isFullTank,
+      vendorId: data.vendorId.present ? data.vendorId.value : this.vendorId,
+      stationName: data.stationName.present
+          ? data.stationName.value
+          : this.stationName,
+      locationText: data.locationText.present
+          ? data.locationText.value
+          : this.locationText,
+      paymentMethod: data.paymentMethod.present
+          ? data.paymentMethod.value
+          : this.paymentMethod,
+      note: data.note.present ? data.note.value : this.note,
+      createdAt: data.createdAt.present ? data.createdAt.value : this.createdAt,
+      updatedAt: data.updatedAt.present ? data.updatedAt.value : this.updatedAt,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('FuelEntryRow(')
+          ..write('id: $id, ')
+          ..write('vehicleId: $vehicleId, ')
+          ..write('entryDateTime: $entryDateTime, ')
+          ..write('odometer: $odometer, ')
+          ..write('fuelType: $fuelType, ')
+          ..write('quantityMl: $quantityMl, ')
+          ..write('pricePerUnitPaisa: $pricePerUnitPaisa, ')
+          ..write('totalCostPaisa: $totalCostPaisa, ')
+          ..write('isFullTank: $isFullTank, ')
+          ..write('vendorId: $vendorId, ')
+          ..write('stationName: $stationName, ')
+          ..write('locationText: $locationText, ')
+          ..write('paymentMethod: $paymentMethod, ')
+          ..write('note: $note, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('updatedAt: $updatedAt')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(
+    id,
+    vehicleId,
+    entryDateTime,
+    odometer,
+    fuelType,
+    quantityMl,
+    pricePerUnitPaisa,
+    totalCostPaisa,
+    isFullTank,
+    vendorId,
+    stationName,
+    locationText,
+    paymentMethod,
+    note,
+    createdAt,
+    updatedAt,
+  );
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is FuelEntryRow &&
+          other.id == this.id &&
+          other.vehicleId == this.vehicleId &&
+          other.entryDateTime == this.entryDateTime &&
+          other.odometer == this.odometer &&
+          other.fuelType == this.fuelType &&
+          other.quantityMl == this.quantityMl &&
+          other.pricePerUnitPaisa == this.pricePerUnitPaisa &&
+          other.totalCostPaisa == this.totalCostPaisa &&
+          other.isFullTank == this.isFullTank &&
+          other.vendorId == this.vendorId &&
+          other.stationName == this.stationName &&
+          other.locationText == this.locationText &&
+          other.paymentMethod == this.paymentMethod &&
+          other.note == this.note &&
+          other.createdAt == this.createdAt &&
+          other.updatedAt == this.updatedAt);
+}
+
+class FuelEntriesCompanion extends UpdateCompanion<FuelEntryRow> {
+  final Value<String> id;
+  final Value<String> vehicleId;
+  final Value<DateTime> entryDateTime;
+  final Value<int> odometer;
+  final Value<String> fuelType;
+  final Value<int> quantityMl;
+  final Value<int?> pricePerUnitPaisa;
+  final Value<int> totalCostPaisa;
+  final Value<bool> isFullTank;
+  final Value<String?> vendorId;
+  final Value<String?> stationName;
+  final Value<String?> locationText;
+  final Value<String?> paymentMethod;
+  final Value<String?> note;
+  final Value<DateTime> createdAt;
+  final Value<DateTime> updatedAt;
+  final Value<int> rowid;
+  const FuelEntriesCompanion({
+    this.id = const Value.absent(),
+    this.vehicleId = const Value.absent(),
+    this.entryDateTime = const Value.absent(),
+    this.odometer = const Value.absent(),
+    this.fuelType = const Value.absent(),
+    this.quantityMl = const Value.absent(),
+    this.pricePerUnitPaisa = const Value.absent(),
+    this.totalCostPaisa = const Value.absent(),
+    this.isFullTank = const Value.absent(),
+    this.vendorId = const Value.absent(),
+    this.stationName = const Value.absent(),
+    this.locationText = const Value.absent(),
+    this.paymentMethod = const Value.absent(),
+    this.note = const Value.absent(),
+    this.createdAt = const Value.absent(),
+    this.updatedAt = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  FuelEntriesCompanion.insert({
+    required String id,
+    required String vehicleId,
+    required DateTime entryDateTime,
+    required int odometer,
+    required String fuelType,
+    required int quantityMl,
+    this.pricePerUnitPaisa = const Value.absent(),
+    required int totalCostPaisa,
+    this.isFullTank = const Value.absent(),
+    this.vendorId = const Value.absent(),
+    this.stationName = const Value.absent(),
+    this.locationText = const Value.absent(),
+    this.paymentMethod = const Value.absent(),
+    this.note = const Value.absent(),
+    required DateTime createdAt,
+    required DateTime updatedAt,
+    this.rowid = const Value.absent(),
+  }) : id = Value(id),
+       vehicleId = Value(vehicleId),
+       entryDateTime = Value(entryDateTime),
+       odometer = Value(odometer),
+       fuelType = Value(fuelType),
+       quantityMl = Value(quantityMl),
+       totalCostPaisa = Value(totalCostPaisa),
+       createdAt = Value(createdAt),
+       updatedAt = Value(updatedAt);
+  static Insertable<FuelEntryRow> custom({
+    Expression<String>? id,
+    Expression<String>? vehicleId,
+    Expression<DateTime>? entryDateTime,
+    Expression<int>? odometer,
+    Expression<String>? fuelType,
+    Expression<int>? quantityMl,
+    Expression<int>? pricePerUnitPaisa,
+    Expression<int>? totalCostPaisa,
+    Expression<bool>? isFullTank,
+    Expression<String>? vendorId,
+    Expression<String>? stationName,
+    Expression<String>? locationText,
+    Expression<String>? paymentMethod,
+    Expression<String>? note,
+    Expression<DateTime>? createdAt,
+    Expression<DateTime>? updatedAt,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (vehicleId != null) 'vehicle_id': vehicleId,
+      if (entryDateTime != null) 'entry_date_time': entryDateTime,
+      if (odometer != null) 'odometer': odometer,
+      if (fuelType != null) 'fuel_type': fuelType,
+      if (quantityMl != null) 'quantity_ml': quantityMl,
+      if (pricePerUnitPaisa != null) 'price_per_unit_paisa': pricePerUnitPaisa,
+      if (totalCostPaisa != null) 'total_cost_paisa': totalCostPaisa,
+      if (isFullTank != null) 'is_full_tank': isFullTank,
+      if (vendorId != null) 'vendor_id': vendorId,
+      if (stationName != null) 'station_name': stationName,
+      if (locationText != null) 'location_text': locationText,
+      if (paymentMethod != null) 'payment_method': paymentMethod,
+      if (note != null) 'note': note,
+      if (createdAt != null) 'created_at': createdAt,
+      if (updatedAt != null) 'updated_at': updatedAt,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  FuelEntriesCompanion copyWith({
+    Value<String>? id,
+    Value<String>? vehicleId,
+    Value<DateTime>? entryDateTime,
+    Value<int>? odometer,
+    Value<String>? fuelType,
+    Value<int>? quantityMl,
+    Value<int?>? pricePerUnitPaisa,
+    Value<int>? totalCostPaisa,
+    Value<bool>? isFullTank,
+    Value<String?>? vendorId,
+    Value<String?>? stationName,
+    Value<String?>? locationText,
+    Value<String?>? paymentMethod,
+    Value<String?>? note,
+    Value<DateTime>? createdAt,
+    Value<DateTime>? updatedAt,
+    Value<int>? rowid,
+  }) {
+    return FuelEntriesCompanion(
+      id: id ?? this.id,
+      vehicleId: vehicleId ?? this.vehicleId,
+      entryDateTime: entryDateTime ?? this.entryDateTime,
+      odometer: odometer ?? this.odometer,
+      fuelType: fuelType ?? this.fuelType,
+      quantityMl: quantityMl ?? this.quantityMl,
+      pricePerUnitPaisa: pricePerUnitPaisa ?? this.pricePerUnitPaisa,
+      totalCostPaisa: totalCostPaisa ?? this.totalCostPaisa,
+      isFullTank: isFullTank ?? this.isFullTank,
+      vendorId: vendorId ?? this.vendorId,
+      stationName: stationName ?? this.stationName,
+      locationText: locationText ?? this.locationText,
+      paymentMethod: paymentMethod ?? this.paymentMethod,
+      note: note ?? this.note,
+      createdAt: createdAt ?? this.createdAt,
+      updatedAt: updatedAt ?? this.updatedAt,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<String>(id.value);
+    }
+    if (vehicleId.present) {
+      map['vehicle_id'] = Variable<String>(vehicleId.value);
+    }
+    if (entryDateTime.present) {
+      map['entry_date_time'] = Variable<DateTime>(entryDateTime.value);
+    }
+    if (odometer.present) {
+      map['odometer'] = Variable<int>(odometer.value);
+    }
+    if (fuelType.present) {
+      map['fuel_type'] = Variable<String>(fuelType.value);
+    }
+    if (quantityMl.present) {
+      map['quantity_ml'] = Variable<int>(quantityMl.value);
+    }
+    if (pricePerUnitPaisa.present) {
+      map['price_per_unit_paisa'] = Variable<int>(pricePerUnitPaisa.value);
+    }
+    if (totalCostPaisa.present) {
+      map['total_cost_paisa'] = Variable<int>(totalCostPaisa.value);
+    }
+    if (isFullTank.present) {
+      map['is_full_tank'] = Variable<bool>(isFullTank.value);
+    }
+    if (vendorId.present) {
+      map['vendor_id'] = Variable<String>(vendorId.value);
+    }
+    if (stationName.present) {
+      map['station_name'] = Variable<String>(stationName.value);
+    }
+    if (locationText.present) {
+      map['location_text'] = Variable<String>(locationText.value);
+    }
+    if (paymentMethod.present) {
+      map['payment_method'] = Variable<String>(paymentMethod.value);
+    }
+    if (note.present) {
+      map['note'] = Variable<String>(note.value);
+    }
+    if (createdAt.present) {
+      map['created_at'] = Variable<DateTime>(createdAt.value);
+    }
+    if (updatedAt.present) {
+      map['updated_at'] = Variable<DateTime>(updatedAt.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('FuelEntriesCompanion(')
+          ..write('id: $id, ')
+          ..write('vehicleId: $vehicleId, ')
+          ..write('entryDateTime: $entryDateTime, ')
+          ..write('odometer: $odometer, ')
+          ..write('fuelType: $fuelType, ')
+          ..write('quantityMl: $quantityMl, ')
+          ..write('pricePerUnitPaisa: $pricePerUnitPaisa, ')
+          ..write('totalCostPaisa: $totalCostPaisa, ')
+          ..write('isFullTank: $isFullTank, ')
+          ..write('vendorId: $vendorId, ')
+          ..write('stationName: $stationName, ')
+          ..write('locationText: $locationText, ')
+          ..write('paymentMethod: $paymentMethod, ')
+          ..write('note: $note, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('updatedAt: $updatedAt, ')
           ..write('rowid: $rowid')
           ..write(')'))
         .toString();
@@ -2053,6 +3061,23 @@ abstract class _$AppDatabase extends GeneratedDatabase {
   late final $OdometerEntriesTable odometerEntries = $OdometerEntriesTable(
     this,
   );
+  late final $FuelEntriesTable fuelEntries = $FuelEntriesTable(this);
+  late final Index idxOdometerVehicleRecorded = Index(
+    'idx_odometer_vehicle_recorded',
+    'CREATE INDEX idx_odometer_vehicle_recorded ON odometer_entries (vehicle_id, recorded_at)',
+  );
+  late final Index idxOdometerVehicleOdometer = Index(
+    'idx_odometer_vehicle_odometer',
+    'CREATE INDEX idx_odometer_vehicle_odometer ON odometer_entries (vehicle_id, odometer)',
+  );
+  late final Index idxFuelVehicleDatetime = Index(
+    'idx_fuel_vehicle_datetime',
+    'CREATE INDEX idx_fuel_vehicle_datetime ON fuel_entries (entry_date_time, vehicle_id)',
+  );
+  late final Index idxFuelVehicleOdometer = Index(
+    'idx_fuel_vehicle_odometer',
+    'CREATE INDEX idx_fuel_vehicle_odometer ON fuel_entries (vehicle_id, odometer)',
+  );
   @override
   Iterable<TableInfo<Table, Object?>> get allTables =>
       allSchemaEntities.whereType<TableInfo<Table, Object?>>();
@@ -2061,6 +3086,11 @@ abstract class _$AppDatabase extends GeneratedDatabase {
     settings,
     vehicles,
     odometerEntries,
+    fuelEntries,
+    idxOdometerVehicleRecorded,
+    idxOdometerVehicleOdometer,
+    idxFuelVehicleDatetime,
+    idxFuelVehicleOdometer,
   ];
 }
 
@@ -2302,6 +3332,24 @@ final class $$VehiclesTableReferences
       manager.$state.copyWith(prefetchedData: cache),
     );
   }
+
+  static MultiTypedResultKey<$FuelEntriesTable, List<FuelEntryRow>>
+  _fuelEntriesRefsTable(_$AppDatabase db) => MultiTypedResultKey.fromTable(
+    db.fuelEntries,
+    aliasName: 'vehicles__id__fuel_entries__vehicle_id',
+  );
+
+  $$FuelEntriesTableProcessedTableManager get fuelEntriesRefs {
+    final manager = $$FuelEntriesTableTableManager(
+      $_db,
+      $_db.fuelEntries,
+    ).filter((f) => f.vehicleId.id.sqlEquals($_itemColumn<String>('id')!));
+
+    final cache = $_typedResult.readTableOrNull(_fuelEntriesRefsTable($_db));
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: cache),
+    );
+  }
 }
 
 class $$VehiclesTableFilterComposer
@@ -2434,6 +3482,31 @@ class $$VehiclesTableFilterComposer
           }) => $$OdometerEntriesTableFilterComposer(
             $db: $db,
             $table: $db.odometerEntries,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
+
+  Expression<bool> fuelEntriesRefs(
+    Expression<bool> Function($$FuelEntriesTableFilterComposer f) f,
+  ) {
+    final $$FuelEntriesTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.fuelEntries,
+      getReferencedColumn: (t) => t.vehicleId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$FuelEntriesTableFilterComposer(
+            $db: $db,
+            $table: $db.fuelEntries,
             $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
             joinBuilder: joinBuilder,
             $removeJoinBuilderFromRootComposer:
@@ -2675,6 +3748,31 @@ class $$VehiclesTableAnnotationComposer
     );
     return f(composer);
   }
+
+  Expression<T> fuelEntriesRefs<T extends Object>(
+    Expression<T> Function($$FuelEntriesTableAnnotationComposer a) f,
+  ) {
+    final $$FuelEntriesTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.fuelEntries,
+      getReferencedColumn: (t) => t.vehicleId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$FuelEntriesTableAnnotationComposer(
+            $db: $db,
+            $table: $db.fuelEntries,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
 }
 
 class $$VehiclesTableTableManager
@@ -2690,7 +3788,10 @@ class $$VehiclesTableTableManager
           $$VehiclesTableUpdateCompanionBuilder,
           (VehicleRow, $$VehiclesTableReferences),
           VehicleRow,
-          PrefetchHooks Function({bool odometerEntriesRefs})
+          PrefetchHooks Function({
+            bool odometerEntriesRefs,
+            bool fuelEntriesRefs,
+          })
         > {
   $$VehiclesTableTableManager(_$AppDatabase db, $VehiclesTable table)
     : super(
@@ -2807,37 +3908,63 @@ class $$VehiclesTableTableManager
                 ),
               )
               .toList(),
-          prefetchHooksCallback: ({odometerEntriesRefs = false}) {
-            return PrefetchHooks(
-              db: db,
-              explicitlyWatchedTables: [
-                if (odometerEntriesRefs) db.odometerEntries,
-              ],
-              addJoins: null,
-              getPrefetchedDataCallback: (items) async {
-                return [
-                  if (odometerEntriesRefs)
-                    await $_getPrefetchedData<
-                      VehicleRow,
-                      $VehiclesTable,
-                      OdometerEntryRow
-                    >(
-                      currentTable: table,
-                      referencedTable: $$VehiclesTableReferences
-                          ._odometerEntriesRefsTable(db),
-                      managerFromTypedResult: (p0) => $$VehiclesTableReferences(
-                        db,
-                        table,
-                        p0,
-                      ).odometerEntriesRefs,
-                      referencedItemsForCurrentItem: (item, referencedItems) =>
-                          referencedItems.where((e) => e.vehicleId == item.id),
-                      typedResults: items,
-                    ),
-                ];
+          prefetchHooksCallback:
+              ({odometerEntriesRefs = false, fuelEntriesRefs = false}) {
+                return PrefetchHooks(
+                  db: db,
+                  explicitlyWatchedTables: [
+                    if (odometerEntriesRefs) db.odometerEntries,
+                    if (fuelEntriesRefs) db.fuelEntries,
+                  ],
+                  addJoins: null,
+                  getPrefetchedDataCallback: (items) async {
+                    return [
+                      if (odometerEntriesRefs)
+                        await $_getPrefetchedData<
+                          VehicleRow,
+                          $VehiclesTable,
+                          OdometerEntryRow
+                        >(
+                          currentTable: table,
+                          referencedTable: $$VehiclesTableReferences
+                              ._odometerEntriesRefsTable(db),
+                          managerFromTypedResult: (p0) =>
+                              $$VehiclesTableReferences(
+                                db,
+                                table,
+                                p0,
+                              ).odometerEntriesRefs,
+                          referencedItemsForCurrentItem:
+                              (item, referencedItems) => referencedItems.where(
+                                (e) => e.vehicleId == item.id,
+                              ),
+                          typedResults: items,
+                        ),
+                      if (fuelEntriesRefs)
+                        await $_getPrefetchedData<
+                          VehicleRow,
+                          $VehiclesTable,
+                          FuelEntryRow
+                        >(
+                          currentTable: table,
+                          referencedTable: $$VehiclesTableReferences
+                              ._fuelEntriesRefsTable(db),
+                          managerFromTypedResult: (p0) =>
+                              $$VehiclesTableReferences(
+                                db,
+                                table,
+                                p0,
+                              ).fuelEntriesRefs,
+                          referencedItemsForCurrentItem:
+                              (item, referencedItems) => referencedItems.where(
+                                (e) => e.vehicleId == item.id,
+                              ),
+                          typedResults: items,
+                        ),
+                    ];
+                  },
+                );
               },
-            );
-          },
         ),
       );
 }
@@ -2854,7 +3981,7 @@ typedef $$VehiclesTableProcessedTableManager =
       $$VehiclesTableUpdateCompanionBuilder,
       (VehicleRow, $$VehiclesTableReferences),
       VehicleRow,
-      PrefetchHooks Function({bool odometerEntriesRefs})
+      PrefetchHooks Function({bool odometerEntriesRefs, bool fuelEntriesRefs})
     >;
 typedef $$OdometerEntriesTableCreateCompanionBuilder =
     OdometerEntriesCompanion Function({
@@ -2866,6 +3993,7 @@ typedef $$OdometerEntriesTableCreateCompanionBuilder =
       Value<String?> sourceRecordId,
       Value<String?> note,
       Value<bool> isManualCorrection,
+      Value<bool> isDiscontinuity,
       required DateTime createdAt,
       Value<int> rowid,
     });
@@ -2879,6 +4007,7 @@ typedef $$OdometerEntriesTableUpdateCompanionBuilder =
       Value<String?> sourceRecordId,
       Value<String?> note,
       Value<bool> isManualCorrection,
+      Value<bool> isDiscontinuity,
       Value<DateTime> createdAt,
       Value<int> rowid,
     });
@@ -2951,6 +4080,11 @@ class $$OdometerEntriesTableFilterComposer
 
   ColumnFilters<bool> get isManualCorrection => $composableBuilder(
     column: $table.isManualCorrection,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<bool> get isDiscontinuity => $composableBuilder(
+    column: $table.isDiscontinuity,
     builder: (column) => ColumnFilters(column),
   );
 
@@ -3027,6 +4161,11 @@ class $$OdometerEntriesTableOrderingComposer
     builder: (column) => ColumnOrderings(column),
   );
 
+  ColumnOrderings<bool> get isDiscontinuity => $composableBuilder(
+    column: $table.isDiscontinuity,
+    builder: (column) => ColumnOrderings(column),
+  );
+
   ColumnOrderings<DateTime> get createdAt => $composableBuilder(
     column: $table.createdAt,
     builder: (column) => ColumnOrderings(column),
@@ -3091,6 +4230,11 @@ class $$OdometerEntriesTableAnnotationComposer
 
   GeneratedColumn<bool> get isManualCorrection => $composableBuilder(
     column: $table.isManualCorrection,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<bool> get isDiscontinuity => $composableBuilder(
+    column: $table.isDiscontinuity,
     builder: (column) => column,
   );
 
@@ -3159,6 +4303,7 @@ class $$OdometerEntriesTableTableManager
                 Value<String?> sourceRecordId = const Value.absent(),
                 Value<String?> note = const Value.absent(),
                 Value<bool> isManualCorrection = const Value.absent(),
+                Value<bool> isDiscontinuity = const Value.absent(),
                 Value<DateTime> createdAt = const Value.absent(),
                 Value<int> rowid = const Value.absent(),
               }) => OdometerEntriesCompanion(
@@ -3170,6 +4315,7 @@ class $$OdometerEntriesTableTableManager
                 sourceRecordId: sourceRecordId,
                 note: note,
                 isManualCorrection: isManualCorrection,
+                isDiscontinuity: isDiscontinuity,
                 createdAt: createdAt,
                 rowid: rowid,
               ),
@@ -3183,6 +4329,7 @@ class $$OdometerEntriesTableTableManager
                 Value<String?> sourceRecordId = const Value.absent(),
                 Value<String?> note = const Value.absent(),
                 Value<bool> isManualCorrection = const Value.absent(),
+                Value<bool> isDiscontinuity = const Value.absent(),
                 required DateTime createdAt,
                 Value<int> rowid = const Value.absent(),
               }) => OdometerEntriesCompanion.insert(
@@ -3194,6 +4341,7 @@ class $$OdometerEntriesTableTableManager
                 sourceRecordId: sourceRecordId,
                 note: note,
                 isManualCorrection: isManualCorrection,
+                isDiscontinuity: isDiscontinuity,
                 createdAt: createdAt,
                 rowid: rowid,
               ),
@@ -3262,6 +4410,546 @@ typedef $$OdometerEntriesTableProcessedTableManager =
       OdometerEntryRow,
       PrefetchHooks Function({bool vehicleId})
     >;
+typedef $$FuelEntriesTableCreateCompanionBuilder =
+    FuelEntriesCompanion Function({
+      required String id,
+      required String vehicleId,
+      required DateTime entryDateTime,
+      required int odometer,
+      required String fuelType,
+      required int quantityMl,
+      Value<int?> pricePerUnitPaisa,
+      required int totalCostPaisa,
+      Value<bool> isFullTank,
+      Value<String?> vendorId,
+      Value<String?> stationName,
+      Value<String?> locationText,
+      Value<String?> paymentMethod,
+      Value<String?> note,
+      required DateTime createdAt,
+      required DateTime updatedAt,
+      Value<int> rowid,
+    });
+typedef $$FuelEntriesTableUpdateCompanionBuilder =
+    FuelEntriesCompanion Function({
+      Value<String> id,
+      Value<String> vehicleId,
+      Value<DateTime> entryDateTime,
+      Value<int> odometer,
+      Value<String> fuelType,
+      Value<int> quantityMl,
+      Value<int?> pricePerUnitPaisa,
+      Value<int> totalCostPaisa,
+      Value<bool> isFullTank,
+      Value<String?> vendorId,
+      Value<String?> stationName,
+      Value<String?> locationText,
+      Value<String?> paymentMethod,
+      Value<String?> note,
+      Value<DateTime> createdAt,
+      Value<DateTime> updatedAt,
+      Value<int> rowid,
+    });
+
+final class $$FuelEntriesTableReferences
+    extends BaseReferences<_$AppDatabase, $FuelEntriesTable, FuelEntryRow> {
+  $$FuelEntriesTableReferences(super.$_db, super.$_table, super.$_typedResult);
+
+  static $VehiclesTable _vehicleIdTable(_$AppDatabase db) =>
+      db.vehicles.createAlias('fuel_entries__vehicle_id__vehicles__id');
+
+  $$VehiclesTableProcessedTableManager get vehicleId {
+    final $_column = $_itemColumn<String>('vehicle_id')!;
+
+    final manager = $$VehiclesTableTableManager(
+      $_db,
+      $_db.vehicles,
+    ).filter((f) => f.id.sqlEquals($_column));
+    final item = $_typedResult.readTableOrNull(_vehicleIdTable($_db));
+    if (item == null) return manager;
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: [item]),
+    );
+  }
+}
+
+class $$FuelEntriesTableFilterComposer
+    extends Composer<_$AppDatabase, $FuelEntriesTable> {
+  $$FuelEntriesTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get entryDateTime => $composableBuilder(
+    column: $table.entryDateTime,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get odometer => $composableBuilder(
+    column: $table.odometer,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get fuelType => $composableBuilder(
+    column: $table.fuelType,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get quantityMl => $composableBuilder(
+    column: $table.quantityMl,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get pricePerUnitPaisa => $composableBuilder(
+    column: $table.pricePerUnitPaisa,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get totalCostPaisa => $composableBuilder(
+    column: $table.totalCostPaisa,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<bool> get isFullTank => $composableBuilder(
+    column: $table.isFullTank,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get vendorId => $composableBuilder(
+    column: $table.vendorId,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get stationName => $composableBuilder(
+    column: $table.stationName,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get locationText => $composableBuilder(
+    column: $table.locationText,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get paymentMethod => $composableBuilder(
+    column: $table.paymentMethod,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get note => $composableBuilder(
+    column: $table.note,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get updatedAt => $composableBuilder(
+    column: $table.updatedAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  $$VehiclesTableFilterComposer get vehicleId {
+    final $$VehiclesTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.vehicleId,
+      referencedTable: $db.vehicles,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$VehiclesTableFilterComposer(
+            $db: $db,
+            $table: $db.vehicles,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$FuelEntriesTableOrderingComposer
+    extends Composer<_$AppDatabase, $FuelEntriesTable> {
+  $$FuelEntriesTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get entryDateTime => $composableBuilder(
+    column: $table.entryDateTime,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get odometer => $composableBuilder(
+    column: $table.odometer,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get fuelType => $composableBuilder(
+    column: $table.fuelType,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get quantityMl => $composableBuilder(
+    column: $table.quantityMl,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get pricePerUnitPaisa => $composableBuilder(
+    column: $table.pricePerUnitPaisa,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get totalCostPaisa => $composableBuilder(
+    column: $table.totalCostPaisa,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<bool> get isFullTank => $composableBuilder(
+    column: $table.isFullTank,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get vendorId => $composableBuilder(
+    column: $table.vendorId,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get stationName => $composableBuilder(
+    column: $table.stationName,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get locationText => $composableBuilder(
+    column: $table.locationText,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get paymentMethod => $composableBuilder(
+    column: $table.paymentMethod,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get note => $composableBuilder(
+    column: $table.note,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get updatedAt => $composableBuilder(
+    column: $table.updatedAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  $$VehiclesTableOrderingComposer get vehicleId {
+    final $$VehiclesTableOrderingComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.vehicleId,
+      referencedTable: $db.vehicles,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$VehiclesTableOrderingComposer(
+            $db: $db,
+            $table: $db.vehicles,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$FuelEntriesTableAnnotationComposer
+    extends Composer<_$AppDatabase, $FuelEntriesTable> {
+  $$FuelEntriesTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get entryDateTime => $composableBuilder(
+    column: $table.entryDateTime,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get odometer =>
+      $composableBuilder(column: $table.odometer, builder: (column) => column);
+
+  GeneratedColumn<String> get fuelType =>
+      $composableBuilder(column: $table.fuelType, builder: (column) => column);
+
+  GeneratedColumn<int> get quantityMl => $composableBuilder(
+    column: $table.quantityMl,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get pricePerUnitPaisa => $composableBuilder(
+    column: $table.pricePerUnitPaisa,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get totalCostPaisa => $composableBuilder(
+    column: $table.totalCostPaisa,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<bool> get isFullTank => $composableBuilder(
+    column: $table.isFullTank,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get vendorId =>
+      $composableBuilder(column: $table.vendorId, builder: (column) => column);
+
+  GeneratedColumn<String> get stationName => $composableBuilder(
+    column: $table.stationName,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get locationText => $composableBuilder(
+    column: $table.locationText,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get paymentMethod => $composableBuilder(
+    column: $table.paymentMethod,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get note =>
+      $composableBuilder(column: $table.note, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get updatedAt =>
+      $composableBuilder(column: $table.updatedAt, builder: (column) => column);
+
+  $$VehiclesTableAnnotationComposer get vehicleId {
+    final $$VehiclesTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.vehicleId,
+      referencedTable: $db.vehicles,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$VehiclesTableAnnotationComposer(
+            $db: $db,
+            $table: $db.vehicles,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$FuelEntriesTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $FuelEntriesTable,
+          FuelEntryRow,
+          $$FuelEntriesTableFilterComposer,
+          $$FuelEntriesTableOrderingComposer,
+          $$FuelEntriesTableAnnotationComposer,
+          $$FuelEntriesTableCreateCompanionBuilder,
+          $$FuelEntriesTableUpdateCompanionBuilder,
+          (FuelEntryRow, $$FuelEntriesTableReferences),
+          FuelEntryRow,
+          PrefetchHooks Function({bool vehicleId})
+        > {
+  $$FuelEntriesTableTableManager(_$AppDatabase db, $FuelEntriesTable table)
+    : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$FuelEntriesTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$FuelEntriesTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$FuelEntriesTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<String> id = const Value.absent(),
+                Value<String> vehicleId = const Value.absent(),
+                Value<DateTime> entryDateTime = const Value.absent(),
+                Value<int> odometer = const Value.absent(),
+                Value<String> fuelType = const Value.absent(),
+                Value<int> quantityMl = const Value.absent(),
+                Value<int?> pricePerUnitPaisa = const Value.absent(),
+                Value<int> totalCostPaisa = const Value.absent(),
+                Value<bool> isFullTank = const Value.absent(),
+                Value<String?> vendorId = const Value.absent(),
+                Value<String?> stationName = const Value.absent(),
+                Value<String?> locationText = const Value.absent(),
+                Value<String?> paymentMethod = const Value.absent(),
+                Value<String?> note = const Value.absent(),
+                Value<DateTime> createdAt = const Value.absent(),
+                Value<DateTime> updatedAt = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => FuelEntriesCompanion(
+                id: id,
+                vehicleId: vehicleId,
+                entryDateTime: entryDateTime,
+                odometer: odometer,
+                fuelType: fuelType,
+                quantityMl: quantityMl,
+                pricePerUnitPaisa: pricePerUnitPaisa,
+                totalCostPaisa: totalCostPaisa,
+                isFullTank: isFullTank,
+                vendorId: vendorId,
+                stationName: stationName,
+                locationText: locationText,
+                paymentMethod: paymentMethod,
+                note: note,
+                createdAt: createdAt,
+                updatedAt: updatedAt,
+                rowid: rowid,
+              ),
+          createCompanionCallback:
+              ({
+                required String id,
+                required String vehicleId,
+                required DateTime entryDateTime,
+                required int odometer,
+                required String fuelType,
+                required int quantityMl,
+                Value<int?> pricePerUnitPaisa = const Value.absent(),
+                required int totalCostPaisa,
+                Value<bool> isFullTank = const Value.absent(),
+                Value<String?> vendorId = const Value.absent(),
+                Value<String?> stationName = const Value.absent(),
+                Value<String?> locationText = const Value.absent(),
+                Value<String?> paymentMethod = const Value.absent(),
+                Value<String?> note = const Value.absent(),
+                required DateTime createdAt,
+                required DateTime updatedAt,
+                Value<int> rowid = const Value.absent(),
+              }) => FuelEntriesCompanion.insert(
+                id: id,
+                vehicleId: vehicleId,
+                entryDateTime: entryDateTime,
+                odometer: odometer,
+                fuelType: fuelType,
+                quantityMl: quantityMl,
+                pricePerUnitPaisa: pricePerUnitPaisa,
+                totalCostPaisa: totalCostPaisa,
+                isFullTank: isFullTank,
+                vendorId: vendorId,
+                stationName: stationName,
+                locationText: locationText,
+                paymentMethod: paymentMethod,
+                note: note,
+                createdAt: createdAt,
+                updatedAt: updatedAt,
+                rowid: rowid,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map(
+                (e) => (
+                  e.readTable<$FuelEntriesTable, FuelEntryRow>(table),
+                  $$FuelEntriesTableReferences(db, table, e),
+                ),
+              )
+              .toList(),
+          prefetchHooksCallback: ({vehicleId = false}) {
+            return PrefetchHooks(
+              db: db,
+              explicitlyWatchedTables: [],
+              addJoins:
+                  <
+                    T extends TableManagerState<
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic
+                    >
+                  >(state) {
+                    if (vehicleId) {
+                      state = state.withJoin(
+                        currentTable: table,
+                        currentColumn: table.vehicleId,
+                        referencedTable: $$FuelEntriesTableReferences
+                            ._vehicleIdTable(db),
+                        referencedColumn: $$FuelEntriesTableReferences
+                            ._vehicleIdTable(db)
+                            .id,
+                      ) as T;
+                    }
+
+                    return state;
+                  },
+              getPrefetchedDataCallback: (items) async {
+                return [];
+              },
+            );
+          },
+        ),
+      );
+}
+
+typedef $$FuelEntriesTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $FuelEntriesTable,
+      FuelEntryRow,
+      $$FuelEntriesTableFilterComposer,
+      $$FuelEntriesTableOrderingComposer,
+      $$FuelEntriesTableAnnotationComposer,
+      $$FuelEntriesTableCreateCompanionBuilder,
+      $$FuelEntriesTableUpdateCompanionBuilder,
+      (FuelEntryRow, $$FuelEntriesTableReferences),
+      FuelEntryRow,
+      PrefetchHooks Function({bool vehicleId})
+    >;
 
 class $AppDatabaseManager {
   final _$AppDatabase _db;
@@ -3272,4 +4960,6 @@ class $AppDatabaseManager {
       $$VehiclesTableTableManager(_db, _db.vehicles);
   $$OdometerEntriesTableTableManager get odometerEntries =>
       $$OdometerEntriesTableTableManager(_db, _db.odometerEntries);
+  $$FuelEntriesTableTableManager get fuelEntries =>
+      $$FuelEntriesTableTableManager(_db, _db.fuelEntries);
 }

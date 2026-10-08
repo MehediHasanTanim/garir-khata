@@ -47,7 +47,10 @@ class MainShell extends ConsumerWidget {
                 ListTile(
                   leading: const Icon(Icons.local_gas_station_outlined),
                   title: Text(l10n.addFuel),
-                  onTap: () => Navigator.of(context).pop(),
+                  onTap: () {
+                    Navigator.of(context).pop();
+                    context.push('/fuel/add');
+                  },
                 ),
                 ListTile(
                   leading: const Icon(Icons.payments_outlined),
@@ -67,7 +70,10 @@ class MainShell extends ConsumerWidget {
                 ListTile(
                   leading: const Icon(Icons.speed_outlined),
                   title: Text(l10n.updateOdometer),
-                  onTap: () => Navigator.of(context).pop(),
+                  onTap: () {
+                    Navigator.of(context).pop();
+                    context.push('/odometer/update');
+                  },
                 ),
                 ListTile(
                   leading: const Icon(Icons.description_outlined),

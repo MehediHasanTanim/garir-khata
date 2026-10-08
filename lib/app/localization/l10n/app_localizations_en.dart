@@ -422,4 +422,143 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get ownershipOther => 'Other';
+
+  @override
+  String get fuelHistory => 'Fuel History';
+
+  @override
+  String get fuelDetails => 'Fuel Details';
+
+  @override
+  String get editFuel => 'Edit Fuel';
+
+  @override
+  String get fuelHistoryEmpty => 'No fuel records yet';
+
+  @override
+  String get fuelHistoryEmptyHint =>
+      'Add your first refill to start tracking mileage.';
+
+  @override
+  String get saveFuelEntry => 'Save Fuel Entry';
+
+  @override
+  String get fullTankLabel => 'Filled to full tank?';
+
+  @override
+  String get fullTankHelper =>
+      'Use full-tank entries for more accurate mileage.';
+
+  @override
+  String get fullTankBadge => 'Full tank';
+
+  @override
+  String get moreDetails => 'More details';
+
+  @override
+  String get fieldDateTime => 'Date & time';
+
+  @override
+  String get fieldLiters => 'Fuel quantity';
+
+  @override
+  String get fieldTotalAmount => 'Total amount';
+
+  @override
+  String get fieldPricePerLiter => 'Price per liter';
+
+  @override
+  String get fieldStation => 'Fuel station';
+
+  @override
+  String get fieldLocation => 'Location';
+
+  @override
+  String get fieldPayment => 'Payment method';
+
+  @override
+  String get fieldNotesOptional => 'Notes (optional)';
+
+  @override
+  String get fieldNewOdometer => 'New reading';
+
+  @override
+  String get calculated => 'Calculated';
+
+  @override
+  String get totalFuelSpend => 'Total fuel spend';
+
+  @override
+  String get totalLiters => 'Total liters';
+
+  @override
+  String get paymentCash => 'Cash';
+
+  @override
+  String get paymentCard => 'Card';
+
+  @override
+  String get paymentMobile => 'Mobile banking';
+
+  @override
+  String get paymentOther => 'Other';
+
+  @override
+  String get duplicateFuelTitle => 'Similar entry found';
+
+  @override
+  String get duplicateFuelMessage =>
+      'A similar fuel entry already exists. Save anyway?';
+
+  @override
+  String get saveAnyway => 'Save anyway';
+
+  @override
+  String get deleteFuelTitle => 'Delete this fuel entry?';
+
+  @override
+  String get deleteFuelMessage =>
+      'This will also update odometer and mileage calculations.';
+
+  @override
+  String get odometerHistory => 'Odometer History';
+
+  @override
+  String get odometerHistoryEmpty => 'No odometer readings yet';
+
+  @override
+  String get odometerLowerTitle =>
+      'This reading is lower than the previous reading';
+
+  @override
+  String odometerLowerMessage(String previous, String entered) {
+    return 'Previous: $previous km\nEntered: $entered km';
+  }
+
+  @override
+  String get odometerCorrectValue => 'Correct value';
+
+  @override
+  String get odometerWasReset => 'Odometer was reset/replaced';
+
+  @override
+  String get odometerSourceManual => 'Manual';
+
+  @override
+  String get odometerSourceFuel => 'Fuel';
+
+  @override
+  String get odometerSourceService => 'Service';
+
+  @override
+  String get odometerSourceRepair => 'Repair';
+
+  @override
+  String get odometerSourceOil => 'Oil change';
+
+  @override
+  String get odometerSourceReset => 'Reset';
+
+  @override
+  String get odometerSourceImport => 'Import';
 }

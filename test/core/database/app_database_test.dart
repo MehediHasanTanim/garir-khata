@@ -15,12 +15,12 @@ void main() {
     await db.close();
   });
 
-  test('database initializes with schema version 1', () async {
-    expect(db.schemaVersion, 1);
+  test('database initializes with schema version 2', () async {
+    expect(db.schemaVersion, 2);
     final QueryRow row = await db
         .customSelect('PRAGMA user_version')
         .getSingle();
-    expect(row.read<int>('user_version'), 1);
+    expect(row.read<int>('user_version'), 2);
   });
 
   test('settings insert and read works', () async {
@@ -88,5 +88,6 @@ void main() {
     expect(names.contains('settings'), isTrue);
     expect(names.contains('vehicles'), isTrue);
     expect(names.contains('odometer_entries'), isTrue);
+    expect(names.contains('fuel_entries'), isTrue);
   });
 }

@@ -907,6 +907,270 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Other'**
   String get ownershipOther;
+
+  /// No description provided for @fuelHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Fuel History'**
+  String get fuelHistory;
+
+  /// No description provided for @fuelDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Fuel Details'**
+  String get fuelDetails;
+
+  /// No description provided for @editFuel.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Fuel'**
+  String get editFuel;
+
+  /// No description provided for @fuelHistoryEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No fuel records yet'**
+  String get fuelHistoryEmpty;
+
+  /// No description provided for @fuelHistoryEmptyHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Add your first refill to start tracking mileage.'**
+  String get fuelHistoryEmptyHint;
+
+  /// No description provided for @saveFuelEntry.
+  ///
+  /// In en, this message translates to:
+  /// **'Save Fuel Entry'**
+  String get saveFuelEntry;
+
+  /// No description provided for @fullTankLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Filled to full tank?'**
+  String get fullTankLabel;
+
+  /// No description provided for @fullTankHelper.
+  ///
+  /// In en, this message translates to:
+  /// **'Use full-tank entries for more accurate mileage.'**
+  String get fullTankHelper;
+
+  /// No description provided for @fullTankBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'Full tank'**
+  String get fullTankBadge;
+
+  /// No description provided for @moreDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'More details'**
+  String get moreDetails;
+
+  /// No description provided for @fieldDateTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Date & time'**
+  String get fieldDateTime;
+
+  /// No description provided for @fieldLiters.
+  ///
+  /// In en, this message translates to:
+  /// **'Fuel quantity'**
+  String get fieldLiters;
+
+  /// No description provided for @fieldTotalAmount.
+  ///
+  /// In en, this message translates to:
+  /// **'Total amount'**
+  String get fieldTotalAmount;
+
+  /// No description provided for @fieldPricePerLiter.
+  ///
+  /// In en, this message translates to:
+  /// **'Price per liter'**
+  String get fieldPricePerLiter;
+
+  /// No description provided for @fieldStation.
+  ///
+  /// In en, this message translates to:
+  /// **'Fuel station'**
+  String get fieldStation;
+
+  /// No description provided for @fieldLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Location'**
+  String get fieldLocation;
+
+  /// No description provided for @fieldPayment.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment method'**
+  String get fieldPayment;
+
+  /// No description provided for @fieldNotesOptional.
+  ///
+  /// In en, this message translates to:
+  /// **'Notes (optional)'**
+  String get fieldNotesOptional;
+
+  /// No description provided for @fieldNewOdometer.
+  ///
+  /// In en, this message translates to:
+  /// **'New reading'**
+  String get fieldNewOdometer;
+
+  /// No description provided for @calculated.
+  ///
+  /// In en, this message translates to:
+  /// **'Calculated'**
+  String get calculated;
+
+  /// No description provided for @totalFuelSpend.
+  ///
+  /// In en, this message translates to:
+  /// **'Total fuel spend'**
+  String get totalFuelSpend;
+
+  /// No description provided for @totalLiters.
+  ///
+  /// In en, this message translates to:
+  /// **'Total liters'**
+  String get totalLiters;
+
+  /// No description provided for @paymentCash.
+  ///
+  /// In en, this message translates to:
+  /// **'Cash'**
+  String get paymentCash;
+
+  /// No description provided for @paymentCard.
+  ///
+  /// In en, this message translates to:
+  /// **'Card'**
+  String get paymentCard;
+
+  /// No description provided for @paymentMobile.
+  ///
+  /// In en, this message translates to:
+  /// **'Mobile banking'**
+  String get paymentMobile;
+
+  /// No description provided for @paymentOther.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get paymentOther;
+
+  /// No description provided for @duplicateFuelTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Similar entry found'**
+  String get duplicateFuelTitle;
+
+  /// No description provided for @duplicateFuelMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'A similar fuel entry already exists. Save anyway?'**
+  String get duplicateFuelMessage;
+
+  /// No description provided for @saveAnyway.
+  ///
+  /// In en, this message translates to:
+  /// **'Save anyway'**
+  String get saveAnyway;
+
+  /// No description provided for @deleteFuelTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete this fuel entry?'**
+  String get deleteFuelTitle;
+
+  /// No description provided for @deleteFuelMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'This will also update odometer and mileage calculations.'**
+  String get deleteFuelMessage;
+
+  /// No description provided for @odometerHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Odometer History'**
+  String get odometerHistory;
+
+  /// No description provided for @odometerHistoryEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No odometer readings yet'**
+  String get odometerHistoryEmpty;
+
+  /// No description provided for @odometerLowerTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'This reading is lower than the previous reading'**
+  String get odometerLowerTitle;
+
+  /// No description provided for @odometerLowerMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Previous: {previous} km\nEntered: {entered} km'**
+  String odometerLowerMessage(String previous, String entered);
+
+  /// No description provided for @odometerCorrectValue.
+  ///
+  /// In en, this message translates to:
+  /// **'Correct value'**
+  String get odometerCorrectValue;
+
+  /// No description provided for @odometerWasReset.
+  ///
+  /// In en, this message translates to:
+  /// **'Odometer was reset/replaced'**
+  String get odometerWasReset;
+
+  /// No description provided for @odometerSourceManual.
+  ///
+  /// In en, this message translates to:
+  /// **'Manual'**
+  String get odometerSourceManual;
+
+  /// No description provided for @odometerSourceFuel.
+  ///
+  /// In en, this message translates to:
+  /// **'Fuel'**
+  String get odometerSourceFuel;
+
+  /// No description provided for @odometerSourceService.
+  ///
+  /// In en, this message translates to:
+  /// **'Service'**
+  String get odometerSourceService;
+
+  /// No description provided for @odometerSourceRepair.
+  ///
+  /// In en, this message translates to:
+  /// **'Repair'**
+  String get odometerSourceRepair;
+
+  /// No description provided for @odometerSourceOil.
+  ///
+  /// In en, this message translates to:
+  /// **'Oil change'**
+  String get odometerSourceOil;
+
+  /// No description provided for @odometerSourceReset.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset'**
+  String get odometerSourceReset;
+
+  /// No description provided for @odometerSourceImport.
+  ///
+  /// In en, this message translates to:
+  /// **'Import'**
+  String get odometerSourceImport;
 }
 
 class _AppLocalizationsDelegate

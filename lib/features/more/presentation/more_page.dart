@@ -24,6 +24,16 @@ class MorePage extends ConsumerWidget {
             title: Text(l10n.vehicles),
             onTap: () => context.push('/vehicles'),
           ),
+          ListTile(
+            leading: const Icon(Icons.local_gas_station_outlined),
+            title: Text(l10n.fuelHistory),
+            onTap: () => context.push('/fuel'),
+          ),
+          ListTile(
+            leading: const Icon(Icons.speed_outlined),
+            title: Text(l10n.odometerHistory),
+            onTap: () => context.push('/odometer/history'),
+          ),
           const Divider(),
           Text(l10n.language, style: Theme.of(context).textTheme.titleMedium),
           const SizedBox(height: AppSpacing.xs),
