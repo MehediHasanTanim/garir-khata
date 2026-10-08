@@ -1166,4 +1166,144 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get snoozeOneWeek => '1 week';
+
+  @override
+  String get oil => 'Oil';
+
+  @override
+  String get tyres => 'Tyres';
+
+  @override
+  String get odometer => 'Odometer';
+
+  @override
+  String get commonClear => 'Clear';
+
+  @override
+  String get commonApply => 'Apply';
+
+  @override
+  String get historyEmpty => 'No history yet';
+
+  @override
+  String get historyFilters => 'Filters';
+
+  @override
+  String get reportEmpty => 'No data for this period';
+
+  @override
+  String get monthlyExpenseReport => 'Monthly Expense';
+
+  @override
+  String get yearlyExpenseReport => 'Yearly Expense';
+
+  @override
+  String get fuelReport => 'Fuel Report';
+
+  @override
+  String get mileageReport => 'Mileage Report';
+
+  @override
+  String get costPerKmReport => 'Cost per km';
+
+  @override
+  String get maintenanceReport => 'Maintenance Report';
+
+  @override
+  String get repairReport => 'Repair Report';
+
+  @override
+  String get annualTotal => 'Annual total';
+
+  @override
+  String get monthlyAverage => 'Monthly average';
+
+  @override
+  String get highestMonth => 'Highest month';
+
+  @override
+  String get monthlyBreakdown => 'Monthly breakdown';
+
+  @override
+  String get categoryBreakdown => 'Category breakdown';
+
+  @override
+  String get averagePricePerLiter => 'Avg price/L';
+
+  @override
+  String get averageMileage => 'Avg mileage';
+
+  @override
+  String get fuelCostPerKm => 'Fuel cost/km';
+
+  @override
+  String get monthlyFuelCost => 'Monthly fuel cost';
+
+  @override
+  String get fuelPriceTrend => 'Fuel price trend';
+
+  @override
+  String get latestMileage => 'Latest';
+
+  @override
+  String get mileageLast30Days => 'Last 30 days';
+
+  @override
+  String get mileageLast90Days => 'Last 90 days';
+
+  @override
+  String get lifetimeMileage => 'Lifetime';
+
+  @override
+  String get bestMileage => 'Best';
+
+  @override
+  String get lowestMileage => 'Lowest';
+
+  @override
+  String get mileageByRefill => 'Mileage by refill';
+
+  @override
+  String get costPerKmFuelOnly => 'Fuel only';
+
+  @override
+  String get costPerKmOperating => 'Operating';
+
+  @override
+  String get costPerKmCustom => 'Custom';
+
+  @override
+  String get selectCategories => 'Select categories';
+
+  @override
+  String get howCalculated => 'How this is calculated';
+
+  @override
+  String get totalServiceCost => 'Total service cost';
+
+  @override
+  String get serviceCount => 'Service count';
+
+  @override
+  String get averageServiceCost => 'Average service cost';
+
+  @override
+  String get commonServiceCategories => 'Common categories';
+
+  @override
+  String get totalRepairCost => 'Total repair cost';
+
+  @override
+  String get repairCount => 'Repair count';
+
+  @override
+  String get topRepairCategories => 'Top categories';
+
+  @override
+  String get repeatedIssues => 'Repeated issues';
+
+  @override
+  String repeatedIssuesHint(int count) {
+    return 'Same category ≥ $count times in this period';
+  }
 }

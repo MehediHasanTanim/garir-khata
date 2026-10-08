@@ -61,3 +61,4 @@ lib/
 - ✅ Sprint 5 — Maintenance & engine oil
 - ✅ Sprint 6 — Repairs, parts, tyres & battery
 - ✅ Sprint 7 — Documents, reminders & notifications
+- ✅ Sprint 8 — Reports, analytics & unified history

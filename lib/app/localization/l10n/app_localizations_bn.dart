@@ -1161,4 +1161,144 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get snoozeOneWeek => '১ সপ্তাহ';
+
+  @override
+  String get oil => 'তেল';
+
+  @override
+  String get tyres => 'টায়ার';
+
+  @override
+  String get odometer => 'ওডোমিটার';
+
+  @override
+  String get commonClear => 'মুছুন';
+
+  @override
+  String get commonApply => 'প্রয়োগ';
+
+  @override
+  String get historyEmpty => 'এখনো কোনো ইতিহাস নেই';
+
+  @override
+  String get historyFilters => 'ফিল্টার';
+
+  @override
+  String get reportEmpty => 'এই সময়ের কোনো ডেটা নেই';
+
+  @override
+  String get monthlyExpenseReport => 'মাসিক খরচ';
+
+  @override
+  String get yearlyExpenseReport => 'বার্ষিক খরচ';
+
+  @override
+  String get fuelReport => 'জ্বালানি রিপোর্ট';
+
+  @override
+  String get mileageReport => 'মাইলেজ রিপোর্ট';
+
+  @override
+  String get costPerKmReport => 'প্রতি কিমিতে খরচ';
+
+  @override
+  String get maintenanceReport => 'রক্ষণাবেক্ষণ রিপোর্ট';
+
+  @override
+  String get repairReport => 'মেরামত রিপোর্ট';
+
+  @override
+  String get annualTotal => 'বার্ষিক মোট';
+
+  @override
+  String get monthlyAverage => 'মাসিক গড়';
+
+  @override
+  String get highestMonth => 'সর্বোচ্চ মাস';
+
+  @override
+  String get monthlyBreakdown => 'মাসিক বিভাজন';
+
+  @override
+  String get categoryBreakdown => 'ক্যাটাগরি বিভাজন';
+
+  @override
+  String get averagePricePerLiter => 'গড় দাম/লি';
+
+  @override
+  String get averageMileage => 'গড় মাইলেজ';
+
+  @override
+  String get fuelCostPerKm => 'জ্বালানি খরচ/কিমি';
+
+  @override
+  String get monthlyFuelCost => 'মাসিক জ্বালানি খরচ';
+
+  @override
+  String get fuelPriceTrend => 'জ্বালানির দামের ধারা';
+
+  @override
+  String get latestMileage => 'সর্বশেষ';
+
+  @override
+  String get mileageLast30Days => 'গত ৩০ দিন';
+
+  @override
+  String get mileageLast90Days => 'গত ৯০ দিন';
+
+  @override
+  String get lifetimeMileage => 'সর্বমোট';
+
+  @override
+  String get bestMileage => 'সেরা';
+
+  @override
+  String get lowestMileage => 'সর্বনিম্ন';
+
+  @override
+  String get mileageByRefill => 'রিফিল অনুযায়ী মাইলেজ';
+
+  @override
+  String get costPerKmFuelOnly => 'শুধু জ্বালানি';
+
+  @override
+  String get costPerKmOperating => 'পরিচালন';
+
+  @override
+  String get costPerKmCustom => 'কাস্টম';
+
+  @override
+  String get selectCategories => 'ক্যাটাগরি বেছে নিন';
+
+  @override
+  String get howCalculated => 'কীভাবে হিসাব হয়';
+
+  @override
+  String get totalServiceCost => 'মোট সার্ভিস খরচ';
+
+  @override
+  String get serviceCount => 'সার্ভিসের সংখ্যা';
+
+  @override
+  String get averageServiceCost => 'গড় সার্ভিস খরচ';
+
+  @override
+  String get commonServiceCategories => 'সাধারণ ক্যাটাগরি';
+
+  @override
+  String get totalRepairCost => 'মোট মেরামত খরচ';
+
+  @override
+  String get repairCount => 'মেরামতের সংখ্যা';
+
+  @override
+  String get topRepairCategories => 'শীর্ষ ক্যাটাগরি';
+
+  @override
+  String get repeatedIssues => 'পুনরাবৃত্ত সমস্যা';
+
+  @override
+  String repeatedIssuesHint(int count) {
+    return 'একই ক্যাটাগরি এই সময়ে ≥ $count বার';
+  }
 }

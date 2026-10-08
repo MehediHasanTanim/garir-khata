@@ -6,6 +6,7 @@ import 'package:garir_khata/features/dashboard/domain/dashboard_summary.dart';
 import 'package:garir_khata/features/expenses/application/expense_providers.dart';
 import 'package:garir_khata/features/fuel/application/fuel_providers.dart';
 import 'package:garir_khata/features/odometer/application/odometer_providers.dart';
+import 'package:garir_khata/features/reports/application/report_providers.dart';
 import 'package:garir_khata/features/vehicles/application/vehicle_providers.dart';
 
 final dashboardServiceProvider = Provider<DashboardService>((ref) {
@@ -13,6 +14,7 @@ final dashboardServiceProvider = Provider<DashboardService>((ref) {
     fuelRepository: ref.watch(fuelRepositoryProvider),
     expenseRepository: ref.watch(expenseRepositoryProvider),
     odometerRepository: ref.watch(odometerRepositoryProvider),
+    reportRepository: ref.watch(reportRepositoryProvider),
   );
 });
 

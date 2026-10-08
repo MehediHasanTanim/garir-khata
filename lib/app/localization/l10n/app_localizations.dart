@@ -2353,6 +2353,282 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'1 week'**
   String get snoozeOneWeek;
+
+  /// No description provided for @oil.
+  ///
+  /// In en, this message translates to:
+  /// **'Oil'**
+  String get oil;
+
+  /// No description provided for @tyres.
+  ///
+  /// In en, this message translates to:
+  /// **'Tyres'**
+  String get tyres;
+
+  /// No description provided for @odometer.
+  ///
+  /// In en, this message translates to:
+  /// **'Odometer'**
+  String get odometer;
+
+  /// No description provided for @commonClear.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear'**
+  String get commonClear;
+
+  /// No description provided for @commonApply.
+  ///
+  /// In en, this message translates to:
+  /// **'Apply'**
+  String get commonApply;
+
+  /// No description provided for @historyEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No history yet'**
+  String get historyEmpty;
+
+  /// No description provided for @historyFilters.
+  ///
+  /// In en, this message translates to:
+  /// **'Filters'**
+  String get historyFilters;
+
+  /// No description provided for @reportEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No data for this period'**
+  String get reportEmpty;
+
+  /// No description provided for @monthlyExpenseReport.
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly Expense'**
+  String get monthlyExpenseReport;
+
+  /// No description provided for @yearlyExpenseReport.
+  ///
+  /// In en, this message translates to:
+  /// **'Yearly Expense'**
+  String get yearlyExpenseReport;
+
+  /// No description provided for @fuelReport.
+  ///
+  /// In en, this message translates to:
+  /// **'Fuel Report'**
+  String get fuelReport;
+
+  /// No description provided for @mileageReport.
+  ///
+  /// In en, this message translates to:
+  /// **'Mileage Report'**
+  String get mileageReport;
+
+  /// No description provided for @costPerKmReport.
+  ///
+  /// In en, this message translates to:
+  /// **'Cost per km'**
+  String get costPerKmReport;
+
+  /// No description provided for @maintenanceReport.
+  ///
+  /// In en, this message translates to:
+  /// **'Maintenance Report'**
+  String get maintenanceReport;
+
+  /// No description provided for @repairReport.
+  ///
+  /// In en, this message translates to:
+  /// **'Repair Report'**
+  String get repairReport;
+
+  /// No description provided for @annualTotal.
+  ///
+  /// In en, this message translates to:
+  /// **'Annual total'**
+  String get annualTotal;
+
+  /// No description provided for @monthlyAverage.
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly average'**
+  String get monthlyAverage;
+
+  /// No description provided for @highestMonth.
+  ///
+  /// In en, this message translates to:
+  /// **'Highest month'**
+  String get highestMonth;
+
+  /// No description provided for @monthlyBreakdown.
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly breakdown'**
+  String get monthlyBreakdown;
+
+  /// No description provided for @categoryBreakdown.
+  ///
+  /// In en, this message translates to:
+  /// **'Category breakdown'**
+  String get categoryBreakdown;
+
+  /// No description provided for @averagePricePerLiter.
+  ///
+  /// In en, this message translates to:
+  /// **'Avg price/L'**
+  String get averagePricePerLiter;
+
+  /// No description provided for @averageMileage.
+  ///
+  /// In en, this message translates to:
+  /// **'Avg mileage'**
+  String get averageMileage;
+
+  /// No description provided for @fuelCostPerKm.
+  ///
+  /// In en, this message translates to:
+  /// **'Fuel cost/km'**
+  String get fuelCostPerKm;
+
+  /// No description provided for @monthlyFuelCost.
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly fuel cost'**
+  String get monthlyFuelCost;
+
+  /// No description provided for @fuelPriceTrend.
+  ///
+  /// In en, this message translates to:
+  /// **'Fuel price trend'**
+  String get fuelPriceTrend;
+
+  /// No description provided for @latestMileage.
+  ///
+  /// In en, this message translates to:
+  /// **'Latest'**
+  String get latestMileage;
+
+  /// No description provided for @mileageLast30Days.
+  ///
+  /// In en, this message translates to:
+  /// **'Last 30 days'**
+  String get mileageLast30Days;
+
+  /// No description provided for @mileageLast90Days.
+  ///
+  /// In en, this message translates to:
+  /// **'Last 90 days'**
+  String get mileageLast90Days;
+
+  /// No description provided for @lifetimeMileage.
+  ///
+  /// In en, this message translates to:
+  /// **'Lifetime'**
+  String get lifetimeMileage;
+
+  /// No description provided for @bestMileage.
+  ///
+  /// In en, this message translates to:
+  /// **'Best'**
+  String get bestMileage;
+
+  /// No description provided for @lowestMileage.
+  ///
+  /// In en, this message translates to:
+  /// **'Lowest'**
+  String get lowestMileage;
+
+  /// No description provided for @mileageByRefill.
+  ///
+  /// In en, this message translates to:
+  /// **'Mileage by refill'**
+  String get mileageByRefill;
+
+  /// No description provided for @costPerKmFuelOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'Fuel only'**
+  String get costPerKmFuelOnly;
+
+  /// No description provided for @costPerKmOperating.
+  ///
+  /// In en, this message translates to:
+  /// **'Operating'**
+  String get costPerKmOperating;
+
+  /// No description provided for @costPerKmCustom.
+  ///
+  /// In en, this message translates to:
+  /// **'Custom'**
+  String get costPerKmCustom;
+
+  /// No description provided for @selectCategories.
+  ///
+  /// In en, this message translates to:
+  /// **'Select categories'**
+  String get selectCategories;
+
+  /// No description provided for @howCalculated.
+  ///
+  /// In en, this message translates to:
+  /// **'How this is calculated'**
+  String get howCalculated;
+
+  /// No description provided for @totalServiceCost.
+  ///
+  /// In en, this message translates to:
+  /// **'Total service cost'**
+  String get totalServiceCost;
+
+  /// No description provided for @serviceCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Service count'**
+  String get serviceCount;
+
+  /// No description provided for @averageServiceCost.
+  ///
+  /// In en, this message translates to:
+  /// **'Average service cost'**
+  String get averageServiceCost;
+
+  /// No description provided for @commonServiceCategories.
+  ///
+  /// In en, this message translates to:
+  /// **'Common categories'**
+  String get commonServiceCategories;
+
+  /// No description provided for @totalRepairCost.
+  ///
+  /// In en, this message translates to:
+  /// **'Total repair cost'**
+  String get totalRepairCost;
+
+  /// No description provided for @repairCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Repair count'**
+  String get repairCount;
+
+  /// No description provided for @topRepairCategories.
+  ///
+  /// In en, this message translates to:
+  /// **'Top categories'**
+  String get topRepairCategories;
+
+  /// No description provided for @repeatedIssues.
+  ///
+  /// In en, this message translates to:
+  /// **'Repeated issues'**
+  String get repeatedIssues;
+
+  /// No description provided for @repeatedIssuesHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Same category ≥ {count} times in this period'**
+  String repeatedIssuesHint(int count);
 }
 
 class _AppLocalizationsDelegate

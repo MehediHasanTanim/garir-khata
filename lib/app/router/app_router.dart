@@ -42,7 +42,14 @@ import 'package:garir_khata/features/parts/presentation/vehicle_parts_page.dart'
 import 'package:garir_khata/features/reminders/presentation/add_edit_reminder_page.dart';
 import 'package:garir_khata/features/reminders/presentation/reminder_details_page.dart';
 import 'package:garir_khata/features/reminders/presentation/reminders_page.dart';
+import 'package:garir_khata/features/reports/presentation/cost_per_km_report_page.dart';
+import 'package:garir_khata/features/reports/presentation/fuel_report_page.dart';
+import 'package:garir_khata/features/reports/presentation/maintenance_report_page.dart';
+import 'package:garir_khata/features/reports/presentation/mileage_report_page.dart';
+import 'package:garir_khata/features/reports/presentation/monthly_expense_report_page.dart';
+import 'package:garir_khata/features/reports/presentation/repair_report_page.dart';
 import 'package:garir_khata/features/reports/presentation/reports_page.dart';
+import 'package:garir_khata/features/reports/presentation/yearly_expense_report_page.dart';
 import 'package:garir_khata/features/settings/application/settings_controller.dart';
 import 'package:garir_khata/features/shell/presentation/main_shell.dart';
 import 'package:garir_khata/features/shell/presentation/route_not_found_page.dart';
@@ -141,6 +148,53 @@ final appRouterProvider = Provider<GoRouter>((ref) {
                 path: '/reports',
                 name: 'reports',
                 builder: (context, state) => const ReportsPage(),
+                routes: [
+                  GoRoute(
+                    path: 'monthly',
+                    name: 'reportsMonthly',
+                    parentNavigatorKey: _rootNavigatorKey,
+                    builder: (context, state) =>
+                        const MonthlyExpenseReportPage(),
+                  ),
+                  GoRoute(
+                    path: 'yearly',
+                    name: 'reportsYearly',
+                    parentNavigatorKey: _rootNavigatorKey,
+                    builder: (context, state) =>
+                        const YearlyExpenseReportPage(),
+                  ),
+                  GoRoute(
+                    path: 'fuel',
+                    name: 'reportsFuel',
+                    parentNavigatorKey: _rootNavigatorKey,
+                    builder: (context, state) => const FuelReportPage(),
+                  ),
+                  GoRoute(
+                    path: 'mileage',
+                    name: 'reportsMileage',
+                    parentNavigatorKey: _rootNavigatorKey,
+                    builder: (context, state) => const MileageReportPage(),
+                  ),
+                  GoRoute(
+                    path: 'cost-per-km',
+                    name: 'reportsCostPerKm',
+                    parentNavigatorKey: _rootNavigatorKey,
+                    builder: (context, state) => const CostPerKmReportPage(),
+                  ),
+                  GoRoute(
+                    path: 'maintenance',
+                    name: 'reportsMaintenance',
+                    parentNavigatorKey: _rootNavigatorKey,
+                    builder: (context, state) =>
+                        const MaintenanceReportPage(),
+                  ),
+                  GoRoute(
+                    path: 'repair',
+                    name: 'reportsRepair',
+                    parentNavigatorKey: _rootNavigatorKey,
+                    builder: (context, state) => const RepairReportPage(),
+                  ),
+                ],
               ),
             ],
           ),
