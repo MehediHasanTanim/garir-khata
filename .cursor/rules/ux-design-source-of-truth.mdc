@@ -1,0 +1,40 @@
+---
+description: Strict UX and app icon source of truth from docs/UX — always follow mockups and icons
+alwaysApply: true
+---
+
+# Garir Khata UX & Icons — Source of Truth
+
+When building UI, themes, icons, splash, navigation, forms, empty/error states, or store assets:
+
+1. **Strictly follow** designs and icons in `docs/UX/`.
+2. Do **not** invent alternate visual styles, iconography, or branding.
+3. Before implementing a screen, open the matching mockup PNG under `docs/UX/` (A–T series) and match layout, hierarchy, colors, and components.
+4. For app/launcher icons, use only `docs/UX/Icon-1.png`, `Icon-2.png`, `Icon-3.png` (and derivatives from those assets).
+
+## Canonical references
+
+| Area | Path |
+|---|---|
+| UI spec | `docs/UX/Garir_Khata_Detailed_UI_Specification.md` |
+| Storyboard overview | `docs/UX/Garir Khata Vehicle App Storyboard.png` |
+| Screen mockups | `docs/UX/A.` … `T.` PNG series |
+| App icons | `docs/UX/Icon-1.png`, `Icon-2.png`, `Icon-3.png` |
+
+## Visual identity to preserve
+
+- Brand: **Garir Khata / গাড়ির খাতা**
+- Primary: emerald/teal green (buttons, active nav, success)
+- Icon mark: white motorcycle + spiral notebook/ledger on green gradient; blue mini bar chart on notebook
+- Bottom nav: Home · History · **emphasized Add** · Reports · More
+- Bangla-first labels where mockups show Bangla; bilingual patterns as in mockups
+- Soft scenic Bangladesh-inspired header illustrations where present in mockups
+- Category accents (e.g. fuel / maintenance / repair / other) as shown in mockups — not reinvented
+
+## Related product docs (behavior, not visual override)
+
+- Features: `docs/feature/Garir_Khata_Detailed_Feature_Spec.md`
+- Architecture: `docs/design/Garir_Khata_Technical_Design.md`
+- Sprints: `docs/plan/Garir_Khata_Sprintwise_Technical_Implementation_Plan.md`
+
+If UX mockups and other docs disagree on visuals, **docs/UX wins**.
