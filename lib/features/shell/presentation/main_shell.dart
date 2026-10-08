@@ -77,11 +77,27 @@ class MainShell extends ConsumerWidget {
                   },
                 ),
                 ListTile(
-                  leading: const Icon(Icons.settings_suggest_outlined),
+                  leading: const Icon(Icons.handyman_outlined),
                   title: Text(l10n.addRepair),
                   onTap: () {
                     Navigator.of(context).pop();
-                    context.push('/expenses/add?category=repair');
+                    context.push('/repairs/add');
+                  },
+                ),
+                ListTile(
+                  leading: const Icon(Icons.trip_origin),
+                  title: Text(l10n.addTyre),
+                  onTap: () {
+                    Navigator.of(context).pop();
+                    context.push('/tyres/add');
+                  },
+                ),
+                ListTile(
+                  leading: const Icon(Icons.battery_charging_full_outlined),
+                  title: Text(l10n.addBattery),
+                  onTap: () {
+                    Navigator.of(context).pop();
+                    context.push('/batteries/add');
                   },
                 ),
                 ListTile(

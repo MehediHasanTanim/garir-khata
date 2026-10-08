@@ -816,4 +816,215 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get overdue => 'Overdue';
+
+  @override
+  String get repairHistory => 'Repair History';
+
+  @override
+  String get repairDetails => 'Repair Details';
+
+  @override
+  String get saveRepair => 'Save Repair';
+
+  @override
+  String get repairHistoryEmpty => 'No repairs recorded yet';
+
+  @override
+  String get repairHistoryEmptyHint =>
+      'Log repairs to track parts, warranty and costs.';
+
+  @override
+  String get repairCategory => 'Category';
+
+  @override
+  String get repairParts => 'Parts used';
+
+  @override
+  String get addRepairPart => 'Add part';
+
+  @override
+  String get fieldProblem => 'Problem';
+
+  @override
+  String get fieldDiagnosis => 'Diagnosis';
+
+  @override
+  String get fieldWorkPerformed => 'Work performed';
+
+  @override
+  String get fieldWarrantyEnd => 'Warranty end date';
+
+  @override
+  String get fieldFollowUpDate => 'Follow-up date';
+
+  @override
+  String get fieldPartName => 'Part name';
+
+  @override
+  String get fieldPartNumber => 'Part number';
+
+  @override
+  String get fieldQuantity => 'Quantity';
+
+  @override
+  String get fieldUnitCost => 'Unit cost';
+
+  @override
+  String get fieldCost => 'Cost';
+
+  @override
+  String get fieldInstalledDate => 'Installed date';
+
+  @override
+  String get fieldIntervalKm => 'Replacement interval (km)';
+
+  @override
+  String get fieldIntervalDays => 'Replacement interval (days)';
+
+  @override
+  String get fieldSpecification => 'Specification';
+
+  @override
+  String get fieldStatus => 'Status';
+
+  @override
+  String get fieldTyreSize => 'Tyre size';
+
+  @override
+  String get totalRepairs => 'Total repairs';
+
+  @override
+  String get deleteRepairTitle => 'Delete this repair?';
+
+  @override
+  String get deleteRepairMessage => 'Linked expense will also be removed.';
+
+  @override
+  String get vehicleParts => 'Vehicle Parts';
+
+  @override
+  String get vehiclePartDetails => 'Part Details';
+
+  @override
+  String get addVehiclePart => 'Add Part';
+
+  @override
+  String get saveVehiclePart => 'Save Part';
+
+  @override
+  String get vehiclePartsEmpty => 'No parts tracked yet';
+
+  @override
+  String get vehiclePartsEmptyHint =>
+      'Track standalone part replacements and intervals.';
+
+  @override
+  String get invalidReplacementInterval =>
+      'Replacement interval must be positive.';
+
+  @override
+  String get nextDue => 'Next due';
+
+  @override
+  String get tyresTitle => 'Tyres';
+
+  @override
+  String get tyreDetails => 'Tyre Details';
+
+  @override
+  String get addTyre => 'Add Tyre';
+
+  @override
+  String get saveTyre => 'Save Tyre';
+
+  @override
+  String get tyresEmpty => 'No tyres recorded';
+
+  @override
+  String get tyresEmptyHint =>
+      'Add tyres by position to track lifecycle events.';
+
+  @override
+  String get tyrePositions => 'Positions';
+
+  @override
+  String get tyrePosition => 'Position';
+
+  @override
+  String get activeTyres => 'Active tyres';
+
+  @override
+  String get selectTyrePosition => 'Select a tyre position';
+
+  @override
+  String get tyreEvents => 'Lifecycle events';
+
+  @override
+  String get tyreEventInstalled => 'Installed';
+
+  @override
+  String get tyreEventRotated => 'Rotated';
+
+  @override
+  String get tyreEventInspected => 'Inspected';
+
+  @override
+  String get tyreEventRepaired => 'Repaired';
+
+  @override
+  String get tyreEventReplaced => 'Replaced';
+
+  @override
+  String get tyreEventRemoved => 'Removed';
+
+  @override
+  String get tyreActionInspect => 'Inspect';
+
+  @override
+  String get tyreActionRepair => 'Repair';
+
+  @override
+  String get tyreActionRotate => 'Rotate';
+
+  @override
+  String get tyreActionReplace => 'Replace';
+
+  @override
+  String get batteryTitle => 'Battery';
+
+  @override
+  String get batteryDetails => 'Battery Details';
+
+  @override
+  String get addBattery => 'Add Battery';
+
+  @override
+  String get replaceBattery => 'Replace Battery';
+
+  @override
+  String get saveBattery => 'Save Battery';
+
+  @override
+  String get activeBattery => 'Active battery';
+
+  @override
+  String get batteryEmpty => 'No active battery';
+
+  @override
+  String get batteryHistory => 'Battery history';
+
+  @override
+  String get batteryHistoryEmpty => 'No previous batteries';
+
+  @override
+  String get markBatteryRemoved => 'Mark removed';
+
+  @override
+  String get warrantyActive => 'Warranty active';
+
+  @override
+  String get warrantyExpiringSoon => 'Expiring soon';
+
+  @override
+  String get warrantyExpired => 'Expired';
 }

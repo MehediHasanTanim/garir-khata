@@ -1663,6 +1663,420 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Overdue'**
   String get overdue;
+
+  /// No description provided for @repairHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Repair History'**
+  String get repairHistory;
+
+  /// No description provided for @repairDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Repair Details'**
+  String get repairDetails;
+
+  /// No description provided for @saveRepair.
+  ///
+  /// In en, this message translates to:
+  /// **'Save Repair'**
+  String get saveRepair;
+
+  /// No description provided for @repairHistoryEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No repairs recorded yet'**
+  String get repairHistoryEmpty;
+
+  /// No description provided for @repairHistoryEmptyHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Log repairs to track parts, warranty and costs.'**
+  String get repairHistoryEmptyHint;
+
+  /// No description provided for @repairCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Category'**
+  String get repairCategory;
+
+  /// No description provided for @repairParts.
+  ///
+  /// In en, this message translates to:
+  /// **'Parts used'**
+  String get repairParts;
+
+  /// No description provided for @addRepairPart.
+  ///
+  /// In en, this message translates to:
+  /// **'Add part'**
+  String get addRepairPart;
+
+  /// No description provided for @fieldProblem.
+  ///
+  /// In en, this message translates to:
+  /// **'Problem'**
+  String get fieldProblem;
+
+  /// No description provided for @fieldDiagnosis.
+  ///
+  /// In en, this message translates to:
+  /// **'Diagnosis'**
+  String get fieldDiagnosis;
+
+  /// No description provided for @fieldWorkPerformed.
+  ///
+  /// In en, this message translates to:
+  /// **'Work performed'**
+  String get fieldWorkPerformed;
+
+  /// No description provided for @fieldWarrantyEnd.
+  ///
+  /// In en, this message translates to:
+  /// **'Warranty end date'**
+  String get fieldWarrantyEnd;
+
+  /// No description provided for @fieldFollowUpDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Follow-up date'**
+  String get fieldFollowUpDate;
+
+  /// No description provided for @fieldPartName.
+  ///
+  /// In en, this message translates to:
+  /// **'Part name'**
+  String get fieldPartName;
+
+  /// No description provided for @fieldPartNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Part number'**
+  String get fieldPartNumber;
+
+  /// No description provided for @fieldQuantity.
+  ///
+  /// In en, this message translates to:
+  /// **'Quantity'**
+  String get fieldQuantity;
+
+  /// No description provided for @fieldUnitCost.
+  ///
+  /// In en, this message translates to:
+  /// **'Unit cost'**
+  String get fieldUnitCost;
+
+  /// No description provided for @fieldCost.
+  ///
+  /// In en, this message translates to:
+  /// **'Cost'**
+  String get fieldCost;
+
+  /// No description provided for @fieldInstalledDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Installed date'**
+  String get fieldInstalledDate;
+
+  /// No description provided for @fieldIntervalKm.
+  ///
+  /// In en, this message translates to:
+  /// **'Replacement interval (km)'**
+  String get fieldIntervalKm;
+
+  /// No description provided for @fieldIntervalDays.
+  ///
+  /// In en, this message translates to:
+  /// **'Replacement interval (days)'**
+  String get fieldIntervalDays;
+
+  /// No description provided for @fieldSpecification.
+  ///
+  /// In en, this message translates to:
+  /// **'Specification'**
+  String get fieldSpecification;
+
+  /// No description provided for @fieldStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'Status'**
+  String get fieldStatus;
+
+  /// No description provided for @fieldTyreSize.
+  ///
+  /// In en, this message translates to:
+  /// **'Tyre size'**
+  String get fieldTyreSize;
+
+  /// No description provided for @totalRepairs.
+  ///
+  /// In en, this message translates to:
+  /// **'Total repairs'**
+  String get totalRepairs;
+
+  /// No description provided for @deleteRepairTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete this repair?'**
+  String get deleteRepairTitle;
+
+  /// No description provided for @deleteRepairMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Linked expense will also be removed.'**
+  String get deleteRepairMessage;
+
+  /// No description provided for @vehicleParts.
+  ///
+  /// In en, this message translates to:
+  /// **'Vehicle Parts'**
+  String get vehicleParts;
+
+  /// No description provided for @vehiclePartDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Part Details'**
+  String get vehiclePartDetails;
+
+  /// No description provided for @addVehiclePart.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Part'**
+  String get addVehiclePart;
+
+  /// No description provided for @saveVehiclePart.
+  ///
+  /// In en, this message translates to:
+  /// **'Save Part'**
+  String get saveVehiclePart;
+
+  /// No description provided for @vehiclePartsEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No parts tracked yet'**
+  String get vehiclePartsEmpty;
+
+  /// No description provided for @vehiclePartsEmptyHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Track standalone part replacements and intervals.'**
+  String get vehiclePartsEmptyHint;
+
+  /// No description provided for @invalidReplacementInterval.
+  ///
+  /// In en, this message translates to:
+  /// **'Replacement interval must be positive.'**
+  String get invalidReplacementInterval;
+
+  /// No description provided for @nextDue.
+  ///
+  /// In en, this message translates to:
+  /// **'Next due'**
+  String get nextDue;
+
+  /// No description provided for @tyresTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Tyres'**
+  String get tyresTitle;
+
+  /// No description provided for @tyreDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Tyre Details'**
+  String get tyreDetails;
+
+  /// No description provided for @addTyre.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Tyre'**
+  String get addTyre;
+
+  /// No description provided for @saveTyre.
+  ///
+  /// In en, this message translates to:
+  /// **'Save Tyre'**
+  String get saveTyre;
+
+  /// No description provided for @tyresEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No tyres recorded'**
+  String get tyresEmpty;
+
+  /// No description provided for @tyresEmptyHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Add tyres by position to track lifecycle events.'**
+  String get tyresEmptyHint;
+
+  /// No description provided for @tyrePositions.
+  ///
+  /// In en, this message translates to:
+  /// **'Positions'**
+  String get tyrePositions;
+
+  /// No description provided for @tyrePosition.
+  ///
+  /// In en, this message translates to:
+  /// **'Position'**
+  String get tyrePosition;
+
+  /// No description provided for @activeTyres.
+  ///
+  /// In en, this message translates to:
+  /// **'Active tyres'**
+  String get activeTyres;
+
+  /// No description provided for @selectTyrePosition.
+  ///
+  /// In en, this message translates to:
+  /// **'Select a tyre position'**
+  String get selectTyrePosition;
+
+  /// No description provided for @tyreEvents.
+  ///
+  /// In en, this message translates to:
+  /// **'Lifecycle events'**
+  String get tyreEvents;
+
+  /// No description provided for @tyreEventInstalled.
+  ///
+  /// In en, this message translates to:
+  /// **'Installed'**
+  String get tyreEventInstalled;
+
+  /// No description provided for @tyreEventRotated.
+  ///
+  /// In en, this message translates to:
+  /// **'Rotated'**
+  String get tyreEventRotated;
+
+  /// No description provided for @tyreEventInspected.
+  ///
+  /// In en, this message translates to:
+  /// **'Inspected'**
+  String get tyreEventInspected;
+
+  /// No description provided for @tyreEventRepaired.
+  ///
+  /// In en, this message translates to:
+  /// **'Repaired'**
+  String get tyreEventRepaired;
+
+  /// No description provided for @tyreEventReplaced.
+  ///
+  /// In en, this message translates to:
+  /// **'Replaced'**
+  String get tyreEventReplaced;
+
+  /// No description provided for @tyreEventRemoved.
+  ///
+  /// In en, this message translates to:
+  /// **'Removed'**
+  String get tyreEventRemoved;
+
+  /// No description provided for @tyreActionInspect.
+  ///
+  /// In en, this message translates to:
+  /// **'Inspect'**
+  String get tyreActionInspect;
+
+  /// No description provided for @tyreActionRepair.
+  ///
+  /// In en, this message translates to:
+  /// **'Repair'**
+  String get tyreActionRepair;
+
+  /// No description provided for @tyreActionRotate.
+  ///
+  /// In en, this message translates to:
+  /// **'Rotate'**
+  String get tyreActionRotate;
+
+  /// No description provided for @tyreActionReplace.
+  ///
+  /// In en, this message translates to:
+  /// **'Replace'**
+  String get tyreActionReplace;
+
+  /// No description provided for @batteryTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Battery'**
+  String get batteryTitle;
+
+  /// No description provided for @batteryDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Battery Details'**
+  String get batteryDetails;
+
+  /// No description provided for @addBattery.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Battery'**
+  String get addBattery;
+
+  /// No description provided for @replaceBattery.
+  ///
+  /// In en, this message translates to:
+  /// **'Replace Battery'**
+  String get replaceBattery;
+
+  /// No description provided for @saveBattery.
+  ///
+  /// In en, this message translates to:
+  /// **'Save Battery'**
+  String get saveBattery;
+
+  /// No description provided for @activeBattery.
+  ///
+  /// In en, this message translates to:
+  /// **'Active battery'**
+  String get activeBattery;
+
+  /// No description provided for @batteryEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No active battery'**
+  String get batteryEmpty;
+
+  /// No description provided for @batteryHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Battery history'**
+  String get batteryHistory;
+
+  /// No description provided for @batteryHistoryEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No previous batteries'**
+  String get batteryHistoryEmpty;
+
+  /// No description provided for @markBatteryRemoved.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark removed'**
+  String get markBatteryRemoved;
+
+  /// No description provided for @warrantyActive.
+  ///
+  /// In en, this message translates to:
+  /// **'Warranty active'**
+  String get warrantyActive;
+
+  /// No description provided for @warrantyExpiringSoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Expiring soon'**
+  String get warrantyExpiringSoon;
+
+  /// No description provided for @warrantyExpired.
+  ///
+  /// In en, this message translates to:
+  /// **'Expired'**
+  String get warrantyExpired;
 }
 
 class _AppLocalizationsDelegate

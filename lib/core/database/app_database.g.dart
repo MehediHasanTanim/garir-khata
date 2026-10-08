@@ -7575,6 +7575,5138 @@ class OilChangesCompanion extends UpdateCompanion<OilChangeRow> {
   }
 }
 
+class $RepairsTable extends Repairs with TableInfo<$RepairsTable, RepairRow> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $RepairsTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<String> id = GeneratedColumn<String>(
+    'id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _vehicleIdMeta = const VerificationMeta(
+    'vehicleId',
+  );
+  @override
+  late final GeneratedColumn<String> vehicleId = GeneratedColumn<String>(
+    'vehicle_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'REFERENCES vehicles (id)',
+    ),
+  );
+  static const VerificationMeta _repairDateMeta = const VerificationMeta(
+    'repairDate',
+  );
+  @override
+  late final GeneratedColumn<DateTime> repairDate = GeneratedColumn<DateTime>(
+    'repair_date',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _odometerMeta = const VerificationMeta(
+    'odometer',
+  );
+  @override
+  late final GeneratedColumn<int> odometer = GeneratedColumn<int>(
+    'odometer',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _categoryMeta = const VerificationMeta(
+    'category',
+  );
+  @override
+  late final GeneratedColumn<String> category = GeneratedColumn<String>(
+    'category',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _problemDescriptionMeta =
+      const VerificationMeta('problemDescription');
+  @override
+  late final GeneratedColumn<String> problemDescription =
+      GeneratedColumn<String>(
+        'problem_description',
+        aliasedName,
+        false,
+        type: DriftSqlType.string,
+        requiredDuringInsert: true,
+      );
+  static const VerificationMeta _diagnosisMeta = const VerificationMeta(
+    'diagnosis',
+  );
+  @override
+  late final GeneratedColumn<String> diagnosis = GeneratedColumn<String>(
+    'diagnosis',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _workPerformedMeta = const VerificationMeta(
+    'workPerformed',
+  );
+  @override
+  late final GeneratedColumn<String> workPerformed = GeneratedColumn<String>(
+    'work_performed',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _vendorNameMeta = const VerificationMeta(
+    'vendorName',
+  );
+  @override
+  late final GeneratedColumn<String> vendorName = GeneratedColumn<String>(
+    'vendor_name',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _laborCostPaisaMeta = const VerificationMeta(
+    'laborCostPaisa',
+  );
+  @override
+  late final GeneratedColumn<int> laborCostPaisa = GeneratedColumn<int>(
+    'labor_cost_paisa',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _partsCostPaisaMeta = const VerificationMeta(
+    'partsCostPaisa',
+  );
+  @override
+  late final GeneratedColumn<int> partsCostPaisa = GeneratedColumn<int>(
+    'parts_cost_paisa',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _totalCostPaisaMeta = const VerificationMeta(
+    'totalCostPaisa',
+  );
+  @override
+  late final GeneratedColumn<int> totalCostPaisa = GeneratedColumn<int>(
+    'total_cost_paisa',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _warrantyEndDateMeta = const VerificationMeta(
+    'warrantyEndDate',
+  );
+  @override
+  late final GeneratedColumn<DateTime> warrantyEndDate =
+      GeneratedColumn<DateTime>(
+        'warranty_end_date',
+        aliasedName,
+        true,
+        type: DriftSqlType.dateTime,
+        requiredDuringInsert: false,
+      );
+  static const VerificationMeta _followUpDateMeta = const VerificationMeta(
+    'followUpDate',
+  );
+  @override
+  late final GeneratedColumn<DateTime> followUpDate = GeneratedColumn<DateTime>(
+    'follow_up_date',
+    aliasedName,
+    true,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _noteMeta = const VerificationMeta('note');
+  @override
+  late final GeneratedColumn<String> note = GeneratedColumn<String>(
+    'note',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _createdAtMeta = const VerificationMeta(
+    'createdAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> createdAt = GeneratedColumn<DateTime>(
+    'created_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _updatedAtMeta = const VerificationMeta(
+    'updatedAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> updatedAt = GeneratedColumn<DateTime>(
+    'updated_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [
+    id,
+    vehicleId,
+    repairDate,
+    odometer,
+    category,
+    problemDescription,
+    diagnosis,
+    workPerformed,
+    vendorName,
+    laborCostPaisa,
+    partsCostPaisa,
+    totalCostPaisa,
+    warrantyEndDate,
+    followUpDate,
+    note,
+    createdAt,
+    updatedAt,
+  ];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'repairs';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<RepairRow> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    } else if (isInserting) {
+      context.missing(_idMeta);
+    }
+    if (data.containsKey('vehicle_id')) {
+      context.handle(
+        _vehicleIdMeta,
+        vehicleId.isAcceptableOrUnknown(data['vehicle_id']!, _vehicleIdMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_vehicleIdMeta);
+    }
+    if (data.containsKey('repair_date')) {
+      context.handle(
+        _repairDateMeta,
+        repairDate.isAcceptableOrUnknown(data['repair_date']!, _repairDateMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_repairDateMeta);
+    }
+    if (data.containsKey('odometer')) {
+      context.handle(
+        _odometerMeta,
+        odometer.isAcceptableOrUnknown(data['odometer']!, _odometerMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_odometerMeta);
+    }
+    if (data.containsKey('category')) {
+      context.handle(
+        _categoryMeta,
+        category.isAcceptableOrUnknown(data['category']!, _categoryMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_categoryMeta);
+    }
+    if (data.containsKey('problem_description')) {
+      context.handle(
+        _problemDescriptionMeta,
+        problemDescription.isAcceptableOrUnknown(
+          data['problem_description']!,
+          _problemDescriptionMeta,
+        ),
+      );
+    } else if (isInserting) {
+      context.missing(_problemDescriptionMeta);
+    }
+    if (data.containsKey('diagnosis')) {
+      context.handle(
+        _diagnosisMeta,
+        diagnosis.isAcceptableOrUnknown(data['diagnosis']!, _diagnosisMeta),
+      );
+    }
+    if (data.containsKey('work_performed')) {
+      context.handle(
+        _workPerformedMeta,
+        workPerformed.isAcceptableOrUnknown(
+          data['work_performed']!,
+          _workPerformedMeta,
+        ),
+      );
+    }
+    if (data.containsKey('vendor_name')) {
+      context.handle(
+        _vendorNameMeta,
+        vendorName.isAcceptableOrUnknown(data['vendor_name']!, _vendorNameMeta),
+      );
+    }
+    if (data.containsKey('labor_cost_paisa')) {
+      context.handle(
+        _laborCostPaisaMeta,
+        laborCostPaisa.isAcceptableOrUnknown(
+          data['labor_cost_paisa']!,
+          _laborCostPaisaMeta,
+        ),
+      );
+    }
+    if (data.containsKey('parts_cost_paisa')) {
+      context.handle(
+        _partsCostPaisaMeta,
+        partsCostPaisa.isAcceptableOrUnknown(
+          data['parts_cost_paisa']!,
+          _partsCostPaisaMeta,
+        ),
+      );
+    }
+    if (data.containsKey('total_cost_paisa')) {
+      context.handle(
+        _totalCostPaisaMeta,
+        totalCostPaisa.isAcceptableOrUnknown(
+          data['total_cost_paisa']!,
+          _totalCostPaisaMeta,
+        ),
+      );
+    }
+    if (data.containsKey('warranty_end_date')) {
+      context.handle(
+        _warrantyEndDateMeta,
+        warrantyEndDate.isAcceptableOrUnknown(
+          data['warranty_end_date']!,
+          _warrantyEndDateMeta,
+        ),
+      );
+    }
+    if (data.containsKey('follow_up_date')) {
+      context.handle(
+        _followUpDateMeta,
+        followUpDate.isAcceptableOrUnknown(
+          data['follow_up_date']!,
+          _followUpDateMeta,
+        ),
+      );
+    }
+    if (data.containsKey('note')) {
+      context.handle(
+        _noteMeta,
+        note.isAcceptableOrUnknown(data['note']!, _noteMeta),
+      );
+    }
+    if (data.containsKey('created_at')) {
+      context.handle(
+        _createdAtMeta,
+        createdAt.isAcceptableOrUnknown(data['created_at']!, _createdAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_createdAtMeta);
+    }
+    if (data.containsKey('updated_at')) {
+      context.handle(
+        _updatedAtMeta,
+        updatedAt.isAcceptableOrUnknown(data['updated_at']!, _updatedAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_updatedAtMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  RepairRow map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return RepairRow(
+      id: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}id'],
+      )!,
+      vehicleId: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}vehicle_id'],
+      )!,
+      repairDate: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}repair_date'],
+      )!,
+      odometer: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}odometer'],
+      )!,
+      category: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}category'],
+      )!,
+      problemDescription: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}problem_description'],
+      )!,
+      diagnosis: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}diagnosis'],
+      ),
+      workPerformed: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}work_performed'],
+      ),
+      vendorName: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}vendor_name'],
+      ),
+      laborCostPaisa: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}labor_cost_paisa'],
+      )!,
+      partsCostPaisa: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}parts_cost_paisa'],
+      )!,
+      totalCostPaisa: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}total_cost_paisa'],
+      )!,
+      warrantyEndDate: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}warranty_end_date'],
+      ),
+      followUpDate: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}follow_up_date'],
+      ),
+      note: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}note'],
+      ),
+      createdAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}created_at'],
+      )!,
+      updatedAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}updated_at'],
+      )!,
+    );
+  }
+
+  @override
+  $RepairsTable createAlias(String alias) {
+    return $RepairsTable(attachedDatabase, alias);
+  }
+}
+
+class RepairRow extends DataClass implements Insertable<RepairRow> {
+  final String id;
+  final String vehicleId;
+  final DateTime repairDate;
+  final int odometer;
+  final String category;
+  final String problemDescription;
+  final String? diagnosis;
+  final String? workPerformed;
+  final String? vendorName;
+  final int laborCostPaisa;
+  final int partsCostPaisa;
+  final int totalCostPaisa;
+  final DateTime? warrantyEndDate;
+  final DateTime? followUpDate;
+  final String? note;
+  final DateTime createdAt;
+  final DateTime updatedAt;
+  const RepairRow({
+    required this.id,
+    required this.vehicleId,
+    required this.repairDate,
+    required this.odometer,
+    required this.category,
+    required this.problemDescription,
+    this.diagnosis,
+    this.workPerformed,
+    this.vendorName,
+    required this.laborCostPaisa,
+    required this.partsCostPaisa,
+    required this.totalCostPaisa,
+    this.warrantyEndDate,
+    this.followUpDate,
+    this.note,
+    required this.createdAt,
+    required this.updatedAt,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<String>(id);
+    map['vehicle_id'] = Variable<String>(vehicleId);
+    map['repair_date'] = Variable<DateTime>(repairDate);
+    map['odometer'] = Variable<int>(odometer);
+    map['category'] = Variable<String>(category);
+    map['problem_description'] = Variable<String>(problemDescription);
+    if (!nullToAbsent || diagnosis != null) {
+      map['diagnosis'] = Variable<String>(diagnosis);
+    }
+    if (!nullToAbsent || workPerformed != null) {
+      map['work_performed'] = Variable<String>(workPerformed);
+    }
+    if (!nullToAbsent || vendorName != null) {
+      map['vendor_name'] = Variable<String>(vendorName);
+    }
+    map['labor_cost_paisa'] = Variable<int>(laborCostPaisa);
+    map['parts_cost_paisa'] = Variable<int>(partsCostPaisa);
+    map['total_cost_paisa'] = Variable<int>(totalCostPaisa);
+    if (!nullToAbsent || warrantyEndDate != null) {
+      map['warranty_end_date'] = Variable<DateTime>(warrantyEndDate);
+    }
+    if (!nullToAbsent || followUpDate != null) {
+      map['follow_up_date'] = Variable<DateTime>(followUpDate);
+    }
+    if (!nullToAbsent || note != null) {
+      map['note'] = Variable<String>(note);
+    }
+    map['created_at'] = Variable<DateTime>(createdAt);
+    map['updated_at'] = Variable<DateTime>(updatedAt);
+    return map;
+  }
+
+  RepairsCompanion toCompanion(bool nullToAbsent) {
+    return RepairsCompanion(
+      id: Value(id),
+      vehicleId: Value(vehicleId),
+      repairDate: Value(repairDate),
+      odometer: Value(odometer),
+      category: Value(category),
+      problemDescription: Value(problemDescription),
+      diagnosis: diagnosis == null && nullToAbsent
+          ? const Value.absent()
+          : Value(diagnosis),
+      workPerformed: workPerformed == null && nullToAbsent
+          ? const Value.absent()
+          : Value(workPerformed),
+      vendorName: vendorName == null && nullToAbsent
+          ? const Value.absent()
+          : Value(vendorName),
+      laborCostPaisa: Value(laborCostPaisa),
+      partsCostPaisa: Value(partsCostPaisa),
+      totalCostPaisa: Value(totalCostPaisa),
+      warrantyEndDate: warrantyEndDate == null && nullToAbsent
+          ? const Value.absent()
+          : Value(warrantyEndDate),
+      followUpDate: followUpDate == null && nullToAbsent
+          ? const Value.absent()
+          : Value(followUpDate),
+      note: note == null && nullToAbsent ? const Value.absent() : Value(note),
+      createdAt: Value(createdAt),
+      updatedAt: Value(updatedAt),
+    );
+  }
+
+  factory RepairRow.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return RepairRow(
+      id: serializer.fromJson<String>(json['id']),
+      vehicleId: serializer.fromJson<String>(json['vehicleId']),
+      repairDate: serializer.fromJson<DateTime>(json['repairDate']),
+      odometer: serializer.fromJson<int>(json['odometer']),
+      category: serializer.fromJson<String>(json['category']),
+      problemDescription: serializer.fromJson<String>(
+        json['problemDescription'],
+      ),
+      diagnosis: serializer.fromJson<String?>(json['diagnosis']),
+      workPerformed: serializer.fromJson<String?>(json['workPerformed']),
+      vendorName: serializer.fromJson<String?>(json['vendorName']),
+      laborCostPaisa: serializer.fromJson<int>(json['laborCostPaisa']),
+      partsCostPaisa: serializer.fromJson<int>(json['partsCostPaisa']),
+      totalCostPaisa: serializer.fromJson<int>(json['totalCostPaisa']),
+      warrantyEndDate: serializer.fromJson<DateTime?>(json['warrantyEndDate']),
+      followUpDate: serializer.fromJson<DateTime?>(json['followUpDate']),
+      note: serializer.fromJson<String?>(json['note']),
+      createdAt: serializer.fromJson<DateTime>(json['createdAt']),
+      updatedAt: serializer.fromJson<DateTime>(json['updatedAt']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<String>(id),
+      'vehicleId': serializer.toJson<String>(vehicleId),
+      'repairDate': serializer.toJson<DateTime>(repairDate),
+      'odometer': serializer.toJson<int>(odometer),
+      'category': serializer.toJson<String>(category),
+      'problemDescription': serializer.toJson<String>(problemDescription),
+      'diagnosis': serializer.toJson<String?>(diagnosis),
+      'workPerformed': serializer.toJson<String?>(workPerformed),
+      'vendorName': serializer.toJson<String?>(vendorName),
+      'laborCostPaisa': serializer.toJson<int>(laborCostPaisa),
+      'partsCostPaisa': serializer.toJson<int>(partsCostPaisa),
+      'totalCostPaisa': serializer.toJson<int>(totalCostPaisa),
+      'warrantyEndDate': serializer.toJson<DateTime?>(warrantyEndDate),
+      'followUpDate': serializer.toJson<DateTime?>(followUpDate),
+      'note': serializer.toJson<String?>(note),
+      'createdAt': serializer.toJson<DateTime>(createdAt),
+      'updatedAt': serializer.toJson<DateTime>(updatedAt),
+    };
+  }
+
+  RepairRow copyWith({
+    String? id,
+    String? vehicleId,
+    DateTime? repairDate,
+    int? odometer,
+    String? category,
+    String? problemDescription,
+    Value<String?> diagnosis = const Value.absent(),
+    Value<String?> workPerformed = const Value.absent(),
+    Value<String?> vendorName = const Value.absent(),
+    int? laborCostPaisa,
+    int? partsCostPaisa,
+    int? totalCostPaisa,
+    Value<DateTime?> warrantyEndDate = const Value.absent(),
+    Value<DateTime?> followUpDate = const Value.absent(),
+    Value<String?> note = const Value.absent(),
+    DateTime? createdAt,
+    DateTime? updatedAt,
+  }) => RepairRow(
+    id: id ?? this.id,
+    vehicleId: vehicleId ?? this.vehicleId,
+    repairDate: repairDate ?? this.repairDate,
+    odometer: odometer ?? this.odometer,
+    category: category ?? this.category,
+    problemDescription: problemDescription ?? this.problemDescription,
+    diagnosis: diagnosis.present ? diagnosis.value : this.diagnosis,
+    workPerformed: workPerformed.present
+        ? workPerformed.value
+        : this.workPerformed,
+    vendorName: vendorName.present ? vendorName.value : this.vendorName,
+    laborCostPaisa: laborCostPaisa ?? this.laborCostPaisa,
+    partsCostPaisa: partsCostPaisa ?? this.partsCostPaisa,
+    totalCostPaisa: totalCostPaisa ?? this.totalCostPaisa,
+    warrantyEndDate: warrantyEndDate.present
+        ? warrantyEndDate.value
+        : this.warrantyEndDate,
+    followUpDate: followUpDate.present ? followUpDate.value : this.followUpDate,
+    note: note.present ? note.value : this.note,
+    createdAt: createdAt ?? this.createdAt,
+    updatedAt: updatedAt ?? this.updatedAt,
+  );
+  RepairRow copyWithCompanion(RepairsCompanion data) {
+    return RepairRow(
+      id: data.id.present ? data.id.value : this.id,
+      vehicleId: data.vehicleId.present ? data.vehicleId.value : this.vehicleId,
+      repairDate: data.repairDate.present
+          ? data.repairDate.value
+          : this.repairDate,
+      odometer: data.odometer.present ? data.odometer.value : this.odometer,
+      category: data.category.present ? data.category.value : this.category,
+      problemDescription: data.problemDescription.present
+          ? data.problemDescription.value
+          : this.problemDescription,
+      diagnosis: data.diagnosis.present ? data.diagnosis.value : this.diagnosis,
+      workPerformed: data.workPerformed.present
+          ? data.workPerformed.value
+          : this.workPerformed,
+      vendorName: data.vendorName.present
+          ? data.vendorName.value
+          : this.vendorName,
+      laborCostPaisa: data.laborCostPaisa.present
+          ? data.laborCostPaisa.value
+          : this.laborCostPaisa,
+      partsCostPaisa: data.partsCostPaisa.present
+          ? data.partsCostPaisa.value
+          : this.partsCostPaisa,
+      totalCostPaisa: data.totalCostPaisa.present
+          ? data.totalCostPaisa.value
+          : this.totalCostPaisa,
+      warrantyEndDate: data.warrantyEndDate.present
+          ? data.warrantyEndDate.value
+          : this.warrantyEndDate,
+      followUpDate: data.followUpDate.present
+          ? data.followUpDate.value
+          : this.followUpDate,
+      note: data.note.present ? data.note.value : this.note,
+      createdAt: data.createdAt.present ? data.createdAt.value : this.createdAt,
+      updatedAt: data.updatedAt.present ? data.updatedAt.value : this.updatedAt,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('RepairRow(')
+          ..write('id: $id, ')
+          ..write('vehicleId: $vehicleId, ')
+          ..write('repairDate: $repairDate, ')
+          ..write('odometer: $odometer, ')
+          ..write('category: $category, ')
+          ..write('problemDescription: $problemDescription, ')
+          ..write('diagnosis: $diagnosis, ')
+          ..write('workPerformed: $workPerformed, ')
+          ..write('vendorName: $vendorName, ')
+          ..write('laborCostPaisa: $laborCostPaisa, ')
+          ..write('partsCostPaisa: $partsCostPaisa, ')
+          ..write('totalCostPaisa: $totalCostPaisa, ')
+          ..write('warrantyEndDate: $warrantyEndDate, ')
+          ..write('followUpDate: $followUpDate, ')
+          ..write('note: $note, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('updatedAt: $updatedAt')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(
+    id,
+    vehicleId,
+    repairDate,
+    odometer,
+    category,
+    problemDescription,
+    diagnosis,
+    workPerformed,
+    vendorName,
+    laborCostPaisa,
+    partsCostPaisa,
+    totalCostPaisa,
+    warrantyEndDate,
+    followUpDate,
+    note,
+    createdAt,
+    updatedAt,
+  );
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is RepairRow &&
+          other.id == this.id &&
+          other.vehicleId == this.vehicleId &&
+          other.repairDate == this.repairDate &&
+          other.odometer == this.odometer &&
+          other.category == this.category &&
+          other.problemDescription == this.problemDescription &&
+          other.diagnosis == this.diagnosis &&
+          other.workPerformed == this.workPerformed &&
+          other.vendorName == this.vendorName &&
+          other.laborCostPaisa == this.laborCostPaisa &&
+          other.partsCostPaisa == this.partsCostPaisa &&
+          other.totalCostPaisa == this.totalCostPaisa &&
+          other.warrantyEndDate == this.warrantyEndDate &&
+          other.followUpDate == this.followUpDate &&
+          other.note == this.note &&
+          other.createdAt == this.createdAt &&
+          other.updatedAt == this.updatedAt);
+}
+
+class RepairsCompanion extends UpdateCompanion<RepairRow> {
+  final Value<String> id;
+  final Value<String> vehicleId;
+  final Value<DateTime> repairDate;
+  final Value<int> odometer;
+  final Value<String> category;
+  final Value<String> problemDescription;
+  final Value<String?> diagnosis;
+  final Value<String?> workPerformed;
+  final Value<String?> vendorName;
+  final Value<int> laborCostPaisa;
+  final Value<int> partsCostPaisa;
+  final Value<int> totalCostPaisa;
+  final Value<DateTime?> warrantyEndDate;
+  final Value<DateTime?> followUpDate;
+  final Value<String?> note;
+  final Value<DateTime> createdAt;
+  final Value<DateTime> updatedAt;
+  final Value<int> rowid;
+  const RepairsCompanion({
+    this.id = const Value.absent(),
+    this.vehicleId = const Value.absent(),
+    this.repairDate = const Value.absent(),
+    this.odometer = const Value.absent(),
+    this.category = const Value.absent(),
+    this.problemDescription = const Value.absent(),
+    this.diagnosis = const Value.absent(),
+    this.workPerformed = const Value.absent(),
+    this.vendorName = const Value.absent(),
+    this.laborCostPaisa = const Value.absent(),
+    this.partsCostPaisa = const Value.absent(),
+    this.totalCostPaisa = const Value.absent(),
+    this.warrantyEndDate = const Value.absent(),
+    this.followUpDate = const Value.absent(),
+    this.note = const Value.absent(),
+    this.createdAt = const Value.absent(),
+    this.updatedAt = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  RepairsCompanion.insert({
+    required String id,
+    required String vehicleId,
+    required DateTime repairDate,
+    required int odometer,
+    required String category,
+    required String problemDescription,
+    this.diagnosis = const Value.absent(),
+    this.workPerformed = const Value.absent(),
+    this.vendorName = const Value.absent(),
+    this.laborCostPaisa = const Value.absent(),
+    this.partsCostPaisa = const Value.absent(),
+    this.totalCostPaisa = const Value.absent(),
+    this.warrantyEndDate = const Value.absent(),
+    this.followUpDate = const Value.absent(),
+    this.note = const Value.absent(),
+    required DateTime createdAt,
+    required DateTime updatedAt,
+    this.rowid = const Value.absent(),
+  }) : id = Value(id),
+       vehicleId = Value(vehicleId),
+       repairDate = Value(repairDate),
+       odometer = Value(odometer),
+       category = Value(category),
+       problemDescription = Value(problemDescription),
+       createdAt = Value(createdAt),
+       updatedAt = Value(updatedAt);
+  static Insertable<RepairRow> custom({
+    Expression<String>? id,
+    Expression<String>? vehicleId,
+    Expression<DateTime>? repairDate,
+    Expression<int>? odometer,
+    Expression<String>? category,
+    Expression<String>? problemDescription,
+    Expression<String>? diagnosis,
+    Expression<String>? workPerformed,
+    Expression<String>? vendorName,
+    Expression<int>? laborCostPaisa,
+    Expression<int>? partsCostPaisa,
+    Expression<int>? totalCostPaisa,
+    Expression<DateTime>? warrantyEndDate,
+    Expression<DateTime>? followUpDate,
+    Expression<String>? note,
+    Expression<DateTime>? createdAt,
+    Expression<DateTime>? updatedAt,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (vehicleId != null) 'vehicle_id': vehicleId,
+      if (repairDate != null) 'repair_date': repairDate,
+      if (odometer != null) 'odometer': odometer,
+      if (category != null) 'category': category,
+      if (problemDescription != null) 'problem_description': problemDescription,
+      if (diagnosis != null) 'diagnosis': diagnosis,
+      if (workPerformed != null) 'work_performed': workPerformed,
+      if (vendorName != null) 'vendor_name': vendorName,
+      if (laborCostPaisa != null) 'labor_cost_paisa': laborCostPaisa,
+      if (partsCostPaisa != null) 'parts_cost_paisa': partsCostPaisa,
+      if (totalCostPaisa != null) 'total_cost_paisa': totalCostPaisa,
+      if (warrantyEndDate != null) 'warranty_end_date': warrantyEndDate,
+      if (followUpDate != null) 'follow_up_date': followUpDate,
+      if (note != null) 'note': note,
+      if (createdAt != null) 'created_at': createdAt,
+      if (updatedAt != null) 'updated_at': updatedAt,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  RepairsCompanion copyWith({
+    Value<String>? id,
+    Value<String>? vehicleId,
+    Value<DateTime>? repairDate,
+    Value<int>? odometer,
+    Value<String>? category,
+    Value<String>? problemDescription,
+    Value<String?>? diagnosis,
+    Value<String?>? workPerformed,
+    Value<String?>? vendorName,
+    Value<int>? laborCostPaisa,
+    Value<int>? partsCostPaisa,
+    Value<int>? totalCostPaisa,
+    Value<DateTime?>? warrantyEndDate,
+    Value<DateTime?>? followUpDate,
+    Value<String?>? note,
+    Value<DateTime>? createdAt,
+    Value<DateTime>? updatedAt,
+    Value<int>? rowid,
+  }) {
+    return RepairsCompanion(
+      id: id ?? this.id,
+      vehicleId: vehicleId ?? this.vehicleId,
+      repairDate: repairDate ?? this.repairDate,
+      odometer: odometer ?? this.odometer,
+      category: category ?? this.category,
+      problemDescription: problemDescription ?? this.problemDescription,
+      diagnosis: diagnosis ?? this.diagnosis,
+      workPerformed: workPerformed ?? this.workPerformed,
+      vendorName: vendorName ?? this.vendorName,
+      laborCostPaisa: laborCostPaisa ?? this.laborCostPaisa,
+      partsCostPaisa: partsCostPaisa ?? this.partsCostPaisa,
+      totalCostPaisa: totalCostPaisa ?? this.totalCostPaisa,
+      warrantyEndDate: warrantyEndDate ?? this.warrantyEndDate,
+      followUpDate: followUpDate ?? this.followUpDate,
+      note: note ?? this.note,
+      createdAt: createdAt ?? this.createdAt,
+      updatedAt: updatedAt ?? this.updatedAt,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<String>(id.value);
+    }
+    if (vehicleId.present) {
+      map['vehicle_id'] = Variable<String>(vehicleId.value);
+    }
+    if (repairDate.present) {
+      map['repair_date'] = Variable<DateTime>(repairDate.value);
+    }
+    if (odometer.present) {
+      map['odometer'] = Variable<int>(odometer.value);
+    }
+    if (category.present) {
+      map['category'] = Variable<String>(category.value);
+    }
+    if (problemDescription.present) {
+      map['problem_description'] = Variable<String>(problemDescription.value);
+    }
+    if (diagnosis.present) {
+      map['diagnosis'] = Variable<String>(diagnosis.value);
+    }
+    if (workPerformed.present) {
+      map['work_performed'] = Variable<String>(workPerformed.value);
+    }
+    if (vendorName.present) {
+      map['vendor_name'] = Variable<String>(vendorName.value);
+    }
+    if (laborCostPaisa.present) {
+      map['labor_cost_paisa'] = Variable<int>(laborCostPaisa.value);
+    }
+    if (partsCostPaisa.present) {
+      map['parts_cost_paisa'] = Variable<int>(partsCostPaisa.value);
+    }
+    if (totalCostPaisa.present) {
+      map['total_cost_paisa'] = Variable<int>(totalCostPaisa.value);
+    }
+    if (warrantyEndDate.present) {
+      map['warranty_end_date'] = Variable<DateTime>(warrantyEndDate.value);
+    }
+    if (followUpDate.present) {
+      map['follow_up_date'] = Variable<DateTime>(followUpDate.value);
+    }
+    if (note.present) {
+      map['note'] = Variable<String>(note.value);
+    }
+    if (createdAt.present) {
+      map['created_at'] = Variable<DateTime>(createdAt.value);
+    }
+    if (updatedAt.present) {
+      map['updated_at'] = Variable<DateTime>(updatedAt.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('RepairsCompanion(')
+          ..write('id: $id, ')
+          ..write('vehicleId: $vehicleId, ')
+          ..write('repairDate: $repairDate, ')
+          ..write('odometer: $odometer, ')
+          ..write('category: $category, ')
+          ..write('problemDescription: $problemDescription, ')
+          ..write('diagnosis: $diagnosis, ')
+          ..write('workPerformed: $workPerformed, ')
+          ..write('vendorName: $vendorName, ')
+          ..write('laborCostPaisa: $laborCostPaisa, ')
+          ..write('partsCostPaisa: $partsCostPaisa, ')
+          ..write('totalCostPaisa: $totalCostPaisa, ')
+          ..write('warrantyEndDate: $warrantyEndDate, ')
+          ..write('followUpDate: $followUpDate, ')
+          ..write('note: $note, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('updatedAt: $updatedAt, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
+class $RepairPartsTable extends RepairParts
+    with TableInfo<$RepairPartsTable, RepairPartRow> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $RepairPartsTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<String> id = GeneratedColumn<String>(
+    'id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _repairIdMeta = const VerificationMeta(
+    'repairId',
+  );
+  @override
+  late final GeneratedColumn<String> repairId = GeneratedColumn<String>(
+    'repair_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'REFERENCES repairs (id) ON DELETE CASCADE',
+    ),
+  );
+  static const VerificationMeta _partNameMeta = const VerificationMeta(
+    'partName',
+  );
+  @override
+  late final GeneratedColumn<String> partName = GeneratedColumn<String>(
+    'part_name',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _brandMeta = const VerificationMeta('brand');
+  @override
+  late final GeneratedColumn<String> brand = GeneratedColumn<String>(
+    'brand',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _partNumberMeta = const VerificationMeta(
+    'partNumber',
+  );
+  @override
+  late final GeneratedColumn<String> partNumber = GeneratedColumn<String>(
+    'part_number',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _quantityMeta = const VerificationMeta(
+    'quantity',
+  );
+  @override
+  late final GeneratedColumn<double> quantity = GeneratedColumn<double>(
+    'quantity',
+    aliasedName,
+    false,
+    type: DriftSqlType.double,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(1.0),
+  );
+  static const VerificationMeta _unitCostPaisaMeta = const VerificationMeta(
+    'unitCostPaisa',
+  );
+  @override
+  late final GeneratedColumn<int> unitCostPaisa = GeneratedColumn<int>(
+    'unit_cost_paisa',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _totalCostPaisaMeta = const VerificationMeta(
+    'totalCostPaisa',
+  );
+  @override
+  late final GeneratedColumn<int> totalCostPaisa = GeneratedColumn<int>(
+    'total_cost_paisa',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _warrantyEndDateMeta = const VerificationMeta(
+    'warrantyEndDate',
+  );
+  @override
+  late final GeneratedColumn<DateTime> warrantyEndDate =
+      GeneratedColumn<DateTime>(
+        'warranty_end_date',
+        aliasedName,
+        true,
+        type: DriftSqlType.dateTime,
+        requiredDuringInsert: false,
+      );
+  static const VerificationMeta _noteMeta = const VerificationMeta('note');
+  @override
+  late final GeneratedColumn<String> note = GeneratedColumn<String>(
+    'note',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [
+    id,
+    repairId,
+    partName,
+    brand,
+    partNumber,
+    quantity,
+    unitCostPaisa,
+    totalCostPaisa,
+    warrantyEndDate,
+    note,
+  ];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'repair_parts';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<RepairPartRow> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    } else if (isInserting) {
+      context.missing(_idMeta);
+    }
+    if (data.containsKey('repair_id')) {
+      context.handle(
+        _repairIdMeta,
+        repairId.isAcceptableOrUnknown(data['repair_id']!, _repairIdMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_repairIdMeta);
+    }
+    if (data.containsKey('part_name')) {
+      context.handle(
+        _partNameMeta,
+        partName.isAcceptableOrUnknown(data['part_name']!, _partNameMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_partNameMeta);
+    }
+    if (data.containsKey('brand')) {
+      context.handle(
+        _brandMeta,
+        brand.isAcceptableOrUnknown(data['brand']!, _brandMeta),
+      );
+    }
+    if (data.containsKey('part_number')) {
+      context.handle(
+        _partNumberMeta,
+        partNumber.isAcceptableOrUnknown(data['part_number']!, _partNumberMeta),
+      );
+    }
+    if (data.containsKey('quantity')) {
+      context.handle(
+        _quantityMeta,
+        quantity.isAcceptableOrUnknown(data['quantity']!, _quantityMeta),
+      );
+    }
+    if (data.containsKey('unit_cost_paisa')) {
+      context.handle(
+        _unitCostPaisaMeta,
+        unitCostPaisa.isAcceptableOrUnknown(
+          data['unit_cost_paisa']!,
+          _unitCostPaisaMeta,
+        ),
+      );
+    }
+    if (data.containsKey('total_cost_paisa')) {
+      context.handle(
+        _totalCostPaisaMeta,
+        totalCostPaisa.isAcceptableOrUnknown(
+          data['total_cost_paisa']!,
+          _totalCostPaisaMeta,
+        ),
+      );
+    }
+    if (data.containsKey('warranty_end_date')) {
+      context.handle(
+        _warrantyEndDateMeta,
+        warrantyEndDate.isAcceptableOrUnknown(
+          data['warranty_end_date']!,
+          _warrantyEndDateMeta,
+        ),
+      );
+    }
+    if (data.containsKey('note')) {
+      context.handle(
+        _noteMeta,
+        note.isAcceptableOrUnknown(data['note']!, _noteMeta),
+      );
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  RepairPartRow map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return RepairPartRow(
+      id: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}id'],
+      )!,
+      repairId: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}repair_id'],
+      )!,
+      partName: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}part_name'],
+      )!,
+      brand: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}brand'],
+      ),
+      partNumber: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}part_number'],
+      ),
+      quantity: attachedDatabase.typeMapping.read(
+        DriftSqlType.double,
+        data['${effectivePrefix}quantity'],
+      )!,
+      unitCostPaisa: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}unit_cost_paisa'],
+      )!,
+      totalCostPaisa: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}total_cost_paisa'],
+      )!,
+      warrantyEndDate: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}warranty_end_date'],
+      ),
+      note: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}note'],
+      ),
+    );
+  }
+
+  @override
+  $RepairPartsTable createAlias(String alias) {
+    return $RepairPartsTable(attachedDatabase, alias);
+  }
+}
+
+class RepairPartRow extends DataClass implements Insertable<RepairPartRow> {
+  final String id;
+  final String repairId;
+  final String partName;
+  final String? brand;
+  final String? partNumber;
+  final double quantity;
+  final int unitCostPaisa;
+  final int totalCostPaisa;
+  final DateTime? warrantyEndDate;
+  final String? note;
+  const RepairPartRow({
+    required this.id,
+    required this.repairId,
+    required this.partName,
+    this.brand,
+    this.partNumber,
+    required this.quantity,
+    required this.unitCostPaisa,
+    required this.totalCostPaisa,
+    this.warrantyEndDate,
+    this.note,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<String>(id);
+    map['repair_id'] = Variable<String>(repairId);
+    map['part_name'] = Variable<String>(partName);
+    if (!nullToAbsent || brand != null) {
+      map['brand'] = Variable<String>(brand);
+    }
+    if (!nullToAbsent || partNumber != null) {
+      map['part_number'] = Variable<String>(partNumber);
+    }
+    map['quantity'] = Variable<double>(quantity);
+    map['unit_cost_paisa'] = Variable<int>(unitCostPaisa);
+    map['total_cost_paisa'] = Variable<int>(totalCostPaisa);
+    if (!nullToAbsent || warrantyEndDate != null) {
+      map['warranty_end_date'] = Variable<DateTime>(warrantyEndDate);
+    }
+    if (!nullToAbsent || note != null) {
+      map['note'] = Variable<String>(note);
+    }
+    return map;
+  }
+
+  RepairPartsCompanion toCompanion(bool nullToAbsent) {
+    return RepairPartsCompanion(
+      id: Value(id),
+      repairId: Value(repairId),
+      partName: Value(partName),
+      brand: brand == null && nullToAbsent
+          ? const Value.absent()
+          : Value(brand),
+      partNumber: partNumber == null && nullToAbsent
+          ? const Value.absent()
+          : Value(partNumber),
+      quantity: Value(quantity),
+      unitCostPaisa: Value(unitCostPaisa),
+      totalCostPaisa: Value(totalCostPaisa),
+      warrantyEndDate: warrantyEndDate == null && nullToAbsent
+          ? const Value.absent()
+          : Value(warrantyEndDate),
+      note: note == null && nullToAbsent ? const Value.absent() : Value(note),
+    );
+  }
+
+  factory RepairPartRow.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return RepairPartRow(
+      id: serializer.fromJson<String>(json['id']),
+      repairId: serializer.fromJson<String>(json['repairId']),
+      partName: serializer.fromJson<String>(json['partName']),
+      brand: serializer.fromJson<String?>(json['brand']),
+      partNumber: serializer.fromJson<String?>(json['partNumber']),
+      quantity: serializer.fromJson<double>(json['quantity']),
+      unitCostPaisa: serializer.fromJson<int>(json['unitCostPaisa']),
+      totalCostPaisa: serializer.fromJson<int>(json['totalCostPaisa']),
+      warrantyEndDate: serializer.fromJson<DateTime?>(json['warrantyEndDate']),
+      note: serializer.fromJson<String?>(json['note']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<String>(id),
+      'repairId': serializer.toJson<String>(repairId),
+      'partName': serializer.toJson<String>(partName),
+      'brand': serializer.toJson<String?>(brand),
+      'partNumber': serializer.toJson<String?>(partNumber),
+      'quantity': serializer.toJson<double>(quantity),
+      'unitCostPaisa': serializer.toJson<int>(unitCostPaisa),
+      'totalCostPaisa': serializer.toJson<int>(totalCostPaisa),
+      'warrantyEndDate': serializer.toJson<DateTime?>(warrantyEndDate),
+      'note': serializer.toJson<String?>(note),
+    };
+  }
+
+  RepairPartRow copyWith({
+    String? id,
+    String? repairId,
+    String? partName,
+    Value<String?> brand = const Value.absent(),
+    Value<String?> partNumber = const Value.absent(),
+    double? quantity,
+    int? unitCostPaisa,
+    int? totalCostPaisa,
+    Value<DateTime?> warrantyEndDate = const Value.absent(),
+    Value<String?> note = const Value.absent(),
+  }) => RepairPartRow(
+    id: id ?? this.id,
+    repairId: repairId ?? this.repairId,
+    partName: partName ?? this.partName,
+    brand: brand.present ? brand.value : this.brand,
+    partNumber: partNumber.present ? partNumber.value : this.partNumber,
+    quantity: quantity ?? this.quantity,
+    unitCostPaisa: unitCostPaisa ?? this.unitCostPaisa,
+    totalCostPaisa: totalCostPaisa ?? this.totalCostPaisa,
+    warrantyEndDate: warrantyEndDate.present
+        ? warrantyEndDate.value
+        : this.warrantyEndDate,
+    note: note.present ? note.value : this.note,
+  );
+  RepairPartRow copyWithCompanion(RepairPartsCompanion data) {
+    return RepairPartRow(
+      id: data.id.present ? data.id.value : this.id,
+      repairId: data.repairId.present ? data.repairId.value : this.repairId,
+      partName: data.partName.present ? data.partName.value : this.partName,
+      brand: data.brand.present ? data.brand.value : this.brand,
+      partNumber: data.partNumber.present
+          ? data.partNumber.value
+          : this.partNumber,
+      quantity: data.quantity.present ? data.quantity.value : this.quantity,
+      unitCostPaisa: data.unitCostPaisa.present
+          ? data.unitCostPaisa.value
+          : this.unitCostPaisa,
+      totalCostPaisa: data.totalCostPaisa.present
+          ? data.totalCostPaisa.value
+          : this.totalCostPaisa,
+      warrantyEndDate: data.warrantyEndDate.present
+          ? data.warrantyEndDate.value
+          : this.warrantyEndDate,
+      note: data.note.present ? data.note.value : this.note,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('RepairPartRow(')
+          ..write('id: $id, ')
+          ..write('repairId: $repairId, ')
+          ..write('partName: $partName, ')
+          ..write('brand: $brand, ')
+          ..write('partNumber: $partNumber, ')
+          ..write('quantity: $quantity, ')
+          ..write('unitCostPaisa: $unitCostPaisa, ')
+          ..write('totalCostPaisa: $totalCostPaisa, ')
+          ..write('warrantyEndDate: $warrantyEndDate, ')
+          ..write('note: $note')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(
+    id,
+    repairId,
+    partName,
+    brand,
+    partNumber,
+    quantity,
+    unitCostPaisa,
+    totalCostPaisa,
+    warrantyEndDate,
+    note,
+  );
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is RepairPartRow &&
+          other.id == this.id &&
+          other.repairId == this.repairId &&
+          other.partName == this.partName &&
+          other.brand == this.brand &&
+          other.partNumber == this.partNumber &&
+          other.quantity == this.quantity &&
+          other.unitCostPaisa == this.unitCostPaisa &&
+          other.totalCostPaisa == this.totalCostPaisa &&
+          other.warrantyEndDate == this.warrantyEndDate &&
+          other.note == this.note);
+}
+
+class RepairPartsCompanion extends UpdateCompanion<RepairPartRow> {
+  final Value<String> id;
+  final Value<String> repairId;
+  final Value<String> partName;
+  final Value<String?> brand;
+  final Value<String?> partNumber;
+  final Value<double> quantity;
+  final Value<int> unitCostPaisa;
+  final Value<int> totalCostPaisa;
+  final Value<DateTime?> warrantyEndDate;
+  final Value<String?> note;
+  final Value<int> rowid;
+  const RepairPartsCompanion({
+    this.id = const Value.absent(),
+    this.repairId = const Value.absent(),
+    this.partName = const Value.absent(),
+    this.brand = const Value.absent(),
+    this.partNumber = const Value.absent(),
+    this.quantity = const Value.absent(),
+    this.unitCostPaisa = const Value.absent(),
+    this.totalCostPaisa = const Value.absent(),
+    this.warrantyEndDate = const Value.absent(),
+    this.note = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  RepairPartsCompanion.insert({
+    required String id,
+    required String repairId,
+    required String partName,
+    this.brand = const Value.absent(),
+    this.partNumber = const Value.absent(),
+    this.quantity = const Value.absent(),
+    this.unitCostPaisa = const Value.absent(),
+    this.totalCostPaisa = const Value.absent(),
+    this.warrantyEndDate = const Value.absent(),
+    this.note = const Value.absent(),
+    this.rowid = const Value.absent(),
+  }) : id = Value(id),
+       repairId = Value(repairId),
+       partName = Value(partName);
+  static Insertable<RepairPartRow> custom({
+    Expression<String>? id,
+    Expression<String>? repairId,
+    Expression<String>? partName,
+    Expression<String>? brand,
+    Expression<String>? partNumber,
+    Expression<double>? quantity,
+    Expression<int>? unitCostPaisa,
+    Expression<int>? totalCostPaisa,
+    Expression<DateTime>? warrantyEndDate,
+    Expression<String>? note,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (repairId != null) 'repair_id': repairId,
+      if (partName != null) 'part_name': partName,
+      if (brand != null) 'brand': brand,
+      if (partNumber != null) 'part_number': partNumber,
+      if (quantity != null) 'quantity': quantity,
+      if (unitCostPaisa != null) 'unit_cost_paisa': unitCostPaisa,
+      if (totalCostPaisa != null) 'total_cost_paisa': totalCostPaisa,
+      if (warrantyEndDate != null) 'warranty_end_date': warrantyEndDate,
+      if (note != null) 'note': note,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  RepairPartsCompanion copyWith({
+    Value<String>? id,
+    Value<String>? repairId,
+    Value<String>? partName,
+    Value<String?>? brand,
+    Value<String?>? partNumber,
+    Value<double>? quantity,
+    Value<int>? unitCostPaisa,
+    Value<int>? totalCostPaisa,
+    Value<DateTime?>? warrantyEndDate,
+    Value<String?>? note,
+    Value<int>? rowid,
+  }) {
+    return RepairPartsCompanion(
+      id: id ?? this.id,
+      repairId: repairId ?? this.repairId,
+      partName: partName ?? this.partName,
+      brand: brand ?? this.brand,
+      partNumber: partNumber ?? this.partNumber,
+      quantity: quantity ?? this.quantity,
+      unitCostPaisa: unitCostPaisa ?? this.unitCostPaisa,
+      totalCostPaisa: totalCostPaisa ?? this.totalCostPaisa,
+      warrantyEndDate: warrantyEndDate ?? this.warrantyEndDate,
+      note: note ?? this.note,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<String>(id.value);
+    }
+    if (repairId.present) {
+      map['repair_id'] = Variable<String>(repairId.value);
+    }
+    if (partName.present) {
+      map['part_name'] = Variable<String>(partName.value);
+    }
+    if (brand.present) {
+      map['brand'] = Variable<String>(brand.value);
+    }
+    if (partNumber.present) {
+      map['part_number'] = Variable<String>(partNumber.value);
+    }
+    if (quantity.present) {
+      map['quantity'] = Variable<double>(quantity.value);
+    }
+    if (unitCostPaisa.present) {
+      map['unit_cost_paisa'] = Variable<int>(unitCostPaisa.value);
+    }
+    if (totalCostPaisa.present) {
+      map['total_cost_paisa'] = Variable<int>(totalCostPaisa.value);
+    }
+    if (warrantyEndDate.present) {
+      map['warranty_end_date'] = Variable<DateTime>(warrantyEndDate.value);
+    }
+    if (note.present) {
+      map['note'] = Variable<String>(note.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('RepairPartsCompanion(')
+          ..write('id: $id, ')
+          ..write('repairId: $repairId, ')
+          ..write('partName: $partName, ')
+          ..write('brand: $brand, ')
+          ..write('partNumber: $partNumber, ')
+          ..write('quantity: $quantity, ')
+          ..write('unitCostPaisa: $unitCostPaisa, ')
+          ..write('totalCostPaisa: $totalCostPaisa, ')
+          ..write('warrantyEndDate: $warrantyEndDate, ')
+          ..write('note: $note, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
+class $VehiclePartsTable extends VehicleParts
+    with TableInfo<$VehiclePartsTable, VehiclePartRow> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $VehiclePartsTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<String> id = GeneratedColumn<String>(
+    'id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _vehicleIdMeta = const VerificationMeta(
+    'vehicleId',
+  );
+  @override
+  late final GeneratedColumn<String> vehicleId = GeneratedColumn<String>(
+    'vehicle_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'REFERENCES vehicles (id)',
+    ),
+  );
+  static const VerificationMeta _categoryMeta = const VerificationMeta(
+    'category',
+  );
+  @override
+  late final GeneratedColumn<String> category = GeneratedColumn<String>(
+    'category',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _nameMeta = const VerificationMeta('name');
+  @override
+  late final GeneratedColumn<String> name = GeneratedColumn<String>(
+    'name',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _brandMeta = const VerificationMeta('brand');
+  @override
+  late final GeneratedColumn<String> brand = GeneratedColumn<String>(
+    'brand',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _partNumberMeta = const VerificationMeta(
+    'partNumber',
+  );
+  @override
+  late final GeneratedColumn<String> partNumber = GeneratedColumn<String>(
+    'part_number',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _installedDateMeta = const VerificationMeta(
+    'installedDate',
+  );
+  @override
+  late final GeneratedColumn<DateTime> installedDate =
+      GeneratedColumn<DateTime>(
+        'installed_date',
+        aliasedName,
+        false,
+        type: DriftSqlType.dateTime,
+        requiredDuringInsert: true,
+      );
+  static const VerificationMeta _installedOdometerMeta = const VerificationMeta(
+    'installedOdometer',
+  );
+  @override
+  late final GeneratedColumn<int> installedOdometer = GeneratedColumn<int>(
+    'installed_odometer',
+    aliasedName,
+    true,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _costPaisaMeta = const VerificationMeta(
+    'costPaisa',
+  );
+  @override
+  late final GeneratedColumn<int> costPaisa = GeneratedColumn<int>(
+    'cost_paisa',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _vendorNameMeta = const VerificationMeta(
+    'vendorName',
+  );
+  @override
+  late final GeneratedColumn<String> vendorName = GeneratedColumn<String>(
+    'vendor_name',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _warrantyEndDateMeta = const VerificationMeta(
+    'warrantyEndDate',
+  );
+  @override
+  late final GeneratedColumn<DateTime> warrantyEndDate =
+      GeneratedColumn<DateTime>(
+        'warranty_end_date',
+        aliasedName,
+        true,
+        type: DriftSqlType.dateTime,
+        requiredDuringInsert: false,
+      );
+  static const VerificationMeta _replacementIntervalKmMeta =
+      const VerificationMeta('replacementIntervalKm');
+  @override
+  late final GeneratedColumn<int> replacementIntervalKm = GeneratedColumn<int>(
+    'replacement_interval_km',
+    aliasedName,
+    true,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _replacementIntervalDaysMeta =
+      const VerificationMeta('replacementIntervalDays');
+  @override
+  late final GeneratedColumn<int> replacementIntervalDays =
+      GeneratedColumn<int>(
+        'replacement_interval_days',
+        aliasedName,
+        true,
+        type: DriftSqlType.int,
+        requiredDuringInsert: false,
+      );
+  static const VerificationMeta _noteMeta = const VerificationMeta('note');
+  @override
+  late final GeneratedColumn<String> note = GeneratedColumn<String>(
+    'note',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _isActiveMeta = const VerificationMeta(
+    'isActive',
+  );
+  @override
+  late final GeneratedColumn<bool> isActive = GeneratedColumn<bool>(
+    'is_active',
+    aliasedName,
+    false,
+    type: DriftSqlType.bool,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'CHECK ("is_active" IN (0, 1))',
+    ),
+    defaultValue: const Constant(true),
+  );
+  static const VerificationMeta _createdAtMeta = const VerificationMeta(
+    'createdAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> createdAt = GeneratedColumn<DateTime>(
+    'created_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _updatedAtMeta = const VerificationMeta(
+    'updatedAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> updatedAt = GeneratedColumn<DateTime>(
+    'updated_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [
+    id,
+    vehicleId,
+    category,
+    name,
+    brand,
+    partNumber,
+    installedDate,
+    installedOdometer,
+    costPaisa,
+    vendorName,
+    warrantyEndDate,
+    replacementIntervalKm,
+    replacementIntervalDays,
+    note,
+    isActive,
+    createdAt,
+    updatedAt,
+  ];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'vehicle_parts';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<VehiclePartRow> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    } else if (isInserting) {
+      context.missing(_idMeta);
+    }
+    if (data.containsKey('vehicle_id')) {
+      context.handle(
+        _vehicleIdMeta,
+        vehicleId.isAcceptableOrUnknown(data['vehicle_id']!, _vehicleIdMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_vehicleIdMeta);
+    }
+    if (data.containsKey('category')) {
+      context.handle(
+        _categoryMeta,
+        category.isAcceptableOrUnknown(data['category']!, _categoryMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_categoryMeta);
+    }
+    if (data.containsKey('name')) {
+      context.handle(
+        _nameMeta,
+        name.isAcceptableOrUnknown(data['name']!, _nameMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_nameMeta);
+    }
+    if (data.containsKey('brand')) {
+      context.handle(
+        _brandMeta,
+        brand.isAcceptableOrUnknown(data['brand']!, _brandMeta),
+      );
+    }
+    if (data.containsKey('part_number')) {
+      context.handle(
+        _partNumberMeta,
+        partNumber.isAcceptableOrUnknown(data['part_number']!, _partNumberMeta),
+      );
+    }
+    if (data.containsKey('installed_date')) {
+      context.handle(
+        _installedDateMeta,
+        installedDate.isAcceptableOrUnknown(
+          data['installed_date']!,
+          _installedDateMeta,
+        ),
+      );
+    } else if (isInserting) {
+      context.missing(_installedDateMeta);
+    }
+    if (data.containsKey('installed_odometer')) {
+      context.handle(
+        _installedOdometerMeta,
+        installedOdometer.isAcceptableOrUnknown(
+          data['installed_odometer']!,
+          _installedOdometerMeta,
+        ),
+      );
+    }
+    if (data.containsKey('cost_paisa')) {
+      context.handle(
+        _costPaisaMeta,
+        costPaisa.isAcceptableOrUnknown(data['cost_paisa']!, _costPaisaMeta),
+      );
+    }
+    if (data.containsKey('vendor_name')) {
+      context.handle(
+        _vendorNameMeta,
+        vendorName.isAcceptableOrUnknown(data['vendor_name']!, _vendorNameMeta),
+      );
+    }
+    if (data.containsKey('warranty_end_date')) {
+      context.handle(
+        _warrantyEndDateMeta,
+        warrantyEndDate.isAcceptableOrUnknown(
+          data['warranty_end_date']!,
+          _warrantyEndDateMeta,
+        ),
+      );
+    }
+    if (data.containsKey('replacement_interval_km')) {
+      context.handle(
+        _replacementIntervalKmMeta,
+        replacementIntervalKm.isAcceptableOrUnknown(
+          data['replacement_interval_km']!,
+          _replacementIntervalKmMeta,
+        ),
+      );
+    }
+    if (data.containsKey('replacement_interval_days')) {
+      context.handle(
+        _replacementIntervalDaysMeta,
+        replacementIntervalDays.isAcceptableOrUnknown(
+          data['replacement_interval_days']!,
+          _replacementIntervalDaysMeta,
+        ),
+      );
+    }
+    if (data.containsKey('note')) {
+      context.handle(
+        _noteMeta,
+        note.isAcceptableOrUnknown(data['note']!, _noteMeta),
+      );
+    }
+    if (data.containsKey('is_active')) {
+      context.handle(
+        _isActiveMeta,
+        isActive.isAcceptableOrUnknown(data['is_active']!, _isActiveMeta),
+      );
+    }
+    if (data.containsKey('created_at')) {
+      context.handle(
+        _createdAtMeta,
+        createdAt.isAcceptableOrUnknown(data['created_at']!, _createdAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_createdAtMeta);
+    }
+    if (data.containsKey('updated_at')) {
+      context.handle(
+        _updatedAtMeta,
+        updatedAt.isAcceptableOrUnknown(data['updated_at']!, _updatedAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_updatedAtMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  VehiclePartRow map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return VehiclePartRow(
+      id: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}id'],
+      )!,
+      vehicleId: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}vehicle_id'],
+      )!,
+      category: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}category'],
+      )!,
+      name: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}name'],
+      )!,
+      brand: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}brand'],
+      ),
+      partNumber: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}part_number'],
+      ),
+      installedDate: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}installed_date'],
+      )!,
+      installedOdometer: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}installed_odometer'],
+      ),
+      costPaisa: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}cost_paisa'],
+      )!,
+      vendorName: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}vendor_name'],
+      ),
+      warrantyEndDate: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}warranty_end_date'],
+      ),
+      replacementIntervalKm: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}replacement_interval_km'],
+      ),
+      replacementIntervalDays: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}replacement_interval_days'],
+      ),
+      note: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}note'],
+      ),
+      isActive: attachedDatabase.typeMapping.read(
+        DriftSqlType.bool,
+        data['${effectivePrefix}is_active'],
+      )!,
+      createdAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}created_at'],
+      )!,
+      updatedAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}updated_at'],
+      )!,
+    );
+  }
+
+  @override
+  $VehiclePartsTable createAlias(String alias) {
+    return $VehiclePartsTable(attachedDatabase, alias);
+  }
+}
+
+class VehiclePartRow extends DataClass implements Insertable<VehiclePartRow> {
+  final String id;
+  final String vehicleId;
+  final String category;
+  final String name;
+  final String? brand;
+  final String? partNumber;
+  final DateTime installedDate;
+  final int? installedOdometer;
+  final int costPaisa;
+  final String? vendorName;
+  final DateTime? warrantyEndDate;
+  final int? replacementIntervalKm;
+  final int? replacementIntervalDays;
+  final String? note;
+  final bool isActive;
+  final DateTime createdAt;
+  final DateTime updatedAt;
+  const VehiclePartRow({
+    required this.id,
+    required this.vehicleId,
+    required this.category,
+    required this.name,
+    this.brand,
+    this.partNumber,
+    required this.installedDate,
+    this.installedOdometer,
+    required this.costPaisa,
+    this.vendorName,
+    this.warrantyEndDate,
+    this.replacementIntervalKm,
+    this.replacementIntervalDays,
+    this.note,
+    required this.isActive,
+    required this.createdAt,
+    required this.updatedAt,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<String>(id);
+    map['vehicle_id'] = Variable<String>(vehicleId);
+    map['category'] = Variable<String>(category);
+    map['name'] = Variable<String>(name);
+    if (!nullToAbsent || brand != null) {
+      map['brand'] = Variable<String>(brand);
+    }
+    if (!nullToAbsent || partNumber != null) {
+      map['part_number'] = Variable<String>(partNumber);
+    }
+    map['installed_date'] = Variable<DateTime>(installedDate);
+    if (!nullToAbsent || installedOdometer != null) {
+      map['installed_odometer'] = Variable<int>(installedOdometer);
+    }
+    map['cost_paisa'] = Variable<int>(costPaisa);
+    if (!nullToAbsent || vendorName != null) {
+      map['vendor_name'] = Variable<String>(vendorName);
+    }
+    if (!nullToAbsent || warrantyEndDate != null) {
+      map['warranty_end_date'] = Variable<DateTime>(warrantyEndDate);
+    }
+    if (!nullToAbsent || replacementIntervalKm != null) {
+      map['replacement_interval_km'] = Variable<int>(replacementIntervalKm);
+    }
+    if (!nullToAbsent || replacementIntervalDays != null) {
+      map['replacement_interval_days'] = Variable<int>(replacementIntervalDays);
+    }
+    if (!nullToAbsent || note != null) {
+      map['note'] = Variable<String>(note);
+    }
+    map['is_active'] = Variable<bool>(isActive);
+    map['created_at'] = Variable<DateTime>(createdAt);
+    map['updated_at'] = Variable<DateTime>(updatedAt);
+    return map;
+  }
+
+  VehiclePartsCompanion toCompanion(bool nullToAbsent) {
+    return VehiclePartsCompanion(
+      id: Value(id),
+      vehicleId: Value(vehicleId),
+      category: Value(category),
+      name: Value(name),
+      brand: brand == null && nullToAbsent
+          ? const Value.absent()
+          : Value(brand),
+      partNumber: partNumber == null && nullToAbsent
+          ? const Value.absent()
+          : Value(partNumber),
+      installedDate: Value(installedDate),
+      installedOdometer: installedOdometer == null && nullToAbsent
+          ? const Value.absent()
+          : Value(installedOdometer),
+      costPaisa: Value(costPaisa),
+      vendorName: vendorName == null && nullToAbsent
+          ? const Value.absent()
+          : Value(vendorName),
+      warrantyEndDate: warrantyEndDate == null && nullToAbsent
+          ? const Value.absent()
+          : Value(warrantyEndDate),
+      replacementIntervalKm: replacementIntervalKm == null && nullToAbsent
+          ? const Value.absent()
+          : Value(replacementIntervalKm),
+      replacementIntervalDays: replacementIntervalDays == null && nullToAbsent
+          ? const Value.absent()
+          : Value(replacementIntervalDays),
+      note: note == null && nullToAbsent ? const Value.absent() : Value(note),
+      isActive: Value(isActive),
+      createdAt: Value(createdAt),
+      updatedAt: Value(updatedAt),
+    );
+  }
+
+  factory VehiclePartRow.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return VehiclePartRow(
+      id: serializer.fromJson<String>(json['id']),
+      vehicleId: serializer.fromJson<String>(json['vehicleId']),
+      category: serializer.fromJson<String>(json['category']),
+      name: serializer.fromJson<String>(json['name']),
+      brand: serializer.fromJson<String?>(json['brand']),
+      partNumber: serializer.fromJson<String?>(json['partNumber']),
+      installedDate: serializer.fromJson<DateTime>(json['installedDate']),
+      installedOdometer: serializer.fromJson<int?>(json['installedOdometer']),
+      costPaisa: serializer.fromJson<int>(json['costPaisa']),
+      vendorName: serializer.fromJson<String?>(json['vendorName']),
+      warrantyEndDate: serializer.fromJson<DateTime?>(json['warrantyEndDate']),
+      replacementIntervalKm: serializer.fromJson<int?>(
+        json['replacementIntervalKm'],
+      ),
+      replacementIntervalDays: serializer.fromJson<int?>(
+        json['replacementIntervalDays'],
+      ),
+      note: serializer.fromJson<String?>(json['note']),
+      isActive: serializer.fromJson<bool>(json['isActive']),
+      createdAt: serializer.fromJson<DateTime>(json['createdAt']),
+      updatedAt: serializer.fromJson<DateTime>(json['updatedAt']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<String>(id),
+      'vehicleId': serializer.toJson<String>(vehicleId),
+      'category': serializer.toJson<String>(category),
+      'name': serializer.toJson<String>(name),
+      'brand': serializer.toJson<String?>(brand),
+      'partNumber': serializer.toJson<String?>(partNumber),
+      'installedDate': serializer.toJson<DateTime>(installedDate),
+      'installedOdometer': serializer.toJson<int?>(installedOdometer),
+      'costPaisa': serializer.toJson<int>(costPaisa),
+      'vendorName': serializer.toJson<String?>(vendorName),
+      'warrantyEndDate': serializer.toJson<DateTime?>(warrantyEndDate),
+      'replacementIntervalKm': serializer.toJson<int?>(replacementIntervalKm),
+      'replacementIntervalDays': serializer.toJson<int?>(
+        replacementIntervalDays,
+      ),
+      'note': serializer.toJson<String?>(note),
+      'isActive': serializer.toJson<bool>(isActive),
+      'createdAt': serializer.toJson<DateTime>(createdAt),
+      'updatedAt': serializer.toJson<DateTime>(updatedAt),
+    };
+  }
+
+  VehiclePartRow copyWith({
+    String? id,
+    String? vehicleId,
+    String? category,
+    String? name,
+    Value<String?> brand = const Value.absent(),
+    Value<String?> partNumber = const Value.absent(),
+    DateTime? installedDate,
+    Value<int?> installedOdometer = const Value.absent(),
+    int? costPaisa,
+    Value<String?> vendorName = const Value.absent(),
+    Value<DateTime?> warrantyEndDate = const Value.absent(),
+    Value<int?> replacementIntervalKm = const Value.absent(),
+    Value<int?> replacementIntervalDays = const Value.absent(),
+    Value<String?> note = const Value.absent(),
+    bool? isActive,
+    DateTime? createdAt,
+    DateTime? updatedAt,
+  }) => VehiclePartRow(
+    id: id ?? this.id,
+    vehicleId: vehicleId ?? this.vehicleId,
+    category: category ?? this.category,
+    name: name ?? this.name,
+    brand: brand.present ? brand.value : this.brand,
+    partNumber: partNumber.present ? partNumber.value : this.partNumber,
+    installedDate: installedDate ?? this.installedDate,
+    installedOdometer: installedOdometer.present
+        ? installedOdometer.value
+        : this.installedOdometer,
+    costPaisa: costPaisa ?? this.costPaisa,
+    vendorName: vendorName.present ? vendorName.value : this.vendorName,
+    warrantyEndDate: warrantyEndDate.present
+        ? warrantyEndDate.value
+        : this.warrantyEndDate,
+    replacementIntervalKm: replacementIntervalKm.present
+        ? replacementIntervalKm.value
+        : this.replacementIntervalKm,
+    replacementIntervalDays: replacementIntervalDays.present
+        ? replacementIntervalDays.value
+        : this.replacementIntervalDays,
+    note: note.present ? note.value : this.note,
+    isActive: isActive ?? this.isActive,
+    createdAt: createdAt ?? this.createdAt,
+    updatedAt: updatedAt ?? this.updatedAt,
+  );
+  VehiclePartRow copyWithCompanion(VehiclePartsCompanion data) {
+    return VehiclePartRow(
+      id: data.id.present ? data.id.value : this.id,
+      vehicleId: data.vehicleId.present ? data.vehicleId.value : this.vehicleId,
+      category: data.category.present ? data.category.value : this.category,
+      name: data.name.present ? data.name.value : this.name,
+      brand: data.brand.present ? data.brand.value : this.brand,
+      partNumber: data.partNumber.present
+          ? data.partNumber.value
+          : this.partNumber,
+      installedDate: data.installedDate.present
+          ? data.installedDate.value
+          : this.installedDate,
+      installedOdometer: data.installedOdometer.present
+          ? data.installedOdometer.value
+          : this.installedOdometer,
+      costPaisa: data.costPaisa.present ? data.costPaisa.value : this.costPaisa,
+      vendorName: data.vendorName.present
+          ? data.vendorName.value
+          : this.vendorName,
+      warrantyEndDate: data.warrantyEndDate.present
+          ? data.warrantyEndDate.value
+          : this.warrantyEndDate,
+      replacementIntervalKm: data.replacementIntervalKm.present
+          ? data.replacementIntervalKm.value
+          : this.replacementIntervalKm,
+      replacementIntervalDays: data.replacementIntervalDays.present
+          ? data.replacementIntervalDays.value
+          : this.replacementIntervalDays,
+      note: data.note.present ? data.note.value : this.note,
+      isActive: data.isActive.present ? data.isActive.value : this.isActive,
+      createdAt: data.createdAt.present ? data.createdAt.value : this.createdAt,
+      updatedAt: data.updatedAt.present ? data.updatedAt.value : this.updatedAt,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('VehiclePartRow(')
+          ..write('id: $id, ')
+          ..write('vehicleId: $vehicleId, ')
+          ..write('category: $category, ')
+          ..write('name: $name, ')
+          ..write('brand: $brand, ')
+          ..write('partNumber: $partNumber, ')
+          ..write('installedDate: $installedDate, ')
+          ..write('installedOdometer: $installedOdometer, ')
+          ..write('costPaisa: $costPaisa, ')
+          ..write('vendorName: $vendorName, ')
+          ..write('warrantyEndDate: $warrantyEndDate, ')
+          ..write('replacementIntervalKm: $replacementIntervalKm, ')
+          ..write('replacementIntervalDays: $replacementIntervalDays, ')
+          ..write('note: $note, ')
+          ..write('isActive: $isActive, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('updatedAt: $updatedAt')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(
+    id,
+    vehicleId,
+    category,
+    name,
+    brand,
+    partNumber,
+    installedDate,
+    installedOdometer,
+    costPaisa,
+    vendorName,
+    warrantyEndDate,
+    replacementIntervalKm,
+    replacementIntervalDays,
+    note,
+    isActive,
+    createdAt,
+    updatedAt,
+  );
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is VehiclePartRow &&
+          other.id == this.id &&
+          other.vehicleId == this.vehicleId &&
+          other.category == this.category &&
+          other.name == this.name &&
+          other.brand == this.brand &&
+          other.partNumber == this.partNumber &&
+          other.installedDate == this.installedDate &&
+          other.installedOdometer == this.installedOdometer &&
+          other.costPaisa == this.costPaisa &&
+          other.vendorName == this.vendorName &&
+          other.warrantyEndDate == this.warrantyEndDate &&
+          other.replacementIntervalKm == this.replacementIntervalKm &&
+          other.replacementIntervalDays == this.replacementIntervalDays &&
+          other.note == this.note &&
+          other.isActive == this.isActive &&
+          other.createdAt == this.createdAt &&
+          other.updatedAt == this.updatedAt);
+}
+
+class VehiclePartsCompanion extends UpdateCompanion<VehiclePartRow> {
+  final Value<String> id;
+  final Value<String> vehicleId;
+  final Value<String> category;
+  final Value<String> name;
+  final Value<String?> brand;
+  final Value<String?> partNumber;
+  final Value<DateTime> installedDate;
+  final Value<int?> installedOdometer;
+  final Value<int> costPaisa;
+  final Value<String?> vendorName;
+  final Value<DateTime?> warrantyEndDate;
+  final Value<int?> replacementIntervalKm;
+  final Value<int?> replacementIntervalDays;
+  final Value<String?> note;
+  final Value<bool> isActive;
+  final Value<DateTime> createdAt;
+  final Value<DateTime> updatedAt;
+  final Value<int> rowid;
+  const VehiclePartsCompanion({
+    this.id = const Value.absent(),
+    this.vehicleId = const Value.absent(),
+    this.category = const Value.absent(),
+    this.name = const Value.absent(),
+    this.brand = const Value.absent(),
+    this.partNumber = const Value.absent(),
+    this.installedDate = const Value.absent(),
+    this.installedOdometer = const Value.absent(),
+    this.costPaisa = const Value.absent(),
+    this.vendorName = const Value.absent(),
+    this.warrantyEndDate = const Value.absent(),
+    this.replacementIntervalKm = const Value.absent(),
+    this.replacementIntervalDays = const Value.absent(),
+    this.note = const Value.absent(),
+    this.isActive = const Value.absent(),
+    this.createdAt = const Value.absent(),
+    this.updatedAt = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  VehiclePartsCompanion.insert({
+    required String id,
+    required String vehicleId,
+    required String category,
+    required String name,
+    this.brand = const Value.absent(),
+    this.partNumber = const Value.absent(),
+    required DateTime installedDate,
+    this.installedOdometer = const Value.absent(),
+    this.costPaisa = const Value.absent(),
+    this.vendorName = const Value.absent(),
+    this.warrantyEndDate = const Value.absent(),
+    this.replacementIntervalKm = const Value.absent(),
+    this.replacementIntervalDays = const Value.absent(),
+    this.note = const Value.absent(),
+    this.isActive = const Value.absent(),
+    required DateTime createdAt,
+    required DateTime updatedAt,
+    this.rowid = const Value.absent(),
+  }) : id = Value(id),
+       vehicleId = Value(vehicleId),
+       category = Value(category),
+       name = Value(name),
+       installedDate = Value(installedDate),
+       createdAt = Value(createdAt),
+       updatedAt = Value(updatedAt);
+  static Insertable<VehiclePartRow> custom({
+    Expression<String>? id,
+    Expression<String>? vehicleId,
+    Expression<String>? category,
+    Expression<String>? name,
+    Expression<String>? brand,
+    Expression<String>? partNumber,
+    Expression<DateTime>? installedDate,
+    Expression<int>? installedOdometer,
+    Expression<int>? costPaisa,
+    Expression<String>? vendorName,
+    Expression<DateTime>? warrantyEndDate,
+    Expression<int>? replacementIntervalKm,
+    Expression<int>? replacementIntervalDays,
+    Expression<String>? note,
+    Expression<bool>? isActive,
+    Expression<DateTime>? createdAt,
+    Expression<DateTime>? updatedAt,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (vehicleId != null) 'vehicle_id': vehicleId,
+      if (category != null) 'category': category,
+      if (name != null) 'name': name,
+      if (brand != null) 'brand': brand,
+      if (partNumber != null) 'part_number': partNumber,
+      if (installedDate != null) 'installed_date': installedDate,
+      if (installedOdometer != null) 'installed_odometer': installedOdometer,
+      if (costPaisa != null) 'cost_paisa': costPaisa,
+      if (vendorName != null) 'vendor_name': vendorName,
+      if (warrantyEndDate != null) 'warranty_end_date': warrantyEndDate,
+      if (replacementIntervalKm != null)
+        'replacement_interval_km': replacementIntervalKm,
+      if (replacementIntervalDays != null)
+        'replacement_interval_days': replacementIntervalDays,
+      if (note != null) 'note': note,
+      if (isActive != null) 'is_active': isActive,
+      if (createdAt != null) 'created_at': createdAt,
+      if (updatedAt != null) 'updated_at': updatedAt,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  VehiclePartsCompanion copyWith({
+    Value<String>? id,
+    Value<String>? vehicleId,
+    Value<String>? category,
+    Value<String>? name,
+    Value<String?>? brand,
+    Value<String?>? partNumber,
+    Value<DateTime>? installedDate,
+    Value<int?>? installedOdometer,
+    Value<int>? costPaisa,
+    Value<String?>? vendorName,
+    Value<DateTime?>? warrantyEndDate,
+    Value<int?>? replacementIntervalKm,
+    Value<int?>? replacementIntervalDays,
+    Value<String?>? note,
+    Value<bool>? isActive,
+    Value<DateTime>? createdAt,
+    Value<DateTime>? updatedAt,
+    Value<int>? rowid,
+  }) {
+    return VehiclePartsCompanion(
+      id: id ?? this.id,
+      vehicleId: vehicleId ?? this.vehicleId,
+      category: category ?? this.category,
+      name: name ?? this.name,
+      brand: brand ?? this.brand,
+      partNumber: partNumber ?? this.partNumber,
+      installedDate: installedDate ?? this.installedDate,
+      installedOdometer: installedOdometer ?? this.installedOdometer,
+      costPaisa: costPaisa ?? this.costPaisa,
+      vendorName: vendorName ?? this.vendorName,
+      warrantyEndDate: warrantyEndDate ?? this.warrantyEndDate,
+      replacementIntervalKm:
+          replacementIntervalKm ?? this.replacementIntervalKm,
+      replacementIntervalDays:
+          replacementIntervalDays ?? this.replacementIntervalDays,
+      note: note ?? this.note,
+      isActive: isActive ?? this.isActive,
+      createdAt: createdAt ?? this.createdAt,
+      updatedAt: updatedAt ?? this.updatedAt,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<String>(id.value);
+    }
+    if (vehicleId.present) {
+      map['vehicle_id'] = Variable<String>(vehicleId.value);
+    }
+    if (category.present) {
+      map['category'] = Variable<String>(category.value);
+    }
+    if (name.present) {
+      map['name'] = Variable<String>(name.value);
+    }
+    if (brand.present) {
+      map['brand'] = Variable<String>(brand.value);
+    }
+    if (partNumber.present) {
+      map['part_number'] = Variable<String>(partNumber.value);
+    }
+    if (installedDate.present) {
+      map['installed_date'] = Variable<DateTime>(installedDate.value);
+    }
+    if (installedOdometer.present) {
+      map['installed_odometer'] = Variable<int>(installedOdometer.value);
+    }
+    if (costPaisa.present) {
+      map['cost_paisa'] = Variable<int>(costPaisa.value);
+    }
+    if (vendorName.present) {
+      map['vendor_name'] = Variable<String>(vendorName.value);
+    }
+    if (warrantyEndDate.present) {
+      map['warranty_end_date'] = Variable<DateTime>(warrantyEndDate.value);
+    }
+    if (replacementIntervalKm.present) {
+      map['replacement_interval_km'] = Variable<int>(
+        replacementIntervalKm.value,
+      );
+    }
+    if (replacementIntervalDays.present) {
+      map['replacement_interval_days'] = Variable<int>(
+        replacementIntervalDays.value,
+      );
+    }
+    if (note.present) {
+      map['note'] = Variable<String>(note.value);
+    }
+    if (isActive.present) {
+      map['is_active'] = Variable<bool>(isActive.value);
+    }
+    if (createdAt.present) {
+      map['created_at'] = Variable<DateTime>(createdAt.value);
+    }
+    if (updatedAt.present) {
+      map['updated_at'] = Variable<DateTime>(updatedAt.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('VehiclePartsCompanion(')
+          ..write('id: $id, ')
+          ..write('vehicleId: $vehicleId, ')
+          ..write('category: $category, ')
+          ..write('name: $name, ')
+          ..write('brand: $brand, ')
+          ..write('partNumber: $partNumber, ')
+          ..write('installedDate: $installedDate, ')
+          ..write('installedOdometer: $installedOdometer, ')
+          ..write('costPaisa: $costPaisa, ')
+          ..write('vendorName: $vendorName, ')
+          ..write('warrantyEndDate: $warrantyEndDate, ')
+          ..write('replacementIntervalKm: $replacementIntervalKm, ')
+          ..write('replacementIntervalDays: $replacementIntervalDays, ')
+          ..write('note: $note, ')
+          ..write('isActive: $isActive, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('updatedAt: $updatedAt, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
+class $TyresTable extends Tyres with TableInfo<$TyresTable, TyreRow> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $TyresTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<String> id = GeneratedColumn<String>(
+    'id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _vehicleIdMeta = const VerificationMeta(
+    'vehicleId',
+  );
+  @override
+  late final GeneratedColumn<String> vehicleId = GeneratedColumn<String>(
+    'vehicle_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'REFERENCES vehicles (id)',
+    ),
+  );
+  static const VerificationMeta _positionMeta = const VerificationMeta(
+    'position',
+  );
+  @override
+  late final GeneratedColumn<String> position = GeneratedColumn<String>(
+    'position',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _brandMeta = const VerificationMeta('brand');
+  @override
+  late final GeneratedColumn<String> brand = GeneratedColumn<String>(
+    'brand',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _modelMeta = const VerificationMeta('model');
+  @override
+  late final GeneratedColumn<String> model = GeneratedColumn<String>(
+    'model',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _sizeMeta = const VerificationMeta('size');
+  @override
+  late final GeneratedColumn<String> size = GeneratedColumn<String>(
+    'size',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _purchaseDateMeta = const VerificationMeta(
+    'purchaseDate',
+  );
+  @override
+  late final GeneratedColumn<DateTime> purchaseDate = GeneratedColumn<DateTime>(
+    'purchase_date',
+    aliasedName,
+    true,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _installDateMeta = const VerificationMeta(
+    'installDate',
+  );
+  @override
+  late final GeneratedColumn<DateTime> installDate = GeneratedColumn<DateTime>(
+    'install_date',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _installOdometerMeta = const VerificationMeta(
+    'installOdometer',
+  );
+  @override
+  late final GeneratedColumn<int> installOdometer = GeneratedColumn<int>(
+    'install_odometer',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _costPaisaMeta = const VerificationMeta(
+    'costPaisa',
+  );
+  @override
+  late final GeneratedColumn<int> costPaisa = GeneratedColumn<int>(
+    'cost_paisa',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _warrantyEndDateMeta = const VerificationMeta(
+    'warrantyEndDate',
+  );
+  @override
+  late final GeneratedColumn<DateTime> warrantyEndDate =
+      GeneratedColumn<DateTime>(
+        'warranty_end_date',
+        aliasedName,
+        true,
+        type: DriftSqlType.dateTime,
+        requiredDuringInsert: false,
+      );
+  static const VerificationMeta _vendorNameMeta = const VerificationMeta(
+    'vendorName',
+  );
+  @override
+  late final GeneratedColumn<String> vendorName = GeneratedColumn<String>(
+    'vendor_name',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _statusMeta = const VerificationMeta('status');
+  @override
+  late final GeneratedColumn<String> status = GeneratedColumn<String>(
+    'status',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+    defaultValue: const Constant('active'),
+  );
+  static const VerificationMeta _noteMeta = const VerificationMeta('note');
+  @override
+  late final GeneratedColumn<String> note = GeneratedColumn<String>(
+    'note',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _createdAtMeta = const VerificationMeta(
+    'createdAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> createdAt = GeneratedColumn<DateTime>(
+    'created_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _updatedAtMeta = const VerificationMeta(
+    'updatedAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> updatedAt = GeneratedColumn<DateTime>(
+    'updated_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [
+    id,
+    vehicleId,
+    position,
+    brand,
+    model,
+    size,
+    purchaseDate,
+    installDate,
+    installOdometer,
+    costPaisa,
+    warrantyEndDate,
+    vendorName,
+    status,
+    note,
+    createdAt,
+    updatedAt,
+  ];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'tyres';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<TyreRow> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    } else if (isInserting) {
+      context.missing(_idMeta);
+    }
+    if (data.containsKey('vehicle_id')) {
+      context.handle(
+        _vehicleIdMeta,
+        vehicleId.isAcceptableOrUnknown(data['vehicle_id']!, _vehicleIdMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_vehicleIdMeta);
+    }
+    if (data.containsKey('position')) {
+      context.handle(
+        _positionMeta,
+        position.isAcceptableOrUnknown(data['position']!, _positionMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_positionMeta);
+    }
+    if (data.containsKey('brand')) {
+      context.handle(
+        _brandMeta,
+        brand.isAcceptableOrUnknown(data['brand']!, _brandMeta),
+      );
+    }
+    if (data.containsKey('model')) {
+      context.handle(
+        _modelMeta,
+        model.isAcceptableOrUnknown(data['model']!, _modelMeta),
+      );
+    }
+    if (data.containsKey('size')) {
+      context.handle(
+        _sizeMeta,
+        size.isAcceptableOrUnknown(data['size']!, _sizeMeta),
+      );
+    }
+    if (data.containsKey('purchase_date')) {
+      context.handle(
+        _purchaseDateMeta,
+        purchaseDate.isAcceptableOrUnknown(
+          data['purchase_date']!,
+          _purchaseDateMeta,
+        ),
+      );
+    }
+    if (data.containsKey('install_date')) {
+      context.handle(
+        _installDateMeta,
+        installDate.isAcceptableOrUnknown(
+          data['install_date']!,
+          _installDateMeta,
+        ),
+      );
+    } else if (isInserting) {
+      context.missing(_installDateMeta);
+    }
+    if (data.containsKey('install_odometer')) {
+      context.handle(
+        _installOdometerMeta,
+        installOdometer.isAcceptableOrUnknown(
+          data['install_odometer']!,
+          _installOdometerMeta,
+        ),
+      );
+    } else if (isInserting) {
+      context.missing(_installOdometerMeta);
+    }
+    if (data.containsKey('cost_paisa')) {
+      context.handle(
+        _costPaisaMeta,
+        costPaisa.isAcceptableOrUnknown(data['cost_paisa']!, _costPaisaMeta),
+      );
+    }
+    if (data.containsKey('warranty_end_date')) {
+      context.handle(
+        _warrantyEndDateMeta,
+        warrantyEndDate.isAcceptableOrUnknown(
+          data['warranty_end_date']!,
+          _warrantyEndDateMeta,
+        ),
+      );
+    }
+    if (data.containsKey('vendor_name')) {
+      context.handle(
+        _vendorNameMeta,
+        vendorName.isAcceptableOrUnknown(data['vendor_name']!, _vendorNameMeta),
+      );
+    }
+    if (data.containsKey('status')) {
+      context.handle(
+        _statusMeta,
+        status.isAcceptableOrUnknown(data['status']!, _statusMeta),
+      );
+    }
+    if (data.containsKey('note')) {
+      context.handle(
+        _noteMeta,
+        note.isAcceptableOrUnknown(data['note']!, _noteMeta),
+      );
+    }
+    if (data.containsKey('created_at')) {
+      context.handle(
+        _createdAtMeta,
+        createdAt.isAcceptableOrUnknown(data['created_at']!, _createdAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_createdAtMeta);
+    }
+    if (data.containsKey('updated_at')) {
+      context.handle(
+        _updatedAtMeta,
+        updatedAt.isAcceptableOrUnknown(data['updated_at']!, _updatedAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_updatedAtMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  TyreRow map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return TyreRow(
+      id: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}id'],
+      )!,
+      vehicleId: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}vehicle_id'],
+      )!,
+      position: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}position'],
+      )!,
+      brand: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}brand'],
+      ),
+      model: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}model'],
+      ),
+      size: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}size'],
+      ),
+      purchaseDate: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}purchase_date'],
+      ),
+      installDate: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}install_date'],
+      )!,
+      installOdometer: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}install_odometer'],
+      )!,
+      costPaisa: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}cost_paisa'],
+      )!,
+      warrantyEndDate: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}warranty_end_date'],
+      ),
+      vendorName: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}vendor_name'],
+      ),
+      status: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}status'],
+      )!,
+      note: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}note'],
+      ),
+      createdAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}created_at'],
+      )!,
+      updatedAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}updated_at'],
+      )!,
+    );
+  }
+
+  @override
+  $TyresTable createAlias(String alias) {
+    return $TyresTable(attachedDatabase, alias);
+  }
+}
+
+class TyreRow extends DataClass implements Insertable<TyreRow> {
+  final String id;
+  final String vehicleId;
+  final String position;
+  final String? brand;
+  final String? model;
+  final String? size;
+  final DateTime? purchaseDate;
+  final DateTime installDate;
+  final int installOdometer;
+  final int costPaisa;
+  final DateTime? warrantyEndDate;
+  final String? vendorName;
+
+  /// active | replaced | removed | stored
+  final String status;
+  final String? note;
+  final DateTime createdAt;
+  final DateTime updatedAt;
+  const TyreRow({
+    required this.id,
+    required this.vehicleId,
+    required this.position,
+    this.brand,
+    this.model,
+    this.size,
+    this.purchaseDate,
+    required this.installDate,
+    required this.installOdometer,
+    required this.costPaisa,
+    this.warrantyEndDate,
+    this.vendorName,
+    required this.status,
+    this.note,
+    required this.createdAt,
+    required this.updatedAt,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<String>(id);
+    map['vehicle_id'] = Variable<String>(vehicleId);
+    map['position'] = Variable<String>(position);
+    if (!nullToAbsent || brand != null) {
+      map['brand'] = Variable<String>(brand);
+    }
+    if (!nullToAbsent || model != null) {
+      map['model'] = Variable<String>(model);
+    }
+    if (!nullToAbsent || size != null) {
+      map['size'] = Variable<String>(size);
+    }
+    if (!nullToAbsent || purchaseDate != null) {
+      map['purchase_date'] = Variable<DateTime>(purchaseDate);
+    }
+    map['install_date'] = Variable<DateTime>(installDate);
+    map['install_odometer'] = Variable<int>(installOdometer);
+    map['cost_paisa'] = Variable<int>(costPaisa);
+    if (!nullToAbsent || warrantyEndDate != null) {
+      map['warranty_end_date'] = Variable<DateTime>(warrantyEndDate);
+    }
+    if (!nullToAbsent || vendorName != null) {
+      map['vendor_name'] = Variable<String>(vendorName);
+    }
+    map['status'] = Variable<String>(status);
+    if (!nullToAbsent || note != null) {
+      map['note'] = Variable<String>(note);
+    }
+    map['created_at'] = Variable<DateTime>(createdAt);
+    map['updated_at'] = Variable<DateTime>(updatedAt);
+    return map;
+  }
+
+  TyresCompanion toCompanion(bool nullToAbsent) {
+    return TyresCompanion(
+      id: Value(id),
+      vehicleId: Value(vehicleId),
+      position: Value(position),
+      brand: brand == null && nullToAbsent
+          ? const Value.absent()
+          : Value(brand),
+      model: model == null && nullToAbsent
+          ? const Value.absent()
+          : Value(model),
+      size: size == null && nullToAbsent ? const Value.absent() : Value(size),
+      purchaseDate: purchaseDate == null && nullToAbsent
+          ? const Value.absent()
+          : Value(purchaseDate),
+      installDate: Value(installDate),
+      installOdometer: Value(installOdometer),
+      costPaisa: Value(costPaisa),
+      warrantyEndDate: warrantyEndDate == null && nullToAbsent
+          ? const Value.absent()
+          : Value(warrantyEndDate),
+      vendorName: vendorName == null && nullToAbsent
+          ? const Value.absent()
+          : Value(vendorName),
+      status: Value(status),
+      note: note == null && nullToAbsent ? const Value.absent() : Value(note),
+      createdAt: Value(createdAt),
+      updatedAt: Value(updatedAt),
+    );
+  }
+
+  factory TyreRow.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return TyreRow(
+      id: serializer.fromJson<String>(json['id']),
+      vehicleId: serializer.fromJson<String>(json['vehicleId']),
+      position: serializer.fromJson<String>(json['position']),
+      brand: serializer.fromJson<String?>(json['brand']),
+      model: serializer.fromJson<String?>(json['model']),
+      size: serializer.fromJson<String?>(json['size']),
+      purchaseDate: serializer.fromJson<DateTime?>(json['purchaseDate']),
+      installDate: serializer.fromJson<DateTime>(json['installDate']),
+      installOdometer: serializer.fromJson<int>(json['installOdometer']),
+      costPaisa: serializer.fromJson<int>(json['costPaisa']),
+      warrantyEndDate: serializer.fromJson<DateTime?>(json['warrantyEndDate']),
+      vendorName: serializer.fromJson<String?>(json['vendorName']),
+      status: serializer.fromJson<String>(json['status']),
+      note: serializer.fromJson<String?>(json['note']),
+      createdAt: serializer.fromJson<DateTime>(json['createdAt']),
+      updatedAt: serializer.fromJson<DateTime>(json['updatedAt']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<String>(id),
+      'vehicleId': serializer.toJson<String>(vehicleId),
+      'position': serializer.toJson<String>(position),
+      'brand': serializer.toJson<String?>(brand),
+      'model': serializer.toJson<String?>(model),
+      'size': serializer.toJson<String?>(size),
+      'purchaseDate': serializer.toJson<DateTime?>(purchaseDate),
+      'installDate': serializer.toJson<DateTime>(installDate),
+      'installOdometer': serializer.toJson<int>(installOdometer),
+      'costPaisa': serializer.toJson<int>(costPaisa),
+      'warrantyEndDate': serializer.toJson<DateTime?>(warrantyEndDate),
+      'vendorName': serializer.toJson<String?>(vendorName),
+      'status': serializer.toJson<String>(status),
+      'note': serializer.toJson<String?>(note),
+      'createdAt': serializer.toJson<DateTime>(createdAt),
+      'updatedAt': serializer.toJson<DateTime>(updatedAt),
+    };
+  }
+
+  TyreRow copyWith({
+    String? id,
+    String? vehicleId,
+    String? position,
+    Value<String?> brand = const Value.absent(),
+    Value<String?> model = const Value.absent(),
+    Value<String?> size = const Value.absent(),
+    Value<DateTime?> purchaseDate = const Value.absent(),
+    DateTime? installDate,
+    int? installOdometer,
+    int? costPaisa,
+    Value<DateTime?> warrantyEndDate = const Value.absent(),
+    Value<String?> vendorName = const Value.absent(),
+    String? status,
+    Value<String?> note = const Value.absent(),
+    DateTime? createdAt,
+    DateTime? updatedAt,
+  }) => TyreRow(
+    id: id ?? this.id,
+    vehicleId: vehicleId ?? this.vehicleId,
+    position: position ?? this.position,
+    brand: brand.present ? brand.value : this.brand,
+    model: model.present ? model.value : this.model,
+    size: size.present ? size.value : this.size,
+    purchaseDate: purchaseDate.present ? purchaseDate.value : this.purchaseDate,
+    installDate: installDate ?? this.installDate,
+    installOdometer: installOdometer ?? this.installOdometer,
+    costPaisa: costPaisa ?? this.costPaisa,
+    warrantyEndDate: warrantyEndDate.present
+        ? warrantyEndDate.value
+        : this.warrantyEndDate,
+    vendorName: vendorName.present ? vendorName.value : this.vendorName,
+    status: status ?? this.status,
+    note: note.present ? note.value : this.note,
+    createdAt: createdAt ?? this.createdAt,
+    updatedAt: updatedAt ?? this.updatedAt,
+  );
+  TyreRow copyWithCompanion(TyresCompanion data) {
+    return TyreRow(
+      id: data.id.present ? data.id.value : this.id,
+      vehicleId: data.vehicleId.present ? data.vehicleId.value : this.vehicleId,
+      position: data.position.present ? data.position.value : this.position,
+      brand: data.brand.present ? data.brand.value : this.brand,
+      model: data.model.present ? data.model.value : this.model,
+      size: data.size.present ? data.size.value : this.size,
+      purchaseDate: data.purchaseDate.present
+          ? data.purchaseDate.value
+          : this.purchaseDate,
+      installDate: data.installDate.present
+          ? data.installDate.value
+          : this.installDate,
+      installOdometer: data.installOdometer.present
+          ? data.installOdometer.value
+          : this.installOdometer,
+      costPaisa: data.costPaisa.present ? data.costPaisa.value : this.costPaisa,
+      warrantyEndDate: data.warrantyEndDate.present
+          ? data.warrantyEndDate.value
+          : this.warrantyEndDate,
+      vendorName: data.vendorName.present
+          ? data.vendorName.value
+          : this.vendorName,
+      status: data.status.present ? data.status.value : this.status,
+      note: data.note.present ? data.note.value : this.note,
+      createdAt: data.createdAt.present ? data.createdAt.value : this.createdAt,
+      updatedAt: data.updatedAt.present ? data.updatedAt.value : this.updatedAt,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('TyreRow(')
+          ..write('id: $id, ')
+          ..write('vehicleId: $vehicleId, ')
+          ..write('position: $position, ')
+          ..write('brand: $brand, ')
+          ..write('model: $model, ')
+          ..write('size: $size, ')
+          ..write('purchaseDate: $purchaseDate, ')
+          ..write('installDate: $installDate, ')
+          ..write('installOdometer: $installOdometer, ')
+          ..write('costPaisa: $costPaisa, ')
+          ..write('warrantyEndDate: $warrantyEndDate, ')
+          ..write('vendorName: $vendorName, ')
+          ..write('status: $status, ')
+          ..write('note: $note, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('updatedAt: $updatedAt')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(
+    id,
+    vehicleId,
+    position,
+    brand,
+    model,
+    size,
+    purchaseDate,
+    installDate,
+    installOdometer,
+    costPaisa,
+    warrantyEndDate,
+    vendorName,
+    status,
+    note,
+    createdAt,
+    updatedAt,
+  );
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is TyreRow &&
+          other.id == this.id &&
+          other.vehicleId == this.vehicleId &&
+          other.position == this.position &&
+          other.brand == this.brand &&
+          other.model == this.model &&
+          other.size == this.size &&
+          other.purchaseDate == this.purchaseDate &&
+          other.installDate == this.installDate &&
+          other.installOdometer == this.installOdometer &&
+          other.costPaisa == this.costPaisa &&
+          other.warrantyEndDate == this.warrantyEndDate &&
+          other.vendorName == this.vendorName &&
+          other.status == this.status &&
+          other.note == this.note &&
+          other.createdAt == this.createdAt &&
+          other.updatedAt == this.updatedAt);
+}
+
+class TyresCompanion extends UpdateCompanion<TyreRow> {
+  final Value<String> id;
+  final Value<String> vehicleId;
+  final Value<String> position;
+  final Value<String?> brand;
+  final Value<String?> model;
+  final Value<String?> size;
+  final Value<DateTime?> purchaseDate;
+  final Value<DateTime> installDate;
+  final Value<int> installOdometer;
+  final Value<int> costPaisa;
+  final Value<DateTime?> warrantyEndDate;
+  final Value<String?> vendorName;
+  final Value<String> status;
+  final Value<String?> note;
+  final Value<DateTime> createdAt;
+  final Value<DateTime> updatedAt;
+  final Value<int> rowid;
+  const TyresCompanion({
+    this.id = const Value.absent(),
+    this.vehicleId = const Value.absent(),
+    this.position = const Value.absent(),
+    this.brand = const Value.absent(),
+    this.model = const Value.absent(),
+    this.size = const Value.absent(),
+    this.purchaseDate = const Value.absent(),
+    this.installDate = const Value.absent(),
+    this.installOdometer = const Value.absent(),
+    this.costPaisa = const Value.absent(),
+    this.warrantyEndDate = const Value.absent(),
+    this.vendorName = const Value.absent(),
+    this.status = const Value.absent(),
+    this.note = const Value.absent(),
+    this.createdAt = const Value.absent(),
+    this.updatedAt = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  TyresCompanion.insert({
+    required String id,
+    required String vehicleId,
+    required String position,
+    this.brand = const Value.absent(),
+    this.model = const Value.absent(),
+    this.size = const Value.absent(),
+    this.purchaseDate = const Value.absent(),
+    required DateTime installDate,
+    required int installOdometer,
+    this.costPaisa = const Value.absent(),
+    this.warrantyEndDate = const Value.absent(),
+    this.vendorName = const Value.absent(),
+    this.status = const Value.absent(),
+    this.note = const Value.absent(),
+    required DateTime createdAt,
+    required DateTime updatedAt,
+    this.rowid = const Value.absent(),
+  }) : id = Value(id),
+       vehicleId = Value(vehicleId),
+       position = Value(position),
+       installDate = Value(installDate),
+       installOdometer = Value(installOdometer),
+       createdAt = Value(createdAt),
+       updatedAt = Value(updatedAt);
+  static Insertable<TyreRow> custom({
+    Expression<String>? id,
+    Expression<String>? vehicleId,
+    Expression<String>? position,
+    Expression<String>? brand,
+    Expression<String>? model,
+    Expression<String>? size,
+    Expression<DateTime>? purchaseDate,
+    Expression<DateTime>? installDate,
+    Expression<int>? installOdometer,
+    Expression<int>? costPaisa,
+    Expression<DateTime>? warrantyEndDate,
+    Expression<String>? vendorName,
+    Expression<String>? status,
+    Expression<String>? note,
+    Expression<DateTime>? createdAt,
+    Expression<DateTime>? updatedAt,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (vehicleId != null) 'vehicle_id': vehicleId,
+      if (position != null) 'position': position,
+      if (brand != null) 'brand': brand,
+      if (model != null) 'model': model,
+      if (size != null) 'size': size,
+      if (purchaseDate != null) 'purchase_date': purchaseDate,
+      if (installDate != null) 'install_date': installDate,
+      if (installOdometer != null) 'install_odometer': installOdometer,
+      if (costPaisa != null) 'cost_paisa': costPaisa,
+      if (warrantyEndDate != null) 'warranty_end_date': warrantyEndDate,
+      if (vendorName != null) 'vendor_name': vendorName,
+      if (status != null) 'status': status,
+      if (note != null) 'note': note,
+      if (createdAt != null) 'created_at': createdAt,
+      if (updatedAt != null) 'updated_at': updatedAt,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  TyresCompanion copyWith({
+    Value<String>? id,
+    Value<String>? vehicleId,
+    Value<String>? position,
+    Value<String?>? brand,
+    Value<String?>? model,
+    Value<String?>? size,
+    Value<DateTime?>? purchaseDate,
+    Value<DateTime>? installDate,
+    Value<int>? installOdometer,
+    Value<int>? costPaisa,
+    Value<DateTime?>? warrantyEndDate,
+    Value<String?>? vendorName,
+    Value<String>? status,
+    Value<String?>? note,
+    Value<DateTime>? createdAt,
+    Value<DateTime>? updatedAt,
+    Value<int>? rowid,
+  }) {
+    return TyresCompanion(
+      id: id ?? this.id,
+      vehicleId: vehicleId ?? this.vehicleId,
+      position: position ?? this.position,
+      brand: brand ?? this.brand,
+      model: model ?? this.model,
+      size: size ?? this.size,
+      purchaseDate: purchaseDate ?? this.purchaseDate,
+      installDate: installDate ?? this.installDate,
+      installOdometer: installOdometer ?? this.installOdometer,
+      costPaisa: costPaisa ?? this.costPaisa,
+      warrantyEndDate: warrantyEndDate ?? this.warrantyEndDate,
+      vendorName: vendorName ?? this.vendorName,
+      status: status ?? this.status,
+      note: note ?? this.note,
+      createdAt: createdAt ?? this.createdAt,
+      updatedAt: updatedAt ?? this.updatedAt,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<String>(id.value);
+    }
+    if (vehicleId.present) {
+      map['vehicle_id'] = Variable<String>(vehicleId.value);
+    }
+    if (position.present) {
+      map['position'] = Variable<String>(position.value);
+    }
+    if (brand.present) {
+      map['brand'] = Variable<String>(brand.value);
+    }
+    if (model.present) {
+      map['model'] = Variable<String>(model.value);
+    }
+    if (size.present) {
+      map['size'] = Variable<String>(size.value);
+    }
+    if (purchaseDate.present) {
+      map['purchase_date'] = Variable<DateTime>(purchaseDate.value);
+    }
+    if (installDate.present) {
+      map['install_date'] = Variable<DateTime>(installDate.value);
+    }
+    if (installOdometer.present) {
+      map['install_odometer'] = Variable<int>(installOdometer.value);
+    }
+    if (costPaisa.present) {
+      map['cost_paisa'] = Variable<int>(costPaisa.value);
+    }
+    if (warrantyEndDate.present) {
+      map['warranty_end_date'] = Variable<DateTime>(warrantyEndDate.value);
+    }
+    if (vendorName.present) {
+      map['vendor_name'] = Variable<String>(vendorName.value);
+    }
+    if (status.present) {
+      map['status'] = Variable<String>(status.value);
+    }
+    if (note.present) {
+      map['note'] = Variable<String>(note.value);
+    }
+    if (createdAt.present) {
+      map['created_at'] = Variable<DateTime>(createdAt.value);
+    }
+    if (updatedAt.present) {
+      map['updated_at'] = Variable<DateTime>(updatedAt.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('TyresCompanion(')
+          ..write('id: $id, ')
+          ..write('vehicleId: $vehicleId, ')
+          ..write('position: $position, ')
+          ..write('brand: $brand, ')
+          ..write('model: $model, ')
+          ..write('size: $size, ')
+          ..write('purchaseDate: $purchaseDate, ')
+          ..write('installDate: $installDate, ')
+          ..write('installOdometer: $installOdometer, ')
+          ..write('costPaisa: $costPaisa, ')
+          ..write('warrantyEndDate: $warrantyEndDate, ')
+          ..write('vendorName: $vendorName, ')
+          ..write('status: $status, ')
+          ..write('note: $note, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('updatedAt: $updatedAt, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
+class $TyreEventsTable extends TyreEvents
+    with TableInfo<$TyreEventsTable, TyreEventRow> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $TyreEventsTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<String> id = GeneratedColumn<String>(
+    'id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _tyreIdMeta = const VerificationMeta('tyreId');
+  @override
+  late final GeneratedColumn<String> tyreId = GeneratedColumn<String>(
+    'tyre_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'REFERENCES tyres (id) ON DELETE CASCADE',
+    ),
+  );
+  static const VerificationMeta _vehicleIdMeta = const VerificationMeta(
+    'vehicleId',
+  );
+  @override
+  late final GeneratedColumn<String> vehicleId = GeneratedColumn<String>(
+    'vehicle_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'REFERENCES vehicles (id)',
+    ),
+  );
+  static const VerificationMeta _eventTypeMeta = const VerificationMeta(
+    'eventType',
+  );
+  @override
+  late final GeneratedColumn<String> eventType = GeneratedColumn<String>(
+    'event_type',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _occurredOnMeta = const VerificationMeta(
+    'occurredOn',
+  );
+  @override
+  late final GeneratedColumn<DateTime> occurredOn = GeneratedColumn<DateTime>(
+    'occurred_on',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _odometerMeta = const VerificationMeta(
+    'odometer',
+  );
+  @override
+  late final GeneratedColumn<int> odometer = GeneratedColumn<int>(
+    'odometer',
+    aliasedName,
+    true,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _fromPositionMeta = const VerificationMeta(
+    'fromPosition',
+  );
+  @override
+  late final GeneratedColumn<String> fromPosition = GeneratedColumn<String>(
+    'from_position',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _toPositionMeta = const VerificationMeta(
+    'toPosition',
+  );
+  @override
+  late final GeneratedColumn<String> toPosition = GeneratedColumn<String>(
+    'to_position',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _inspectionResultMeta = const VerificationMeta(
+    'inspectionResult',
+  );
+  @override
+  late final GeneratedColumn<String> inspectionResult = GeneratedColumn<String>(
+    'inspection_result',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _costPaisaMeta = const VerificationMeta(
+    'costPaisa',
+  );
+  @override
+  late final GeneratedColumn<int> costPaisa = GeneratedColumn<int>(
+    'cost_paisa',
+    aliasedName,
+    true,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _noteMeta = const VerificationMeta('note');
+  @override
+  late final GeneratedColumn<String> note = GeneratedColumn<String>(
+    'note',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _createdAtMeta = const VerificationMeta(
+    'createdAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> createdAt = GeneratedColumn<DateTime>(
+    'created_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [
+    id,
+    tyreId,
+    vehicleId,
+    eventType,
+    occurredOn,
+    odometer,
+    fromPosition,
+    toPosition,
+    inspectionResult,
+    costPaisa,
+    note,
+    createdAt,
+  ];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'tyre_events';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<TyreEventRow> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    } else if (isInserting) {
+      context.missing(_idMeta);
+    }
+    if (data.containsKey('tyre_id')) {
+      context.handle(
+        _tyreIdMeta,
+        tyreId.isAcceptableOrUnknown(data['tyre_id']!, _tyreIdMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_tyreIdMeta);
+    }
+    if (data.containsKey('vehicle_id')) {
+      context.handle(
+        _vehicleIdMeta,
+        vehicleId.isAcceptableOrUnknown(data['vehicle_id']!, _vehicleIdMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_vehicleIdMeta);
+    }
+    if (data.containsKey('event_type')) {
+      context.handle(
+        _eventTypeMeta,
+        eventType.isAcceptableOrUnknown(data['event_type']!, _eventTypeMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_eventTypeMeta);
+    }
+    if (data.containsKey('occurred_on')) {
+      context.handle(
+        _occurredOnMeta,
+        occurredOn.isAcceptableOrUnknown(data['occurred_on']!, _occurredOnMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_occurredOnMeta);
+    }
+    if (data.containsKey('odometer')) {
+      context.handle(
+        _odometerMeta,
+        odometer.isAcceptableOrUnknown(data['odometer']!, _odometerMeta),
+      );
+    }
+    if (data.containsKey('from_position')) {
+      context.handle(
+        _fromPositionMeta,
+        fromPosition.isAcceptableOrUnknown(
+          data['from_position']!,
+          _fromPositionMeta,
+        ),
+      );
+    }
+    if (data.containsKey('to_position')) {
+      context.handle(
+        _toPositionMeta,
+        toPosition.isAcceptableOrUnknown(data['to_position']!, _toPositionMeta),
+      );
+    }
+    if (data.containsKey('inspection_result')) {
+      context.handle(
+        _inspectionResultMeta,
+        inspectionResult.isAcceptableOrUnknown(
+          data['inspection_result']!,
+          _inspectionResultMeta,
+        ),
+      );
+    }
+    if (data.containsKey('cost_paisa')) {
+      context.handle(
+        _costPaisaMeta,
+        costPaisa.isAcceptableOrUnknown(data['cost_paisa']!, _costPaisaMeta),
+      );
+    }
+    if (data.containsKey('note')) {
+      context.handle(
+        _noteMeta,
+        note.isAcceptableOrUnknown(data['note']!, _noteMeta),
+      );
+    }
+    if (data.containsKey('created_at')) {
+      context.handle(
+        _createdAtMeta,
+        createdAt.isAcceptableOrUnknown(data['created_at']!, _createdAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_createdAtMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  TyreEventRow map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return TyreEventRow(
+      id: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}id'],
+      )!,
+      tyreId: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}tyre_id'],
+      )!,
+      vehicleId: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}vehicle_id'],
+      )!,
+      eventType: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}event_type'],
+      )!,
+      occurredOn: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}occurred_on'],
+      )!,
+      odometer: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}odometer'],
+      ),
+      fromPosition: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}from_position'],
+      ),
+      toPosition: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}to_position'],
+      ),
+      inspectionResult: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}inspection_result'],
+      ),
+      costPaisa: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}cost_paisa'],
+      ),
+      note: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}note'],
+      ),
+      createdAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}created_at'],
+      )!,
+    );
+  }
+
+  @override
+  $TyreEventsTable createAlias(String alias) {
+    return $TyreEventsTable(attachedDatabase, alias);
+  }
+}
+
+class TyreEventRow extends DataClass implements Insertable<TyreEventRow> {
+  final String id;
+  final String tyreId;
+  final String vehicleId;
+
+  /// installed | rotated | inspected | repaired | replaced | removed
+  final String eventType;
+  final DateTime occurredOn;
+  final int? odometer;
+  final String? fromPosition;
+  final String? toPosition;
+  final String? inspectionResult;
+  final int? costPaisa;
+  final String? note;
+  final DateTime createdAt;
+  const TyreEventRow({
+    required this.id,
+    required this.tyreId,
+    required this.vehicleId,
+    required this.eventType,
+    required this.occurredOn,
+    this.odometer,
+    this.fromPosition,
+    this.toPosition,
+    this.inspectionResult,
+    this.costPaisa,
+    this.note,
+    required this.createdAt,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<String>(id);
+    map['tyre_id'] = Variable<String>(tyreId);
+    map['vehicle_id'] = Variable<String>(vehicleId);
+    map['event_type'] = Variable<String>(eventType);
+    map['occurred_on'] = Variable<DateTime>(occurredOn);
+    if (!nullToAbsent || odometer != null) {
+      map['odometer'] = Variable<int>(odometer);
+    }
+    if (!nullToAbsent || fromPosition != null) {
+      map['from_position'] = Variable<String>(fromPosition);
+    }
+    if (!nullToAbsent || toPosition != null) {
+      map['to_position'] = Variable<String>(toPosition);
+    }
+    if (!nullToAbsent || inspectionResult != null) {
+      map['inspection_result'] = Variable<String>(inspectionResult);
+    }
+    if (!nullToAbsent || costPaisa != null) {
+      map['cost_paisa'] = Variable<int>(costPaisa);
+    }
+    if (!nullToAbsent || note != null) {
+      map['note'] = Variable<String>(note);
+    }
+    map['created_at'] = Variable<DateTime>(createdAt);
+    return map;
+  }
+
+  TyreEventsCompanion toCompanion(bool nullToAbsent) {
+    return TyreEventsCompanion(
+      id: Value(id),
+      tyreId: Value(tyreId),
+      vehicleId: Value(vehicleId),
+      eventType: Value(eventType),
+      occurredOn: Value(occurredOn),
+      odometer: odometer == null && nullToAbsent
+          ? const Value.absent()
+          : Value(odometer),
+      fromPosition: fromPosition == null && nullToAbsent
+          ? const Value.absent()
+          : Value(fromPosition),
+      toPosition: toPosition == null && nullToAbsent
+          ? const Value.absent()
+          : Value(toPosition),
+      inspectionResult: inspectionResult == null && nullToAbsent
+          ? const Value.absent()
+          : Value(inspectionResult),
+      costPaisa: costPaisa == null && nullToAbsent
+          ? const Value.absent()
+          : Value(costPaisa),
+      note: note == null && nullToAbsent ? const Value.absent() : Value(note),
+      createdAt: Value(createdAt),
+    );
+  }
+
+  factory TyreEventRow.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return TyreEventRow(
+      id: serializer.fromJson<String>(json['id']),
+      tyreId: serializer.fromJson<String>(json['tyreId']),
+      vehicleId: serializer.fromJson<String>(json['vehicleId']),
+      eventType: serializer.fromJson<String>(json['eventType']),
+      occurredOn: serializer.fromJson<DateTime>(json['occurredOn']),
+      odometer: serializer.fromJson<int?>(json['odometer']),
+      fromPosition: serializer.fromJson<String?>(json['fromPosition']),
+      toPosition: serializer.fromJson<String?>(json['toPosition']),
+      inspectionResult: serializer.fromJson<String?>(json['inspectionResult']),
+      costPaisa: serializer.fromJson<int?>(json['costPaisa']),
+      note: serializer.fromJson<String?>(json['note']),
+      createdAt: serializer.fromJson<DateTime>(json['createdAt']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<String>(id),
+      'tyreId': serializer.toJson<String>(tyreId),
+      'vehicleId': serializer.toJson<String>(vehicleId),
+      'eventType': serializer.toJson<String>(eventType),
+      'occurredOn': serializer.toJson<DateTime>(occurredOn),
+      'odometer': serializer.toJson<int?>(odometer),
+      'fromPosition': serializer.toJson<String?>(fromPosition),
+      'toPosition': serializer.toJson<String?>(toPosition),
+      'inspectionResult': serializer.toJson<String?>(inspectionResult),
+      'costPaisa': serializer.toJson<int?>(costPaisa),
+      'note': serializer.toJson<String?>(note),
+      'createdAt': serializer.toJson<DateTime>(createdAt),
+    };
+  }
+
+  TyreEventRow copyWith({
+    String? id,
+    String? tyreId,
+    String? vehicleId,
+    String? eventType,
+    DateTime? occurredOn,
+    Value<int?> odometer = const Value.absent(),
+    Value<String?> fromPosition = const Value.absent(),
+    Value<String?> toPosition = const Value.absent(),
+    Value<String?> inspectionResult = const Value.absent(),
+    Value<int?> costPaisa = const Value.absent(),
+    Value<String?> note = const Value.absent(),
+    DateTime? createdAt,
+  }) => TyreEventRow(
+    id: id ?? this.id,
+    tyreId: tyreId ?? this.tyreId,
+    vehicleId: vehicleId ?? this.vehicleId,
+    eventType: eventType ?? this.eventType,
+    occurredOn: occurredOn ?? this.occurredOn,
+    odometer: odometer.present ? odometer.value : this.odometer,
+    fromPosition: fromPosition.present ? fromPosition.value : this.fromPosition,
+    toPosition: toPosition.present ? toPosition.value : this.toPosition,
+    inspectionResult: inspectionResult.present
+        ? inspectionResult.value
+        : this.inspectionResult,
+    costPaisa: costPaisa.present ? costPaisa.value : this.costPaisa,
+    note: note.present ? note.value : this.note,
+    createdAt: createdAt ?? this.createdAt,
+  );
+  TyreEventRow copyWithCompanion(TyreEventsCompanion data) {
+    return TyreEventRow(
+      id: data.id.present ? data.id.value : this.id,
+      tyreId: data.tyreId.present ? data.tyreId.value : this.tyreId,
+      vehicleId: data.vehicleId.present ? data.vehicleId.value : this.vehicleId,
+      eventType: data.eventType.present ? data.eventType.value : this.eventType,
+      occurredOn: data.occurredOn.present
+          ? data.occurredOn.value
+          : this.occurredOn,
+      odometer: data.odometer.present ? data.odometer.value : this.odometer,
+      fromPosition: data.fromPosition.present
+          ? data.fromPosition.value
+          : this.fromPosition,
+      toPosition: data.toPosition.present
+          ? data.toPosition.value
+          : this.toPosition,
+      inspectionResult: data.inspectionResult.present
+          ? data.inspectionResult.value
+          : this.inspectionResult,
+      costPaisa: data.costPaisa.present ? data.costPaisa.value : this.costPaisa,
+      note: data.note.present ? data.note.value : this.note,
+      createdAt: data.createdAt.present ? data.createdAt.value : this.createdAt,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('TyreEventRow(')
+          ..write('id: $id, ')
+          ..write('tyreId: $tyreId, ')
+          ..write('vehicleId: $vehicleId, ')
+          ..write('eventType: $eventType, ')
+          ..write('occurredOn: $occurredOn, ')
+          ..write('odometer: $odometer, ')
+          ..write('fromPosition: $fromPosition, ')
+          ..write('toPosition: $toPosition, ')
+          ..write('inspectionResult: $inspectionResult, ')
+          ..write('costPaisa: $costPaisa, ')
+          ..write('note: $note, ')
+          ..write('createdAt: $createdAt')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(
+    id,
+    tyreId,
+    vehicleId,
+    eventType,
+    occurredOn,
+    odometer,
+    fromPosition,
+    toPosition,
+    inspectionResult,
+    costPaisa,
+    note,
+    createdAt,
+  );
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is TyreEventRow &&
+          other.id == this.id &&
+          other.tyreId == this.tyreId &&
+          other.vehicleId == this.vehicleId &&
+          other.eventType == this.eventType &&
+          other.occurredOn == this.occurredOn &&
+          other.odometer == this.odometer &&
+          other.fromPosition == this.fromPosition &&
+          other.toPosition == this.toPosition &&
+          other.inspectionResult == this.inspectionResult &&
+          other.costPaisa == this.costPaisa &&
+          other.note == this.note &&
+          other.createdAt == this.createdAt);
+}
+
+class TyreEventsCompanion extends UpdateCompanion<TyreEventRow> {
+  final Value<String> id;
+  final Value<String> tyreId;
+  final Value<String> vehicleId;
+  final Value<String> eventType;
+  final Value<DateTime> occurredOn;
+  final Value<int?> odometer;
+  final Value<String?> fromPosition;
+  final Value<String?> toPosition;
+  final Value<String?> inspectionResult;
+  final Value<int?> costPaisa;
+  final Value<String?> note;
+  final Value<DateTime> createdAt;
+  final Value<int> rowid;
+  const TyreEventsCompanion({
+    this.id = const Value.absent(),
+    this.tyreId = const Value.absent(),
+    this.vehicleId = const Value.absent(),
+    this.eventType = const Value.absent(),
+    this.occurredOn = const Value.absent(),
+    this.odometer = const Value.absent(),
+    this.fromPosition = const Value.absent(),
+    this.toPosition = const Value.absent(),
+    this.inspectionResult = const Value.absent(),
+    this.costPaisa = const Value.absent(),
+    this.note = const Value.absent(),
+    this.createdAt = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  TyreEventsCompanion.insert({
+    required String id,
+    required String tyreId,
+    required String vehicleId,
+    required String eventType,
+    required DateTime occurredOn,
+    this.odometer = const Value.absent(),
+    this.fromPosition = const Value.absent(),
+    this.toPosition = const Value.absent(),
+    this.inspectionResult = const Value.absent(),
+    this.costPaisa = const Value.absent(),
+    this.note = const Value.absent(),
+    required DateTime createdAt,
+    this.rowid = const Value.absent(),
+  }) : id = Value(id),
+       tyreId = Value(tyreId),
+       vehicleId = Value(vehicleId),
+       eventType = Value(eventType),
+       occurredOn = Value(occurredOn),
+       createdAt = Value(createdAt);
+  static Insertable<TyreEventRow> custom({
+    Expression<String>? id,
+    Expression<String>? tyreId,
+    Expression<String>? vehicleId,
+    Expression<String>? eventType,
+    Expression<DateTime>? occurredOn,
+    Expression<int>? odometer,
+    Expression<String>? fromPosition,
+    Expression<String>? toPosition,
+    Expression<String>? inspectionResult,
+    Expression<int>? costPaisa,
+    Expression<String>? note,
+    Expression<DateTime>? createdAt,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (tyreId != null) 'tyre_id': tyreId,
+      if (vehicleId != null) 'vehicle_id': vehicleId,
+      if (eventType != null) 'event_type': eventType,
+      if (occurredOn != null) 'occurred_on': occurredOn,
+      if (odometer != null) 'odometer': odometer,
+      if (fromPosition != null) 'from_position': fromPosition,
+      if (toPosition != null) 'to_position': toPosition,
+      if (inspectionResult != null) 'inspection_result': inspectionResult,
+      if (costPaisa != null) 'cost_paisa': costPaisa,
+      if (note != null) 'note': note,
+      if (createdAt != null) 'created_at': createdAt,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  TyreEventsCompanion copyWith({
+    Value<String>? id,
+    Value<String>? tyreId,
+    Value<String>? vehicleId,
+    Value<String>? eventType,
+    Value<DateTime>? occurredOn,
+    Value<int?>? odometer,
+    Value<String?>? fromPosition,
+    Value<String?>? toPosition,
+    Value<String?>? inspectionResult,
+    Value<int?>? costPaisa,
+    Value<String?>? note,
+    Value<DateTime>? createdAt,
+    Value<int>? rowid,
+  }) {
+    return TyreEventsCompanion(
+      id: id ?? this.id,
+      tyreId: tyreId ?? this.tyreId,
+      vehicleId: vehicleId ?? this.vehicleId,
+      eventType: eventType ?? this.eventType,
+      occurredOn: occurredOn ?? this.occurredOn,
+      odometer: odometer ?? this.odometer,
+      fromPosition: fromPosition ?? this.fromPosition,
+      toPosition: toPosition ?? this.toPosition,
+      inspectionResult: inspectionResult ?? this.inspectionResult,
+      costPaisa: costPaisa ?? this.costPaisa,
+      note: note ?? this.note,
+      createdAt: createdAt ?? this.createdAt,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<String>(id.value);
+    }
+    if (tyreId.present) {
+      map['tyre_id'] = Variable<String>(tyreId.value);
+    }
+    if (vehicleId.present) {
+      map['vehicle_id'] = Variable<String>(vehicleId.value);
+    }
+    if (eventType.present) {
+      map['event_type'] = Variable<String>(eventType.value);
+    }
+    if (occurredOn.present) {
+      map['occurred_on'] = Variable<DateTime>(occurredOn.value);
+    }
+    if (odometer.present) {
+      map['odometer'] = Variable<int>(odometer.value);
+    }
+    if (fromPosition.present) {
+      map['from_position'] = Variable<String>(fromPosition.value);
+    }
+    if (toPosition.present) {
+      map['to_position'] = Variable<String>(toPosition.value);
+    }
+    if (inspectionResult.present) {
+      map['inspection_result'] = Variable<String>(inspectionResult.value);
+    }
+    if (costPaisa.present) {
+      map['cost_paisa'] = Variable<int>(costPaisa.value);
+    }
+    if (note.present) {
+      map['note'] = Variable<String>(note.value);
+    }
+    if (createdAt.present) {
+      map['created_at'] = Variable<DateTime>(createdAt.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('TyreEventsCompanion(')
+          ..write('id: $id, ')
+          ..write('tyreId: $tyreId, ')
+          ..write('vehicleId: $vehicleId, ')
+          ..write('eventType: $eventType, ')
+          ..write('occurredOn: $occurredOn, ')
+          ..write('odometer: $odometer, ')
+          ..write('fromPosition: $fromPosition, ')
+          ..write('toPosition: $toPosition, ')
+          ..write('inspectionResult: $inspectionResult, ')
+          ..write('costPaisa: $costPaisa, ')
+          ..write('note: $note, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
+class $BatteriesTable extends Batteries
+    with TableInfo<$BatteriesTable, BatteryRow> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $BatteriesTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<String> id = GeneratedColumn<String>(
+    'id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _vehicleIdMeta = const VerificationMeta(
+    'vehicleId',
+  );
+  @override
+  late final GeneratedColumn<String> vehicleId = GeneratedColumn<String>(
+    'vehicle_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'REFERENCES vehicles (id)',
+    ),
+  );
+  static const VerificationMeta _brandMeta = const VerificationMeta('brand');
+  @override
+  late final GeneratedColumn<String> brand = GeneratedColumn<String>(
+    'brand',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _modelMeta = const VerificationMeta('model');
+  @override
+  late final GeneratedColumn<String> model = GeneratedColumn<String>(
+    'model',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _specificationMeta = const VerificationMeta(
+    'specification',
+  );
+  @override
+  late final GeneratedColumn<String> specification = GeneratedColumn<String>(
+    'specification',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _purchaseDateMeta = const VerificationMeta(
+    'purchaseDate',
+  );
+  @override
+  late final GeneratedColumn<DateTime> purchaseDate = GeneratedColumn<DateTime>(
+    'purchase_date',
+    aliasedName,
+    true,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _installDateMeta = const VerificationMeta(
+    'installDate',
+  );
+  @override
+  late final GeneratedColumn<DateTime> installDate = GeneratedColumn<DateTime>(
+    'install_date',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _installOdometerMeta = const VerificationMeta(
+    'installOdometer',
+  );
+  @override
+  late final GeneratedColumn<int> installOdometer = GeneratedColumn<int>(
+    'install_odometer',
+    aliasedName,
+    true,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _costPaisaMeta = const VerificationMeta(
+    'costPaisa',
+  );
+  @override
+  late final GeneratedColumn<int> costPaisa = GeneratedColumn<int>(
+    'cost_paisa',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _warrantyEndDateMeta = const VerificationMeta(
+    'warrantyEndDate',
+  );
+  @override
+  late final GeneratedColumn<DateTime> warrantyEndDate =
+      GeneratedColumn<DateTime>(
+        'warranty_end_date',
+        aliasedName,
+        true,
+        type: DriftSqlType.dateTime,
+        requiredDuringInsert: false,
+      );
+  static const VerificationMeta _vendorNameMeta = const VerificationMeta(
+    'vendorName',
+  );
+  @override
+  late final GeneratedColumn<String> vendorName = GeneratedColumn<String>(
+    'vendor_name',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _statusMeta = const VerificationMeta('status');
+  @override
+  late final GeneratedColumn<String> status = GeneratedColumn<String>(
+    'status',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+    defaultValue: const Constant('active'),
+  );
+  static const VerificationMeta _noteMeta = const VerificationMeta('note');
+  @override
+  late final GeneratedColumn<String> note = GeneratedColumn<String>(
+    'note',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _createdAtMeta = const VerificationMeta(
+    'createdAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> createdAt = GeneratedColumn<DateTime>(
+    'created_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _updatedAtMeta = const VerificationMeta(
+    'updatedAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> updatedAt = GeneratedColumn<DateTime>(
+    'updated_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [
+    id,
+    vehicleId,
+    brand,
+    model,
+    specification,
+    purchaseDate,
+    installDate,
+    installOdometer,
+    costPaisa,
+    warrantyEndDate,
+    vendorName,
+    status,
+    note,
+    createdAt,
+    updatedAt,
+  ];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'batteries';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<BatteryRow> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    } else if (isInserting) {
+      context.missing(_idMeta);
+    }
+    if (data.containsKey('vehicle_id')) {
+      context.handle(
+        _vehicleIdMeta,
+        vehicleId.isAcceptableOrUnknown(data['vehicle_id']!, _vehicleIdMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_vehicleIdMeta);
+    }
+    if (data.containsKey('brand')) {
+      context.handle(
+        _brandMeta,
+        brand.isAcceptableOrUnknown(data['brand']!, _brandMeta),
+      );
+    }
+    if (data.containsKey('model')) {
+      context.handle(
+        _modelMeta,
+        model.isAcceptableOrUnknown(data['model']!, _modelMeta),
+      );
+    }
+    if (data.containsKey('specification')) {
+      context.handle(
+        _specificationMeta,
+        specification.isAcceptableOrUnknown(
+          data['specification']!,
+          _specificationMeta,
+        ),
+      );
+    }
+    if (data.containsKey('purchase_date')) {
+      context.handle(
+        _purchaseDateMeta,
+        purchaseDate.isAcceptableOrUnknown(
+          data['purchase_date']!,
+          _purchaseDateMeta,
+        ),
+      );
+    }
+    if (data.containsKey('install_date')) {
+      context.handle(
+        _installDateMeta,
+        installDate.isAcceptableOrUnknown(
+          data['install_date']!,
+          _installDateMeta,
+        ),
+      );
+    } else if (isInserting) {
+      context.missing(_installDateMeta);
+    }
+    if (data.containsKey('install_odometer')) {
+      context.handle(
+        _installOdometerMeta,
+        installOdometer.isAcceptableOrUnknown(
+          data['install_odometer']!,
+          _installOdometerMeta,
+        ),
+      );
+    }
+    if (data.containsKey('cost_paisa')) {
+      context.handle(
+        _costPaisaMeta,
+        costPaisa.isAcceptableOrUnknown(data['cost_paisa']!, _costPaisaMeta),
+      );
+    }
+    if (data.containsKey('warranty_end_date')) {
+      context.handle(
+        _warrantyEndDateMeta,
+        warrantyEndDate.isAcceptableOrUnknown(
+          data['warranty_end_date']!,
+          _warrantyEndDateMeta,
+        ),
+      );
+    }
+    if (data.containsKey('vendor_name')) {
+      context.handle(
+        _vendorNameMeta,
+        vendorName.isAcceptableOrUnknown(data['vendor_name']!, _vendorNameMeta),
+      );
+    }
+    if (data.containsKey('status')) {
+      context.handle(
+        _statusMeta,
+        status.isAcceptableOrUnknown(data['status']!, _statusMeta),
+      );
+    }
+    if (data.containsKey('note')) {
+      context.handle(
+        _noteMeta,
+        note.isAcceptableOrUnknown(data['note']!, _noteMeta),
+      );
+    }
+    if (data.containsKey('created_at')) {
+      context.handle(
+        _createdAtMeta,
+        createdAt.isAcceptableOrUnknown(data['created_at']!, _createdAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_createdAtMeta);
+    }
+    if (data.containsKey('updated_at')) {
+      context.handle(
+        _updatedAtMeta,
+        updatedAt.isAcceptableOrUnknown(data['updated_at']!, _updatedAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_updatedAtMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  BatteryRow map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return BatteryRow(
+      id: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}id'],
+      )!,
+      vehicleId: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}vehicle_id'],
+      )!,
+      brand: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}brand'],
+      ),
+      model: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}model'],
+      ),
+      specification: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}specification'],
+      ),
+      purchaseDate: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}purchase_date'],
+      ),
+      installDate: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}install_date'],
+      )!,
+      installOdometer: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}install_odometer'],
+      ),
+      costPaisa: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}cost_paisa'],
+      )!,
+      warrantyEndDate: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}warranty_end_date'],
+      ),
+      vendorName: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}vendor_name'],
+      ),
+      status: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}status'],
+      )!,
+      note: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}note'],
+      ),
+      createdAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}created_at'],
+      )!,
+      updatedAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}updated_at'],
+      )!,
+    );
+  }
+
+  @override
+  $BatteriesTable createAlias(String alias) {
+    return $BatteriesTable(attachedDatabase, alias);
+  }
+}
+
+class BatteryRow extends DataClass implements Insertable<BatteryRow> {
+  final String id;
+  final String vehicleId;
+  final String? brand;
+  final String? model;
+  final String? specification;
+  final DateTime? purchaseDate;
+  final DateTime installDate;
+  final int? installOdometer;
+  final int costPaisa;
+  final DateTime? warrantyEndDate;
+  final String? vendorName;
+
+  /// active | replaced | removed
+  final String status;
+  final String? note;
+  final DateTime createdAt;
+  final DateTime updatedAt;
+  const BatteryRow({
+    required this.id,
+    required this.vehicleId,
+    this.brand,
+    this.model,
+    this.specification,
+    this.purchaseDate,
+    required this.installDate,
+    this.installOdometer,
+    required this.costPaisa,
+    this.warrantyEndDate,
+    this.vendorName,
+    required this.status,
+    this.note,
+    required this.createdAt,
+    required this.updatedAt,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<String>(id);
+    map['vehicle_id'] = Variable<String>(vehicleId);
+    if (!nullToAbsent || brand != null) {
+      map['brand'] = Variable<String>(brand);
+    }
+    if (!nullToAbsent || model != null) {
+      map['model'] = Variable<String>(model);
+    }
+    if (!nullToAbsent || specification != null) {
+      map['specification'] = Variable<String>(specification);
+    }
+    if (!nullToAbsent || purchaseDate != null) {
+      map['purchase_date'] = Variable<DateTime>(purchaseDate);
+    }
+    map['install_date'] = Variable<DateTime>(installDate);
+    if (!nullToAbsent || installOdometer != null) {
+      map['install_odometer'] = Variable<int>(installOdometer);
+    }
+    map['cost_paisa'] = Variable<int>(costPaisa);
+    if (!nullToAbsent || warrantyEndDate != null) {
+      map['warranty_end_date'] = Variable<DateTime>(warrantyEndDate);
+    }
+    if (!nullToAbsent || vendorName != null) {
+      map['vendor_name'] = Variable<String>(vendorName);
+    }
+    map['status'] = Variable<String>(status);
+    if (!nullToAbsent || note != null) {
+      map['note'] = Variable<String>(note);
+    }
+    map['created_at'] = Variable<DateTime>(createdAt);
+    map['updated_at'] = Variable<DateTime>(updatedAt);
+    return map;
+  }
+
+  BatteriesCompanion toCompanion(bool nullToAbsent) {
+    return BatteriesCompanion(
+      id: Value(id),
+      vehicleId: Value(vehicleId),
+      brand: brand == null && nullToAbsent
+          ? const Value.absent()
+          : Value(brand),
+      model: model == null && nullToAbsent
+          ? const Value.absent()
+          : Value(model),
+      specification: specification == null && nullToAbsent
+          ? const Value.absent()
+          : Value(specification),
+      purchaseDate: purchaseDate == null && nullToAbsent
+          ? const Value.absent()
+          : Value(purchaseDate),
+      installDate: Value(installDate),
+      installOdometer: installOdometer == null && nullToAbsent
+          ? const Value.absent()
+          : Value(installOdometer),
+      costPaisa: Value(costPaisa),
+      warrantyEndDate: warrantyEndDate == null && nullToAbsent
+          ? const Value.absent()
+          : Value(warrantyEndDate),
+      vendorName: vendorName == null && nullToAbsent
+          ? const Value.absent()
+          : Value(vendorName),
+      status: Value(status),
+      note: note == null && nullToAbsent ? const Value.absent() : Value(note),
+      createdAt: Value(createdAt),
+      updatedAt: Value(updatedAt),
+    );
+  }
+
+  factory BatteryRow.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return BatteryRow(
+      id: serializer.fromJson<String>(json['id']),
+      vehicleId: serializer.fromJson<String>(json['vehicleId']),
+      brand: serializer.fromJson<String?>(json['brand']),
+      model: serializer.fromJson<String?>(json['model']),
+      specification: serializer.fromJson<String?>(json['specification']),
+      purchaseDate: serializer.fromJson<DateTime?>(json['purchaseDate']),
+      installDate: serializer.fromJson<DateTime>(json['installDate']),
+      installOdometer: serializer.fromJson<int?>(json['installOdometer']),
+      costPaisa: serializer.fromJson<int>(json['costPaisa']),
+      warrantyEndDate: serializer.fromJson<DateTime?>(json['warrantyEndDate']),
+      vendorName: serializer.fromJson<String?>(json['vendorName']),
+      status: serializer.fromJson<String>(json['status']),
+      note: serializer.fromJson<String?>(json['note']),
+      createdAt: serializer.fromJson<DateTime>(json['createdAt']),
+      updatedAt: serializer.fromJson<DateTime>(json['updatedAt']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<String>(id),
+      'vehicleId': serializer.toJson<String>(vehicleId),
+      'brand': serializer.toJson<String?>(brand),
+      'model': serializer.toJson<String?>(model),
+      'specification': serializer.toJson<String?>(specification),
+      'purchaseDate': serializer.toJson<DateTime?>(purchaseDate),
+      'installDate': serializer.toJson<DateTime>(installDate),
+      'installOdometer': serializer.toJson<int?>(installOdometer),
+      'costPaisa': serializer.toJson<int>(costPaisa),
+      'warrantyEndDate': serializer.toJson<DateTime?>(warrantyEndDate),
+      'vendorName': serializer.toJson<String?>(vendorName),
+      'status': serializer.toJson<String>(status),
+      'note': serializer.toJson<String?>(note),
+      'createdAt': serializer.toJson<DateTime>(createdAt),
+      'updatedAt': serializer.toJson<DateTime>(updatedAt),
+    };
+  }
+
+  BatteryRow copyWith({
+    String? id,
+    String? vehicleId,
+    Value<String?> brand = const Value.absent(),
+    Value<String?> model = const Value.absent(),
+    Value<String?> specification = const Value.absent(),
+    Value<DateTime?> purchaseDate = const Value.absent(),
+    DateTime? installDate,
+    Value<int?> installOdometer = const Value.absent(),
+    int? costPaisa,
+    Value<DateTime?> warrantyEndDate = const Value.absent(),
+    Value<String?> vendorName = const Value.absent(),
+    String? status,
+    Value<String?> note = const Value.absent(),
+    DateTime? createdAt,
+    DateTime? updatedAt,
+  }) => BatteryRow(
+    id: id ?? this.id,
+    vehicleId: vehicleId ?? this.vehicleId,
+    brand: brand.present ? brand.value : this.brand,
+    model: model.present ? model.value : this.model,
+    specification: specification.present
+        ? specification.value
+        : this.specification,
+    purchaseDate: purchaseDate.present ? purchaseDate.value : this.purchaseDate,
+    installDate: installDate ?? this.installDate,
+    installOdometer: installOdometer.present
+        ? installOdometer.value
+        : this.installOdometer,
+    costPaisa: costPaisa ?? this.costPaisa,
+    warrantyEndDate: warrantyEndDate.present
+        ? warrantyEndDate.value
+        : this.warrantyEndDate,
+    vendorName: vendorName.present ? vendorName.value : this.vendorName,
+    status: status ?? this.status,
+    note: note.present ? note.value : this.note,
+    createdAt: createdAt ?? this.createdAt,
+    updatedAt: updatedAt ?? this.updatedAt,
+  );
+  BatteryRow copyWithCompanion(BatteriesCompanion data) {
+    return BatteryRow(
+      id: data.id.present ? data.id.value : this.id,
+      vehicleId: data.vehicleId.present ? data.vehicleId.value : this.vehicleId,
+      brand: data.brand.present ? data.brand.value : this.brand,
+      model: data.model.present ? data.model.value : this.model,
+      specification: data.specification.present
+          ? data.specification.value
+          : this.specification,
+      purchaseDate: data.purchaseDate.present
+          ? data.purchaseDate.value
+          : this.purchaseDate,
+      installDate: data.installDate.present
+          ? data.installDate.value
+          : this.installDate,
+      installOdometer: data.installOdometer.present
+          ? data.installOdometer.value
+          : this.installOdometer,
+      costPaisa: data.costPaisa.present ? data.costPaisa.value : this.costPaisa,
+      warrantyEndDate: data.warrantyEndDate.present
+          ? data.warrantyEndDate.value
+          : this.warrantyEndDate,
+      vendorName: data.vendorName.present
+          ? data.vendorName.value
+          : this.vendorName,
+      status: data.status.present ? data.status.value : this.status,
+      note: data.note.present ? data.note.value : this.note,
+      createdAt: data.createdAt.present ? data.createdAt.value : this.createdAt,
+      updatedAt: data.updatedAt.present ? data.updatedAt.value : this.updatedAt,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('BatteryRow(')
+          ..write('id: $id, ')
+          ..write('vehicleId: $vehicleId, ')
+          ..write('brand: $brand, ')
+          ..write('model: $model, ')
+          ..write('specification: $specification, ')
+          ..write('purchaseDate: $purchaseDate, ')
+          ..write('installDate: $installDate, ')
+          ..write('installOdometer: $installOdometer, ')
+          ..write('costPaisa: $costPaisa, ')
+          ..write('warrantyEndDate: $warrantyEndDate, ')
+          ..write('vendorName: $vendorName, ')
+          ..write('status: $status, ')
+          ..write('note: $note, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('updatedAt: $updatedAt')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(
+    id,
+    vehicleId,
+    brand,
+    model,
+    specification,
+    purchaseDate,
+    installDate,
+    installOdometer,
+    costPaisa,
+    warrantyEndDate,
+    vendorName,
+    status,
+    note,
+    createdAt,
+    updatedAt,
+  );
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is BatteryRow &&
+          other.id == this.id &&
+          other.vehicleId == this.vehicleId &&
+          other.brand == this.brand &&
+          other.model == this.model &&
+          other.specification == this.specification &&
+          other.purchaseDate == this.purchaseDate &&
+          other.installDate == this.installDate &&
+          other.installOdometer == this.installOdometer &&
+          other.costPaisa == this.costPaisa &&
+          other.warrantyEndDate == this.warrantyEndDate &&
+          other.vendorName == this.vendorName &&
+          other.status == this.status &&
+          other.note == this.note &&
+          other.createdAt == this.createdAt &&
+          other.updatedAt == this.updatedAt);
+}
+
+class BatteriesCompanion extends UpdateCompanion<BatteryRow> {
+  final Value<String> id;
+  final Value<String> vehicleId;
+  final Value<String?> brand;
+  final Value<String?> model;
+  final Value<String?> specification;
+  final Value<DateTime?> purchaseDate;
+  final Value<DateTime> installDate;
+  final Value<int?> installOdometer;
+  final Value<int> costPaisa;
+  final Value<DateTime?> warrantyEndDate;
+  final Value<String?> vendorName;
+  final Value<String> status;
+  final Value<String?> note;
+  final Value<DateTime> createdAt;
+  final Value<DateTime> updatedAt;
+  final Value<int> rowid;
+  const BatteriesCompanion({
+    this.id = const Value.absent(),
+    this.vehicleId = const Value.absent(),
+    this.brand = const Value.absent(),
+    this.model = const Value.absent(),
+    this.specification = const Value.absent(),
+    this.purchaseDate = const Value.absent(),
+    this.installDate = const Value.absent(),
+    this.installOdometer = const Value.absent(),
+    this.costPaisa = const Value.absent(),
+    this.warrantyEndDate = const Value.absent(),
+    this.vendorName = const Value.absent(),
+    this.status = const Value.absent(),
+    this.note = const Value.absent(),
+    this.createdAt = const Value.absent(),
+    this.updatedAt = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  BatteriesCompanion.insert({
+    required String id,
+    required String vehicleId,
+    this.brand = const Value.absent(),
+    this.model = const Value.absent(),
+    this.specification = const Value.absent(),
+    this.purchaseDate = const Value.absent(),
+    required DateTime installDate,
+    this.installOdometer = const Value.absent(),
+    this.costPaisa = const Value.absent(),
+    this.warrantyEndDate = const Value.absent(),
+    this.vendorName = const Value.absent(),
+    this.status = const Value.absent(),
+    this.note = const Value.absent(),
+    required DateTime createdAt,
+    required DateTime updatedAt,
+    this.rowid = const Value.absent(),
+  }) : id = Value(id),
+       vehicleId = Value(vehicleId),
+       installDate = Value(installDate),
+       createdAt = Value(createdAt),
+       updatedAt = Value(updatedAt);
+  static Insertable<BatteryRow> custom({
+    Expression<String>? id,
+    Expression<String>? vehicleId,
+    Expression<String>? brand,
+    Expression<String>? model,
+    Expression<String>? specification,
+    Expression<DateTime>? purchaseDate,
+    Expression<DateTime>? installDate,
+    Expression<int>? installOdometer,
+    Expression<int>? costPaisa,
+    Expression<DateTime>? warrantyEndDate,
+    Expression<String>? vendorName,
+    Expression<String>? status,
+    Expression<String>? note,
+    Expression<DateTime>? createdAt,
+    Expression<DateTime>? updatedAt,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (vehicleId != null) 'vehicle_id': vehicleId,
+      if (brand != null) 'brand': brand,
+      if (model != null) 'model': model,
+      if (specification != null) 'specification': specification,
+      if (purchaseDate != null) 'purchase_date': purchaseDate,
+      if (installDate != null) 'install_date': installDate,
+      if (installOdometer != null) 'install_odometer': installOdometer,
+      if (costPaisa != null) 'cost_paisa': costPaisa,
+      if (warrantyEndDate != null) 'warranty_end_date': warrantyEndDate,
+      if (vendorName != null) 'vendor_name': vendorName,
+      if (status != null) 'status': status,
+      if (note != null) 'note': note,
+      if (createdAt != null) 'created_at': createdAt,
+      if (updatedAt != null) 'updated_at': updatedAt,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  BatteriesCompanion copyWith({
+    Value<String>? id,
+    Value<String>? vehicleId,
+    Value<String?>? brand,
+    Value<String?>? model,
+    Value<String?>? specification,
+    Value<DateTime?>? purchaseDate,
+    Value<DateTime>? installDate,
+    Value<int?>? installOdometer,
+    Value<int>? costPaisa,
+    Value<DateTime?>? warrantyEndDate,
+    Value<String?>? vendorName,
+    Value<String>? status,
+    Value<String?>? note,
+    Value<DateTime>? createdAt,
+    Value<DateTime>? updatedAt,
+    Value<int>? rowid,
+  }) {
+    return BatteriesCompanion(
+      id: id ?? this.id,
+      vehicleId: vehicleId ?? this.vehicleId,
+      brand: brand ?? this.brand,
+      model: model ?? this.model,
+      specification: specification ?? this.specification,
+      purchaseDate: purchaseDate ?? this.purchaseDate,
+      installDate: installDate ?? this.installDate,
+      installOdometer: installOdometer ?? this.installOdometer,
+      costPaisa: costPaisa ?? this.costPaisa,
+      warrantyEndDate: warrantyEndDate ?? this.warrantyEndDate,
+      vendorName: vendorName ?? this.vendorName,
+      status: status ?? this.status,
+      note: note ?? this.note,
+      createdAt: createdAt ?? this.createdAt,
+      updatedAt: updatedAt ?? this.updatedAt,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<String>(id.value);
+    }
+    if (vehicleId.present) {
+      map['vehicle_id'] = Variable<String>(vehicleId.value);
+    }
+    if (brand.present) {
+      map['brand'] = Variable<String>(brand.value);
+    }
+    if (model.present) {
+      map['model'] = Variable<String>(model.value);
+    }
+    if (specification.present) {
+      map['specification'] = Variable<String>(specification.value);
+    }
+    if (purchaseDate.present) {
+      map['purchase_date'] = Variable<DateTime>(purchaseDate.value);
+    }
+    if (installDate.present) {
+      map['install_date'] = Variable<DateTime>(installDate.value);
+    }
+    if (installOdometer.present) {
+      map['install_odometer'] = Variable<int>(installOdometer.value);
+    }
+    if (costPaisa.present) {
+      map['cost_paisa'] = Variable<int>(costPaisa.value);
+    }
+    if (warrantyEndDate.present) {
+      map['warranty_end_date'] = Variable<DateTime>(warrantyEndDate.value);
+    }
+    if (vendorName.present) {
+      map['vendor_name'] = Variable<String>(vendorName.value);
+    }
+    if (status.present) {
+      map['status'] = Variable<String>(status.value);
+    }
+    if (note.present) {
+      map['note'] = Variable<String>(note.value);
+    }
+    if (createdAt.present) {
+      map['created_at'] = Variable<DateTime>(createdAt.value);
+    }
+    if (updatedAt.present) {
+      map['updated_at'] = Variable<DateTime>(updatedAt.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('BatteriesCompanion(')
+          ..write('id: $id, ')
+          ..write('vehicleId: $vehicleId, ')
+          ..write('brand: $brand, ')
+          ..write('model: $model, ')
+          ..write('specification: $specification, ')
+          ..write('purchaseDate: $purchaseDate, ')
+          ..write('installDate: $installDate, ')
+          ..write('installOdometer: $installOdometer, ')
+          ..write('costPaisa: $costPaisa, ')
+          ..write('warrantyEndDate: $warrantyEndDate, ')
+          ..write('vendorName: $vendorName, ')
+          ..write('status: $status, ')
+          ..write('note: $note, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('updatedAt: $updatedAt, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
 abstract class _$AppDatabase extends GeneratedDatabase {
   _$AppDatabase(QueryExecutor e) : super(e);
   $AppDatabaseManager get managers => $AppDatabaseManager(this);
@@ -7592,6 +12724,12 @@ abstract class _$AppDatabase extends GeneratedDatabase {
   late final $ServiceRecordsTable serviceRecords = $ServiceRecordsTable(this);
   late final $ServiceItemsTable serviceItems = $ServiceItemsTable(this);
   late final $OilChangesTable oilChanges = $OilChangesTable(this);
+  late final $RepairsTable repairs = $RepairsTable(this);
+  late final $RepairPartsTable repairParts = $RepairPartsTable(this);
+  late final $VehiclePartsTable vehicleParts = $VehiclePartsTable(this);
+  late final $TyresTable tyres = $TyresTable(this);
+  late final $TyreEventsTable tyreEvents = $TyreEventsTable(this);
+  late final $BatteriesTable batteries = $BatteriesTable(this);
   late final Index idxOdometerVehicleRecorded = Index(
     'idx_odometer_vehicle_recorded',
     'CREATE INDEX idx_odometer_vehicle_recorded ON odometer_entries (vehicle_id, recorded_at)',
@@ -7628,6 +12766,30 @@ abstract class _$AppDatabase extends GeneratedDatabase {
     'idx_oil_vehicle_date',
     'CREATE INDEX idx_oil_vehicle_date ON oil_changes (vehicle_id, occurred_on)',
   );
+  late final Index idxRepairVehicleDate = Index(
+    'idx_repair_vehicle_date',
+    'CREATE INDEX idx_repair_vehicle_date ON repairs (vehicle_id, repair_date)',
+  );
+  late final Index idxRepairPartsRepair = Index(
+    'idx_repair_parts_repair',
+    'CREATE INDEX idx_repair_parts_repair ON repair_parts (repair_id)',
+  );
+  late final Index idxVehiclePartsVehicle = Index(
+    'idx_vehicle_parts_vehicle',
+    'CREATE INDEX idx_vehicle_parts_vehicle ON vehicle_parts (vehicle_id, installed_date)',
+  );
+  late final Index idxTyresVehicleStatus = Index(
+    'idx_tyres_vehicle_status',
+    'CREATE INDEX idx_tyres_vehicle_status ON tyres (vehicle_id, status)',
+  );
+  late final Index idxTyreEventsTyre = Index(
+    'idx_tyre_events_tyre',
+    'CREATE INDEX idx_tyre_events_tyre ON tyre_events (tyre_id, occurred_on)',
+  );
+  late final Index idxBatteriesVehicleStatus = Index(
+    'idx_batteries_vehicle_status',
+    'CREATE INDEX idx_batteries_vehicle_status ON batteries (vehicle_id, status)',
+  );
   @override
   Iterable<TableInfo<Table, Object?>> get allTables =>
       allSchemaEntities.whereType<TableInfo<Table, Object?>>();
@@ -7643,6 +12805,12 @@ abstract class _$AppDatabase extends GeneratedDatabase {
     serviceRecords,
     serviceItems,
     oilChanges,
+    repairs,
+    repairParts,
+    vehicleParts,
+    tyres,
+    tyreEvents,
+    batteries,
     idxOdometerVehicleRecorded,
     idxOdometerVehicleOdometer,
     idxFuelVehicleDatetime,
@@ -7652,6 +12820,12 @@ abstract class _$AppDatabase extends GeneratedDatabase {
     idxServiceVehicleDate,
     idxServiceItemsRecord,
     idxOilVehicleDate,
+    idxRepairVehicleDate,
+    idxRepairPartsRepair,
+    idxVehiclePartsVehicle,
+    idxTyresVehicleStatus,
+    idxTyreEventsTyre,
+    idxBatteriesVehicleStatus,
   ];
   @override
   StreamQueryUpdateRules get streamUpdateRules => const StreamQueryUpdateRules([
@@ -7661,6 +12835,20 @@ abstract class _$AppDatabase extends GeneratedDatabase {
         limitUpdateKind: UpdateKind.delete,
       ),
       result: [TableUpdate('service_items', kind: UpdateKind.delete)],
+    ),
+    WritePropagation(
+      on: TableUpdateQuery.onTableName(
+        'repairs',
+        limitUpdateKind: UpdateKind.delete,
+      ),
+      result: [TableUpdate('repair_parts', kind: UpdateKind.delete)],
+    ),
+    WritePropagation(
+      on: TableUpdateQuery.onTableName(
+        'tyres',
+        limitUpdateKind: UpdateKind.delete,
+      ),
+      result: [TableUpdate('tyre_events', kind: UpdateKind.delete)],
     ),
   ]);
 }
@@ -7975,6 +13163,98 @@ final class $$VehiclesTableReferences
       manager.$state.copyWith(prefetchedData: cache),
     );
   }
+
+  static MultiTypedResultKey<$RepairsTable, List<RepairRow>> _repairsRefsTable(
+    _$AppDatabase db,
+  ) => MultiTypedResultKey.fromTable(
+    db.repairs,
+    aliasName: 'vehicles__id__repairs__vehicle_id',
+  );
+
+  $$RepairsTableProcessedTableManager get repairsRefs {
+    final manager = $$RepairsTableTableManager(
+      $_db,
+      $_db.repairs,
+    ).filter((f) => f.vehicleId.id.sqlEquals($_itemColumn<String>('id')!));
+
+    final cache = $_typedResult.readTableOrNull(_repairsRefsTable($_db));
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: cache),
+    );
+  }
+
+  static MultiTypedResultKey<$VehiclePartsTable, List<VehiclePartRow>>
+  _vehiclePartsRefsTable(_$AppDatabase db) => MultiTypedResultKey.fromTable(
+    db.vehicleParts,
+    aliasName: 'vehicles__id__vehicle_parts__vehicle_id',
+  );
+
+  $$VehiclePartsTableProcessedTableManager get vehiclePartsRefs {
+    final manager = $$VehiclePartsTableTableManager(
+      $_db,
+      $_db.vehicleParts,
+    ).filter((f) => f.vehicleId.id.sqlEquals($_itemColumn<String>('id')!));
+
+    final cache = $_typedResult.readTableOrNull(_vehiclePartsRefsTable($_db));
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: cache),
+    );
+  }
+
+  static MultiTypedResultKey<$TyresTable, List<TyreRow>> _tyresRefsTable(
+    _$AppDatabase db,
+  ) => MultiTypedResultKey.fromTable(
+    db.tyres,
+    aliasName: 'vehicles__id__tyres__vehicle_id',
+  );
+
+  $$TyresTableProcessedTableManager get tyresRefs {
+    final manager = $$TyresTableTableManager(
+      $_db,
+      $_db.tyres,
+    ).filter((f) => f.vehicleId.id.sqlEquals($_itemColumn<String>('id')!));
+
+    final cache = $_typedResult.readTableOrNull(_tyresRefsTable($_db));
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: cache),
+    );
+  }
+
+  static MultiTypedResultKey<$TyreEventsTable, List<TyreEventRow>>
+  _tyreEventsRefsTable(_$AppDatabase db) => MultiTypedResultKey.fromTable(
+    db.tyreEvents,
+    aliasName: 'vehicles__id__tyre_events__vehicle_id',
+  );
+
+  $$TyreEventsTableProcessedTableManager get tyreEventsRefs {
+    final manager = $$TyreEventsTableTableManager(
+      $_db,
+      $_db.tyreEvents,
+    ).filter((f) => f.vehicleId.id.sqlEquals($_itemColumn<String>('id')!));
+
+    final cache = $_typedResult.readTableOrNull(_tyreEventsRefsTable($_db));
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: cache),
+    );
+  }
+
+  static MultiTypedResultKey<$BatteriesTable, List<BatteryRow>>
+  _batteriesRefsTable(_$AppDatabase db) => MultiTypedResultKey.fromTable(
+    db.batteries,
+    aliasName: 'vehicles__id__batteries__vehicle_id',
+  );
+
+  $$BatteriesTableProcessedTableManager get batteriesRefs {
+    final manager = $$BatteriesTableTableManager(
+      $_db,
+      $_db.batteries,
+    ).filter((f) => f.vehicleId.id.sqlEquals($_itemColumn<String>('id')!));
+
+    final cache = $_typedResult.readTableOrNull(_batteriesRefsTable($_db));
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: cache),
+    );
+  }
 }
 
 class $$VehiclesTableFilterComposer
@@ -8207,6 +13487,131 @@ class $$VehiclesTableFilterComposer
           }) => $$OilChangesTableFilterComposer(
             $db: $db,
             $table: $db.oilChanges,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
+
+  Expression<bool> repairsRefs(
+    Expression<bool> Function($$RepairsTableFilterComposer f) f,
+  ) {
+    final $$RepairsTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.repairs,
+      getReferencedColumn: (t) => t.vehicleId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$RepairsTableFilterComposer(
+            $db: $db,
+            $table: $db.repairs,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
+
+  Expression<bool> vehiclePartsRefs(
+    Expression<bool> Function($$VehiclePartsTableFilterComposer f) f,
+  ) {
+    final $$VehiclePartsTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.vehicleParts,
+      getReferencedColumn: (t) => t.vehicleId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$VehiclePartsTableFilterComposer(
+            $db: $db,
+            $table: $db.vehicleParts,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
+
+  Expression<bool> tyresRefs(
+    Expression<bool> Function($$TyresTableFilterComposer f) f,
+  ) {
+    final $$TyresTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.tyres,
+      getReferencedColumn: (t) => t.vehicleId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$TyresTableFilterComposer(
+            $db: $db,
+            $table: $db.tyres,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
+
+  Expression<bool> tyreEventsRefs(
+    Expression<bool> Function($$TyreEventsTableFilterComposer f) f,
+  ) {
+    final $$TyreEventsTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.tyreEvents,
+      getReferencedColumn: (t) => t.vehicleId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$TyreEventsTableFilterComposer(
+            $db: $db,
+            $table: $db.tyreEvents,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
+
+  Expression<bool> batteriesRefs(
+    Expression<bool> Function($$BatteriesTableFilterComposer f) f,
+  ) {
+    final $$BatteriesTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.batteries,
+      getReferencedColumn: (t) => t.vehicleId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$BatteriesTableFilterComposer(
+            $db: $db,
+            $table: $db.batteries,
             $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
             joinBuilder: joinBuilder,
             $removeJoinBuilderFromRootComposer:
@@ -8548,6 +13953,131 @@ class $$VehiclesTableAnnotationComposer
     );
     return f(composer);
   }
+
+  Expression<T> repairsRefs<T extends Object>(
+    Expression<T> Function($$RepairsTableAnnotationComposer a) f,
+  ) {
+    final $$RepairsTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.repairs,
+      getReferencedColumn: (t) => t.vehicleId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$RepairsTableAnnotationComposer(
+            $db: $db,
+            $table: $db.repairs,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
+
+  Expression<T> vehiclePartsRefs<T extends Object>(
+    Expression<T> Function($$VehiclePartsTableAnnotationComposer a) f,
+  ) {
+    final $$VehiclePartsTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.vehicleParts,
+      getReferencedColumn: (t) => t.vehicleId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$VehiclePartsTableAnnotationComposer(
+            $db: $db,
+            $table: $db.vehicleParts,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
+
+  Expression<T> tyresRefs<T extends Object>(
+    Expression<T> Function($$TyresTableAnnotationComposer a) f,
+  ) {
+    final $$TyresTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.tyres,
+      getReferencedColumn: (t) => t.vehicleId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$TyresTableAnnotationComposer(
+            $db: $db,
+            $table: $db.tyres,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
+
+  Expression<T> tyreEventsRefs<T extends Object>(
+    Expression<T> Function($$TyreEventsTableAnnotationComposer a) f,
+  ) {
+    final $$TyreEventsTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.tyreEvents,
+      getReferencedColumn: (t) => t.vehicleId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$TyreEventsTableAnnotationComposer(
+            $db: $db,
+            $table: $db.tyreEvents,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
+
+  Expression<T> batteriesRefs<T extends Object>(
+    Expression<T> Function($$BatteriesTableAnnotationComposer a) f,
+  ) {
+    final $$BatteriesTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.batteries,
+      getReferencedColumn: (t) => t.vehicleId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$BatteriesTableAnnotationComposer(
+            $db: $db,
+            $table: $db.batteries,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
 }
 
 class $$VehiclesTableTableManager
@@ -8569,6 +14099,11 @@ class $$VehiclesTableTableManager
             bool expensesRefs,
             bool serviceRecordsRefs,
             bool oilChangesRefs,
+            bool repairsRefs,
+            bool vehiclePartsRefs,
+            bool tyresRefs,
+            bool tyreEventsRefs,
+            bool batteriesRefs,
           })
         > {
   $$VehiclesTableTableManager(_$AppDatabase db, $VehiclesTable table)
@@ -8693,6 +14228,11 @@ class $$VehiclesTableTableManager
                 expensesRefs = false,
                 serviceRecordsRefs = false,
                 oilChangesRefs = false,
+                repairsRefs = false,
+                vehiclePartsRefs = false,
+                tyresRefs = false,
+                tyreEventsRefs = false,
+                batteriesRefs = false,
               }) {
                 return PrefetchHooks(
                   db: db,
@@ -8702,6 +14242,11 @@ class $$VehiclesTableTableManager
                     if (expensesRefs) db.expenses,
                     if (serviceRecordsRefs) db.serviceRecords,
                     if (oilChangesRefs) db.oilChanges,
+                    if (repairsRefs) db.repairs,
+                    if (vehiclePartsRefs) db.vehicleParts,
+                    if (tyresRefs) db.tyres,
+                    if (tyreEventsRefs) db.tyreEvents,
+                    if (batteriesRefs) db.batteries,
                   ],
                   addJoins: null,
                   getPrefetchedDataCallback: (items) async {
@@ -8811,6 +14356,111 @@ class $$VehiclesTableTableManager
                               ),
                           typedResults: items,
                         ),
+                      if (repairsRefs)
+                        await $_getPrefetchedData<
+                          VehicleRow,
+                          $VehiclesTable,
+                          RepairRow
+                        >(
+                          currentTable: table,
+                          referencedTable: $$VehiclesTableReferences
+                              ._repairsRefsTable(db),
+                          managerFromTypedResult: (p0) =>
+                              $$VehiclesTableReferences(
+                                db,
+                                table,
+                                p0,
+                              ).repairsRefs,
+                          referencedItemsForCurrentItem:
+                              (item, referencedItems) => referencedItems.where(
+                                (e) => e.vehicleId == item.id,
+                              ),
+                          typedResults: items,
+                        ),
+                      if (vehiclePartsRefs)
+                        await $_getPrefetchedData<
+                          VehicleRow,
+                          $VehiclesTable,
+                          VehiclePartRow
+                        >(
+                          currentTable: table,
+                          referencedTable: $$VehiclesTableReferences
+                              ._vehiclePartsRefsTable(db),
+                          managerFromTypedResult: (p0) =>
+                              $$VehiclesTableReferences(
+                                db,
+                                table,
+                                p0,
+                              ).vehiclePartsRefs,
+                          referencedItemsForCurrentItem:
+                              (item, referencedItems) => referencedItems.where(
+                                (e) => e.vehicleId == item.id,
+                              ),
+                          typedResults: items,
+                        ),
+                      if (tyresRefs)
+                        await $_getPrefetchedData<
+                          VehicleRow,
+                          $VehiclesTable,
+                          TyreRow
+                        >(
+                          currentTable: table,
+                          referencedTable: $$VehiclesTableReferences
+                              ._tyresRefsTable(db),
+                          managerFromTypedResult: (p0) =>
+                              $$VehiclesTableReferences(
+                                db,
+                                table,
+                                p0,
+                              ).tyresRefs,
+                          referencedItemsForCurrentItem:
+                              (item, referencedItems) => referencedItems.where(
+                                (e) => e.vehicleId == item.id,
+                              ),
+                          typedResults: items,
+                        ),
+                      if (tyreEventsRefs)
+                        await $_getPrefetchedData<
+                          VehicleRow,
+                          $VehiclesTable,
+                          TyreEventRow
+                        >(
+                          currentTable: table,
+                          referencedTable: $$VehiclesTableReferences
+                              ._tyreEventsRefsTable(db),
+                          managerFromTypedResult: (p0) =>
+                              $$VehiclesTableReferences(
+                                db,
+                                table,
+                                p0,
+                              ).tyreEventsRefs,
+                          referencedItemsForCurrentItem:
+                              (item, referencedItems) => referencedItems.where(
+                                (e) => e.vehicleId == item.id,
+                              ),
+                          typedResults: items,
+                        ),
+                      if (batteriesRefs)
+                        await $_getPrefetchedData<
+                          VehicleRow,
+                          $VehiclesTable,
+                          BatteryRow
+                        >(
+                          currentTable: table,
+                          referencedTable: $$VehiclesTableReferences
+                              ._batteriesRefsTable(db),
+                          managerFromTypedResult: (p0) =>
+                              $$VehiclesTableReferences(
+                                db,
+                                table,
+                                p0,
+                              ).batteriesRefs,
+                          referencedItemsForCurrentItem:
+                              (item, referencedItems) => referencedItems.where(
+                                (e) => e.vehicleId == item.id,
+                              ),
+                          typedResults: items,
+                        ),
                     ];
                   },
                 );
@@ -8837,6 +14487,11 @@ typedef $$VehiclesTableProcessedTableManager =
         bool expensesRefs,
         bool serviceRecordsRefs,
         bool oilChangesRefs,
+        bool repairsRefs,
+        bool vehiclePartsRefs,
+        bool tyresRefs,
+        bool tyreEventsRefs,
+        bool batteriesRefs,
       })
     >;
 typedef $$OdometerEntriesTableCreateCompanionBuilder =
@@ -13071,6 +18726,3302 @@ typedef $$OilChangesTableProcessedTableManager =
       OilChangeRow,
       PrefetchHooks Function({bool vehicleId, bool serviceRecordId})
     >;
+typedef $$RepairsTableCreateCompanionBuilder = RepairsCompanion Function({
+  required String id,
+  required String vehicleId,
+  required DateTime repairDate,
+  required int odometer,
+  required String category,
+  required String problemDescription,
+  Value<String?> diagnosis,
+  Value<String?> workPerformed,
+  Value<String?> vendorName,
+  Value<int> laborCostPaisa,
+  Value<int> partsCostPaisa,
+  Value<int> totalCostPaisa,
+  Value<DateTime?> warrantyEndDate,
+  Value<DateTime?> followUpDate,
+  Value<String?> note,
+  required DateTime createdAt,
+  required DateTime updatedAt,
+  Value<int> rowid,
+});
+typedef $$RepairsTableUpdateCompanionBuilder = RepairsCompanion Function({
+  Value<String> id,
+  Value<String> vehicleId,
+  Value<DateTime> repairDate,
+  Value<int> odometer,
+  Value<String> category,
+  Value<String> problemDescription,
+  Value<String?> diagnosis,
+  Value<String?> workPerformed,
+  Value<String?> vendorName,
+  Value<int> laborCostPaisa,
+  Value<int> partsCostPaisa,
+  Value<int> totalCostPaisa,
+  Value<DateTime?> warrantyEndDate,
+  Value<DateTime?> followUpDate,
+  Value<String?> note,
+  Value<DateTime> createdAt,
+  Value<DateTime> updatedAt,
+  Value<int> rowid,
+});
+
+final class $$RepairsTableReferences
+    extends BaseReferences<_$AppDatabase, $RepairsTable, RepairRow> {
+  $$RepairsTableReferences(super.$_db, super.$_table, super.$_typedResult);
+
+  static $VehiclesTable _vehicleIdTable(_$AppDatabase db) =>
+      db.vehicles.createAlias('repairs__vehicle_id__vehicles__id');
+
+  $$VehiclesTableProcessedTableManager get vehicleId {
+    final $_column = $_itemColumn<String>('vehicle_id')!;
+
+    final manager = $$VehiclesTableTableManager(
+      $_db,
+      $_db.vehicles,
+    ).filter((f) => f.id.sqlEquals($_column));
+    final item = $_typedResult.readTableOrNull(_vehicleIdTable($_db));
+    if (item == null) return manager;
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: [item]),
+    );
+  }
+
+  static MultiTypedResultKey<$RepairPartsTable, List<RepairPartRow>>
+  _repairPartsRefsTable(_$AppDatabase db) => MultiTypedResultKey.fromTable(
+    db.repairParts,
+    aliasName: 'repairs__id__repair_parts__repair_id',
+  );
+
+  $$RepairPartsTableProcessedTableManager get repairPartsRefs {
+    final manager = $$RepairPartsTableTableManager(
+      $_db,
+      $_db.repairParts,
+    ).filter((f) => f.repairId.id.sqlEquals($_itemColumn<String>('id')!));
+
+    final cache = $_typedResult.readTableOrNull(_repairPartsRefsTable($_db));
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: cache),
+    );
+  }
+}
+
+class $$RepairsTableFilterComposer
+    extends Composer<_$AppDatabase, $RepairsTable> {
+  $$RepairsTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get repairDate => $composableBuilder(
+    column: $table.repairDate,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get odometer => $composableBuilder(
+    column: $table.odometer,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get category => $composableBuilder(
+    column: $table.category,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get problemDescription => $composableBuilder(
+    column: $table.problemDescription,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get diagnosis => $composableBuilder(
+    column: $table.diagnosis,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get workPerformed => $composableBuilder(
+    column: $table.workPerformed,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get vendorName => $composableBuilder(
+    column: $table.vendorName,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get laborCostPaisa => $composableBuilder(
+    column: $table.laborCostPaisa,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get partsCostPaisa => $composableBuilder(
+    column: $table.partsCostPaisa,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get totalCostPaisa => $composableBuilder(
+    column: $table.totalCostPaisa,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get warrantyEndDate => $composableBuilder(
+    column: $table.warrantyEndDate,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get followUpDate => $composableBuilder(
+    column: $table.followUpDate,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get note => $composableBuilder(
+    column: $table.note,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get updatedAt => $composableBuilder(
+    column: $table.updatedAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  $$VehiclesTableFilterComposer get vehicleId {
+    final $$VehiclesTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.vehicleId,
+      referencedTable: $db.vehicles,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$VehiclesTableFilterComposer(
+            $db: $db,
+            $table: $db.vehicles,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+
+  Expression<bool> repairPartsRefs(
+    Expression<bool> Function($$RepairPartsTableFilterComposer f) f,
+  ) {
+    final $$RepairPartsTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.repairParts,
+      getReferencedColumn: (t) => t.repairId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$RepairPartsTableFilterComposer(
+            $db: $db,
+            $table: $db.repairParts,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
+}
+
+class $$RepairsTableOrderingComposer
+    extends Composer<_$AppDatabase, $RepairsTable> {
+  $$RepairsTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get repairDate => $composableBuilder(
+    column: $table.repairDate,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get odometer => $composableBuilder(
+    column: $table.odometer,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get category => $composableBuilder(
+    column: $table.category,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get problemDescription => $composableBuilder(
+    column: $table.problemDescription,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get diagnosis => $composableBuilder(
+    column: $table.diagnosis,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get workPerformed => $composableBuilder(
+    column: $table.workPerformed,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get vendorName => $composableBuilder(
+    column: $table.vendorName,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get laborCostPaisa => $composableBuilder(
+    column: $table.laborCostPaisa,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get partsCostPaisa => $composableBuilder(
+    column: $table.partsCostPaisa,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get totalCostPaisa => $composableBuilder(
+    column: $table.totalCostPaisa,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get warrantyEndDate => $composableBuilder(
+    column: $table.warrantyEndDate,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get followUpDate => $composableBuilder(
+    column: $table.followUpDate,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get note => $composableBuilder(
+    column: $table.note,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get updatedAt => $composableBuilder(
+    column: $table.updatedAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  $$VehiclesTableOrderingComposer get vehicleId {
+    final $$VehiclesTableOrderingComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.vehicleId,
+      referencedTable: $db.vehicles,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$VehiclesTableOrderingComposer(
+            $db: $db,
+            $table: $db.vehicles,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$RepairsTableAnnotationComposer
+    extends Composer<_$AppDatabase, $RepairsTable> {
+  $$RepairsTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get repairDate => $composableBuilder(
+    column: $table.repairDate,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get odometer =>
+      $composableBuilder(column: $table.odometer, builder: (column) => column);
+
+  GeneratedColumn<String> get category =>
+      $composableBuilder(column: $table.category, builder: (column) => column);
+
+  GeneratedColumn<String> get problemDescription => $composableBuilder(
+    column: $table.problemDescription,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get diagnosis =>
+      $composableBuilder(column: $table.diagnosis, builder: (column) => column);
+
+  GeneratedColumn<String> get workPerformed => $composableBuilder(
+    column: $table.workPerformed,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get vendorName => $composableBuilder(
+    column: $table.vendorName,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get laborCostPaisa => $composableBuilder(
+    column: $table.laborCostPaisa,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get partsCostPaisa => $composableBuilder(
+    column: $table.partsCostPaisa,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get totalCostPaisa => $composableBuilder(
+    column: $table.totalCostPaisa,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<DateTime> get warrantyEndDate => $composableBuilder(
+    column: $table.warrantyEndDate,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<DateTime> get followUpDate => $composableBuilder(
+    column: $table.followUpDate,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get note =>
+      $composableBuilder(column: $table.note, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get updatedAt =>
+      $composableBuilder(column: $table.updatedAt, builder: (column) => column);
+
+  $$VehiclesTableAnnotationComposer get vehicleId {
+    final $$VehiclesTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.vehicleId,
+      referencedTable: $db.vehicles,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$VehiclesTableAnnotationComposer(
+            $db: $db,
+            $table: $db.vehicles,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+
+  Expression<T> repairPartsRefs<T extends Object>(
+    Expression<T> Function($$RepairPartsTableAnnotationComposer a) f,
+  ) {
+    final $$RepairPartsTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.repairParts,
+      getReferencedColumn: (t) => t.repairId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$RepairPartsTableAnnotationComposer(
+            $db: $db,
+            $table: $db.repairParts,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
+}
+
+class $$RepairsTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $RepairsTable,
+          RepairRow,
+          $$RepairsTableFilterComposer,
+          $$RepairsTableOrderingComposer,
+          $$RepairsTableAnnotationComposer,
+          $$RepairsTableCreateCompanionBuilder,
+          $$RepairsTableUpdateCompanionBuilder,
+          (RepairRow, $$RepairsTableReferences),
+          RepairRow,
+          PrefetchHooks Function({bool vehicleId, bool repairPartsRefs})
+        > {
+  $$RepairsTableTableManager(_$AppDatabase db, $RepairsTable table)
+    : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$RepairsTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$RepairsTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$RepairsTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<String> id = const Value.absent(),
+                Value<String> vehicleId = const Value.absent(),
+                Value<DateTime> repairDate = const Value.absent(),
+                Value<int> odometer = const Value.absent(),
+                Value<String> category = const Value.absent(),
+                Value<String> problemDescription = const Value.absent(),
+                Value<String?> diagnosis = const Value.absent(),
+                Value<String?> workPerformed = const Value.absent(),
+                Value<String?> vendorName = const Value.absent(),
+                Value<int> laborCostPaisa = const Value.absent(),
+                Value<int> partsCostPaisa = const Value.absent(),
+                Value<int> totalCostPaisa = const Value.absent(),
+                Value<DateTime?> warrantyEndDate = const Value.absent(),
+                Value<DateTime?> followUpDate = const Value.absent(),
+                Value<String?> note = const Value.absent(),
+                Value<DateTime> createdAt = const Value.absent(),
+                Value<DateTime> updatedAt = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => RepairsCompanion(
+                id: id,
+                vehicleId: vehicleId,
+                repairDate: repairDate,
+                odometer: odometer,
+                category: category,
+                problemDescription: problemDescription,
+                diagnosis: diagnosis,
+                workPerformed: workPerformed,
+                vendorName: vendorName,
+                laborCostPaisa: laborCostPaisa,
+                partsCostPaisa: partsCostPaisa,
+                totalCostPaisa: totalCostPaisa,
+                warrantyEndDate: warrantyEndDate,
+                followUpDate: followUpDate,
+                note: note,
+                createdAt: createdAt,
+                updatedAt: updatedAt,
+                rowid: rowid,
+              ),
+          createCompanionCallback:
+              ({
+                required String id,
+                required String vehicleId,
+                required DateTime repairDate,
+                required int odometer,
+                required String category,
+                required String problemDescription,
+                Value<String?> diagnosis = const Value.absent(),
+                Value<String?> workPerformed = const Value.absent(),
+                Value<String?> vendorName = const Value.absent(),
+                Value<int> laborCostPaisa = const Value.absent(),
+                Value<int> partsCostPaisa = const Value.absent(),
+                Value<int> totalCostPaisa = const Value.absent(),
+                Value<DateTime?> warrantyEndDate = const Value.absent(),
+                Value<DateTime?> followUpDate = const Value.absent(),
+                Value<String?> note = const Value.absent(),
+                required DateTime createdAt,
+                required DateTime updatedAt,
+                Value<int> rowid = const Value.absent(),
+              }) => RepairsCompanion.insert(
+                id: id,
+                vehicleId: vehicleId,
+                repairDate: repairDate,
+                odometer: odometer,
+                category: category,
+                problemDescription: problemDescription,
+                diagnosis: diagnosis,
+                workPerformed: workPerformed,
+                vendorName: vendorName,
+                laborCostPaisa: laborCostPaisa,
+                partsCostPaisa: partsCostPaisa,
+                totalCostPaisa: totalCostPaisa,
+                warrantyEndDate: warrantyEndDate,
+                followUpDate: followUpDate,
+                note: note,
+                createdAt: createdAt,
+                updatedAt: updatedAt,
+                rowid: rowid,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map(
+                (e) => (
+                  e.readTable<$RepairsTable, RepairRow>(table),
+                  $$RepairsTableReferences(db, table, e),
+                ),
+              )
+              .toList(),
+          prefetchHooksCallback:
+              ({vehicleId = false, repairPartsRefs = false}) {
+                return PrefetchHooks(
+                  db: db,
+                  explicitlyWatchedTables: [
+                    if (repairPartsRefs) db.repairParts,
+                  ],
+                  addJoins:
+                      <
+                        T extends TableManagerState<
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic
+                        >
+                      >(state) {
+                        if (vehicleId) {
+                          state = state.withJoin(
+                            currentTable: table,
+                            currentColumn: table.vehicleId,
+                            referencedTable: $$RepairsTableReferences
+                                ._vehicleIdTable(db),
+                            referencedColumn: $$RepairsTableReferences
+                                ._vehicleIdTable(db)
+                                .id,
+                          ) as T;
+                        }
+
+                        return state;
+                      },
+                  getPrefetchedDataCallback: (items) async {
+                    return [
+                      if (repairPartsRefs)
+                        await $_getPrefetchedData<
+                          RepairRow,
+                          $RepairsTable,
+                          RepairPartRow
+                        >(
+                          currentTable: table,
+                          referencedTable: $$RepairsTableReferences
+                              ._repairPartsRefsTable(db),
+                          managerFromTypedResult: (p0) =>
+                              $$RepairsTableReferences(
+                                db,
+                                table,
+                                p0,
+                              ).repairPartsRefs,
+                          referencedItemsForCurrentItem:
+                              (item, referencedItems) => referencedItems.where(
+                                (e) => e.repairId == item.id,
+                              ),
+                          typedResults: items,
+                        ),
+                    ];
+                  },
+                );
+              },
+        ),
+      );
+}
+
+typedef $$RepairsTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $RepairsTable,
+      RepairRow,
+      $$RepairsTableFilterComposer,
+      $$RepairsTableOrderingComposer,
+      $$RepairsTableAnnotationComposer,
+      $$RepairsTableCreateCompanionBuilder,
+      $$RepairsTableUpdateCompanionBuilder,
+      (RepairRow, $$RepairsTableReferences),
+      RepairRow,
+      PrefetchHooks Function({bool vehicleId, bool repairPartsRefs})
+    >;
+typedef $$RepairPartsTableCreateCompanionBuilder =
+    RepairPartsCompanion Function({
+      required String id,
+      required String repairId,
+      required String partName,
+      Value<String?> brand,
+      Value<String?> partNumber,
+      Value<double> quantity,
+      Value<int> unitCostPaisa,
+      Value<int> totalCostPaisa,
+      Value<DateTime?> warrantyEndDate,
+      Value<String?> note,
+      Value<int> rowid,
+    });
+typedef $$RepairPartsTableUpdateCompanionBuilder =
+    RepairPartsCompanion Function({
+      Value<String> id,
+      Value<String> repairId,
+      Value<String> partName,
+      Value<String?> brand,
+      Value<String?> partNumber,
+      Value<double> quantity,
+      Value<int> unitCostPaisa,
+      Value<int> totalCostPaisa,
+      Value<DateTime?> warrantyEndDate,
+      Value<String?> note,
+      Value<int> rowid,
+    });
+
+final class $$RepairPartsTableReferences
+    extends BaseReferences<_$AppDatabase, $RepairPartsTable, RepairPartRow> {
+  $$RepairPartsTableReferences(super.$_db, super.$_table, super.$_typedResult);
+
+  static $RepairsTable _repairIdTable(_$AppDatabase db) =>
+      db.repairs.createAlias('repair_parts__repair_id__repairs__id');
+
+  $$RepairsTableProcessedTableManager get repairId {
+    final $_column = $_itemColumn<String>('repair_id')!;
+
+    final manager = $$RepairsTableTableManager(
+      $_db,
+      $_db.repairs,
+    ).filter((f) => f.id.sqlEquals($_column));
+    final item = $_typedResult.readTableOrNull(_repairIdTable($_db));
+    if (item == null) return manager;
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: [item]),
+    );
+  }
+}
+
+class $$RepairPartsTableFilterComposer
+    extends Composer<_$AppDatabase, $RepairPartsTable> {
+  $$RepairPartsTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get partName => $composableBuilder(
+    column: $table.partName,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get brand => $composableBuilder(
+    column: $table.brand,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get partNumber => $composableBuilder(
+    column: $table.partNumber,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<double> get quantity => $composableBuilder(
+    column: $table.quantity,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get unitCostPaisa => $composableBuilder(
+    column: $table.unitCostPaisa,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get totalCostPaisa => $composableBuilder(
+    column: $table.totalCostPaisa,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get warrantyEndDate => $composableBuilder(
+    column: $table.warrantyEndDate,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get note => $composableBuilder(
+    column: $table.note,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  $$RepairsTableFilterComposer get repairId {
+    final $$RepairsTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.repairId,
+      referencedTable: $db.repairs,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$RepairsTableFilterComposer(
+            $db: $db,
+            $table: $db.repairs,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$RepairPartsTableOrderingComposer
+    extends Composer<_$AppDatabase, $RepairPartsTable> {
+  $$RepairPartsTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get partName => $composableBuilder(
+    column: $table.partName,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get brand => $composableBuilder(
+    column: $table.brand,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get partNumber => $composableBuilder(
+    column: $table.partNumber,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<double> get quantity => $composableBuilder(
+    column: $table.quantity,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get unitCostPaisa => $composableBuilder(
+    column: $table.unitCostPaisa,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get totalCostPaisa => $composableBuilder(
+    column: $table.totalCostPaisa,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get warrantyEndDate => $composableBuilder(
+    column: $table.warrantyEndDate,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get note => $composableBuilder(
+    column: $table.note,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  $$RepairsTableOrderingComposer get repairId {
+    final $$RepairsTableOrderingComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.repairId,
+      referencedTable: $db.repairs,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$RepairsTableOrderingComposer(
+            $db: $db,
+            $table: $db.repairs,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$RepairPartsTableAnnotationComposer
+    extends Composer<_$AppDatabase, $RepairPartsTable> {
+  $$RepairPartsTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<String> get partName =>
+      $composableBuilder(column: $table.partName, builder: (column) => column);
+
+  GeneratedColumn<String> get brand =>
+      $composableBuilder(column: $table.brand, builder: (column) => column);
+
+  GeneratedColumn<String> get partNumber => $composableBuilder(
+    column: $table.partNumber,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<double> get quantity =>
+      $composableBuilder(column: $table.quantity, builder: (column) => column);
+
+  GeneratedColumn<int> get unitCostPaisa => $composableBuilder(
+    column: $table.unitCostPaisa,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get totalCostPaisa => $composableBuilder(
+    column: $table.totalCostPaisa,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<DateTime> get warrantyEndDate => $composableBuilder(
+    column: $table.warrantyEndDate,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get note =>
+      $composableBuilder(column: $table.note, builder: (column) => column);
+
+  $$RepairsTableAnnotationComposer get repairId {
+    final $$RepairsTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.repairId,
+      referencedTable: $db.repairs,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$RepairsTableAnnotationComposer(
+            $db: $db,
+            $table: $db.repairs,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$RepairPartsTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $RepairPartsTable,
+          RepairPartRow,
+          $$RepairPartsTableFilterComposer,
+          $$RepairPartsTableOrderingComposer,
+          $$RepairPartsTableAnnotationComposer,
+          $$RepairPartsTableCreateCompanionBuilder,
+          $$RepairPartsTableUpdateCompanionBuilder,
+          (RepairPartRow, $$RepairPartsTableReferences),
+          RepairPartRow,
+          PrefetchHooks Function({bool repairId})
+        > {
+  $$RepairPartsTableTableManager(_$AppDatabase db, $RepairPartsTable table)
+    : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$RepairPartsTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$RepairPartsTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$RepairPartsTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<String> id = const Value.absent(),
+                Value<String> repairId = const Value.absent(),
+                Value<String> partName = const Value.absent(),
+                Value<String?> brand = const Value.absent(),
+                Value<String?> partNumber = const Value.absent(),
+                Value<double> quantity = const Value.absent(),
+                Value<int> unitCostPaisa = const Value.absent(),
+                Value<int> totalCostPaisa = const Value.absent(),
+                Value<DateTime?> warrantyEndDate = const Value.absent(),
+                Value<String?> note = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => RepairPartsCompanion(
+                id: id,
+                repairId: repairId,
+                partName: partName,
+                brand: brand,
+                partNumber: partNumber,
+                quantity: quantity,
+                unitCostPaisa: unitCostPaisa,
+                totalCostPaisa: totalCostPaisa,
+                warrantyEndDate: warrantyEndDate,
+                note: note,
+                rowid: rowid,
+              ),
+          createCompanionCallback:
+              ({
+                required String id,
+                required String repairId,
+                required String partName,
+                Value<String?> brand = const Value.absent(),
+                Value<String?> partNumber = const Value.absent(),
+                Value<double> quantity = const Value.absent(),
+                Value<int> unitCostPaisa = const Value.absent(),
+                Value<int> totalCostPaisa = const Value.absent(),
+                Value<DateTime?> warrantyEndDate = const Value.absent(),
+                Value<String?> note = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => RepairPartsCompanion.insert(
+                id: id,
+                repairId: repairId,
+                partName: partName,
+                brand: brand,
+                partNumber: partNumber,
+                quantity: quantity,
+                unitCostPaisa: unitCostPaisa,
+                totalCostPaisa: totalCostPaisa,
+                warrantyEndDate: warrantyEndDate,
+                note: note,
+                rowid: rowid,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map(
+                (e) => (
+                  e.readTable<$RepairPartsTable, RepairPartRow>(table),
+                  $$RepairPartsTableReferences(db, table, e),
+                ),
+              )
+              .toList(),
+          prefetchHooksCallback: ({repairId = false}) {
+            return PrefetchHooks(
+              db: db,
+              explicitlyWatchedTables: [],
+              addJoins:
+                  <
+                    T extends TableManagerState<
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic
+                    >
+                  >(state) {
+                    if (repairId) {
+                      state = state.withJoin(
+                        currentTable: table,
+                        currentColumn: table.repairId,
+                        referencedTable: $$RepairPartsTableReferences
+                            ._repairIdTable(db),
+                        referencedColumn: $$RepairPartsTableReferences
+                            ._repairIdTable(db)
+                            .id,
+                      ) as T;
+                    }
+
+                    return state;
+                  },
+              getPrefetchedDataCallback: (items) async {
+                return [];
+              },
+            );
+          },
+        ),
+      );
+}
+
+typedef $$RepairPartsTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $RepairPartsTable,
+      RepairPartRow,
+      $$RepairPartsTableFilterComposer,
+      $$RepairPartsTableOrderingComposer,
+      $$RepairPartsTableAnnotationComposer,
+      $$RepairPartsTableCreateCompanionBuilder,
+      $$RepairPartsTableUpdateCompanionBuilder,
+      (RepairPartRow, $$RepairPartsTableReferences),
+      RepairPartRow,
+      PrefetchHooks Function({bool repairId})
+    >;
+typedef $$VehiclePartsTableCreateCompanionBuilder =
+    VehiclePartsCompanion Function({
+      required String id,
+      required String vehicleId,
+      required String category,
+      required String name,
+      Value<String?> brand,
+      Value<String?> partNumber,
+      required DateTime installedDate,
+      Value<int?> installedOdometer,
+      Value<int> costPaisa,
+      Value<String?> vendorName,
+      Value<DateTime?> warrantyEndDate,
+      Value<int?> replacementIntervalKm,
+      Value<int?> replacementIntervalDays,
+      Value<String?> note,
+      Value<bool> isActive,
+      required DateTime createdAt,
+      required DateTime updatedAt,
+      Value<int> rowid,
+    });
+typedef $$VehiclePartsTableUpdateCompanionBuilder =
+    VehiclePartsCompanion Function({
+      Value<String> id,
+      Value<String> vehicleId,
+      Value<String> category,
+      Value<String> name,
+      Value<String?> brand,
+      Value<String?> partNumber,
+      Value<DateTime> installedDate,
+      Value<int?> installedOdometer,
+      Value<int> costPaisa,
+      Value<String?> vendorName,
+      Value<DateTime?> warrantyEndDate,
+      Value<int?> replacementIntervalKm,
+      Value<int?> replacementIntervalDays,
+      Value<String?> note,
+      Value<bool> isActive,
+      Value<DateTime> createdAt,
+      Value<DateTime> updatedAt,
+      Value<int> rowid,
+    });
+
+final class $$VehiclePartsTableReferences
+    extends BaseReferences<_$AppDatabase, $VehiclePartsTable, VehiclePartRow> {
+  $$VehiclePartsTableReferences(super.$_db, super.$_table, super.$_typedResult);
+
+  static $VehiclesTable _vehicleIdTable(_$AppDatabase db) =>
+      db.vehicles.createAlias('vehicle_parts__vehicle_id__vehicles__id');
+
+  $$VehiclesTableProcessedTableManager get vehicleId {
+    final $_column = $_itemColumn<String>('vehicle_id')!;
+
+    final manager = $$VehiclesTableTableManager(
+      $_db,
+      $_db.vehicles,
+    ).filter((f) => f.id.sqlEquals($_column));
+    final item = $_typedResult.readTableOrNull(_vehicleIdTable($_db));
+    if (item == null) return manager;
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: [item]),
+    );
+  }
+}
+
+class $$VehiclePartsTableFilterComposer
+    extends Composer<_$AppDatabase, $VehiclePartsTable> {
+  $$VehiclePartsTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get category => $composableBuilder(
+    column: $table.category,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get name => $composableBuilder(
+    column: $table.name,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get brand => $composableBuilder(
+    column: $table.brand,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get partNumber => $composableBuilder(
+    column: $table.partNumber,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get installedDate => $composableBuilder(
+    column: $table.installedDate,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get installedOdometer => $composableBuilder(
+    column: $table.installedOdometer,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get costPaisa => $composableBuilder(
+    column: $table.costPaisa,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get vendorName => $composableBuilder(
+    column: $table.vendorName,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get warrantyEndDate => $composableBuilder(
+    column: $table.warrantyEndDate,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get replacementIntervalKm => $composableBuilder(
+    column: $table.replacementIntervalKm,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get replacementIntervalDays => $composableBuilder(
+    column: $table.replacementIntervalDays,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get note => $composableBuilder(
+    column: $table.note,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<bool> get isActive => $composableBuilder(
+    column: $table.isActive,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get updatedAt => $composableBuilder(
+    column: $table.updatedAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  $$VehiclesTableFilterComposer get vehicleId {
+    final $$VehiclesTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.vehicleId,
+      referencedTable: $db.vehicles,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$VehiclesTableFilterComposer(
+            $db: $db,
+            $table: $db.vehicles,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$VehiclePartsTableOrderingComposer
+    extends Composer<_$AppDatabase, $VehiclePartsTable> {
+  $$VehiclePartsTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get category => $composableBuilder(
+    column: $table.category,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get name => $composableBuilder(
+    column: $table.name,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get brand => $composableBuilder(
+    column: $table.brand,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get partNumber => $composableBuilder(
+    column: $table.partNumber,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get installedDate => $composableBuilder(
+    column: $table.installedDate,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get installedOdometer => $composableBuilder(
+    column: $table.installedOdometer,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get costPaisa => $composableBuilder(
+    column: $table.costPaisa,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get vendorName => $composableBuilder(
+    column: $table.vendorName,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get warrantyEndDate => $composableBuilder(
+    column: $table.warrantyEndDate,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get replacementIntervalKm => $composableBuilder(
+    column: $table.replacementIntervalKm,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get replacementIntervalDays => $composableBuilder(
+    column: $table.replacementIntervalDays,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get note => $composableBuilder(
+    column: $table.note,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<bool> get isActive => $composableBuilder(
+    column: $table.isActive,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get updatedAt => $composableBuilder(
+    column: $table.updatedAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  $$VehiclesTableOrderingComposer get vehicleId {
+    final $$VehiclesTableOrderingComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.vehicleId,
+      referencedTable: $db.vehicles,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$VehiclesTableOrderingComposer(
+            $db: $db,
+            $table: $db.vehicles,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$VehiclePartsTableAnnotationComposer
+    extends Composer<_$AppDatabase, $VehiclePartsTable> {
+  $$VehiclePartsTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<String> get category =>
+      $composableBuilder(column: $table.category, builder: (column) => column);
+
+  GeneratedColumn<String> get name =>
+      $composableBuilder(column: $table.name, builder: (column) => column);
+
+  GeneratedColumn<String> get brand =>
+      $composableBuilder(column: $table.brand, builder: (column) => column);
+
+  GeneratedColumn<String> get partNumber => $composableBuilder(
+    column: $table.partNumber,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<DateTime> get installedDate => $composableBuilder(
+    column: $table.installedDate,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get installedOdometer => $composableBuilder(
+    column: $table.installedOdometer,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get costPaisa =>
+      $composableBuilder(column: $table.costPaisa, builder: (column) => column);
+
+  GeneratedColumn<String> get vendorName => $composableBuilder(
+    column: $table.vendorName,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<DateTime> get warrantyEndDate => $composableBuilder(
+    column: $table.warrantyEndDate,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get replacementIntervalKm => $composableBuilder(
+    column: $table.replacementIntervalKm,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get replacementIntervalDays => $composableBuilder(
+    column: $table.replacementIntervalDays,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get note =>
+      $composableBuilder(column: $table.note, builder: (column) => column);
+
+  GeneratedColumn<bool> get isActive =>
+      $composableBuilder(column: $table.isActive, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get updatedAt =>
+      $composableBuilder(column: $table.updatedAt, builder: (column) => column);
+
+  $$VehiclesTableAnnotationComposer get vehicleId {
+    final $$VehiclesTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.vehicleId,
+      referencedTable: $db.vehicles,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$VehiclesTableAnnotationComposer(
+            $db: $db,
+            $table: $db.vehicles,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$VehiclePartsTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $VehiclePartsTable,
+          VehiclePartRow,
+          $$VehiclePartsTableFilterComposer,
+          $$VehiclePartsTableOrderingComposer,
+          $$VehiclePartsTableAnnotationComposer,
+          $$VehiclePartsTableCreateCompanionBuilder,
+          $$VehiclePartsTableUpdateCompanionBuilder,
+          (VehiclePartRow, $$VehiclePartsTableReferences),
+          VehiclePartRow,
+          PrefetchHooks Function({bool vehicleId})
+        > {
+  $$VehiclePartsTableTableManager(_$AppDatabase db, $VehiclePartsTable table)
+    : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$VehiclePartsTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$VehiclePartsTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$VehiclePartsTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<String> id = const Value.absent(),
+                Value<String> vehicleId = const Value.absent(),
+                Value<String> category = const Value.absent(),
+                Value<String> name = const Value.absent(),
+                Value<String?> brand = const Value.absent(),
+                Value<String?> partNumber = const Value.absent(),
+                Value<DateTime> installedDate = const Value.absent(),
+                Value<int?> installedOdometer = const Value.absent(),
+                Value<int> costPaisa = const Value.absent(),
+                Value<String?> vendorName = const Value.absent(),
+                Value<DateTime?> warrantyEndDate = const Value.absent(),
+                Value<int?> replacementIntervalKm = const Value.absent(),
+                Value<int?> replacementIntervalDays = const Value.absent(),
+                Value<String?> note = const Value.absent(),
+                Value<bool> isActive = const Value.absent(),
+                Value<DateTime> createdAt = const Value.absent(),
+                Value<DateTime> updatedAt = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => VehiclePartsCompanion(
+                id: id,
+                vehicleId: vehicleId,
+                category: category,
+                name: name,
+                brand: brand,
+                partNumber: partNumber,
+                installedDate: installedDate,
+                installedOdometer: installedOdometer,
+                costPaisa: costPaisa,
+                vendorName: vendorName,
+                warrantyEndDate: warrantyEndDate,
+                replacementIntervalKm: replacementIntervalKm,
+                replacementIntervalDays: replacementIntervalDays,
+                note: note,
+                isActive: isActive,
+                createdAt: createdAt,
+                updatedAt: updatedAt,
+                rowid: rowid,
+              ),
+          createCompanionCallback:
+              ({
+                required String id,
+                required String vehicleId,
+                required String category,
+                required String name,
+                Value<String?> brand = const Value.absent(),
+                Value<String?> partNumber = const Value.absent(),
+                required DateTime installedDate,
+                Value<int?> installedOdometer = const Value.absent(),
+                Value<int> costPaisa = const Value.absent(),
+                Value<String?> vendorName = const Value.absent(),
+                Value<DateTime?> warrantyEndDate = const Value.absent(),
+                Value<int?> replacementIntervalKm = const Value.absent(),
+                Value<int?> replacementIntervalDays = const Value.absent(),
+                Value<String?> note = const Value.absent(),
+                Value<bool> isActive = const Value.absent(),
+                required DateTime createdAt,
+                required DateTime updatedAt,
+                Value<int> rowid = const Value.absent(),
+              }) => VehiclePartsCompanion.insert(
+                id: id,
+                vehicleId: vehicleId,
+                category: category,
+                name: name,
+                brand: brand,
+                partNumber: partNumber,
+                installedDate: installedDate,
+                installedOdometer: installedOdometer,
+                costPaisa: costPaisa,
+                vendorName: vendorName,
+                warrantyEndDate: warrantyEndDate,
+                replacementIntervalKm: replacementIntervalKm,
+                replacementIntervalDays: replacementIntervalDays,
+                note: note,
+                isActive: isActive,
+                createdAt: createdAt,
+                updatedAt: updatedAt,
+                rowid: rowid,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map(
+                (e) => (
+                  e.readTable<$VehiclePartsTable, VehiclePartRow>(table),
+                  $$VehiclePartsTableReferences(db, table, e),
+                ),
+              )
+              .toList(),
+          prefetchHooksCallback: ({vehicleId = false}) {
+            return PrefetchHooks(
+              db: db,
+              explicitlyWatchedTables: [],
+              addJoins:
+                  <
+                    T extends TableManagerState<
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic
+                    >
+                  >(state) {
+                    if (vehicleId) {
+                      state = state.withJoin(
+                        currentTable: table,
+                        currentColumn: table.vehicleId,
+                        referencedTable: $$VehiclePartsTableReferences
+                            ._vehicleIdTable(db),
+                        referencedColumn: $$VehiclePartsTableReferences
+                            ._vehicleIdTable(db)
+                            .id,
+                      ) as T;
+                    }
+
+                    return state;
+                  },
+              getPrefetchedDataCallback: (items) async {
+                return [];
+              },
+            );
+          },
+        ),
+      );
+}
+
+typedef $$VehiclePartsTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $VehiclePartsTable,
+      VehiclePartRow,
+      $$VehiclePartsTableFilterComposer,
+      $$VehiclePartsTableOrderingComposer,
+      $$VehiclePartsTableAnnotationComposer,
+      $$VehiclePartsTableCreateCompanionBuilder,
+      $$VehiclePartsTableUpdateCompanionBuilder,
+      (VehiclePartRow, $$VehiclePartsTableReferences),
+      VehiclePartRow,
+      PrefetchHooks Function({bool vehicleId})
+    >;
+typedef $$TyresTableCreateCompanionBuilder = TyresCompanion Function({
+  required String id,
+  required String vehicleId,
+  required String position,
+  Value<String?> brand,
+  Value<String?> model,
+  Value<String?> size,
+  Value<DateTime?> purchaseDate,
+  required DateTime installDate,
+  required int installOdometer,
+  Value<int> costPaisa,
+  Value<DateTime?> warrantyEndDate,
+  Value<String?> vendorName,
+  Value<String> status,
+  Value<String?> note,
+  required DateTime createdAt,
+  required DateTime updatedAt,
+  Value<int> rowid,
+});
+typedef $$TyresTableUpdateCompanionBuilder = TyresCompanion Function({
+  Value<String> id,
+  Value<String> vehicleId,
+  Value<String> position,
+  Value<String?> brand,
+  Value<String?> model,
+  Value<String?> size,
+  Value<DateTime?> purchaseDate,
+  Value<DateTime> installDate,
+  Value<int> installOdometer,
+  Value<int> costPaisa,
+  Value<DateTime?> warrantyEndDate,
+  Value<String?> vendorName,
+  Value<String> status,
+  Value<String?> note,
+  Value<DateTime> createdAt,
+  Value<DateTime> updatedAt,
+  Value<int> rowid,
+});
+
+final class $$TyresTableReferences
+    extends BaseReferences<_$AppDatabase, $TyresTable, TyreRow> {
+  $$TyresTableReferences(super.$_db, super.$_table, super.$_typedResult);
+
+  static $VehiclesTable _vehicleIdTable(_$AppDatabase db) =>
+      db.vehicles.createAlias('tyres__vehicle_id__vehicles__id');
+
+  $$VehiclesTableProcessedTableManager get vehicleId {
+    final $_column = $_itemColumn<String>('vehicle_id')!;
+
+    final manager = $$VehiclesTableTableManager(
+      $_db,
+      $_db.vehicles,
+    ).filter((f) => f.id.sqlEquals($_column));
+    final item = $_typedResult.readTableOrNull(_vehicleIdTable($_db));
+    if (item == null) return manager;
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: [item]),
+    );
+  }
+
+  static MultiTypedResultKey<$TyreEventsTable, List<TyreEventRow>>
+  _tyreEventsRefsTable(_$AppDatabase db) => MultiTypedResultKey.fromTable(
+    db.tyreEvents,
+    aliasName: 'tyres__id__tyre_events__tyre_id',
+  );
+
+  $$TyreEventsTableProcessedTableManager get tyreEventsRefs {
+    final manager = $$TyreEventsTableTableManager(
+      $_db,
+      $_db.tyreEvents,
+    ).filter((f) => f.tyreId.id.sqlEquals($_itemColumn<String>('id')!));
+
+    final cache = $_typedResult.readTableOrNull(_tyreEventsRefsTable($_db));
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: cache),
+    );
+  }
+}
+
+class $$TyresTableFilterComposer extends Composer<_$AppDatabase, $TyresTable> {
+  $$TyresTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get position => $composableBuilder(
+    column: $table.position,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get brand => $composableBuilder(
+    column: $table.brand,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get model => $composableBuilder(
+    column: $table.model,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get size => $composableBuilder(
+    column: $table.size,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get purchaseDate => $composableBuilder(
+    column: $table.purchaseDate,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get installDate => $composableBuilder(
+    column: $table.installDate,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get installOdometer => $composableBuilder(
+    column: $table.installOdometer,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get costPaisa => $composableBuilder(
+    column: $table.costPaisa,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get warrantyEndDate => $composableBuilder(
+    column: $table.warrantyEndDate,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get vendorName => $composableBuilder(
+    column: $table.vendorName,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get status => $composableBuilder(
+    column: $table.status,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get note => $composableBuilder(
+    column: $table.note,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get updatedAt => $composableBuilder(
+    column: $table.updatedAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  $$VehiclesTableFilterComposer get vehicleId {
+    final $$VehiclesTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.vehicleId,
+      referencedTable: $db.vehicles,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$VehiclesTableFilterComposer(
+            $db: $db,
+            $table: $db.vehicles,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+
+  Expression<bool> tyreEventsRefs(
+    Expression<bool> Function($$TyreEventsTableFilterComposer f) f,
+  ) {
+    final $$TyreEventsTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.tyreEvents,
+      getReferencedColumn: (t) => t.tyreId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$TyreEventsTableFilterComposer(
+            $db: $db,
+            $table: $db.tyreEvents,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
+}
+
+class $$TyresTableOrderingComposer
+    extends Composer<_$AppDatabase, $TyresTable> {
+  $$TyresTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get position => $composableBuilder(
+    column: $table.position,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get brand => $composableBuilder(
+    column: $table.brand,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get model => $composableBuilder(
+    column: $table.model,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get size => $composableBuilder(
+    column: $table.size,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get purchaseDate => $composableBuilder(
+    column: $table.purchaseDate,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get installDate => $composableBuilder(
+    column: $table.installDate,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get installOdometer => $composableBuilder(
+    column: $table.installOdometer,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get costPaisa => $composableBuilder(
+    column: $table.costPaisa,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get warrantyEndDate => $composableBuilder(
+    column: $table.warrantyEndDate,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get vendorName => $composableBuilder(
+    column: $table.vendorName,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get status => $composableBuilder(
+    column: $table.status,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get note => $composableBuilder(
+    column: $table.note,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get updatedAt => $composableBuilder(
+    column: $table.updatedAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  $$VehiclesTableOrderingComposer get vehicleId {
+    final $$VehiclesTableOrderingComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.vehicleId,
+      referencedTable: $db.vehicles,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$VehiclesTableOrderingComposer(
+            $db: $db,
+            $table: $db.vehicles,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$TyresTableAnnotationComposer
+    extends Composer<_$AppDatabase, $TyresTable> {
+  $$TyresTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<String> get position =>
+      $composableBuilder(column: $table.position, builder: (column) => column);
+
+  GeneratedColumn<String> get brand =>
+      $composableBuilder(column: $table.brand, builder: (column) => column);
+
+  GeneratedColumn<String> get model =>
+      $composableBuilder(column: $table.model, builder: (column) => column);
+
+  GeneratedColumn<String> get size =>
+      $composableBuilder(column: $table.size, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get purchaseDate => $composableBuilder(
+    column: $table.purchaseDate,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<DateTime> get installDate => $composableBuilder(
+    column: $table.installDate,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get installOdometer => $composableBuilder(
+    column: $table.installOdometer,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get costPaisa =>
+      $composableBuilder(column: $table.costPaisa, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get warrantyEndDate => $composableBuilder(
+    column: $table.warrantyEndDate,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get vendorName => $composableBuilder(
+    column: $table.vendorName,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get status =>
+      $composableBuilder(column: $table.status, builder: (column) => column);
+
+  GeneratedColumn<String> get note =>
+      $composableBuilder(column: $table.note, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get updatedAt =>
+      $composableBuilder(column: $table.updatedAt, builder: (column) => column);
+
+  $$VehiclesTableAnnotationComposer get vehicleId {
+    final $$VehiclesTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.vehicleId,
+      referencedTable: $db.vehicles,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$VehiclesTableAnnotationComposer(
+            $db: $db,
+            $table: $db.vehicles,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+
+  Expression<T> tyreEventsRefs<T extends Object>(
+    Expression<T> Function($$TyreEventsTableAnnotationComposer a) f,
+  ) {
+    final $$TyreEventsTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.tyreEvents,
+      getReferencedColumn: (t) => t.tyreId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$TyreEventsTableAnnotationComposer(
+            $db: $db,
+            $table: $db.tyreEvents,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
+}
+
+class $$TyresTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $TyresTable,
+          TyreRow,
+          $$TyresTableFilterComposer,
+          $$TyresTableOrderingComposer,
+          $$TyresTableAnnotationComposer,
+          $$TyresTableCreateCompanionBuilder,
+          $$TyresTableUpdateCompanionBuilder,
+          (TyreRow, $$TyresTableReferences),
+          TyreRow,
+          PrefetchHooks Function({bool vehicleId, bool tyreEventsRefs})
+        > {
+  $$TyresTableTableManager(_$AppDatabase db, $TyresTable table)
+    : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$TyresTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$TyresTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$TyresTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<String> id = const Value.absent(),
+                Value<String> vehicleId = const Value.absent(),
+                Value<String> position = const Value.absent(),
+                Value<String?> brand = const Value.absent(),
+                Value<String?> model = const Value.absent(),
+                Value<String?> size = const Value.absent(),
+                Value<DateTime?> purchaseDate = const Value.absent(),
+                Value<DateTime> installDate = const Value.absent(),
+                Value<int> installOdometer = const Value.absent(),
+                Value<int> costPaisa = const Value.absent(),
+                Value<DateTime?> warrantyEndDate = const Value.absent(),
+                Value<String?> vendorName = const Value.absent(),
+                Value<String> status = const Value.absent(),
+                Value<String?> note = const Value.absent(),
+                Value<DateTime> createdAt = const Value.absent(),
+                Value<DateTime> updatedAt = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => TyresCompanion(
+                id: id,
+                vehicleId: vehicleId,
+                position: position,
+                brand: brand,
+                model: model,
+                size: size,
+                purchaseDate: purchaseDate,
+                installDate: installDate,
+                installOdometer: installOdometer,
+                costPaisa: costPaisa,
+                warrantyEndDate: warrantyEndDate,
+                vendorName: vendorName,
+                status: status,
+                note: note,
+                createdAt: createdAt,
+                updatedAt: updatedAt,
+                rowid: rowid,
+              ),
+          createCompanionCallback:
+              ({
+                required String id,
+                required String vehicleId,
+                required String position,
+                Value<String?> brand = const Value.absent(),
+                Value<String?> model = const Value.absent(),
+                Value<String?> size = const Value.absent(),
+                Value<DateTime?> purchaseDate = const Value.absent(),
+                required DateTime installDate,
+                required int installOdometer,
+                Value<int> costPaisa = const Value.absent(),
+                Value<DateTime?> warrantyEndDate = const Value.absent(),
+                Value<String?> vendorName = const Value.absent(),
+                Value<String> status = const Value.absent(),
+                Value<String?> note = const Value.absent(),
+                required DateTime createdAt,
+                required DateTime updatedAt,
+                Value<int> rowid = const Value.absent(),
+              }) => TyresCompanion.insert(
+                id: id,
+                vehicleId: vehicleId,
+                position: position,
+                brand: brand,
+                model: model,
+                size: size,
+                purchaseDate: purchaseDate,
+                installDate: installDate,
+                installOdometer: installOdometer,
+                costPaisa: costPaisa,
+                warrantyEndDate: warrantyEndDate,
+                vendorName: vendorName,
+                status: status,
+                note: note,
+                createdAt: createdAt,
+                updatedAt: updatedAt,
+                rowid: rowid,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map(
+                (e) => (
+                  e.readTable<$TyresTable, TyreRow>(table),
+                  $$TyresTableReferences(db, table, e),
+                ),
+              )
+              .toList(),
+          prefetchHooksCallback: ({vehicleId = false, tyreEventsRefs = false}) {
+            return PrefetchHooks(
+              db: db,
+              explicitlyWatchedTables: [if (tyreEventsRefs) db.tyreEvents],
+              addJoins:
+                  <
+                    T extends TableManagerState<
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic
+                    >
+                  >(state) {
+                    if (vehicleId) {
+                      state = state.withJoin(
+                        currentTable: table,
+                        currentColumn: table.vehicleId,
+                        referencedTable: $$TyresTableReferences._vehicleIdTable(
+                          db,
+                        ),
+                        referencedColumn: $$TyresTableReferences
+                            ._vehicleIdTable(db)
+                            .id,
+                      ) as T;
+                    }
+
+                    return state;
+                  },
+              getPrefetchedDataCallback: (items) async {
+                return [
+                  if (tyreEventsRefs)
+                    await $_getPrefetchedData<
+                      TyreRow,
+                      $TyresTable,
+                      TyreEventRow
+                    >(
+                      currentTable: table,
+                      referencedTable: $$TyresTableReferences
+                          ._tyreEventsRefsTable(db),
+                      managerFromTypedResult: (p0) =>
+                          $$TyresTableReferences(db, table, p0).tyreEventsRefs,
+                      referencedItemsForCurrentItem: (item, referencedItems) =>
+                          referencedItems.where((e) => e.tyreId == item.id),
+                      typedResults: items,
+                    ),
+                ];
+              },
+            );
+          },
+        ),
+      );
+}
+
+typedef $$TyresTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $TyresTable,
+      TyreRow,
+      $$TyresTableFilterComposer,
+      $$TyresTableOrderingComposer,
+      $$TyresTableAnnotationComposer,
+      $$TyresTableCreateCompanionBuilder,
+      $$TyresTableUpdateCompanionBuilder,
+      (TyreRow, $$TyresTableReferences),
+      TyreRow,
+      PrefetchHooks Function({bool vehicleId, bool tyreEventsRefs})
+    >;
+typedef $$TyreEventsTableCreateCompanionBuilder = TyreEventsCompanion Function({
+  required String id,
+  required String tyreId,
+  required String vehicleId,
+  required String eventType,
+  required DateTime occurredOn,
+  Value<int?> odometer,
+  Value<String?> fromPosition,
+  Value<String?> toPosition,
+  Value<String?> inspectionResult,
+  Value<int?> costPaisa,
+  Value<String?> note,
+  required DateTime createdAt,
+  Value<int> rowid,
+});
+typedef $$TyreEventsTableUpdateCompanionBuilder = TyreEventsCompanion Function({
+  Value<String> id,
+  Value<String> tyreId,
+  Value<String> vehicleId,
+  Value<String> eventType,
+  Value<DateTime> occurredOn,
+  Value<int?> odometer,
+  Value<String?> fromPosition,
+  Value<String?> toPosition,
+  Value<String?> inspectionResult,
+  Value<int?> costPaisa,
+  Value<String?> note,
+  Value<DateTime> createdAt,
+  Value<int> rowid,
+});
+
+final class $$TyreEventsTableReferences
+    extends BaseReferences<_$AppDatabase, $TyreEventsTable, TyreEventRow> {
+  $$TyreEventsTableReferences(super.$_db, super.$_table, super.$_typedResult);
+
+  static $TyresTable _tyreIdTable(_$AppDatabase db) =>
+      db.tyres.createAlias('tyre_events__tyre_id__tyres__id');
+
+  $$TyresTableProcessedTableManager get tyreId {
+    final $_column = $_itemColumn<String>('tyre_id')!;
+
+    final manager = $$TyresTableTableManager(
+      $_db,
+      $_db.tyres,
+    ).filter((f) => f.id.sqlEquals($_column));
+    final item = $_typedResult.readTableOrNull(_tyreIdTable($_db));
+    if (item == null) return manager;
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: [item]),
+    );
+  }
+
+  static $VehiclesTable _vehicleIdTable(_$AppDatabase db) =>
+      db.vehicles.createAlias('tyre_events__vehicle_id__vehicles__id');
+
+  $$VehiclesTableProcessedTableManager get vehicleId {
+    final $_column = $_itemColumn<String>('vehicle_id')!;
+
+    final manager = $$VehiclesTableTableManager(
+      $_db,
+      $_db.vehicles,
+    ).filter((f) => f.id.sqlEquals($_column));
+    final item = $_typedResult.readTableOrNull(_vehicleIdTable($_db));
+    if (item == null) return manager;
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: [item]),
+    );
+  }
+}
+
+class $$TyreEventsTableFilterComposer
+    extends Composer<_$AppDatabase, $TyreEventsTable> {
+  $$TyreEventsTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get eventType => $composableBuilder(
+    column: $table.eventType,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get occurredOn => $composableBuilder(
+    column: $table.occurredOn,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get odometer => $composableBuilder(
+    column: $table.odometer,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get fromPosition => $composableBuilder(
+    column: $table.fromPosition,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get toPosition => $composableBuilder(
+    column: $table.toPosition,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get inspectionResult => $composableBuilder(
+    column: $table.inspectionResult,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get costPaisa => $composableBuilder(
+    column: $table.costPaisa,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get note => $composableBuilder(
+    column: $table.note,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  $$TyresTableFilterComposer get tyreId {
+    final $$TyresTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.tyreId,
+      referencedTable: $db.tyres,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$TyresTableFilterComposer(
+            $db: $db,
+            $table: $db.tyres,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+
+  $$VehiclesTableFilterComposer get vehicleId {
+    final $$VehiclesTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.vehicleId,
+      referencedTable: $db.vehicles,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$VehiclesTableFilterComposer(
+            $db: $db,
+            $table: $db.vehicles,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$TyreEventsTableOrderingComposer
+    extends Composer<_$AppDatabase, $TyreEventsTable> {
+  $$TyreEventsTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get eventType => $composableBuilder(
+    column: $table.eventType,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get occurredOn => $composableBuilder(
+    column: $table.occurredOn,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get odometer => $composableBuilder(
+    column: $table.odometer,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get fromPosition => $composableBuilder(
+    column: $table.fromPosition,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get toPosition => $composableBuilder(
+    column: $table.toPosition,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get inspectionResult => $composableBuilder(
+    column: $table.inspectionResult,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get costPaisa => $composableBuilder(
+    column: $table.costPaisa,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get note => $composableBuilder(
+    column: $table.note,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  $$TyresTableOrderingComposer get tyreId {
+    final $$TyresTableOrderingComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.tyreId,
+      referencedTable: $db.tyres,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$TyresTableOrderingComposer(
+            $db: $db,
+            $table: $db.tyres,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+
+  $$VehiclesTableOrderingComposer get vehicleId {
+    final $$VehiclesTableOrderingComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.vehicleId,
+      referencedTable: $db.vehicles,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$VehiclesTableOrderingComposer(
+            $db: $db,
+            $table: $db.vehicles,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$TyreEventsTableAnnotationComposer
+    extends Composer<_$AppDatabase, $TyreEventsTable> {
+  $$TyreEventsTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<String> get eventType =>
+      $composableBuilder(column: $table.eventType, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get occurredOn => $composableBuilder(
+    column: $table.occurredOn,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get odometer =>
+      $composableBuilder(column: $table.odometer, builder: (column) => column);
+
+  GeneratedColumn<String> get fromPosition => $composableBuilder(
+    column: $table.fromPosition,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get toPosition => $composableBuilder(
+    column: $table.toPosition,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get inspectionResult => $composableBuilder(
+    column: $table.inspectionResult,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get costPaisa =>
+      $composableBuilder(column: $table.costPaisa, builder: (column) => column);
+
+  GeneratedColumn<String> get note =>
+      $composableBuilder(column: $table.note, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
+
+  $$TyresTableAnnotationComposer get tyreId {
+    final $$TyresTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.tyreId,
+      referencedTable: $db.tyres,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$TyresTableAnnotationComposer(
+            $db: $db,
+            $table: $db.tyres,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+
+  $$VehiclesTableAnnotationComposer get vehicleId {
+    final $$VehiclesTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.vehicleId,
+      referencedTable: $db.vehicles,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$VehiclesTableAnnotationComposer(
+            $db: $db,
+            $table: $db.vehicles,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$TyreEventsTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $TyreEventsTable,
+          TyreEventRow,
+          $$TyreEventsTableFilterComposer,
+          $$TyreEventsTableOrderingComposer,
+          $$TyreEventsTableAnnotationComposer,
+          $$TyreEventsTableCreateCompanionBuilder,
+          $$TyreEventsTableUpdateCompanionBuilder,
+          (TyreEventRow, $$TyreEventsTableReferences),
+          TyreEventRow,
+          PrefetchHooks Function({bool tyreId, bool vehicleId})
+        > {
+  $$TyreEventsTableTableManager(_$AppDatabase db, $TyreEventsTable table)
+    : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$TyreEventsTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$TyreEventsTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$TyreEventsTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<String> id = const Value.absent(),
+                Value<String> tyreId = const Value.absent(),
+                Value<String> vehicleId = const Value.absent(),
+                Value<String> eventType = const Value.absent(),
+                Value<DateTime> occurredOn = const Value.absent(),
+                Value<int?> odometer = const Value.absent(),
+                Value<String?> fromPosition = const Value.absent(),
+                Value<String?> toPosition = const Value.absent(),
+                Value<String?> inspectionResult = const Value.absent(),
+                Value<int?> costPaisa = const Value.absent(),
+                Value<String?> note = const Value.absent(),
+                Value<DateTime> createdAt = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => TyreEventsCompanion(
+                id: id,
+                tyreId: tyreId,
+                vehicleId: vehicleId,
+                eventType: eventType,
+                occurredOn: occurredOn,
+                odometer: odometer,
+                fromPosition: fromPosition,
+                toPosition: toPosition,
+                inspectionResult: inspectionResult,
+                costPaisa: costPaisa,
+                note: note,
+                createdAt: createdAt,
+                rowid: rowid,
+              ),
+          createCompanionCallback:
+              ({
+                required String id,
+                required String tyreId,
+                required String vehicleId,
+                required String eventType,
+                required DateTime occurredOn,
+                Value<int?> odometer = const Value.absent(),
+                Value<String?> fromPosition = const Value.absent(),
+                Value<String?> toPosition = const Value.absent(),
+                Value<String?> inspectionResult = const Value.absent(),
+                Value<int?> costPaisa = const Value.absent(),
+                Value<String?> note = const Value.absent(),
+                required DateTime createdAt,
+                Value<int> rowid = const Value.absent(),
+              }) => TyreEventsCompanion.insert(
+                id: id,
+                tyreId: tyreId,
+                vehicleId: vehicleId,
+                eventType: eventType,
+                occurredOn: occurredOn,
+                odometer: odometer,
+                fromPosition: fromPosition,
+                toPosition: toPosition,
+                inspectionResult: inspectionResult,
+                costPaisa: costPaisa,
+                note: note,
+                createdAt: createdAt,
+                rowid: rowid,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map(
+                (e) => (
+                  e.readTable<$TyreEventsTable, TyreEventRow>(table),
+                  $$TyreEventsTableReferences(db, table, e),
+                ),
+              )
+              .toList(),
+          prefetchHooksCallback: ({tyreId = false, vehicleId = false}) {
+            return PrefetchHooks(
+              db: db,
+              explicitlyWatchedTables: [],
+              addJoins:
+                  <
+                    T extends TableManagerState<
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic
+                    >
+                  >(state) {
+                    if (tyreId) {
+                      state = state.withJoin(
+                        currentTable: table,
+                        currentColumn: table.tyreId,
+                        referencedTable: $$TyreEventsTableReferences
+                            ._tyreIdTable(db),
+                        referencedColumn: $$TyreEventsTableReferences
+                            ._tyreIdTable(db)
+                            .id,
+                      ) as T;
+                    }
+                    if (vehicleId) {
+                      state = state.withJoin(
+                        currentTable: table,
+                        currentColumn: table.vehicleId,
+                        referencedTable: $$TyreEventsTableReferences
+                            ._vehicleIdTable(db),
+                        referencedColumn: $$TyreEventsTableReferences
+                            ._vehicleIdTable(db)
+                            .id,
+                      ) as T;
+                    }
+
+                    return state;
+                  },
+              getPrefetchedDataCallback: (items) async {
+                return [];
+              },
+            );
+          },
+        ),
+      );
+}
+
+typedef $$TyreEventsTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $TyreEventsTable,
+      TyreEventRow,
+      $$TyreEventsTableFilterComposer,
+      $$TyreEventsTableOrderingComposer,
+      $$TyreEventsTableAnnotationComposer,
+      $$TyreEventsTableCreateCompanionBuilder,
+      $$TyreEventsTableUpdateCompanionBuilder,
+      (TyreEventRow, $$TyreEventsTableReferences),
+      TyreEventRow,
+      PrefetchHooks Function({bool tyreId, bool vehicleId})
+    >;
+typedef $$BatteriesTableCreateCompanionBuilder = BatteriesCompanion Function({
+  required String id,
+  required String vehicleId,
+  Value<String?> brand,
+  Value<String?> model,
+  Value<String?> specification,
+  Value<DateTime?> purchaseDate,
+  required DateTime installDate,
+  Value<int?> installOdometer,
+  Value<int> costPaisa,
+  Value<DateTime?> warrantyEndDate,
+  Value<String?> vendorName,
+  Value<String> status,
+  Value<String?> note,
+  required DateTime createdAt,
+  required DateTime updatedAt,
+  Value<int> rowid,
+});
+typedef $$BatteriesTableUpdateCompanionBuilder = BatteriesCompanion Function({
+  Value<String> id,
+  Value<String> vehicleId,
+  Value<String?> brand,
+  Value<String?> model,
+  Value<String?> specification,
+  Value<DateTime?> purchaseDate,
+  Value<DateTime> installDate,
+  Value<int?> installOdometer,
+  Value<int> costPaisa,
+  Value<DateTime?> warrantyEndDate,
+  Value<String?> vendorName,
+  Value<String> status,
+  Value<String?> note,
+  Value<DateTime> createdAt,
+  Value<DateTime> updatedAt,
+  Value<int> rowid,
+});
+
+final class $$BatteriesTableReferences
+    extends BaseReferences<_$AppDatabase, $BatteriesTable, BatteryRow> {
+  $$BatteriesTableReferences(super.$_db, super.$_table, super.$_typedResult);
+
+  static $VehiclesTable _vehicleIdTable(_$AppDatabase db) =>
+      db.vehicles.createAlias('batteries__vehicle_id__vehicles__id');
+
+  $$VehiclesTableProcessedTableManager get vehicleId {
+    final $_column = $_itemColumn<String>('vehicle_id')!;
+
+    final manager = $$VehiclesTableTableManager(
+      $_db,
+      $_db.vehicles,
+    ).filter((f) => f.id.sqlEquals($_column));
+    final item = $_typedResult.readTableOrNull(_vehicleIdTable($_db));
+    if (item == null) return manager;
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: [item]),
+    );
+  }
+}
+
+class $$BatteriesTableFilterComposer
+    extends Composer<_$AppDatabase, $BatteriesTable> {
+  $$BatteriesTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get brand => $composableBuilder(
+    column: $table.brand,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get model => $composableBuilder(
+    column: $table.model,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get specification => $composableBuilder(
+    column: $table.specification,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get purchaseDate => $composableBuilder(
+    column: $table.purchaseDate,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get installDate => $composableBuilder(
+    column: $table.installDate,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get installOdometer => $composableBuilder(
+    column: $table.installOdometer,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get costPaisa => $composableBuilder(
+    column: $table.costPaisa,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get warrantyEndDate => $composableBuilder(
+    column: $table.warrantyEndDate,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get vendorName => $composableBuilder(
+    column: $table.vendorName,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get status => $composableBuilder(
+    column: $table.status,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get note => $composableBuilder(
+    column: $table.note,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get updatedAt => $composableBuilder(
+    column: $table.updatedAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  $$VehiclesTableFilterComposer get vehicleId {
+    final $$VehiclesTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.vehicleId,
+      referencedTable: $db.vehicles,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$VehiclesTableFilterComposer(
+            $db: $db,
+            $table: $db.vehicles,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$BatteriesTableOrderingComposer
+    extends Composer<_$AppDatabase, $BatteriesTable> {
+  $$BatteriesTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get brand => $composableBuilder(
+    column: $table.brand,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get model => $composableBuilder(
+    column: $table.model,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get specification => $composableBuilder(
+    column: $table.specification,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get purchaseDate => $composableBuilder(
+    column: $table.purchaseDate,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get installDate => $composableBuilder(
+    column: $table.installDate,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get installOdometer => $composableBuilder(
+    column: $table.installOdometer,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get costPaisa => $composableBuilder(
+    column: $table.costPaisa,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get warrantyEndDate => $composableBuilder(
+    column: $table.warrantyEndDate,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get vendorName => $composableBuilder(
+    column: $table.vendorName,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get status => $composableBuilder(
+    column: $table.status,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get note => $composableBuilder(
+    column: $table.note,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get updatedAt => $composableBuilder(
+    column: $table.updatedAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  $$VehiclesTableOrderingComposer get vehicleId {
+    final $$VehiclesTableOrderingComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.vehicleId,
+      referencedTable: $db.vehicles,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$VehiclesTableOrderingComposer(
+            $db: $db,
+            $table: $db.vehicles,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$BatteriesTableAnnotationComposer
+    extends Composer<_$AppDatabase, $BatteriesTable> {
+  $$BatteriesTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<String> get brand =>
+      $composableBuilder(column: $table.brand, builder: (column) => column);
+
+  GeneratedColumn<String> get model =>
+      $composableBuilder(column: $table.model, builder: (column) => column);
+
+  GeneratedColumn<String> get specification => $composableBuilder(
+    column: $table.specification,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<DateTime> get purchaseDate => $composableBuilder(
+    column: $table.purchaseDate,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<DateTime> get installDate => $composableBuilder(
+    column: $table.installDate,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get installOdometer => $composableBuilder(
+    column: $table.installOdometer,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get costPaisa =>
+      $composableBuilder(column: $table.costPaisa, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get warrantyEndDate => $composableBuilder(
+    column: $table.warrantyEndDate,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get vendorName => $composableBuilder(
+    column: $table.vendorName,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get status =>
+      $composableBuilder(column: $table.status, builder: (column) => column);
+
+  GeneratedColumn<String> get note =>
+      $composableBuilder(column: $table.note, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get updatedAt =>
+      $composableBuilder(column: $table.updatedAt, builder: (column) => column);
+
+  $$VehiclesTableAnnotationComposer get vehicleId {
+    final $$VehiclesTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.vehicleId,
+      referencedTable: $db.vehicles,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$VehiclesTableAnnotationComposer(
+            $db: $db,
+            $table: $db.vehicles,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$BatteriesTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $BatteriesTable,
+          BatteryRow,
+          $$BatteriesTableFilterComposer,
+          $$BatteriesTableOrderingComposer,
+          $$BatteriesTableAnnotationComposer,
+          $$BatteriesTableCreateCompanionBuilder,
+          $$BatteriesTableUpdateCompanionBuilder,
+          (BatteryRow, $$BatteriesTableReferences),
+          BatteryRow,
+          PrefetchHooks Function({bool vehicleId})
+        > {
+  $$BatteriesTableTableManager(_$AppDatabase db, $BatteriesTable table)
+    : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$BatteriesTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$BatteriesTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$BatteriesTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<String> id = const Value.absent(),
+                Value<String> vehicleId = const Value.absent(),
+                Value<String?> brand = const Value.absent(),
+                Value<String?> model = const Value.absent(),
+                Value<String?> specification = const Value.absent(),
+                Value<DateTime?> purchaseDate = const Value.absent(),
+                Value<DateTime> installDate = const Value.absent(),
+                Value<int?> installOdometer = const Value.absent(),
+                Value<int> costPaisa = const Value.absent(),
+                Value<DateTime?> warrantyEndDate = const Value.absent(),
+                Value<String?> vendorName = const Value.absent(),
+                Value<String> status = const Value.absent(),
+                Value<String?> note = const Value.absent(),
+                Value<DateTime> createdAt = const Value.absent(),
+                Value<DateTime> updatedAt = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => BatteriesCompanion(
+                id: id,
+                vehicleId: vehicleId,
+                brand: brand,
+                model: model,
+                specification: specification,
+                purchaseDate: purchaseDate,
+                installDate: installDate,
+                installOdometer: installOdometer,
+                costPaisa: costPaisa,
+                warrantyEndDate: warrantyEndDate,
+                vendorName: vendorName,
+                status: status,
+                note: note,
+                createdAt: createdAt,
+                updatedAt: updatedAt,
+                rowid: rowid,
+              ),
+          createCompanionCallback:
+              ({
+                required String id,
+                required String vehicleId,
+                Value<String?> brand = const Value.absent(),
+                Value<String?> model = const Value.absent(),
+                Value<String?> specification = const Value.absent(),
+                Value<DateTime?> purchaseDate = const Value.absent(),
+                required DateTime installDate,
+                Value<int?> installOdometer = const Value.absent(),
+                Value<int> costPaisa = const Value.absent(),
+                Value<DateTime?> warrantyEndDate = const Value.absent(),
+                Value<String?> vendorName = const Value.absent(),
+                Value<String> status = const Value.absent(),
+                Value<String?> note = const Value.absent(),
+                required DateTime createdAt,
+                required DateTime updatedAt,
+                Value<int> rowid = const Value.absent(),
+              }) => BatteriesCompanion.insert(
+                id: id,
+                vehicleId: vehicleId,
+                brand: brand,
+                model: model,
+                specification: specification,
+                purchaseDate: purchaseDate,
+                installDate: installDate,
+                installOdometer: installOdometer,
+                costPaisa: costPaisa,
+                warrantyEndDate: warrantyEndDate,
+                vendorName: vendorName,
+                status: status,
+                note: note,
+                createdAt: createdAt,
+                updatedAt: updatedAt,
+                rowid: rowid,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map(
+                (e) => (
+                  e.readTable<$BatteriesTable, BatteryRow>(table),
+                  $$BatteriesTableReferences(db, table, e),
+                ),
+              )
+              .toList(),
+          prefetchHooksCallback: ({vehicleId = false}) {
+            return PrefetchHooks(
+              db: db,
+              explicitlyWatchedTables: [],
+              addJoins:
+                  <
+                    T extends TableManagerState<
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic
+                    >
+                  >(state) {
+                    if (vehicleId) {
+                      state = state.withJoin(
+                        currentTable: table,
+                        currentColumn: table.vehicleId,
+                        referencedTable: $$BatteriesTableReferences
+                            ._vehicleIdTable(db),
+                        referencedColumn: $$BatteriesTableReferences
+                            ._vehicleIdTable(db)
+                            .id,
+                      ) as T;
+                    }
+
+                    return state;
+                  },
+              getPrefetchedDataCallback: (items) async {
+                return [];
+              },
+            );
+          },
+        ),
+      );
+}
+
+typedef $$BatteriesTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $BatteriesTable,
+      BatteryRow,
+      $$BatteriesTableFilterComposer,
+      $$BatteriesTableOrderingComposer,
+      $$BatteriesTableAnnotationComposer,
+      $$BatteriesTableCreateCompanionBuilder,
+      $$BatteriesTableUpdateCompanionBuilder,
+      (BatteryRow, $$BatteriesTableReferences),
+      BatteryRow,
+      PrefetchHooks Function({bool vehicleId})
+    >;
 
 class $AppDatabaseManager {
   final _$AppDatabase _db;
@@ -13095,4 +22046,16 @@ class $AppDatabaseManager {
       $$ServiceItemsTableTableManager(_db, _db.serviceItems);
   $$OilChangesTableTableManager get oilChanges =>
       $$OilChangesTableTableManager(_db, _db.oilChanges);
+  $$RepairsTableTableManager get repairs =>
+      $$RepairsTableTableManager(_db, _db.repairs);
+  $$RepairPartsTableTableManager get repairParts =>
+      $$RepairPartsTableTableManager(_db, _db.repairParts);
+  $$VehiclePartsTableTableManager get vehicleParts =>
+      $$VehiclePartsTableTableManager(_db, _db.vehicleParts);
+  $$TyresTableTableManager get tyres =>
+      $$TyresTableTableManager(_db, _db.tyres);
+  $$TyreEventsTableTableManager get tyreEvents =>
+      $$TyreEventsTableTableManager(_db, _db.tyreEvents);
+  $$BatteriesTableTableManager get batteries =>
+      $$BatteriesTableTableManager(_db, _db.batteries);
 }

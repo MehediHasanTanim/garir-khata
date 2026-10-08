@@ -24,6 +24,18 @@ import 'package:garir_khata/features/onboarding/presentation/splash_page.dart';
 import 'package:garir_khata/features/onboarding/presentation/vehicle_details_page.dart';
 import 'package:garir_khata/features/onboarding/presentation/vehicle_type_page.dart';
 import 'package:garir_khata/features/onboarding/presentation/welcome_page.dart';
+import 'package:garir_khata/features/parts/presentation/add_battery_page.dart';
+import 'package:garir_khata/features/parts/presentation/add_repair_page.dart';
+import 'package:garir_khata/features/parts/presentation/add_tyre_page.dart';
+import 'package:garir_khata/features/parts/presentation/add_vehicle_part_page.dart';
+import 'package:garir_khata/features/parts/presentation/battery_details_page.dart';
+import 'package:garir_khata/features/parts/presentation/battery_overview_page.dart';
+import 'package:garir_khata/features/parts/presentation/repair_details_page.dart';
+import 'package:garir_khata/features/parts/presentation/repair_history_page.dart';
+import 'package:garir_khata/features/parts/presentation/tyre_details_page.dart';
+import 'package:garir_khata/features/parts/presentation/tyre_overview_page.dart';
+import 'package:garir_khata/features/parts/presentation/vehicle_part_details_page.dart';
+import 'package:garir_khata/features/parts/presentation/vehicle_parts_page.dart';
 import 'package:garir_khata/features/reports/presentation/reports_page.dart';
 import 'package:garir_khata/features/settings/application/settings_controller.dart';
 import 'package:garir_khata/features/shell/presentation/main_shell.dart';
@@ -275,6 +287,86 @@ final appRouterProvider = Provider<GoRouter>((ref) {
             name: 'oilDetails',
             builder: (context, state) =>
                 OilDetailsPage(oilId: state.pathParameters['id']!),
+          ),
+        ],
+      ),
+      GoRoute(
+        path: '/repairs',
+        name: 'repairHistory',
+        parentNavigatorKey: _rootNavigatorKey,
+        builder: (context, state) => const RepairHistoryPage(),
+        routes: [
+          GoRoute(
+            path: 'add',
+            name: 'repairAdd',
+            builder: (context, state) => const AddRepairPage(),
+          ),
+          GoRoute(
+            path: ':id',
+            name: 'repairDetails',
+            builder: (context, state) =>
+                RepairDetailsPage(repairId: state.pathParameters['id']!),
+          ),
+        ],
+      ),
+      GoRoute(
+        path: '/parts',
+        name: 'vehicleParts',
+        parentNavigatorKey: _rootNavigatorKey,
+        builder: (context, state) => const VehiclePartsPage(),
+        routes: [
+          GoRoute(
+            path: 'add',
+            name: 'vehiclePartAdd',
+            builder: (context, state) => const AddVehiclePartPage(),
+          ),
+          GoRoute(
+            path: ':id',
+            name: 'vehiclePartDetails',
+            builder: (context, state) =>
+                VehiclePartDetailsPage(partId: state.pathParameters['id']!),
+          ),
+        ],
+      ),
+      GoRoute(
+        path: '/tyres',
+        name: 'tyreOverview',
+        parentNavigatorKey: _rootNavigatorKey,
+        builder: (context, state) => const TyreOverviewPage(),
+        routes: [
+          GoRoute(
+            path: 'add',
+            name: 'tyreAdd',
+            builder: (context, state) => AddTyrePage(
+              initialPosition: state.uri.queryParameters['position'],
+            ),
+          ),
+          GoRoute(
+            path: ':id',
+            name: 'tyreDetails',
+            builder: (context, state) =>
+                TyreDetailsPage(tyreId: state.pathParameters['id']!),
+          ),
+        ],
+      ),
+      GoRoute(
+        path: '/batteries',
+        name: 'batteryOverview',
+        parentNavigatorKey: _rootNavigatorKey,
+        builder: (context, state) => const BatteryOverviewPage(),
+        routes: [
+          GoRoute(
+            path: 'add',
+            name: 'batteryAdd',
+            builder: (context, state) => AddBatteryPage(
+              replaceExisting: state.uri.queryParameters['replace'] == 'true',
+            ),
+          ),
+          GoRoute(
+            path: ':id',
+            name: 'batteryDetails',
+            builder: (context, state) =>
+                BatteryDetailsPage(batteryId: state.pathParameters['id']!),
           ),
         ],
       ),

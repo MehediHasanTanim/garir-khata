@@ -1,4 +1,5 @@
 import 'package:drift/native.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:garir_khata/app/app.dart';
@@ -78,6 +79,12 @@ void main() {
     await tester.tap(find.text('More'));
     await tester.pumpAndSettle();
 
+    await tester.dragUntilVisible(
+      find.text('Bangla'),
+      find.byType(ListView).first,
+      const Offset(0, -200),
+    );
+    await tester.pumpAndSettle();
     await tester.tap(find.text('Bangla'));
     await tester.pumpAndSettle();
 

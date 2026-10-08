@@ -811,4 +811,215 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get overdue => 'ওভারডিউ';
+
+  @override
+  String get repairHistory => 'মেরামত ইতিহাস';
+
+  @override
+  String get repairDetails => 'মেরামত বিস্তারিত';
+
+  @override
+  String get saveRepair => 'মেরামত সেভ করুন';
+
+  @override
+  String get repairHistoryEmpty => 'এখনো কোনো মেরামত নেই';
+
+  @override
+  String get repairHistoryEmptyHint =>
+      'পার্টস, ওয়ারেন্টি ও খরচ ট্র্যাক করতে মেরামত লগ করুন।';
+
+  @override
+  String get repairCategory => 'ক্যাটাগরি';
+
+  @override
+  String get repairParts => 'ব্যবহৃত পার্টস';
+
+  @override
+  String get addRepairPart => 'পার্ট যোগ করুন';
+
+  @override
+  String get fieldProblem => 'সমস্যা';
+
+  @override
+  String get fieldDiagnosis => 'ডায়াগনোসিস';
+
+  @override
+  String get fieldWorkPerformed => 'করা কাজ';
+
+  @override
+  String get fieldWarrantyEnd => 'ওয়ারেন্টি শেষ তারিখ';
+
+  @override
+  String get fieldFollowUpDate => 'ফলো-আপ তারিখ';
+
+  @override
+  String get fieldPartName => 'পার্টের নাম';
+
+  @override
+  String get fieldPartNumber => 'পার্ট নম্বর';
+
+  @override
+  String get fieldQuantity => 'পরিমাণ';
+
+  @override
+  String get fieldUnitCost => 'ইউনিট খরচ';
+
+  @override
+  String get fieldCost => 'খরচ';
+
+  @override
+  String get fieldInstalledDate => 'ইনস্টল তারিখ';
+
+  @override
+  String get fieldIntervalKm => 'রিপ্লেসমেন্ট ইন্টারভাল (কিমি)';
+
+  @override
+  String get fieldIntervalDays => 'রিপ্লেসমেন্ট ইন্টারভাল (দিন)';
+
+  @override
+  String get fieldSpecification => 'স্পেসিফিকেশন';
+
+  @override
+  String get fieldStatus => 'স্ট্যাটাস';
+
+  @override
+  String get fieldTyreSize => 'টায়ার সাইজ';
+
+  @override
+  String get totalRepairs => 'মোট মেরামত';
+
+  @override
+  String get deleteRepairTitle => 'এই মেরামত মুছবেন?';
+
+  @override
+  String get deleteRepairMessage => 'লিঙ্কড খরচও মুছে যাবে।';
+
+  @override
+  String get vehicleParts => 'গাড়ির পার্টস';
+
+  @override
+  String get vehiclePartDetails => 'পার্ট বিস্তারিত';
+
+  @override
+  String get addVehiclePart => 'পার্ট যোগ করুন';
+
+  @override
+  String get saveVehiclePart => 'পার্ট সেভ করুন';
+
+  @override
+  String get vehiclePartsEmpty => 'এখনো কোনো পার্ট নেই';
+
+  @override
+  String get vehiclePartsEmptyHint =>
+      'আলাদা পার্ট রিপ্লেসমেন্ট ও ইন্টারভাল ট্র্যাক করুন।';
+
+  @override
+  String get invalidReplacementInterval =>
+      'রিপ্লেসমেন্ট ইন্টারভাল ধনাত্মক হতে হবে।';
+
+  @override
+  String get nextDue => 'পরবর্তী ডিউ';
+
+  @override
+  String get tyresTitle => 'টায়ার';
+
+  @override
+  String get tyreDetails => 'টায়ার বিস্তারিত';
+
+  @override
+  String get addTyre => 'টায়ার যোগ করুন';
+
+  @override
+  String get saveTyre => 'টায়ার সেভ করুন';
+
+  @override
+  String get tyresEmpty => 'এখনো কোনো টায়ার নেই';
+
+  @override
+  String get tyresEmptyHint =>
+      'লাইফসাইকেল ইভেন্ট ট্র্যাক করতে পজিশন অনুযায়ী টায়ার যোগ করুন।';
+
+  @override
+  String get tyrePositions => 'পজিশন';
+
+  @override
+  String get tyrePosition => 'পজিশন';
+
+  @override
+  String get activeTyres => 'সক্রিয় টায়ার';
+
+  @override
+  String get selectTyrePosition => 'টায়ার পজিশন নির্বাচন করুন';
+
+  @override
+  String get tyreEvents => 'লাইফসাইকেল ইভেন্ট';
+
+  @override
+  String get tyreEventInstalled => 'ইনস্টল';
+
+  @override
+  String get tyreEventRotated => 'রোটেট';
+
+  @override
+  String get tyreEventInspected => 'ইন্সপেক্ট';
+
+  @override
+  String get tyreEventRepaired => 'মেরামত';
+
+  @override
+  String get tyreEventReplaced => 'বদলানো';
+
+  @override
+  String get tyreEventRemoved => 'সরানো';
+
+  @override
+  String get tyreActionInspect => 'ইন্সপেক্ট';
+
+  @override
+  String get tyreActionRepair => 'মেরামত';
+
+  @override
+  String get tyreActionRotate => 'রোটেট';
+
+  @override
+  String get tyreActionReplace => 'বদলান';
+
+  @override
+  String get batteryTitle => 'ব্যাটারি';
+
+  @override
+  String get batteryDetails => 'ব্যাটারি বিস্তারিত';
+
+  @override
+  String get addBattery => 'ব্যাটারি যোগ করুন';
+
+  @override
+  String get replaceBattery => 'ব্যাটারি বদলান';
+
+  @override
+  String get saveBattery => 'ব্যাটারি সেভ করুন';
+
+  @override
+  String get activeBattery => 'সক্রিয় ব্যাটারি';
+
+  @override
+  String get batteryEmpty => 'কোনো সক্রিয় ব্যাটারি নেই';
+
+  @override
+  String get batteryHistory => 'ব্যাটারি ইতিহাস';
+
+  @override
+  String get batteryHistoryEmpty => 'আগের কোনো ব্যাটারি নেই';
+
+  @override
+  String get markBatteryRemoved => 'সরানো হিসেবে চিহ্নিত করুন';
+
+  @override
+  String get warrantyActive => 'ওয়ারেন্টি সক্রিয়';
+
+  @override
+  String get warrantyExpiringSoon => 'শীঘ্রই শেষ';
+
+  @override
+  String get warrantyExpired => 'মেয়াদোত্তীর্ণ';
 }

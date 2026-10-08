@@ -59,4 +59,4 @@ lib/
 - ✅ Sprint 3 — Odometer & fuel tracking
 - ✅ Sprint 4 — Mileage, expenses & dashboard
 - ✅ Sprint 5 — Maintenance & engine oil
-- ⏳ Sprint 6 — Repairs, parts, tyres & battery
+- ✅ Sprint 6 — Repairs, parts, tyres & battery
