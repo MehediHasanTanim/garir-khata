@@ -14826,6 +14826,1337 @@ class RemindersCompanion extends UpdateCompanion<ReminderRow> {
   }
 }
 
+class $AttachmentsTable extends Attachments
+    with TableInfo<$AttachmentsTable, AttachmentRow> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $AttachmentsTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<String> id = GeneratedColumn<String>(
+    'id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _ownerTypeMeta = const VerificationMeta(
+    'ownerType',
+  );
+  @override
+  late final GeneratedColumn<String> ownerType = GeneratedColumn<String>(
+    'owner_type',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _ownerIdMeta = const VerificationMeta(
+    'ownerId',
+  );
+  @override
+  late final GeneratedColumn<String> ownerId = GeneratedColumn<String>(
+    'owner_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _originalFileNameMeta = const VerificationMeta(
+    'originalFileName',
+  );
+  @override
+  late final GeneratedColumn<String> originalFileName = GeneratedColumn<String>(
+    'original_file_name',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _storedFileNameMeta = const VerificationMeta(
+    'storedFileName',
+  );
+  @override
+  late final GeneratedColumn<String> storedFileName = GeneratedColumn<String>(
+    'stored_file_name',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _mimeTypeMeta = const VerificationMeta(
+    'mimeType',
+  );
+  @override
+  late final GeneratedColumn<String> mimeType = GeneratedColumn<String>(
+    'mime_type',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _fileSizeBytesMeta = const VerificationMeta(
+    'fileSizeBytes',
+  );
+  @override
+  late final GeneratedColumn<int> fileSizeBytes = GeneratedColumn<int>(
+    'file_size_bytes',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _relativePathMeta = const VerificationMeta(
+    'relativePath',
+  );
+  @override
+  late final GeneratedColumn<String> relativePath = GeneratedColumn<String>(
+    'relative_path',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _thumbnailRelativePathMeta =
+      const VerificationMeta('thumbnailRelativePath');
+  @override
+  late final GeneratedColumn<String> thumbnailRelativePath =
+      GeneratedColumn<String>(
+        'thumbnail_relative_path',
+        aliasedName,
+        true,
+        type: DriftSqlType.string,
+        requiredDuringInsert: false,
+      );
+  static const VerificationMeta _checksumSha256Meta = const VerificationMeta(
+    'checksumSha256',
+  );
+  @override
+  late final GeneratedColumn<String> checksumSha256 = GeneratedColumn<String>(
+    'checksum_sha256',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _displayLabelMeta = const VerificationMeta(
+    'displayLabel',
+  );
+  @override
+  late final GeneratedColumn<String> displayLabel = GeneratedColumn<String>(
+    'display_label',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _createdAtMeta = const VerificationMeta(
+    'createdAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> createdAt = GeneratedColumn<DateTime>(
+    'created_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [
+    id,
+    ownerType,
+    ownerId,
+    originalFileName,
+    storedFileName,
+    mimeType,
+    fileSizeBytes,
+    relativePath,
+    thumbnailRelativePath,
+    checksumSha256,
+    displayLabel,
+    createdAt,
+  ];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'attachments';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<AttachmentRow> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    } else if (isInserting) {
+      context.missing(_idMeta);
+    }
+    if (data.containsKey('owner_type')) {
+      context.handle(
+        _ownerTypeMeta,
+        ownerType.isAcceptableOrUnknown(data['owner_type']!, _ownerTypeMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_ownerTypeMeta);
+    }
+    if (data.containsKey('owner_id')) {
+      context.handle(
+        _ownerIdMeta,
+        ownerId.isAcceptableOrUnknown(data['owner_id']!, _ownerIdMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_ownerIdMeta);
+    }
+    if (data.containsKey('original_file_name')) {
+      context.handle(
+        _originalFileNameMeta,
+        originalFileName.isAcceptableOrUnknown(
+          data['original_file_name']!,
+          _originalFileNameMeta,
+        ),
+      );
+    } else if (isInserting) {
+      context.missing(_originalFileNameMeta);
+    }
+    if (data.containsKey('stored_file_name')) {
+      context.handle(
+        _storedFileNameMeta,
+        storedFileName.isAcceptableOrUnknown(
+          data['stored_file_name']!,
+          _storedFileNameMeta,
+        ),
+      );
+    } else if (isInserting) {
+      context.missing(_storedFileNameMeta);
+    }
+    if (data.containsKey('mime_type')) {
+      context.handle(
+        _mimeTypeMeta,
+        mimeType.isAcceptableOrUnknown(data['mime_type']!, _mimeTypeMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_mimeTypeMeta);
+    }
+    if (data.containsKey('file_size_bytes')) {
+      context.handle(
+        _fileSizeBytesMeta,
+        fileSizeBytes.isAcceptableOrUnknown(
+          data['file_size_bytes']!,
+          _fileSizeBytesMeta,
+        ),
+      );
+    } else if (isInserting) {
+      context.missing(_fileSizeBytesMeta);
+    }
+    if (data.containsKey('relative_path')) {
+      context.handle(
+        _relativePathMeta,
+        relativePath.isAcceptableOrUnknown(
+          data['relative_path']!,
+          _relativePathMeta,
+        ),
+      );
+    } else if (isInserting) {
+      context.missing(_relativePathMeta);
+    }
+    if (data.containsKey('thumbnail_relative_path')) {
+      context.handle(
+        _thumbnailRelativePathMeta,
+        thumbnailRelativePath.isAcceptableOrUnknown(
+          data['thumbnail_relative_path']!,
+          _thumbnailRelativePathMeta,
+        ),
+      );
+    }
+    if (data.containsKey('checksum_sha256')) {
+      context.handle(
+        _checksumSha256Meta,
+        checksumSha256.isAcceptableOrUnknown(
+          data['checksum_sha256']!,
+          _checksumSha256Meta,
+        ),
+      );
+    } else if (isInserting) {
+      context.missing(_checksumSha256Meta);
+    }
+    if (data.containsKey('display_label')) {
+      context.handle(
+        _displayLabelMeta,
+        displayLabel.isAcceptableOrUnknown(
+          data['display_label']!,
+          _displayLabelMeta,
+        ),
+      );
+    }
+    if (data.containsKey('created_at')) {
+      context.handle(
+        _createdAtMeta,
+        createdAt.isAcceptableOrUnknown(data['created_at']!, _createdAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_createdAtMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  AttachmentRow map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return AttachmentRow(
+      id: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}id'],
+      )!,
+      ownerType: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}owner_type'],
+      )!,
+      ownerId: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}owner_id'],
+      )!,
+      originalFileName: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}original_file_name'],
+      )!,
+      storedFileName: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}stored_file_name'],
+      )!,
+      mimeType: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}mime_type'],
+      )!,
+      fileSizeBytes: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}file_size_bytes'],
+      )!,
+      relativePath: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}relative_path'],
+      )!,
+      thumbnailRelativePath: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}thumbnail_relative_path'],
+      ),
+      checksumSha256: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}checksum_sha256'],
+      )!,
+      displayLabel: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}display_label'],
+      ),
+      createdAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}created_at'],
+      )!,
+    );
+  }
+
+  @override
+  $AttachmentsTable createAlias(String alias) {
+    return $AttachmentsTable(attachedDatabase, alias);
+  }
+}
+
+class AttachmentRow extends DataClass implements Insertable<AttachmentRow> {
+  final String id;
+  final String ownerType;
+  final String ownerId;
+  final String originalFileName;
+  final String storedFileName;
+  final String mimeType;
+  final int fileSizeBytes;
+  final String relativePath;
+  final String? thumbnailRelativePath;
+  final String checksumSha256;
+  final String? displayLabel;
+  final DateTime createdAt;
+  const AttachmentRow({
+    required this.id,
+    required this.ownerType,
+    required this.ownerId,
+    required this.originalFileName,
+    required this.storedFileName,
+    required this.mimeType,
+    required this.fileSizeBytes,
+    required this.relativePath,
+    this.thumbnailRelativePath,
+    required this.checksumSha256,
+    this.displayLabel,
+    required this.createdAt,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<String>(id);
+    map['owner_type'] = Variable<String>(ownerType);
+    map['owner_id'] = Variable<String>(ownerId);
+    map['original_file_name'] = Variable<String>(originalFileName);
+    map['stored_file_name'] = Variable<String>(storedFileName);
+    map['mime_type'] = Variable<String>(mimeType);
+    map['file_size_bytes'] = Variable<int>(fileSizeBytes);
+    map['relative_path'] = Variable<String>(relativePath);
+    if (!nullToAbsent || thumbnailRelativePath != null) {
+      map['thumbnail_relative_path'] = Variable<String>(thumbnailRelativePath);
+    }
+    map['checksum_sha256'] = Variable<String>(checksumSha256);
+    if (!nullToAbsent || displayLabel != null) {
+      map['display_label'] = Variable<String>(displayLabel);
+    }
+    map['created_at'] = Variable<DateTime>(createdAt);
+    return map;
+  }
+
+  AttachmentsCompanion toCompanion(bool nullToAbsent) {
+    return AttachmentsCompanion(
+      id: Value(id),
+      ownerType: Value(ownerType),
+      ownerId: Value(ownerId),
+      originalFileName: Value(originalFileName),
+      storedFileName: Value(storedFileName),
+      mimeType: Value(mimeType),
+      fileSizeBytes: Value(fileSizeBytes),
+      relativePath: Value(relativePath),
+      thumbnailRelativePath: thumbnailRelativePath == null && nullToAbsent
+          ? const Value.absent()
+          : Value(thumbnailRelativePath),
+      checksumSha256: Value(checksumSha256),
+      displayLabel: displayLabel == null && nullToAbsent
+          ? const Value.absent()
+          : Value(displayLabel),
+      createdAt: Value(createdAt),
+    );
+  }
+
+  factory AttachmentRow.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return AttachmentRow(
+      id: serializer.fromJson<String>(json['id']),
+      ownerType: serializer.fromJson<String>(json['ownerType']),
+      ownerId: serializer.fromJson<String>(json['ownerId']),
+      originalFileName: serializer.fromJson<String>(json['originalFileName']),
+      storedFileName: serializer.fromJson<String>(json['storedFileName']),
+      mimeType: serializer.fromJson<String>(json['mimeType']),
+      fileSizeBytes: serializer.fromJson<int>(json['fileSizeBytes']),
+      relativePath: serializer.fromJson<String>(json['relativePath']),
+      thumbnailRelativePath: serializer.fromJson<String?>(
+        json['thumbnailRelativePath'],
+      ),
+      checksumSha256: serializer.fromJson<String>(json['checksumSha256']),
+      displayLabel: serializer.fromJson<String?>(json['displayLabel']),
+      createdAt: serializer.fromJson<DateTime>(json['createdAt']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<String>(id),
+      'ownerType': serializer.toJson<String>(ownerType),
+      'ownerId': serializer.toJson<String>(ownerId),
+      'originalFileName': serializer.toJson<String>(originalFileName),
+      'storedFileName': serializer.toJson<String>(storedFileName),
+      'mimeType': serializer.toJson<String>(mimeType),
+      'fileSizeBytes': serializer.toJson<int>(fileSizeBytes),
+      'relativePath': serializer.toJson<String>(relativePath),
+      'thumbnailRelativePath': serializer.toJson<String?>(
+        thumbnailRelativePath,
+      ),
+      'checksumSha256': serializer.toJson<String>(checksumSha256),
+      'displayLabel': serializer.toJson<String?>(displayLabel),
+      'createdAt': serializer.toJson<DateTime>(createdAt),
+    };
+  }
+
+  AttachmentRow copyWith({
+    String? id,
+    String? ownerType,
+    String? ownerId,
+    String? originalFileName,
+    String? storedFileName,
+    String? mimeType,
+    int? fileSizeBytes,
+    String? relativePath,
+    Value<String?> thumbnailRelativePath = const Value.absent(),
+    String? checksumSha256,
+    Value<String?> displayLabel = const Value.absent(),
+    DateTime? createdAt,
+  }) => AttachmentRow(
+    id: id ?? this.id,
+    ownerType: ownerType ?? this.ownerType,
+    ownerId: ownerId ?? this.ownerId,
+    originalFileName: originalFileName ?? this.originalFileName,
+    storedFileName: storedFileName ?? this.storedFileName,
+    mimeType: mimeType ?? this.mimeType,
+    fileSizeBytes: fileSizeBytes ?? this.fileSizeBytes,
+    relativePath: relativePath ?? this.relativePath,
+    thumbnailRelativePath: thumbnailRelativePath.present
+        ? thumbnailRelativePath.value
+        : this.thumbnailRelativePath,
+    checksumSha256: checksumSha256 ?? this.checksumSha256,
+    displayLabel: displayLabel.present ? displayLabel.value : this.displayLabel,
+    createdAt: createdAt ?? this.createdAt,
+  );
+  AttachmentRow copyWithCompanion(AttachmentsCompanion data) {
+    return AttachmentRow(
+      id: data.id.present ? data.id.value : this.id,
+      ownerType: data.ownerType.present ? data.ownerType.value : this.ownerType,
+      ownerId: data.ownerId.present ? data.ownerId.value : this.ownerId,
+      originalFileName: data.originalFileName.present
+          ? data.originalFileName.value
+          : this.originalFileName,
+      storedFileName: data.storedFileName.present
+          ? data.storedFileName.value
+          : this.storedFileName,
+      mimeType: data.mimeType.present ? data.mimeType.value : this.mimeType,
+      fileSizeBytes: data.fileSizeBytes.present
+          ? data.fileSizeBytes.value
+          : this.fileSizeBytes,
+      relativePath: data.relativePath.present
+          ? data.relativePath.value
+          : this.relativePath,
+      thumbnailRelativePath: data.thumbnailRelativePath.present
+          ? data.thumbnailRelativePath.value
+          : this.thumbnailRelativePath,
+      checksumSha256: data.checksumSha256.present
+          ? data.checksumSha256.value
+          : this.checksumSha256,
+      displayLabel: data.displayLabel.present
+          ? data.displayLabel.value
+          : this.displayLabel,
+      createdAt: data.createdAt.present ? data.createdAt.value : this.createdAt,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('AttachmentRow(')
+          ..write('id: $id, ')
+          ..write('ownerType: $ownerType, ')
+          ..write('ownerId: $ownerId, ')
+          ..write('originalFileName: $originalFileName, ')
+          ..write('storedFileName: $storedFileName, ')
+          ..write('mimeType: $mimeType, ')
+          ..write('fileSizeBytes: $fileSizeBytes, ')
+          ..write('relativePath: $relativePath, ')
+          ..write('thumbnailRelativePath: $thumbnailRelativePath, ')
+          ..write('checksumSha256: $checksumSha256, ')
+          ..write('displayLabel: $displayLabel, ')
+          ..write('createdAt: $createdAt')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(
+    id,
+    ownerType,
+    ownerId,
+    originalFileName,
+    storedFileName,
+    mimeType,
+    fileSizeBytes,
+    relativePath,
+    thumbnailRelativePath,
+    checksumSha256,
+    displayLabel,
+    createdAt,
+  );
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is AttachmentRow &&
+          other.id == this.id &&
+          other.ownerType == this.ownerType &&
+          other.ownerId == this.ownerId &&
+          other.originalFileName == this.originalFileName &&
+          other.storedFileName == this.storedFileName &&
+          other.mimeType == this.mimeType &&
+          other.fileSizeBytes == this.fileSizeBytes &&
+          other.relativePath == this.relativePath &&
+          other.thumbnailRelativePath == this.thumbnailRelativePath &&
+          other.checksumSha256 == this.checksumSha256 &&
+          other.displayLabel == this.displayLabel &&
+          other.createdAt == this.createdAt);
+}
+
+class AttachmentsCompanion extends UpdateCompanion<AttachmentRow> {
+  final Value<String> id;
+  final Value<String> ownerType;
+  final Value<String> ownerId;
+  final Value<String> originalFileName;
+  final Value<String> storedFileName;
+  final Value<String> mimeType;
+  final Value<int> fileSizeBytes;
+  final Value<String> relativePath;
+  final Value<String?> thumbnailRelativePath;
+  final Value<String> checksumSha256;
+  final Value<String?> displayLabel;
+  final Value<DateTime> createdAt;
+  final Value<int> rowid;
+  const AttachmentsCompanion({
+    this.id = const Value.absent(),
+    this.ownerType = const Value.absent(),
+    this.ownerId = const Value.absent(),
+    this.originalFileName = const Value.absent(),
+    this.storedFileName = const Value.absent(),
+    this.mimeType = const Value.absent(),
+    this.fileSizeBytes = const Value.absent(),
+    this.relativePath = const Value.absent(),
+    this.thumbnailRelativePath = const Value.absent(),
+    this.checksumSha256 = const Value.absent(),
+    this.displayLabel = const Value.absent(),
+    this.createdAt = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  AttachmentsCompanion.insert({
+    required String id,
+    required String ownerType,
+    required String ownerId,
+    required String originalFileName,
+    required String storedFileName,
+    required String mimeType,
+    required int fileSizeBytes,
+    required String relativePath,
+    this.thumbnailRelativePath = const Value.absent(),
+    required String checksumSha256,
+    this.displayLabel = const Value.absent(),
+    required DateTime createdAt,
+    this.rowid = const Value.absent(),
+  }) : id = Value(id),
+       ownerType = Value(ownerType),
+       ownerId = Value(ownerId),
+       originalFileName = Value(originalFileName),
+       storedFileName = Value(storedFileName),
+       mimeType = Value(mimeType),
+       fileSizeBytes = Value(fileSizeBytes),
+       relativePath = Value(relativePath),
+       checksumSha256 = Value(checksumSha256),
+       createdAt = Value(createdAt);
+  static Insertable<AttachmentRow> custom({
+    Expression<String>? id,
+    Expression<String>? ownerType,
+    Expression<String>? ownerId,
+    Expression<String>? originalFileName,
+    Expression<String>? storedFileName,
+    Expression<String>? mimeType,
+    Expression<int>? fileSizeBytes,
+    Expression<String>? relativePath,
+    Expression<String>? thumbnailRelativePath,
+    Expression<String>? checksumSha256,
+    Expression<String>? displayLabel,
+    Expression<DateTime>? createdAt,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (ownerType != null) 'owner_type': ownerType,
+      if (ownerId != null) 'owner_id': ownerId,
+      if (originalFileName != null) 'original_file_name': originalFileName,
+      if (storedFileName != null) 'stored_file_name': storedFileName,
+      if (mimeType != null) 'mime_type': mimeType,
+      if (fileSizeBytes != null) 'file_size_bytes': fileSizeBytes,
+      if (relativePath != null) 'relative_path': relativePath,
+      if (thumbnailRelativePath != null)
+        'thumbnail_relative_path': thumbnailRelativePath,
+      if (checksumSha256 != null) 'checksum_sha256': checksumSha256,
+      if (displayLabel != null) 'display_label': displayLabel,
+      if (createdAt != null) 'created_at': createdAt,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  AttachmentsCompanion copyWith({
+    Value<String>? id,
+    Value<String>? ownerType,
+    Value<String>? ownerId,
+    Value<String>? originalFileName,
+    Value<String>? storedFileName,
+    Value<String>? mimeType,
+    Value<int>? fileSizeBytes,
+    Value<String>? relativePath,
+    Value<String?>? thumbnailRelativePath,
+    Value<String>? checksumSha256,
+    Value<String?>? displayLabel,
+    Value<DateTime>? createdAt,
+    Value<int>? rowid,
+  }) {
+    return AttachmentsCompanion(
+      id: id ?? this.id,
+      ownerType: ownerType ?? this.ownerType,
+      ownerId: ownerId ?? this.ownerId,
+      originalFileName: originalFileName ?? this.originalFileName,
+      storedFileName: storedFileName ?? this.storedFileName,
+      mimeType: mimeType ?? this.mimeType,
+      fileSizeBytes: fileSizeBytes ?? this.fileSizeBytes,
+      relativePath: relativePath ?? this.relativePath,
+      thumbnailRelativePath:
+          thumbnailRelativePath ?? this.thumbnailRelativePath,
+      checksumSha256: checksumSha256 ?? this.checksumSha256,
+      displayLabel: displayLabel ?? this.displayLabel,
+      createdAt: createdAt ?? this.createdAt,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<String>(id.value);
+    }
+    if (ownerType.present) {
+      map['owner_type'] = Variable<String>(ownerType.value);
+    }
+    if (ownerId.present) {
+      map['owner_id'] = Variable<String>(ownerId.value);
+    }
+    if (originalFileName.present) {
+      map['original_file_name'] = Variable<String>(originalFileName.value);
+    }
+    if (storedFileName.present) {
+      map['stored_file_name'] = Variable<String>(storedFileName.value);
+    }
+    if (mimeType.present) {
+      map['mime_type'] = Variable<String>(mimeType.value);
+    }
+    if (fileSizeBytes.present) {
+      map['file_size_bytes'] = Variable<int>(fileSizeBytes.value);
+    }
+    if (relativePath.present) {
+      map['relative_path'] = Variable<String>(relativePath.value);
+    }
+    if (thumbnailRelativePath.present) {
+      map['thumbnail_relative_path'] = Variable<String>(
+        thumbnailRelativePath.value,
+      );
+    }
+    if (checksumSha256.present) {
+      map['checksum_sha256'] = Variable<String>(checksumSha256.value);
+    }
+    if (displayLabel.present) {
+      map['display_label'] = Variable<String>(displayLabel.value);
+    }
+    if (createdAt.present) {
+      map['created_at'] = Variable<DateTime>(createdAt.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('AttachmentsCompanion(')
+          ..write('id: $id, ')
+          ..write('ownerType: $ownerType, ')
+          ..write('ownerId: $ownerId, ')
+          ..write('originalFileName: $originalFileName, ')
+          ..write('storedFileName: $storedFileName, ')
+          ..write('mimeType: $mimeType, ')
+          ..write('fileSizeBytes: $fileSizeBytes, ')
+          ..write('relativePath: $relativePath, ')
+          ..write('thumbnailRelativePath: $thumbnailRelativePath, ')
+          ..write('checksumSha256: $checksumSha256, ')
+          ..write('displayLabel: $displayLabel, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
+class $BackupHistoryTable extends BackupHistory
+    with TableInfo<$BackupHistoryTable, BackupHistoryRow> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $BackupHistoryTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<String> id = GeneratedColumn<String>(
+    'id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _createdAtMeta = const VerificationMeta(
+    'createdAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> createdAt = GeneratedColumn<DateTime>(
+    'created_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _pathOrUriMeta = const VerificationMeta(
+    'pathOrUri',
+  );
+  @override
+  late final GeneratedColumn<String> pathOrUri = GeneratedColumn<String>(
+    'path_or_uri',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _sizeBytesMeta = const VerificationMeta(
+    'sizeBytes',
+  );
+  @override
+  late final GeneratedColumn<int> sizeBytes = GeneratedColumn<int>(
+    'size_bytes',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _vehicleCountMeta = const VerificationMeta(
+    'vehicleCount',
+  );
+  @override
+  late final GeneratedColumn<int> vehicleCount = GeneratedColumn<int>(
+    'vehicle_count',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _schemaVersionMeta = const VerificationMeta(
+    'schemaVersion',
+  );
+  @override
+  late final GeneratedColumn<int> schemaVersion = GeneratedColumn<int>(
+    'schema_version',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _statusMeta = const VerificationMeta('status');
+  @override
+  late final GeneratedColumn<String> status = GeneratedColumn<String>(
+    'status',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _includeAttachmentsMeta =
+      const VerificationMeta('includeAttachments');
+  @override
+  late final GeneratedColumn<bool> includeAttachments = GeneratedColumn<bool>(
+    'include_attachments',
+    aliasedName,
+    false,
+    type: DriftSqlType.bool,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'CHECK ("include_attachments" IN (0, 1))',
+    ),
+    defaultValue: const Constant(true),
+  );
+  static const VerificationMeta _errorMessageMeta = const VerificationMeta(
+    'errorMessage',
+  );
+  @override
+  late final GeneratedColumn<String> errorMessage = GeneratedColumn<String>(
+    'error_message',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [
+    id,
+    createdAt,
+    pathOrUri,
+    sizeBytes,
+    vehicleCount,
+    schemaVersion,
+    status,
+    includeAttachments,
+    errorMessage,
+  ];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'backup_history';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<BackupHistoryRow> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    } else if (isInserting) {
+      context.missing(_idMeta);
+    }
+    if (data.containsKey('created_at')) {
+      context.handle(
+        _createdAtMeta,
+        createdAt.isAcceptableOrUnknown(data['created_at']!, _createdAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_createdAtMeta);
+    }
+    if (data.containsKey('path_or_uri')) {
+      context.handle(
+        _pathOrUriMeta,
+        pathOrUri.isAcceptableOrUnknown(data['path_or_uri']!, _pathOrUriMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_pathOrUriMeta);
+    }
+    if (data.containsKey('size_bytes')) {
+      context.handle(
+        _sizeBytesMeta,
+        sizeBytes.isAcceptableOrUnknown(data['size_bytes']!, _sizeBytesMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_sizeBytesMeta);
+    }
+    if (data.containsKey('vehicle_count')) {
+      context.handle(
+        _vehicleCountMeta,
+        vehicleCount.isAcceptableOrUnknown(
+          data['vehicle_count']!,
+          _vehicleCountMeta,
+        ),
+      );
+    }
+    if (data.containsKey('schema_version')) {
+      context.handle(
+        _schemaVersionMeta,
+        schemaVersion.isAcceptableOrUnknown(
+          data['schema_version']!,
+          _schemaVersionMeta,
+        ),
+      );
+    } else if (isInserting) {
+      context.missing(_schemaVersionMeta);
+    }
+    if (data.containsKey('status')) {
+      context.handle(
+        _statusMeta,
+        status.isAcceptableOrUnknown(data['status']!, _statusMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_statusMeta);
+    }
+    if (data.containsKey('include_attachments')) {
+      context.handle(
+        _includeAttachmentsMeta,
+        includeAttachments.isAcceptableOrUnknown(
+          data['include_attachments']!,
+          _includeAttachmentsMeta,
+        ),
+      );
+    }
+    if (data.containsKey('error_message')) {
+      context.handle(
+        _errorMessageMeta,
+        errorMessage.isAcceptableOrUnknown(
+          data['error_message']!,
+          _errorMessageMeta,
+        ),
+      );
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  BackupHistoryRow map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return BackupHistoryRow(
+      id: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}id'],
+      )!,
+      createdAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}created_at'],
+      )!,
+      pathOrUri: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}path_or_uri'],
+      )!,
+      sizeBytes: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}size_bytes'],
+      )!,
+      vehicleCount: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}vehicle_count'],
+      )!,
+      schemaVersion: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}schema_version'],
+      )!,
+      status: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}status'],
+      )!,
+      includeAttachments: attachedDatabase.typeMapping.read(
+        DriftSqlType.bool,
+        data['${effectivePrefix}include_attachments'],
+      )!,
+      errorMessage: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}error_message'],
+      ),
+    );
+  }
+
+  @override
+  $BackupHistoryTable createAlias(String alias) {
+    return $BackupHistoryTable(attachedDatabase, alias);
+  }
+}
+
+class BackupHistoryRow extends DataClass
+    implements Insertable<BackupHistoryRow> {
+  final String id;
+  final DateTime createdAt;
+  final String pathOrUri;
+  final int sizeBytes;
+  final int vehicleCount;
+  final int schemaVersion;
+
+  /// success | failed | interrupted
+  final String status;
+  final bool includeAttachments;
+  final String? errorMessage;
+  const BackupHistoryRow({
+    required this.id,
+    required this.createdAt,
+    required this.pathOrUri,
+    required this.sizeBytes,
+    required this.vehicleCount,
+    required this.schemaVersion,
+    required this.status,
+    required this.includeAttachments,
+    this.errorMessage,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<String>(id);
+    map['created_at'] = Variable<DateTime>(createdAt);
+    map['path_or_uri'] = Variable<String>(pathOrUri);
+    map['size_bytes'] = Variable<int>(sizeBytes);
+    map['vehicle_count'] = Variable<int>(vehicleCount);
+    map['schema_version'] = Variable<int>(schemaVersion);
+    map['status'] = Variable<String>(status);
+    map['include_attachments'] = Variable<bool>(includeAttachments);
+    if (!nullToAbsent || errorMessage != null) {
+      map['error_message'] = Variable<String>(errorMessage);
+    }
+    return map;
+  }
+
+  BackupHistoryCompanion toCompanion(bool nullToAbsent) {
+    return BackupHistoryCompanion(
+      id: Value(id),
+      createdAt: Value(createdAt),
+      pathOrUri: Value(pathOrUri),
+      sizeBytes: Value(sizeBytes),
+      vehicleCount: Value(vehicleCount),
+      schemaVersion: Value(schemaVersion),
+      status: Value(status),
+      includeAttachments: Value(includeAttachments),
+      errorMessage: errorMessage == null && nullToAbsent
+          ? const Value.absent()
+          : Value(errorMessage),
+    );
+  }
+
+  factory BackupHistoryRow.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return BackupHistoryRow(
+      id: serializer.fromJson<String>(json['id']),
+      createdAt: serializer.fromJson<DateTime>(json['createdAt']),
+      pathOrUri: serializer.fromJson<String>(json['pathOrUri']),
+      sizeBytes: serializer.fromJson<int>(json['sizeBytes']),
+      vehicleCount: serializer.fromJson<int>(json['vehicleCount']),
+      schemaVersion: serializer.fromJson<int>(json['schemaVersion']),
+      status: serializer.fromJson<String>(json['status']),
+      includeAttachments: serializer.fromJson<bool>(json['includeAttachments']),
+      errorMessage: serializer.fromJson<String?>(json['errorMessage']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<String>(id),
+      'createdAt': serializer.toJson<DateTime>(createdAt),
+      'pathOrUri': serializer.toJson<String>(pathOrUri),
+      'sizeBytes': serializer.toJson<int>(sizeBytes),
+      'vehicleCount': serializer.toJson<int>(vehicleCount),
+      'schemaVersion': serializer.toJson<int>(schemaVersion),
+      'status': serializer.toJson<String>(status),
+      'includeAttachments': serializer.toJson<bool>(includeAttachments),
+      'errorMessage': serializer.toJson<String?>(errorMessage),
+    };
+  }
+
+  BackupHistoryRow copyWith({
+    String? id,
+    DateTime? createdAt,
+    String? pathOrUri,
+    int? sizeBytes,
+    int? vehicleCount,
+    int? schemaVersion,
+    String? status,
+    bool? includeAttachments,
+    Value<String?> errorMessage = const Value.absent(),
+  }) => BackupHistoryRow(
+    id: id ?? this.id,
+    createdAt: createdAt ?? this.createdAt,
+    pathOrUri: pathOrUri ?? this.pathOrUri,
+    sizeBytes: sizeBytes ?? this.sizeBytes,
+    vehicleCount: vehicleCount ?? this.vehicleCount,
+    schemaVersion: schemaVersion ?? this.schemaVersion,
+    status: status ?? this.status,
+    includeAttachments: includeAttachments ?? this.includeAttachments,
+    errorMessage: errorMessage.present ? errorMessage.value : this.errorMessage,
+  );
+  BackupHistoryRow copyWithCompanion(BackupHistoryCompanion data) {
+    return BackupHistoryRow(
+      id: data.id.present ? data.id.value : this.id,
+      createdAt: data.createdAt.present ? data.createdAt.value : this.createdAt,
+      pathOrUri: data.pathOrUri.present ? data.pathOrUri.value : this.pathOrUri,
+      sizeBytes: data.sizeBytes.present ? data.sizeBytes.value : this.sizeBytes,
+      vehicleCount: data.vehicleCount.present
+          ? data.vehicleCount.value
+          : this.vehicleCount,
+      schemaVersion: data.schemaVersion.present
+          ? data.schemaVersion.value
+          : this.schemaVersion,
+      status: data.status.present ? data.status.value : this.status,
+      includeAttachments: data.includeAttachments.present
+          ? data.includeAttachments.value
+          : this.includeAttachments,
+      errorMessage: data.errorMessage.present
+          ? data.errorMessage.value
+          : this.errorMessage,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('BackupHistoryRow(')
+          ..write('id: $id, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('pathOrUri: $pathOrUri, ')
+          ..write('sizeBytes: $sizeBytes, ')
+          ..write('vehicleCount: $vehicleCount, ')
+          ..write('schemaVersion: $schemaVersion, ')
+          ..write('status: $status, ')
+          ..write('includeAttachments: $includeAttachments, ')
+          ..write('errorMessage: $errorMessage')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(
+    id,
+    createdAt,
+    pathOrUri,
+    sizeBytes,
+    vehicleCount,
+    schemaVersion,
+    status,
+    includeAttachments,
+    errorMessage,
+  );
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is BackupHistoryRow &&
+          other.id == this.id &&
+          other.createdAt == this.createdAt &&
+          other.pathOrUri == this.pathOrUri &&
+          other.sizeBytes == this.sizeBytes &&
+          other.vehicleCount == this.vehicleCount &&
+          other.schemaVersion == this.schemaVersion &&
+          other.status == this.status &&
+          other.includeAttachments == this.includeAttachments &&
+          other.errorMessage == this.errorMessage);
+}
+
+class BackupHistoryCompanion extends UpdateCompanion<BackupHistoryRow> {
+  final Value<String> id;
+  final Value<DateTime> createdAt;
+  final Value<String> pathOrUri;
+  final Value<int> sizeBytes;
+  final Value<int> vehicleCount;
+  final Value<int> schemaVersion;
+  final Value<String> status;
+  final Value<bool> includeAttachments;
+  final Value<String?> errorMessage;
+  final Value<int> rowid;
+  const BackupHistoryCompanion({
+    this.id = const Value.absent(),
+    this.createdAt = const Value.absent(),
+    this.pathOrUri = const Value.absent(),
+    this.sizeBytes = const Value.absent(),
+    this.vehicleCount = const Value.absent(),
+    this.schemaVersion = const Value.absent(),
+    this.status = const Value.absent(),
+    this.includeAttachments = const Value.absent(),
+    this.errorMessage = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  BackupHistoryCompanion.insert({
+    required String id,
+    required DateTime createdAt,
+    required String pathOrUri,
+    required int sizeBytes,
+    this.vehicleCount = const Value.absent(),
+    required int schemaVersion,
+    required String status,
+    this.includeAttachments = const Value.absent(),
+    this.errorMessage = const Value.absent(),
+    this.rowid = const Value.absent(),
+  }) : id = Value(id),
+       createdAt = Value(createdAt),
+       pathOrUri = Value(pathOrUri),
+       sizeBytes = Value(sizeBytes),
+       schemaVersion = Value(schemaVersion),
+       status = Value(status);
+  static Insertable<BackupHistoryRow> custom({
+    Expression<String>? id,
+    Expression<DateTime>? createdAt,
+    Expression<String>? pathOrUri,
+    Expression<int>? sizeBytes,
+    Expression<int>? vehicleCount,
+    Expression<int>? schemaVersion,
+    Expression<String>? status,
+    Expression<bool>? includeAttachments,
+    Expression<String>? errorMessage,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (createdAt != null) 'created_at': createdAt,
+      if (pathOrUri != null) 'path_or_uri': pathOrUri,
+      if (sizeBytes != null) 'size_bytes': sizeBytes,
+      if (vehicleCount != null) 'vehicle_count': vehicleCount,
+      if (schemaVersion != null) 'schema_version': schemaVersion,
+      if (status != null) 'status': status,
+      if (includeAttachments != null) 'include_attachments': includeAttachments,
+      if (errorMessage != null) 'error_message': errorMessage,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  BackupHistoryCompanion copyWith({
+    Value<String>? id,
+    Value<DateTime>? createdAt,
+    Value<String>? pathOrUri,
+    Value<int>? sizeBytes,
+    Value<int>? vehicleCount,
+    Value<int>? schemaVersion,
+    Value<String>? status,
+    Value<bool>? includeAttachments,
+    Value<String?>? errorMessage,
+    Value<int>? rowid,
+  }) {
+    return BackupHistoryCompanion(
+      id: id ?? this.id,
+      createdAt: createdAt ?? this.createdAt,
+      pathOrUri: pathOrUri ?? this.pathOrUri,
+      sizeBytes: sizeBytes ?? this.sizeBytes,
+      vehicleCount: vehicleCount ?? this.vehicleCount,
+      schemaVersion: schemaVersion ?? this.schemaVersion,
+      status: status ?? this.status,
+      includeAttachments: includeAttachments ?? this.includeAttachments,
+      errorMessage: errorMessage ?? this.errorMessage,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<String>(id.value);
+    }
+    if (createdAt.present) {
+      map['created_at'] = Variable<DateTime>(createdAt.value);
+    }
+    if (pathOrUri.present) {
+      map['path_or_uri'] = Variable<String>(pathOrUri.value);
+    }
+    if (sizeBytes.present) {
+      map['size_bytes'] = Variable<int>(sizeBytes.value);
+    }
+    if (vehicleCount.present) {
+      map['vehicle_count'] = Variable<int>(vehicleCount.value);
+    }
+    if (schemaVersion.present) {
+      map['schema_version'] = Variable<int>(schemaVersion.value);
+    }
+    if (status.present) {
+      map['status'] = Variable<String>(status.value);
+    }
+    if (includeAttachments.present) {
+      map['include_attachments'] = Variable<bool>(includeAttachments.value);
+    }
+    if (errorMessage.present) {
+      map['error_message'] = Variable<String>(errorMessage.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('BackupHistoryCompanion(')
+          ..write('id: $id, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('pathOrUri: $pathOrUri, ')
+          ..write('sizeBytes: $sizeBytes, ')
+          ..write('vehicleCount: $vehicleCount, ')
+          ..write('schemaVersion: $schemaVersion, ')
+          ..write('status: $status, ')
+          ..write('includeAttachments: $includeAttachments, ')
+          ..write('errorMessage: $errorMessage, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
 abstract class _$AppDatabase extends GeneratedDatabase {
   _$AppDatabase(QueryExecutor e) : super(e);
   $AppDatabaseManager get managers => $AppDatabaseManager(this);
@@ -14853,6 +16184,8 @@ abstract class _$AppDatabase extends GeneratedDatabase {
     this,
   );
   late final $RemindersTable reminders = $RemindersTable(this);
+  late final $AttachmentsTable attachments = $AttachmentsTable(this);
+  late final $BackupHistoryTable backupHistory = $BackupHistoryTable(this);
   late final Index idxOdometerVehicleRecorded = Index(
     'idx_odometer_vehicle_recorded',
     'CREATE INDEX idx_odometer_vehicle_recorded ON odometer_entries (vehicle_id, recorded_at)',
@@ -14929,6 +16262,10 @@ abstract class _$AppDatabase extends GeneratedDatabase {
     'idx_reminders_due_date',
     'CREATE INDEX idx_reminders_due_date ON reminders (vehicle_id, due_date)',
   );
+  late final Index idxAttachmentsOwner = Index(
+    'idx_attachments_owner',
+    'CREATE INDEX idx_attachments_owner ON attachments (owner_type, owner_id)',
+  );
   @override
   Iterable<TableInfo<Table, Object?>> get allTables =>
       allSchemaEntities.whereType<TableInfo<Table, Object?>>();
@@ -14952,6 +16289,8 @@ abstract class _$AppDatabase extends GeneratedDatabase {
     batteries,
     vehicleDocuments,
     reminders,
+    attachments,
+    backupHistory,
     idxOdometerVehicleRecorded,
     idxOdometerVehicleOdometer,
     idxFuelVehicleDatetime,
@@ -14971,6 +16310,7 @@ abstract class _$AppDatabase extends GeneratedDatabase {
     idxVehicleDocumentsExpiry,
     idxRemindersVehicleStatus,
     idxRemindersDueDate,
+    idxAttachmentsOwner,
   ];
   @override
   StreamQueryUpdateRules get streamUpdateRules => const StreamQueryUpdateRules([
@@ -25530,6 +26870,659 @@ typedef $$RemindersTableProcessedTableManager =
       ReminderRow,
       PrefetchHooks Function({bool vehicleId})
     >;
+typedef $$AttachmentsTableCreateCompanionBuilder =
+    AttachmentsCompanion Function({
+      required String id,
+      required String ownerType,
+      required String ownerId,
+      required String originalFileName,
+      required String storedFileName,
+      required String mimeType,
+      required int fileSizeBytes,
+      required String relativePath,
+      Value<String?> thumbnailRelativePath,
+      required String checksumSha256,
+      Value<String?> displayLabel,
+      required DateTime createdAt,
+      Value<int> rowid,
+    });
+typedef $$AttachmentsTableUpdateCompanionBuilder =
+    AttachmentsCompanion Function({
+      Value<String> id,
+      Value<String> ownerType,
+      Value<String> ownerId,
+      Value<String> originalFileName,
+      Value<String> storedFileName,
+      Value<String> mimeType,
+      Value<int> fileSizeBytes,
+      Value<String> relativePath,
+      Value<String?> thumbnailRelativePath,
+      Value<String> checksumSha256,
+      Value<String?> displayLabel,
+      Value<DateTime> createdAt,
+      Value<int> rowid,
+    });
+
+class $$AttachmentsTableFilterComposer
+    extends Composer<_$AppDatabase, $AttachmentsTable> {
+  $$AttachmentsTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get ownerType => $composableBuilder(
+    column: $table.ownerType,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get ownerId => $composableBuilder(
+    column: $table.ownerId,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get originalFileName => $composableBuilder(
+    column: $table.originalFileName,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get storedFileName => $composableBuilder(
+    column: $table.storedFileName,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get mimeType => $composableBuilder(
+    column: $table.mimeType,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get fileSizeBytes => $composableBuilder(
+    column: $table.fileSizeBytes,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get relativePath => $composableBuilder(
+    column: $table.relativePath,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get thumbnailRelativePath => $composableBuilder(
+    column: $table.thumbnailRelativePath,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get checksumSha256 => $composableBuilder(
+    column: $table.checksumSha256,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get displayLabel => $composableBuilder(
+    column: $table.displayLabel,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnFilters(column),
+  );
+}
+
+class $$AttachmentsTableOrderingComposer
+    extends Composer<_$AppDatabase, $AttachmentsTable> {
+  $$AttachmentsTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get ownerType => $composableBuilder(
+    column: $table.ownerType,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get ownerId => $composableBuilder(
+    column: $table.ownerId,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get originalFileName => $composableBuilder(
+    column: $table.originalFileName,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get storedFileName => $composableBuilder(
+    column: $table.storedFileName,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get mimeType => $composableBuilder(
+    column: $table.mimeType,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get fileSizeBytes => $composableBuilder(
+    column: $table.fileSizeBytes,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get relativePath => $composableBuilder(
+    column: $table.relativePath,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get thumbnailRelativePath => $composableBuilder(
+    column: $table.thumbnailRelativePath,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get checksumSha256 => $composableBuilder(
+    column: $table.checksumSha256,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get displayLabel => $composableBuilder(
+    column: $table.displayLabel,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+}
+
+class $$AttachmentsTableAnnotationComposer
+    extends Composer<_$AppDatabase, $AttachmentsTable> {
+  $$AttachmentsTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<String> get ownerType =>
+      $composableBuilder(column: $table.ownerType, builder: (column) => column);
+
+  GeneratedColumn<String> get ownerId =>
+      $composableBuilder(column: $table.ownerId, builder: (column) => column);
+
+  GeneratedColumn<String> get originalFileName => $composableBuilder(
+    column: $table.originalFileName,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get storedFileName => $composableBuilder(
+    column: $table.storedFileName,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get mimeType =>
+      $composableBuilder(column: $table.mimeType, builder: (column) => column);
+
+  GeneratedColumn<int> get fileSizeBytes => $composableBuilder(
+    column: $table.fileSizeBytes,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get relativePath => $composableBuilder(
+    column: $table.relativePath,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get thumbnailRelativePath => $composableBuilder(
+    column: $table.thumbnailRelativePath,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get checksumSha256 => $composableBuilder(
+    column: $table.checksumSha256,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get displayLabel => $composableBuilder(
+    column: $table.displayLabel,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
+}
+
+class $$AttachmentsTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $AttachmentsTable,
+          AttachmentRow,
+          $$AttachmentsTableFilterComposer,
+          $$AttachmentsTableOrderingComposer,
+          $$AttachmentsTableAnnotationComposer,
+          $$AttachmentsTableCreateCompanionBuilder,
+          $$AttachmentsTableUpdateCompanionBuilder,
+          (
+            AttachmentRow,
+            BaseReferences<_$AppDatabase, $AttachmentsTable, AttachmentRow>,
+          ),
+          AttachmentRow,
+          PrefetchHooks Function()
+        > {
+  $$AttachmentsTableTableManager(_$AppDatabase db, $AttachmentsTable table)
+    : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$AttachmentsTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$AttachmentsTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$AttachmentsTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<String> id = const Value.absent(),
+                Value<String> ownerType = const Value.absent(),
+                Value<String> ownerId = const Value.absent(),
+                Value<String> originalFileName = const Value.absent(),
+                Value<String> storedFileName = const Value.absent(),
+                Value<String> mimeType = const Value.absent(),
+                Value<int> fileSizeBytes = const Value.absent(),
+                Value<String> relativePath = const Value.absent(),
+                Value<String?> thumbnailRelativePath = const Value.absent(),
+                Value<String> checksumSha256 = const Value.absent(),
+                Value<String?> displayLabel = const Value.absent(),
+                Value<DateTime> createdAt = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => AttachmentsCompanion(
+                id: id,
+                ownerType: ownerType,
+                ownerId: ownerId,
+                originalFileName: originalFileName,
+                storedFileName: storedFileName,
+                mimeType: mimeType,
+                fileSizeBytes: fileSizeBytes,
+                relativePath: relativePath,
+                thumbnailRelativePath: thumbnailRelativePath,
+                checksumSha256: checksumSha256,
+                displayLabel: displayLabel,
+                createdAt: createdAt,
+                rowid: rowid,
+              ),
+          createCompanionCallback:
+              ({
+                required String id,
+                required String ownerType,
+                required String ownerId,
+                required String originalFileName,
+                required String storedFileName,
+                required String mimeType,
+                required int fileSizeBytes,
+                required String relativePath,
+                Value<String?> thumbnailRelativePath = const Value.absent(),
+                required String checksumSha256,
+                Value<String?> displayLabel = const Value.absent(),
+                required DateTime createdAt,
+                Value<int> rowid = const Value.absent(),
+              }) => AttachmentsCompanion.insert(
+                id: id,
+                ownerType: ownerType,
+                ownerId: ownerId,
+                originalFileName: originalFileName,
+                storedFileName: storedFileName,
+                mimeType: mimeType,
+                fileSizeBytes: fileSizeBytes,
+                relativePath: relativePath,
+                thumbnailRelativePath: thumbnailRelativePath,
+                checksumSha256: checksumSha256,
+                displayLabel: displayLabel,
+                createdAt: createdAt,
+                rowid: rowid,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map(
+                (e) => (
+                  e.readTable<$AttachmentsTable, AttachmentRow>(table),
+                  BaseReferences<
+                    _$AppDatabase,
+                    $AttachmentsTable,
+                    AttachmentRow
+                  >(db, table, e),
+                ),
+              )
+              .toList(),
+          prefetchHooksCallback: null,
+        ),
+      );
+}
+
+typedef $$AttachmentsTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $AttachmentsTable,
+      AttachmentRow,
+      $$AttachmentsTableFilterComposer,
+      $$AttachmentsTableOrderingComposer,
+      $$AttachmentsTableAnnotationComposer,
+      $$AttachmentsTableCreateCompanionBuilder,
+      $$AttachmentsTableUpdateCompanionBuilder,
+      (
+        AttachmentRow,
+        BaseReferences<_$AppDatabase, $AttachmentsTable, AttachmentRow>,
+      ),
+      AttachmentRow,
+      PrefetchHooks Function()
+    >;
+typedef $$BackupHistoryTableCreateCompanionBuilder =
+    BackupHistoryCompanion Function({
+      required String id,
+      required DateTime createdAt,
+      required String pathOrUri,
+      required int sizeBytes,
+      Value<int> vehicleCount,
+      required int schemaVersion,
+      required String status,
+      Value<bool> includeAttachments,
+      Value<String?> errorMessage,
+      Value<int> rowid,
+    });
+typedef $$BackupHistoryTableUpdateCompanionBuilder =
+    BackupHistoryCompanion Function({
+      Value<String> id,
+      Value<DateTime> createdAt,
+      Value<String> pathOrUri,
+      Value<int> sizeBytes,
+      Value<int> vehicleCount,
+      Value<int> schemaVersion,
+      Value<String> status,
+      Value<bool> includeAttachments,
+      Value<String?> errorMessage,
+      Value<int> rowid,
+    });
+
+class $$BackupHistoryTableFilterComposer
+    extends Composer<_$AppDatabase, $BackupHistoryTable> {
+  $$BackupHistoryTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get pathOrUri => $composableBuilder(
+    column: $table.pathOrUri,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get sizeBytes => $composableBuilder(
+    column: $table.sizeBytes,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get vehicleCount => $composableBuilder(
+    column: $table.vehicleCount,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get schemaVersion => $composableBuilder(
+    column: $table.schemaVersion,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get status => $composableBuilder(
+    column: $table.status,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<bool> get includeAttachments => $composableBuilder(
+    column: $table.includeAttachments,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get errorMessage => $composableBuilder(
+    column: $table.errorMessage,
+    builder: (column) => ColumnFilters(column),
+  );
+}
+
+class $$BackupHistoryTableOrderingComposer
+    extends Composer<_$AppDatabase, $BackupHistoryTable> {
+  $$BackupHistoryTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get pathOrUri => $composableBuilder(
+    column: $table.pathOrUri,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get sizeBytes => $composableBuilder(
+    column: $table.sizeBytes,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get vehicleCount => $composableBuilder(
+    column: $table.vehicleCount,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get schemaVersion => $composableBuilder(
+    column: $table.schemaVersion,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get status => $composableBuilder(
+    column: $table.status,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<bool> get includeAttachments => $composableBuilder(
+    column: $table.includeAttachments,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get errorMessage => $composableBuilder(
+    column: $table.errorMessage,
+    builder: (column) => ColumnOrderings(column),
+  );
+}
+
+class $$BackupHistoryTableAnnotationComposer
+    extends Composer<_$AppDatabase, $BackupHistoryTable> {
+  $$BackupHistoryTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
+
+  GeneratedColumn<String> get pathOrUri =>
+      $composableBuilder(column: $table.pathOrUri, builder: (column) => column);
+
+  GeneratedColumn<int> get sizeBytes =>
+      $composableBuilder(column: $table.sizeBytes, builder: (column) => column);
+
+  GeneratedColumn<int> get vehicleCount => $composableBuilder(
+    column: $table.vehicleCount,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get schemaVersion => $composableBuilder(
+    column: $table.schemaVersion,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get status =>
+      $composableBuilder(column: $table.status, builder: (column) => column);
+
+  GeneratedColumn<bool> get includeAttachments => $composableBuilder(
+    column: $table.includeAttachments,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get errorMessage => $composableBuilder(
+    column: $table.errorMessage,
+    builder: (column) => column,
+  );
+}
+
+class $$BackupHistoryTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $BackupHistoryTable,
+          BackupHistoryRow,
+          $$BackupHistoryTableFilterComposer,
+          $$BackupHistoryTableOrderingComposer,
+          $$BackupHistoryTableAnnotationComposer,
+          $$BackupHistoryTableCreateCompanionBuilder,
+          $$BackupHistoryTableUpdateCompanionBuilder,
+          (
+            BackupHistoryRow,
+            BaseReferences<
+              _$AppDatabase,
+              $BackupHistoryTable,
+              BackupHistoryRow
+            >,
+          ),
+          BackupHistoryRow,
+          PrefetchHooks Function()
+        > {
+  $$BackupHistoryTableTableManager(_$AppDatabase db, $BackupHistoryTable table)
+    : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$BackupHistoryTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$BackupHistoryTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$BackupHistoryTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<String> id = const Value.absent(),
+                Value<DateTime> createdAt = const Value.absent(),
+                Value<String> pathOrUri = const Value.absent(),
+                Value<int> sizeBytes = const Value.absent(),
+                Value<int> vehicleCount = const Value.absent(),
+                Value<int> schemaVersion = const Value.absent(),
+                Value<String> status = const Value.absent(),
+                Value<bool> includeAttachments = const Value.absent(),
+                Value<String?> errorMessage = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => BackupHistoryCompanion(
+                id: id,
+                createdAt: createdAt,
+                pathOrUri: pathOrUri,
+                sizeBytes: sizeBytes,
+                vehicleCount: vehicleCount,
+                schemaVersion: schemaVersion,
+                status: status,
+                includeAttachments: includeAttachments,
+                errorMessage: errorMessage,
+                rowid: rowid,
+              ),
+          createCompanionCallback:
+              ({
+                required String id,
+                required DateTime createdAt,
+                required String pathOrUri,
+                required int sizeBytes,
+                Value<int> vehicleCount = const Value.absent(),
+                required int schemaVersion,
+                required String status,
+                Value<bool> includeAttachments = const Value.absent(),
+                Value<String?> errorMessage = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => BackupHistoryCompanion.insert(
+                id: id,
+                createdAt: createdAt,
+                pathOrUri: pathOrUri,
+                sizeBytes: sizeBytes,
+                vehicleCount: vehicleCount,
+                schemaVersion: schemaVersion,
+                status: status,
+                includeAttachments: includeAttachments,
+                errorMessage: errorMessage,
+                rowid: rowid,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map(
+                (e) => (
+                  e.readTable<$BackupHistoryTable, BackupHistoryRow>(table),
+                  BaseReferences<
+                    _$AppDatabase,
+                    $BackupHistoryTable,
+                    BackupHistoryRow
+                  >(db, table, e),
+                ),
+              )
+              .toList(),
+          prefetchHooksCallback: null,
+        ),
+      );
+}
+
+typedef $$BackupHistoryTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $BackupHistoryTable,
+      BackupHistoryRow,
+      $$BackupHistoryTableFilterComposer,
+      $$BackupHistoryTableOrderingComposer,
+      $$BackupHistoryTableAnnotationComposer,
+      $$BackupHistoryTableCreateCompanionBuilder,
+      $$BackupHistoryTableUpdateCompanionBuilder,
+      (
+        BackupHistoryRow,
+        BaseReferences<_$AppDatabase, $BackupHistoryTable, BackupHistoryRow>,
+      ),
+      BackupHistoryRow,
+      PrefetchHooks Function()
+    >;
 
 class $AppDatabaseManager {
   final _$AppDatabase _db;
@@ -25570,4 +27563,8 @@ class $AppDatabaseManager {
       $$VehicleDocumentsTableTableManager(_db, _db.vehicleDocuments);
   $$RemindersTableTableManager get reminders =>
       $$RemindersTableTableManager(_db, _db.reminders);
+  $$AttachmentsTableTableManager get attachments =>
+      $$AttachmentsTableTableManager(_db, _db.attachments);
+  $$BackupHistoryTableTableManager get backupHistory =>
+      $$BackupHistoryTableTableManager(_db, _db.backupHistory);
 }

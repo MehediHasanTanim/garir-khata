@@ -79,6 +79,16 @@ class MorePage extends ConsumerWidget {
             title: Text(l10n.odometerHistory),
             onTap: () => context.push('/odometer/history'),
           ),
+          ListTile(
+            leading: const Icon(Icons.file_download_outlined),
+            title: Text(l10n.exportDataTitle),
+            onTap: () => context.push('/export'),
+          ),
+          ListTile(
+            leading: const Icon(Icons.backup_outlined),
+            title: Text(l10n.backupRestoreTitle),
+            onTap: () => context.push('/backup'),
+          ),
           const Divider(),
           Text(l10n.language, style: Theme.of(context).textTheme.titleMedium),
           const SizedBox(height: AppSpacing.xs),

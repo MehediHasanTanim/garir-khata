@@ -3,6 +3,8 @@ import 'package:drift_flutter/drift_flutter.dart';
 
 import 'package:garir_khata/core/database/seeds/expense_category_seeds.dart';
 import 'package:garir_khata/core/database/seeds/maintenance_template_seeds.dart';
+import 'package:garir_khata/core/database/tables/attachments_table.dart';
+import 'package:garir_khata/core/database/tables/backup_history_table.dart';
 import 'package:garir_khata/core/database/tables/batteries_table.dart';
 import 'package:garir_khata/core/database/tables/expense_categories_table.dart';
 import 'package:garir_khata/core/database/tables/expenses_table.dart';
@@ -44,13 +46,15 @@ part 'app_database.g.dart';
     Batteries,
     VehicleDocuments,
     Reminders,
+    Attachments,
+    BackupHistory,
   ],
 )
 class AppDatabase extends _$AppDatabase {
   AppDatabase([QueryExecutor? executor]) : super(executor ?? _openConnection());
 
   @override
-  int get schemaVersion => 6;
+  int get schemaVersion => 7;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
@@ -88,6 +92,10 @@ class AppDatabase extends _$AppDatabase {
           if (from < 6) {
             await m.createTable(vehicleDocuments);
             await m.createTable(reminders);
+          }
+          if (from < 7) {
+            await m.createTable(attachments);
+            await m.createTable(backupHistory);
           }
         },
         beforeOpen: (details) async {

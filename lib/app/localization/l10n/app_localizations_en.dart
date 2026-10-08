@@ -1306,4 +1306,132 @@ class AppLocalizationsEn extends AppLocalizations {
   String repeatedIssuesHint(int count) {
     return 'Same category ≥ $count times in this period';
   }
+
+  @override
+  String get attachmentsTitle => 'Attachments';
+
+  @override
+  String get attachmentsEmpty => 'No attachments yet';
+
+  @override
+  String get addAttachment => 'Add';
+
+  @override
+  String get attachmentMissing => 'File missing';
+
+  @override
+  String get attachmentPreview => 'Preview';
+
+  @override
+  String get attachmentRename => 'Rename';
+
+  @override
+  String get attachmentPreviewUnavailable =>
+      'Preview not available for this file type';
+
+  @override
+  String get takePhoto => 'Take photo';
+
+  @override
+  String get chooseImage => 'Choose image';
+
+  @override
+  String get chooseFile => 'Choose file';
+
+  @override
+  String get exportDataTitle => 'Export Data';
+
+  @override
+  String get exportKind => 'Data type';
+
+  @override
+  String get exportDateRange => 'Date range';
+
+  @override
+  String get exportAllDates => 'All dates';
+
+  @override
+  String get exportAction => 'Export CSV';
+
+  @override
+  String get backupRestoreTitle => 'Backup & Restore';
+
+  @override
+  String get createBackup => 'Create Backup';
+
+  @override
+  String get createBackupHint => 'Save an encrypted local backup package';
+
+  @override
+  String get restoreBackup => 'Restore Backup';
+
+  @override
+  String get restoreBackupHint => 'Choose a .gkbackup file';
+
+  @override
+  String get backupHistory => 'Backup History';
+
+  @override
+  String get backupHistoryEmpty => 'No backups yet';
+
+  @override
+  String get includeAttachments => 'Include attachments';
+
+  @override
+  String get backupPasswordOptional => 'Password (optional)';
+
+  @override
+  String get backupPasswordHint => 'Leave empty for an unencrypted backup';
+
+  @override
+  String get backupPassword => 'Backup password';
+
+  @override
+  String get backupSuccess => 'Backup created';
+
+  @override
+  String get chooseBackupFile => 'Choose backup file';
+
+  @override
+  String get validateBackup => 'Validate';
+
+  @override
+  String get backupDate => 'Backup date';
+
+  @override
+  String get schemaVersion => 'Schema version';
+
+  @override
+  String get restoreUnderstand =>
+      'I understand this may replace current local data';
+
+  @override
+  String get restoreAction => 'Restore';
+
+  @override
+  String get restorePhaseReading => 'Reading backup…';
+
+  @override
+  String get restorePhaseValidating => 'Validating…';
+
+  @override
+  String get restorePhaseSummary => 'Backup summary';
+
+  @override
+  String get restorePhaseConfirm => 'Confirm restore';
+
+  @override
+  String get restorePhaseRestoring => 'Restoring…';
+
+  @override
+  String get restorePhaseSuccess => 'Restore successful';
+
+  @override
+  String get restorePhaseFailed => 'Restore failed';
+
+  @override
+  String get restorePhaseCorrupt => 'Corrupt backup';
+
+  @override
+  String get restorePhaseUnsupported => 'Unsupported backup version';
 }

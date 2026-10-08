@@ -1301,4 +1301,131 @@ class AppLocalizationsBn extends AppLocalizations {
   String repeatedIssuesHint(int count) {
     return 'একই ক্যাটাগরি এই সময়ে ≥ $count বার';
   }
+
+  @override
+  String get attachmentsTitle => 'অ্যাটাচমেন্ট';
+
+  @override
+  String get attachmentsEmpty => 'এখনো কোনো অ্যাটাচমেন্ট নেই';
+
+  @override
+  String get addAttachment => 'যোগ করুন';
+
+  @override
+  String get attachmentMissing => 'ফাইল নেই';
+
+  @override
+  String get attachmentPreview => 'প্রিভিউ';
+
+  @override
+  String get attachmentRename => 'নাম পরিবর্তন';
+
+  @override
+  String get attachmentPreviewUnavailable => 'এই ফাইলের প্রিভিউ নেই';
+
+  @override
+  String get takePhoto => 'ছবি তুলুন';
+
+  @override
+  String get chooseImage => 'ছবি বেছে নিন';
+
+  @override
+  String get chooseFile => 'ফাইল বেছে নিন';
+
+  @override
+  String get exportDataTitle => 'ডেটা এক্সপোর্ট';
+
+  @override
+  String get exportKind => 'ডেটার ধরন';
+
+  @override
+  String get exportDateRange => 'তারিখের পরিসর';
+
+  @override
+  String get exportAllDates => 'সব তারিখ';
+
+  @override
+  String get exportAction => 'CSV এক্সপোর্ট';
+
+  @override
+  String get backupRestoreTitle => 'ব্যাকআপ ও রিস্টোর';
+
+  @override
+  String get createBackup => 'ব্যাকআপ তৈরি';
+
+  @override
+  String get createBackupHint => 'এনক্রিপ্টেড লোকাল ব্যাকআপ সেভ করুন';
+
+  @override
+  String get restoreBackup => 'ব্যাকআপ রিস্টোর';
+
+  @override
+  String get restoreBackupHint => '.gkbackup ফাইল বেছে নিন';
+
+  @override
+  String get backupHistory => 'ব্যাকআপ ইতিহাস';
+
+  @override
+  String get backupHistoryEmpty => 'এখনো কোনো ব্যাকআপ নেই';
+
+  @override
+  String get includeAttachments => 'অ্যাটাচমেন্টসহ';
+
+  @override
+  String get backupPasswordOptional => 'পাসওয়ার্ড (ঐচ্ছিক)';
+
+  @override
+  String get backupPasswordHint => 'এনক্রিপশন ছাড়া রাখতে খালি রাখুন';
+
+  @override
+  String get backupPassword => 'ব্যাকআপ পাসওয়ার্ড';
+
+  @override
+  String get backupSuccess => 'ব্যাকআপ তৈরি হয়েছে';
+
+  @override
+  String get chooseBackupFile => 'ব্যাকআপ ফাইল বেছে নিন';
+
+  @override
+  String get validateBackup => 'যাচাই করুন';
+
+  @override
+  String get backupDate => 'ব্যাকআপ তারিখ';
+
+  @override
+  String get schemaVersion => 'স্কিমা সংস্করণ';
+
+  @override
+  String get restoreUnderstand =>
+      'আমি বুঝি এটি বর্তমান লোকাল ডেটা প্রতিস্থাপন করতে পারে';
+
+  @override
+  String get restoreAction => 'রিস্টোর';
+
+  @override
+  String get restorePhaseReading => 'ব্যাকআপ পড়া হচ্ছে…';
+
+  @override
+  String get restorePhaseValidating => 'যাচাই হচ্ছে…';
+
+  @override
+  String get restorePhaseSummary => 'ব্যাকআপ সারাংশ';
+
+  @override
+  String get restorePhaseConfirm => 'রিস্টোর নিশ্চিত করুন';
+
+  @override
+  String get restorePhaseRestoring => 'রিস্টোর হচ্ছে…';
+
+  @override
+  String get restorePhaseSuccess => 'রিস্টোর সফল';
+
+  @override
+  String get restorePhaseFailed => 'রিস্টোর ব্যর্থ';
+
+  @override
+  String get restorePhaseCorrupt => 'ক্ষতিগ্রস্ত ব্যাকআপ';
+
+  @override
+  String get restorePhaseUnsupported => 'অসমর্থিত ব্যাকআপ সংস্করণ';
 }

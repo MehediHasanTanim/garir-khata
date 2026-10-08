@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:garir_khata/features/backup_restore/presentation/backup_restore_page.dart';
+import 'package:garir_khata/features/backup_restore/presentation/export_data_page.dart';
 import 'package:garir_khata/features/documents/presentation/add_document_page.dart';
 import 'package:garir_khata/features/documents/presentation/document_details_page.dart';
 import 'package:garir_khata/features/documents/presentation/documents_page.dart';
@@ -476,6 +478,30 @@ final appRouterProvider = Provider<GoRouter>((ref) {
                 ),
               ),
             ],
+          ),
+        ],
+      ),
+      GoRoute(
+        path: '/export',
+        name: 'exportData',
+        parentNavigatorKey: _rootNavigatorKey,
+        builder: (context, state) => const ExportDataPage(),
+      ),
+      GoRoute(
+        path: '/backup',
+        name: 'backupRestore',
+        parentNavigatorKey: _rootNavigatorKey,
+        builder: (context, state) => const BackupRestorePage(),
+        routes: [
+          GoRoute(
+            path: 'create',
+            name: 'backupCreate',
+            builder: (context, state) => const CreateBackupPage(),
+          ),
+          GoRoute(
+            path: 'restore',
+            name: 'backupRestoreFlow',
+            builder: (context, state) => const RestoreBackupPage(),
           ),
         ],
       ),

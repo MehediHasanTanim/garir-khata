@@ -5,6 +5,8 @@ import 'package:garir_khata/app/theme/app_colors.dart';
 import 'package:garir_khata/app/theme/app_spacing.dart';
 import 'package:garir_khata/core/formatting/currency_formatter.dart';
 import 'package:garir_khata/core/result/result.dart';
+import 'package:garir_khata/features/attachments/domain/attachment_owner_type.dart';
+import 'package:garir_khata/features/attachments/presentation/widgets/attachments_section.dart';
 import 'package:garir_khata/features/dashboard/application/dashboard_providers.dart';
 import 'package:garir_khata/features/expenses/application/expense_providers.dart';
 import 'package:garir_khata/features/parts/application/parts_providers.dart';
@@ -127,6 +129,11 @@ class RepairDetailsPage extends ConsumerWidget {
                 Text(l10n.fieldNotes),
                 Text(record.note!),
               ],
+              const SizedBox(height: AppSpacing.lg),
+              AttachmentsSection(
+                ownerType: AttachmentOwnerType.repair,
+                ownerId: record.id,
+              ),
               const SizedBox(height: AppSpacing.lg),
               OutlinedButton(
                 style: OutlinedButton.styleFrom(

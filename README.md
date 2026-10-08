@@ -62,3 +62,4 @@ lib/
 - ✅ Sprint 6 — Repairs, parts, tyres & battery
 - ✅ Sprint 7 — Documents, reminders & notifications
 - ✅ Sprint 8 — Reports, analytics & unified history
+- ✅ Sprint 9 — Attachments, export, backup & restore

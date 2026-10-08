@@ -5,6 +5,8 @@ import 'package:garir_khata/app/theme/app_colors.dart';
 import 'package:garir_khata/app/theme/app_spacing.dart';
 import 'package:garir_khata/core/formatting/currency_formatter.dart';
 import 'package:garir_khata/core/result/result.dart';
+import 'package:garir_khata/features/attachments/domain/attachment_owner_type.dart';
+import 'package:garir_khata/features/attachments/presentation/widgets/attachments_section.dart';
 import 'package:garir_khata/features/documents/application/document_providers.dart';
 import 'package:garir_khata/features/documents/domain/document_types.dart';
 import 'package:garir_khata/features/reminders/application/reminder_providers.dart';
@@ -75,6 +77,11 @@ class DocumentDetailsPage extends ConsumerWidget {
                 Text(l10n.fieldNotes),
                 Text(doc.note!),
               ],
+              const SizedBox(height: AppSpacing.lg),
+              AttachmentsSection(
+                ownerType: AttachmentOwnerType.document,
+                ownerId: doc.id,
+              ),
               const SizedBox(height: AppSpacing.lg),
               OutlinedButton(
                 style: OutlinedButton.styleFrom(

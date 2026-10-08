@@ -3,6 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:garir_khata/app/localization/l10n_extension.dart';
 import 'package:garir_khata/app/theme/app_colors.dart';
 import 'package:garir_khata/app/theme/app_spacing.dart';
+import 'package:garir_khata/features/attachments/domain/attachment_owner_type.dart';
+import 'package:garir_khata/features/attachments/presentation/widgets/attachments_section.dart';
 import 'package:garir_khata/features/fuel/application/fuel_providers.dart';
 import 'package:garir_khata/features/fuel/domain/entities/fuel_entry.dart';
 import 'package:garir_khata/features/vehicles/application/vehicle_providers.dart';
@@ -93,6 +95,11 @@ class FuelDetailsPage extends ConsumerWidget {
                     ],
                   ),
                 ),
+              ),
+              const SizedBox(height: AppSpacing.lg),
+              AttachmentsSection(
+                ownerType: AttachmentOwnerType.fuel,
+                ownerId: entry.id,
               ),
               const SizedBox(height: AppSpacing.lg),
               OutlinedButton(

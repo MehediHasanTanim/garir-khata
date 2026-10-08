@@ -2629,6 +2629,258 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Same category ≥ {count} times in this period'**
   String repeatedIssuesHint(int count);
+
+  /// No description provided for @attachmentsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Attachments'**
+  String get attachmentsTitle;
+
+  /// No description provided for @attachmentsEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No attachments yet'**
+  String get attachmentsEmpty;
+
+  /// No description provided for @addAttachment.
+  ///
+  /// In en, this message translates to:
+  /// **'Add'**
+  String get addAttachment;
+
+  /// No description provided for @attachmentMissing.
+  ///
+  /// In en, this message translates to:
+  /// **'File missing'**
+  String get attachmentMissing;
+
+  /// No description provided for @attachmentPreview.
+  ///
+  /// In en, this message translates to:
+  /// **'Preview'**
+  String get attachmentPreview;
+
+  /// No description provided for @attachmentRename.
+  ///
+  /// In en, this message translates to:
+  /// **'Rename'**
+  String get attachmentRename;
+
+  /// No description provided for @attachmentPreviewUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Preview not available for this file type'**
+  String get attachmentPreviewUnavailable;
+
+  /// No description provided for @takePhoto.
+  ///
+  /// In en, this message translates to:
+  /// **'Take photo'**
+  String get takePhoto;
+
+  /// No description provided for @chooseImage.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose image'**
+  String get chooseImage;
+
+  /// No description provided for @chooseFile.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose file'**
+  String get chooseFile;
+
+  /// No description provided for @exportDataTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Export Data'**
+  String get exportDataTitle;
+
+  /// No description provided for @exportKind.
+  ///
+  /// In en, this message translates to:
+  /// **'Data type'**
+  String get exportKind;
+
+  /// No description provided for @exportDateRange.
+  ///
+  /// In en, this message translates to:
+  /// **'Date range'**
+  String get exportDateRange;
+
+  /// No description provided for @exportAllDates.
+  ///
+  /// In en, this message translates to:
+  /// **'All dates'**
+  String get exportAllDates;
+
+  /// No description provided for @exportAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Export CSV'**
+  String get exportAction;
+
+  /// No description provided for @backupRestoreTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Backup & Restore'**
+  String get backupRestoreTitle;
+
+  /// No description provided for @createBackup.
+  ///
+  /// In en, this message translates to:
+  /// **'Create Backup'**
+  String get createBackup;
+
+  /// No description provided for @createBackupHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Save an encrypted local backup package'**
+  String get createBackupHint;
+
+  /// No description provided for @restoreBackup.
+  ///
+  /// In en, this message translates to:
+  /// **'Restore Backup'**
+  String get restoreBackup;
+
+  /// No description provided for @restoreBackupHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a .gkbackup file'**
+  String get restoreBackupHint;
+
+  /// No description provided for @backupHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Backup History'**
+  String get backupHistory;
+
+  /// No description provided for @backupHistoryEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No backups yet'**
+  String get backupHistoryEmpty;
+
+  /// No description provided for @includeAttachments.
+  ///
+  /// In en, this message translates to:
+  /// **'Include attachments'**
+  String get includeAttachments;
+
+  /// No description provided for @backupPasswordOptional.
+  ///
+  /// In en, this message translates to:
+  /// **'Password (optional)'**
+  String get backupPasswordOptional;
+
+  /// No description provided for @backupPasswordHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Leave empty for an unencrypted backup'**
+  String get backupPasswordHint;
+
+  /// No description provided for @backupPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Backup password'**
+  String get backupPassword;
+
+  /// No description provided for @backupSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Backup created'**
+  String get backupSuccess;
+
+  /// No description provided for @chooseBackupFile.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose backup file'**
+  String get chooseBackupFile;
+
+  /// No description provided for @validateBackup.
+  ///
+  /// In en, this message translates to:
+  /// **'Validate'**
+  String get validateBackup;
+
+  /// No description provided for @backupDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Backup date'**
+  String get backupDate;
+
+  /// No description provided for @schemaVersion.
+  ///
+  /// In en, this message translates to:
+  /// **'Schema version'**
+  String get schemaVersion;
+
+  /// No description provided for @restoreUnderstand.
+  ///
+  /// In en, this message translates to:
+  /// **'I understand this may replace current local data'**
+  String get restoreUnderstand;
+
+  /// No description provided for @restoreAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Restore'**
+  String get restoreAction;
+
+  /// No description provided for @restorePhaseReading.
+  ///
+  /// In en, this message translates to:
+  /// **'Reading backup…'**
+  String get restorePhaseReading;
+
+  /// No description provided for @restorePhaseValidating.
+  ///
+  /// In en, this message translates to:
+  /// **'Validating…'**
+  String get restorePhaseValidating;
+
+  /// No description provided for @restorePhaseSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'Backup summary'**
+  String get restorePhaseSummary;
+
+  /// No description provided for @restorePhaseConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm restore'**
+  String get restorePhaseConfirm;
+
+  /// No description provided for @restorePhaseRestoring.
+  ///
+  /// In en, this message translates to:
+  /// **'Restoring…'**
+  String get restorePhaseRestoring;
+
+  /// No description provided for @restorePhaseSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Restore successful'**
+  String get restorePhaseSuccess;
+
+  /// No description provided for @restorePhaseFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Restore failed'**
+  String get restorePhaseFailed;
+
+  /// No description provided for @restorePhaseCorrupt.
+  ///
+  /// In en, this message translates to:
+  /// **'Corrupt backup'**
+  String get restorePhaseCorrupt;
+
+  /// No description provided for @restorePhaseUnsupported.
+  ///
+  /// In en, this message translates to:
+  /// **'Unsupported backup version'**
+  String get restorePhaseUnsupported;
 }
 
 class _AppLocalizationsDelegate
