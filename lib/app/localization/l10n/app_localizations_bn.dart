@@ -672,4 +672,143 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get deleteExpenseMessage => 'এটি আর ফেরানো যাবে না।';
+
+  @override
+  String get commonAdd => 'যোগ';
+
+  @override
+  String get commonYes => 'হ্যাঁ';
+
+  @override
+  String get commonNo => 'না';
+
+  @override
+  String get optional => 'ঐচ্ছিক';
+
+  @override
+  String get serviceHistory => 'সার্ভিস ইতিহাস';
+
+  @override
+  String get serviceDetails => 'সার্ভিস বিস্তারিত';
+
+  @override
+  String get editService => 'সার্ভিস সম্পাদনা';
+
+  @override
+  String get saveService => 'সার্ভিস সেভ করুন';
+
+  @override
+  String get serviceHistoryEmpty => 'এখনো কোনো সার্ভিস ইতিহাস নেই';
+
+  @override
+  String get serviceHistoryEmptyHint =>
+      'পরবর্তী ডিউ তারিখ ট্র্যাক করতে প্রথম সার্ভিস লগ করুন।';
+
+  @override
+  String get serviceItems => 'সার্ভিস আইটেম';
+
+  @override
+  String get serviceItemsEmpty => 'কোনো সার্ভিস আইটেম নির্বাচিত নেই';
+
+  @override
+  String get addServiceItem => 'সার্ভিস আইটেম যোগ করুন';
+
+  @override
+  String get fieldWorkshop => 'ওয়ার্কশপ / সার্ভিস সেন্টার';
+
+  @override
+  String get fieldLaborCost => 'লেবার খরচ';
+
+  @override
+  String get fieldPartsCost => 'পার্টস খরচ';
+
+  @override
+  String get fieldTotalCost => 'মোট খরচ';
+
+  @override
+  String get fieldNextDueDate => 'পরবর্তী ডিউ তারিখ';
+
+  @override
+  String get fieldNextDueOdometer => 'পরবর্তী ডিউ ওডোমিটার';
+
+  @override
+  String get serviceCostUpdateWarning =>
+      'খরচ আপডেট করলে লিঙ্কড এক্সপেন্সও আপডেট হবে।';
+
+  @override
+  String get totalServices => 'মোট সার্ভিস';
+
+  @override
+  String get totalSpent => 'মোট খরচ';
+
+  @override
+  String get deleteServiceTitle => 'এই সার্ভিস মুছবেন?';
+
+  @override
+  String get deleteServiceMessage =>
+      'লিঙ্কড খরচ ও ওডোমিটার এন্ট্রিও মুছে যাবে।';
+
+  @override
+  String get addOilChange => 'অয়েল চেঞ্জ যোগ করুন';
+
+  @override
+  String get saveOilChange => 'অয়েল চেঞ্জ সেভ করুন';
+
+  @override
+  String get oilHistory => 'অয়েল চেঞ্জ ইতিহাস';
+
+  @override
+  String get oilDetails => 'অয়েল চেঞ্জ বিস্তারিত';
+
+  @override
+  String get oilHistoryEmpty => 'এখনো কোনো অয়েল চেঞ্জ নেই';
+
+  @override
+  String get oilHistoryEmptyHint =>
+      'ইন্টারভাল ও নেক্সট ডিউ ট্র্যাক করতে অয়েল চেঞ্জ রেকর্ড করুন।';
+
+  @override
+  String get fieldOilBrand => 'অয়েল ব্র্যান্ড';
+
+  @override
+  String get fieldOilProduct => 'প্রোডাক্ট নাম';
+
+  @override
+  String get fieldViscosity => 'ভিসকোসিটি';
+
+  @override
+  String get fieldOilQuantity => 'পরিমাণ (লিটার)';
+
+  @override
+  String get oilFilterChanged => 'অয়েল ফিল্টার বদলানো হয়েছে?';
+
+  @override
+  String get autoSuggestHint => 'খালি থাকলে টেমপ্লেট থেকে অটো';
+
+  @override
+  String get totalOilChanges => 'অয়েল চেঞ্জ';
+
+  @override
+  String get avgOilInterval => 'গড় ইন্টারভাল';
+
+  @override
+  String get avgOilCost => 'গড় খরচ';
+
+  @override
+  String get latestOilBrand => 'সর্বশেষ ব্র্যান্ড';
+
+  @override
+  String get deleteOilTitle => 'এই অয়েল চেঞ্জ মুছবেন?';
+
+  @override
+  String get deleteOilMessage => 'লিঙ্কড সার্ভিস ও খরচও মুছে যাবে।';
+
+  @override
+  String get noMaintenanceDue => 'এখনো কোনো মেইনটেন্যান্স ডিউ নেই';
+
+  @override
+  String get dueSoon => 'শীঘ্রই';
+
+  @override
+  String get overdue => 'ওভারডিউ';
 }

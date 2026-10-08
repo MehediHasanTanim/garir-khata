@@ -4557,6 +4557,3024 @@ class ExpensesCompanion extends UpdateCompanion<ExpenseRow> {
   }
 }
 
+class $MaintenanceTemplatesTable extends MaintenanceTemplates
+    with TableInfo<$MaintenanceTemplatesTable, MaintenanceTemplateRow> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $MaintenanceTemplatesTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<String> id = GeneratedColumn<String>(
+    'id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _codeMeta = const VerificationMeta('code');
+  @override
+  late final GeneratedColumn<String> code = GeneratedColumn<String>(
+    'code',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _nameEnMeta = const VerificationMeta('nameEn');
+  @override
+  late final GeneratedColumn<String> nameEn = GeneratedColumn<String>(
+    'name_en',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _nameBnMeta = const VerificationMeta('nameBn');
+  @override
+  late final GeneratedColumn<String> nameBn = GeneratedColumn<String>(
+    'name_bn',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _vehicleTypeMeta = const VerificationMeta(
+    'vehicleType',
+  );
+  @override
+  late final GeneratedColumn<String> vehicleType = GeneratedColumn<String>(
+    'vehicle_type',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+    defaultValue: const Constant('all'),
+  );
+  static const VerificationMeta _defaultKmIntervalMeta = const VerificationMeta(
+    'defaultKmInterval',
+  );
+  @override
+  late final GeneratedColumn<int> defaultKmInterval = GeneratedColumn<int>(
+    'default_km_interval',
+    aliasedName,
+    true,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _defaultDayIntervalMeta =
+      const VerificationMeta('defaultDayInterval');
+  @override
+  late final GeneratedColumn<int> defaultDayInterval = GeneratedColumn<int>(
+    'default_day_interval',
+    aliasedName,
+    true,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _iconKeyMeta = const VerificationMeta(
+    'iconKey',
+  );
+  @override
+  late final GeneratedColumn<String> iconKey = GeneratedColumn<String>(
+    'icon_key',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+    defaultValue: const Constant('service'),
+  );
+  static const VerificationMeta _isSystemMeta = const VerificationMeta(
+    'isSystem',
+  );
+  @override
+  late final GeneratedColumn<bool> isSystem = GeneratedColumn<bool>(
+    'is_system',
+    aliasedName,
+    false,
+    type: DriftSqlType.bool,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'CHECK ("is_system" IN (0, 1))',
+    ),
+    defaultValue: const Constant(true),
+  );
+  static const VerificationMeta _isActiveMeta = const VerificationMeta(
+    'isActive',
+  );
+  @override
+  late final GeneratedColumn<bool> isActive = GeneratedColumn<bool>(
+    'is_active',
+    aliasedName,
+    false,
+    type: DriftSqlType.bool,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'CHECK ("is_active" IN (0, 1))',
+    ),
+    defaultValue: const Constant(true),
+  );
+  static const VerificationMeta _sortOrderMeta = const VerificationMeta(
+    'sortOrder',
+  );
+  @override
+  late final GeneratedColumn<int> sortOrder = GeneratedColumn<int>(
+    'sort_order',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _createdAtMeta = const VerificationMeta(
+    'createdAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> createdAt = GeneratedColumn<DateTime>(
+    'created_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [
+    id,
+    code,
+    nameEn,
+    nameBn,
+    vehicleType,
+    defaultKmInterval,
+    defaultDayInterval,
+    iconKey,
+    isSystem,
+    isActive,
+    sortOrder,
+    createdAt,
+  ];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'maintenance_templates';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<MaintenanceTemplateRow> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    } else if (isInserting) {
+      context.missing(_idMeta);
+    }
+    if (data.containsKey('code')) {
+      context.handle(
+        _codeMeta,
+        code.isAcceptableOrUnknown(data['code']!, _codeMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_codeMeta);
+    }
+    if (data.containsKey('name_en')) {
+      context.handle(
+        _nameEnMeta,
+        nameEn.isAcceptableOrUnknown(data['name_en']!, _nameEnMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_nameEnMeta);
+    }
+    if (data.containsKey('name_bn')) {
+      context.handle(
+        _nameBnMeta,
+        nameBn.isAcceptableOrUnknown(data['name_bn']!, _nameBnMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_nameBnMeta);
+    }
+    if (data.containsKey('vehicle_type')) {
+      context.handle(
+        _vehicleTypeMeta,
+        vehicleType.isAcceptableOrUnknown(
+          data['vehicle_type']!,
+          _vehicleTypeMeta,
+        ),
+      );
+    }
+    if (data.containsKey('default_km_interval')) {
+      context.handle(
+        _defaultKmIntervalMeta,
+        defaultKmInterval.isAcceptableOrUnknown(
+          data['default_km_interval']!,
+          _defaultKmIntervalMeta,
+        ),
+      );
+    }
+    if (data.containsKey('default_day_interval')) {
+      context.handle(
+        _defaultDayIntervalMeta,
+        defaultDayInterval.isAcceptableOrUnknown(
+          data['default_day_interval']!,
+          _defaultDayIntervalMeta,
+        ),
+      );
+    }
+    if (data.containsKey('icon_key')) {
+      context.handle(
+        _iconKeyMeta,
+        iconKey.isAcceptableOrUnknown(data['icon_key']!, _iconKeyMeta),
+      );
+    }
+    if (data.containsKey('is_system')) {
+      context.handle(
+        _isSystemMeta,
+        isSystem.isAcceptableOrUnknown(data['is_system']!, _isSystemMeta),
+      );
+    }
+    if (data.containsKey('is_active')) {
+      context.handle(
+        _isActiveMeta,
+        isActive.isAcceptableOrUnknown(data['is_active']!, _isActiveMeta),
+      );
+    }
+    if (data.containsKey('sort_order')) {
+      context.handle(
+        _sortOrderMeta,
+        sortOrder.isAcceptableOrUnknown(data['sort_order']!, _sortOrderMeta),
+      );
+    }
+    if (data.containsKey('created_at')) {
+      context.handle(
+        _createdAtMeta,
+        createdAt.isAcceptableOrUnknown(data['created_at']!, _createdAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_createdAtMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  List<Set<GeneratedColumn>> get uniqueKeys => [
+    {code, vehicleType},
+  ];
+  @override
+  MaintenanceTemplateRow map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return MaintenanceTemplateRow(
+      id: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}id'],
+      )!,
+      code: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}code'],
+      )!,
+      nameEn: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}name_en'],
+      )!,
+      nameBn: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}name_bn'],
+      )!,
+      vehicleType: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}vehicle_type'],
+      )!,
+      defaultKmInterval: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}default_km_interval'],
+      ),
+      defaultDayInterval: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}default_day_interval'],
+      ),
+      iconKey: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}icon_key'],
+      )!,
+      isSystem: attachedDatabase.typeMapping.read(
+        DriftSqlType.bool,
+        data['${effectivePrefix}is_system'],
+      )!,
+      isActive: attachedDatabase.typeMapping.read(
+        DriftSqlType.bool,
+        data['${effectivePrefix}is_active'],
+      )!,
+      sortOrder: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}sort_order'],
+      )!,
+      createdAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}created_at'],
+      )!,
+    );
+  }
+
+  @override
+  $MaintenanceTemplatesTable createAlias(String alias) {
+    return $MaintenanceTemplatesTable(attachedDatabase, alias);
+  }
+}
+
+class MaintenanceTemplateRow extends DataClass
+    implements Insertable<MaintenanceTemplateRow> {
+  final String id;
+  final String code;
+  final String nameEn;
+  final String nameBn;
+
+  /// motorcycle | car | all
+  final String vehicleType;
+  final int? defaultKmInterval;
+  final int? defaultDayInterval;
+  final String iconKey;
+  final bool isSystem;
+  final bool isActive;
+  final int sortOrder;
+  final DateTime createdAt;
+  const MaintenanceTemplateRow({
+    required this.id,
+    required this.code,
+    required this.nameEn,
+    required this.nameBn,
+    required this.vehicleType,
+    this.defaultKmInterval,
+    this.defaultDayInterval,
+    required this.iconKey,
+    required this.isSystem,
+    required this.isActive,
+    required this.sortOrder,
+    required this.createdAt,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<String>(id);
+    map['code'] = Variable<String>(code);
+    map['name_en'] = Variable<String>(nameEn);
+    map['name_bn'] = Variable<String>(nameBn);
+    map['vehicle_type'] = Variable<String>(vehicleType);
+    if (!nullToAbsent || defaultKmInterval != null) {
+      map['default_km_interval'] = Variable<int>(defaultKmInterval);
+    }
+    if (!nullToAbsent || defaultDayInterval != null) {
+      map['default_day_interval'] = Variable<int>(defaultDayInterval);
+    }
+    map['icon_key'] = Variable<String>(iconKey);
+    map['is_system'] = Variable<bool>(isSystem);
+    map['is_active'] = Variable<bool>(isActive);
+    map['sort_order'] = Variable<int>(sortOrder);
+    map['created_at'] = Variable<DateTime>(createdAt);
+    return map;
+  }
+
+  MaintenanceTemplatesCompanion toCompanion(bool nullToAbsent) {
+    return MaintenanceTemplatesCompanion(
+      id: Value(id),
+      code: Value(code),
+      nameEn: Value(nameEn),
+      nameBn: Value(nameBn),
+      vehicleType: Value(vehicleType),
+      defaultKmInterval: defaultKmInterval == null && nullToAbsent
+          ? const Value.absent()
+          : Value(defaultKmInterval),
+      defaultDayInterval: defaultDayInterval == null && nullToAbsent
+          ? const Value.absent()
+          : Value(defaultDayInterval),
+      iconKey: Value(iconKey),
+      isSystem: Value(isSystem),
+      isActive: Value(isActive),
+      sortOrder: Value(sortOrder),
+      createdAt: Value(createdAt),
+    );
+  }
+
+  factory MaintenanceTemplateRow.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return MaintenanceTemplateRow(
+      id: serializer.fromJson<String>(json['id']),
+      code: serializer.fromJson<String>(json['code']),
+      nameEn: serializer.fromJson<String>(json['nameEn']),
+      nameBn: serializer.fromJson<String>(json['nameBn']),
+      vehicleType: serializer.fromJson<String>(json['vehicleType']),
+      defaultKmInterval: serializer.fromJson<int?>(json['defaultKmInterval']),
+      defaultDayInterval: serializer.fromJson<int?>(json['defaultDayInterval']),
+      iconKey: serializer.fromJson<String>(json['iconKey']),
+      isSystem: serializer.fromJson<bool>(json['isSystem']),
+      isActive: serializer.fromJson<bool>(json['isActive']),
+      sortOrder: serializer.fromJson<int>(json['sortOrder']),
+      createdAt: serializer.fromJson<DateTime>(json['createdAt']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<String>(id),
+      'code': serializer.toJson<String>(code),
+      'nameEn': serializer.toJson<String>(nameEn),
+      'nameBn': serializer.toJson<String>(nameBn),
+      'vehicleType': serializer.toJson<String>(vehicleType),
+      'defaultKmInterval': serializer.toJson<int?>(defaultKmInterval),
+      'defaultDayInterval': serializer.toJson<int?>(defaultDayInterval),
+      'iconKey': serializer.toJson<String>(iconKey),
+      'isSystem': serializer.toJson<bool>(isSystem),
+      'isActive': serializer.toJson<bool>(isActive),
+      'sortOrder': serializer.toJson<int>(sortOrder),
+      'createdAt': serializer.toJson<DateTime>(createdAt),
+    };
+  }
+
+  MaintenanceTemplateRow copyWith({
+    String? id,
+    String? code,
+    String? nameEn,
+    String? nameBn,
+    String? vehicleType,
+    Value<int?> defaultKmInterval = const Value.absent(),
+    Value<int?> defaultDayInterval = const Value.absent(),
+    String? iconKey,
+    bool? isSystem,
+    bool? isActive,
+    int? sortOrder,
+    DateTime? createdAt,
+  }) => MaintenanceTemplateRow(
+    id: id ?? this.id,
+    code: code ?? this.code,
+    nameEn: nameEn ?? this.nameEn,
+    nameBn: nameBn ?? this.nameBn,
+    vehicleType: vehicleType ?? this.vehicleType,
+    defaultKmInterval: defaultKmInterval.present
+        ? defaultKmInterval.value
+        : this.defaultKmInterval,
+    defaultDayInterval: defaultDayInterval.present
+        ? defaultDayInterval.value
+        : this.defaultDayInterval,
+    iconKey: iconKey ?? this.iconKey,
+    isSystem: isSystem ?? this.isSystem,
+    isActive: isActive ?? this.isActive,
+    sortOrder: sortOrder ?? this.sortOrder,
+    createdAt: createdAt ?? this.createdAt,
+  );
+  MaintenanceTemplateRow copyWithCompanion(MaintenanceTemplatesCompanion data) {
+    return MaintenanceTemplateRow(
+      id: data.id.present ? data.id.value : this.id,
+      code: data.code.present ? data.code.value : this.code,
+      nameEn: data.nameEn.present ? data.nameEn.value : this.nameEn,
+      nameBn: data.nameBn.present ? data.nameBn.value : this.nameBn,
+      vehicleType: data.vehicleType.present
+          ? data.vehicleType.value
+          : this.vehicleType,
+      defaultKmInterval: data.defaultKmInterval.present
+          ? data.defaultKmInterval.value
+          : this.defaultKmInterval,
+      defaultDayInterval: data.defaultDayInterval.present
+          ? data.defaultDayInterval.value
+          : this.defaultDayInterval,
+      iconKey: data.iconKey.present ? data.iconKey.value : this.iconKey,
+      isSystem: data.isSystem.present ? data.isSystem.value : this.isSystem,
+      isActive: data.isActive.present ? data.isActive.value : this.isActive,
+      sortOrder: data.sortOrder.present ? data.sortOrder.value : this.sortOrder,
+      createdAt: data.createdAt.present ? data.createdAt.value : this.createdAt,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('MaintenanceTemplateRow(')
+          ..write('id: $id, ')
+          ..write('code: $code, ')
+          ..write('nameEn: $nameEn, ')
+          ..write('nameBn: $nameBn, ')
+          ..write('vehicleType: $vehicleType, ')
+          ..write('defaultKmInterval: $defaultKmInterval, ')
+          ..write('defaultDayInterval: $defaultDayInterval, ')
+          ..write('iconKey: $iconKey, ')
+          ..write('isSystem: $isSystem, ')
+          ..write('isActive: $isActive, ')
+          ..write('sortOrder: $sortOrder, ')
+          ..write('createdAt: $createdAt')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(
+    id,
+    code,
+    nameEn,
+    nameBn,
+    vehicleType,
+    defaultKmInterval,
+    defaultDayInterval,
+    iconKey,
+    isSystem,
+    isActive,
+    sortOrder,
+    createdAt,
+  );
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is MaintenanceTemplateRow &&
+          other.id == this.id &&
+          other.code == this.code &&
+          other.nameEn == this.nameEn &&
+          other.nameBn == this.nameBn &&
+          other.vehicleType == this.vehicleType &&
+          other.defaultKmInterval == this.defaultKmInterval &&
+          other.defaultDayInterval == this.defaultDayInterval &&
+          other.iconKey == this.iconKey &&
+          other.isSystem == this.isSystem &&
+          other.isActive == this.isActive &&
+          other.sortOrder == this.sortOrder &&
+          other.createdAt == this.createdAt);
+}
+
+class MaintenanceTemplatesCompanion
+    extends UpdateCompanion<MaintenanceTemplateRow> {
+  final Value<String> id;
+  final Value<String> code;
+  final Value<String> nameEn;
+  final Value<String> nameBn;
+  final Value<String> vehicleType;
+  final Value<int?> defaultKmInterval;
+  final Value<int?> defaultDayInterval;
+  final Value<String> iconKey;
+  final Value<bool> isSystem;
+  final Value<bool> isActive;
+  final Value<int> sortOrder;
+  final Value<DateTime> createdAt;
+  final Value<int> rowid;
+  const MaintenanceTemplatesCompanion({
+    this.id = const Value.absent(),
+    this.code = const Value.absent(),
+    this.nameEn = const Value.absent(),
+    this.nameBn = const Value.absent(),
+    this.vehicleType = const Value.absent(),
+    this.defaultKmInterval = const Value.absent(),
+    this.defaultDayInterval = const Value.absent(),
+    this.iconKey = const Value.absent(),
+    this.isSystem = const Value.absent(),
+    this.isActive = const Value.absent(),
+    this.sortOrder = const Value.absent(),
+    this.createdAt = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  MaintenanceTemplatesCompanion.insert({
+    required String id,
+    required String code,
+    required String nameEn,
+    required String nameBn,
+    this.vehicleType = const Value.absent(),
+    this.defaultKmInterval = const Value.absent(),
+    this.defaultDayInterval = const Value.absent(),
+    this.iconKey = const Value.absent(),
+    this.isSystem = const Value.absent(),
+    this.isActive = const Value.absent(),
+    this.sortOrder = const Value.absent(),
+    required DateTime createdAt,
+    this.rowid = const Value.absent(),
+  }) : id = Value(id),
+       code = Value(code),
+       nameEn = Value(nameEn),
+       nameBn = Value(nameBn),
+       createdAt = Value(createdAt);
+  static Insertable<MaintenanceTemplateRow> custom({
+    Expression<String>? id,
+    Expression<String>? code,
+    Expression<String>? nameEn,
+    Expression<String>? nameBn,
+    Expression<String>? vehicleType,
+    Expression<int>? defaultKmInterval,
+    Expression<int>? defaultDayInterval,
+    Expression<String>? iconKey,
+    Expression<bool>? isSystem,
+    Expression<bool>? isActive,
+    Expression<int>? sortOrder,
+    Expression<DateTime>? createdAt,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (code != null) 'code': code,
+      if (nameEn != null) 'name_en': nameEn,
+      if (nameBn != null) 'name_bn': nameBn,
+      if (vehicleType != null) 'vehicle_type': vehicleType,
+      if (defaultKmInterval != null) 'default_km_interval': defaultKmInterval,
+      if (defaultDayInterval != null)
+        'default_day_interval': defaultDayInterval,
+      if (iconKey != null) 'icon_key': iconKey,
+      if (isSystem != null) 'is_system': isSystem,
+      if (isActive != null) 'is_active': isActive,
+      if (sortOrder != null) 'sort_order': sortOrder,
+      if (createdAt != null) 'created_at': createdAt,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  MaintenanceTemplatesCompanion copyWith({
+    Value<String>? id,
+    Value<String>? code,
+    Value<String>? nameEn,
+    Value<String>? nameBn,
+    Value<String>? vehicleType,
+    Value<int?>? defaultKmInterval,
+    Value<int?>? defaultDayInterval,
+    Value<String>? iconKey,
+    Value<bool>? isSystem,
+    Value<bool>? isActive,
+    Value<int>? sortOrder,
+    Value<DateTime>? createdAt,
+    Value<int>? rowid,
+  }) {
+    return MaintenanceTemplatesCompanion(
+      id: id ?? this.id,
+      code: code ?? this.code,
+      nameEn: nameEn ?? this.nameEn,
+      nameBn: nameBn ?? this.nameBn,
+      vehicleType: vehicleType ?? this.vehicleType,
+      defaultKmInterval: defaultKmInterval ?? this.defaultKmInterval,
+      defaultDayInterval: defaultDayInterval ?? this.defaultDayInterval,
+      iconKey: iconKey ?? this.iconKey,
+      isSystem: isSystem ?? this.isSystem,
+      isActive: isActive ?? this.isActive,
+      sortOrder: sortOrder ?? this.sortOrder,
+      createdAt: createdAt ?? this.createdAt,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<String>(id.value);
+    }
+    if (code.present) {
+      map['code'] = Variable<String>(code.value);
+    }
+    if (nameEn.present) {
+      map['name_en'] = Variable<String>(nameEn.value);
+    }
+    if (nameBn.present) {
+      map['name_bn'] = Variable<String>(nameBn.value);
+    }
+    if (vehicleType.present) {
+      map['vehicle_type'] = Variable<String>(vehicleType.value);
+    }
+    if (defaultKmInterval.present) {
+      map['default_km_interval'] = Variable<int>(defaultKmInterval.value);
+    }
+    if (defaultDayInterval.present) {
+      map['default_day_interval'] = Variable<int>(defaultDayInterval.value);
+    }
+    if (iconKey.present) {
+      map['icon_key'] = Variable<String>(iconKey.value);
+    }
+    if (isSystem.present) {
+      map['is_system'] = Variable<bool>(isSystem.value);
+    }
+    if (isActive.present) {
+      map['is_active'] = Variable<bool>(isActive.value);
+    }
+    if (sortOrder.present) {
+      map['sort_order'] = Variable<int>(sortOrder.value);
+    }
+    if (createdAt.present) {
+      map['created_at'] = Variable<DateTime>(createdAt.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('MaintenanceTemplatesCompanion(')
+          ..write('id: $id, ')
+          ..write('code: $code, ')
+          ..write('nameEn: $nameEn, ')
+          ..write('nameBn: $nameBn, ')
+          ..write('vehicleType: $vehicleType, ')
+          ..write('defaultKmInterval: $defaultKmInterval, ')
+          ..write('defaultDayInterval: $defaultDayInterval, ')
+          ..write('iconKey: $iconKey, ')
+          ..write('isSystem: $isSystem, ')
+          ..write('isActive: $isActive, ')
+          ..write('sortOrder: $sortOrder, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
+class $ServiceRecordsTable extends ServiceRecords
+    with TableInfo<$ServiceRecordsTable, ServiceRecordRow> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $ServiceRecordsTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<String> id = GeneratedColumn<String>(
+    'id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _vehicleIdMeta = const VerificationMeta(
+    'vehicleId',
+  );
+  @override
+  late final GeneratedColumn<String> vehicleId = GeneratedColumn<String>(
+    'vehicle_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'REFERENCES vehicles (id)',
+    ),
+  );
+  static const VerificationMeta _serviceDateMeta = const VerificationMeta(
+    'serviceDate',
+  );
+  @override
+  late final GeneratedColumn<DateTime> serviceDate = GeneratedColumn<DateTime>(
+    'service_date',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _odometerMeta = const VerificationMeta(
+    'odometer',
+  );
+  @override
+  late final GeneratedColumn<int> odometer = GeneratedColumn<int>(
+    'odometer',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _vendorNameMeta = const VerificationMeta(
+    'vendorName',
+  );
+  @override
+  late final GeneratedColumn<String> vendorName = GeneratedColumn<String>(
+    'vendor_name',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _laborCostPaisaMeta = const VerificationMeta(
+    'laborCostPaisa',
+  );
+  @override
+  late final GeneratedColumn<int> laborCostPaisa = GeneratedColumn<int>(
+    'labor_cost_paisa',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _partsCostPaisaMeta = const VerificationMeta(
+    'partsCostPaisa',
+  );
+  @override
+  late final GeneratedColumn<int> partsCostPaisa = GeneratedColumn<int>(
+    'parts_cost_paisa',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _totalCostPaisaMeta = const VerificationMeta(
+    'totalCostPaisa',
+  );
+  @override
+  late final GeneratedColumn<int> totalCostPaisa = GeneratedColumn<int>(
+    'total_cost_paisa',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _nextDueDateMeta = const VerificationMeta(
+    'nextDueDate',
+  );
+  @override
+  late final GeneratedColumn<DateTime> nextDueDate = GeneratedColumn<DateTime>(
+    'next_due_date',
+    aliasedName,
+    true,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _nextDueOdometerMeta = const VerificationMeta(
+    'nextDueOdometer',
+  );
+  @override
+  late final GeneratedColumn<int> nextDueOdometer = GeneratedColumn<int>(
+    'next_due_odometer',
+    aliasedName,
+    true,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _noteMeta = const VerificationMeta('note');
+  @override
+  late final GeneratedColumn<String> note = GeneratedColumn<String>(
+    'note',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _createdAtMeta = const VerificationMeta(
+    'createdAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> createdAt = GeneratedColumn<DateTime>(
+    'created_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _updatedAtMeta = const VerificationMeta(
+    'updatedAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> updatedAt = GeneratedColumn<DateTime>(
+    'updated_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [
+    id,
+    vehicleId,
+    serviceDate,
+    odometer,
+    vendorName,
+    laborCostPaisa,
+    partsCostPaisa,
+    totalCostPaisa,
+    nextDueDate,
+    nextDueOdometer,
+    note,
+    createdAt,
+    updatedAt,
+  ];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'service_records';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<ServiceRecordRow> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    } else if (isInserting) {
+      context.missing(_idMeta);
+    }
+    if (data.containsKey('vehicle_id')) {
+      context.handle(
+        _vehicleIdMeta,
+        vehicleId.isAcceptableOrUnknown(data['vehicle_id']!, _vehicleIdMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_vehicleIdMeta);
+    }
+    if (data.containsKey('service_date')) {
+      context.handle(
+        _serviceDateMeta,
+        serviceDate.isAcceptableOrUnknown(
+          data['service_date']!,
+          _serviceDateMeta,
+        ),
+      );
+    } else if (isInserting) {
+      context.missing(_serviceDateMeta);
+    }
+    if (data.containsKey('odometer')) {
+      context.handle(
+        _odometerMeta,
+        odometer.isAcceptableOrUnknown(data['odometer']!, _odometerMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_odometerMeta);
+    }
+    if (data.containsKey('vendor_name')) {
+      context.handle(
+        _vendorNameMeta,
+        vendorName.isAcceptableOrUnknown(data['vendor_name']!, _vendorNameMeta),
+      );
+    }
+    if (data.containsKey('labor_cost_paisa')) {
+      context.handle(
+        _laborCostPaisaMeta,
+        laborCostPaisa.isAcceptableOrUnknown(
+          data['labor_cost_paisa']!,
+          _laborCostPaisaMeta,
+        ),
+      );
+    }
+    if (data.containsKey('parts_cost_paisa')) {
+      context.handle(
+        _partsCostPaisaMeta,
+        partsCostPaisa.isAcceptableOrUnknown(
+          data['parts_cost_paisa']!,
+          _partsCostPaisaMeta,
+        ),
+      );
+    }
+    if (data.containsKey('total_cost_paisa')) {
+      context.handle(
+        _totalCostPaisaMeta,
+        totalCostPaisa.isAcceptableOrUnknown(
+          data['total_cost_paisa']!,
+          _totalCostPaisaMeta,
+        ),
+      );
+    }
+    if (data.containsKey('next_due_date')) {
+      context.handle(
+        _nextDueDateMeta,
+        nextDueDate.isAcceptableOrUnknown(
+          data['next_due_date']!,
+          _nextDueDateMeta,
+        ),
+      );
+    }
+    if (data.containsKey('next_due_odometer')) {
+      context.handle(
+        _nextDueOdometerMeta,
+        nextDueOdometer.isAcceptableOrUnknown(
+          data['next_due_odometer']!,
+          _nextDueOdometerMeta,
+        ),
+      );
+    }
+    if (data.containsKey('note')) {
+      context.handle(
+        _noteMeta,
+        note.isAcceptableOrUnknown(data['note']!, _noteMeta),
+      );
+    }
+    if (data.containsKey('created_at')) {
+      context.handle(
+        _createdAtMeta,
+        createdAt.isAcceptableOrUnknown(data['created_at']!, _createdAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_createdAtMeta);
+    }
+    if (data.containsKey('updated_at')) {
+      context.handle(
+        _updatedAtMeta,
+        updatedAt.isAcceptableOrUnknown(data['updated_at']!, _updatedAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_updatedAtMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  ServiceRecordRow map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return ServiceRecordRow(
+      id: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}id'],
+      )!,
+      vehicleId: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}vehicle_id'],
+      )!,
+      serviceDate: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}service_date'],
+      )!,
+      odometer: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}odometer'],
+      )!,
+      vendorName: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}vendor_name'],
+      ),
+      laborCostPaisa: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}labor_cost_paisa'],
+      )!,
+      partsCostPaisa: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}parts_cost_paisa'],
+      )!,
+      totalCostPaisa: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}total_cost_paisa'],
+      )!,
+      nextDueDate: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}next_due_date'],
+      ),
+      nextDueOdometer: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}next_due_odometer'],
+      ),
+      note: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}note'],
+      ),
+      createdAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}created_at'],
+      )!,
+      updatedAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}updated_at'],
+      )!,
+    );
+  }
+
+  @override
+  $ServiceRecordsTable createAlias(String alias) {
+    return $ServiceRecordsTable(attachedDatabase, alias);
+  }
+}
+
+class ServiceRecordRow extends DataClass
+    implements Insertable<ServiceRecordRow> {
+  final String id;
+  final String vehicleId;
+  final DateTime serviceDate;
+  final int odometer;
+  final String? vendorName;
+  final int laborCostPaisa;
+  final int partsCostPaisa;
+  final int totalCostPaisa;
+  final DateTime? nextDueDate;
+  final int? nextDueOdometer;
+  final String? note;
+  final DateTime createdAt;
+  final DateTime updatedAt;
+  const ServiceRecordRow({
+    required this.id,
+    required this.vehicleId,
+    required this.serviceDate,
+    required this.odometer,
+    this.vendorName,
+    required this.laborCostPaisa,
+    required this.partsCostPaisa,
+    required this.totalCostPaisa,
+    this.nextDueDate,
+    this.nextDueOdometer,
+    this.note,
+    required this.createdAt,
+    required this.updatedAt,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<String>(id);
+    map['vehicle_id'] = Variable<String>(vehicleId);
+    map['service_date'] = Variable<DateTime>(serviceDate);
+    map['odometer'] = Variable<int>(odometer);
+    if (!nullToAbsent || vendorName != null) {
+      map['vendor_name'] = Variable<String>(vendorName);
+    }
+    map['labor_cost_paisa'] = Variable<int>(laborCostPaisa);
+    map['parts_cost_paisa'] = Variable<int>(partsCostPaisa);
+    map['total_cost_paisa'] = Variable<int>(totalCostPaisa);
+    if (!nullToAbsent || nextDueDate != null) {
+      map['next_due_date'] = Variable<DateTime>(nextDueDate);
+    }
+    if (!nullToAbsent || nextDueOdometer != null) {
+      map['next_due_odometer'] = Variable<int>(nextDueOdometer);
+    }
+    if (!nullToAbsent || note != null) {
+      map['note'] = Variable<String>(note);
+    }
+    map['created_at'] = Variable<DateTime>(createdAt);
+    map['updated_at'] = Variable<DateTime>(updatedAt);
+    return map;
+  }
+
+  ServiceRecordsCompanion toCompanion(bool nullToAbsent) {
+    return ServiceRecordsCompanion(
+      id: Value(id),
+      vehicleId: Value(vehicleId),
+      serviceDate: Value(serviceDate),
+      odometer: Value(odometer),
+      vendorName: vendorName == null && nullToAbsent
+          ? const Value.absent()
+          : Value(vendorName),
+      laborCostPaisa: Value(laborCostPaisa),
+      partsCostPaisa: Value(partsCostPaisa),
+      totalCostPaisa: Value(totalCostPaisa),
+      nextDueDate: nextDueDate == null && nullToAbsent
+          ? const Value.absent()
+          : Value(nextDueDate),
+      nextDueOdometer: nextDueOdometer == null && nullToAbsent
+          ? const Value.absent()
+          : Value(nextDueOdometer),
+      note: note == null && nullToAbsent ? const Value.absent() : Value(note),
+      createdAt: Value(createdAt),
+      updatedAt: Value(updatedAt),
+    );
+  }
+
+  factory ServiceRecordRow.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return ServiceRecordRow(
+      id: serializer.fromJson<String>(json['id']),
+      vehicleId: serializer.fromJson<String>(json['vehicleId']),
+      serviceDate: serializer.fromJson<DateTime>(json['serviceDate']),
+      odometer: serializer.fromJson<int>(json['odometer']),
+      vendorName: serializer.fromJson<String?>(json['vendorName']),
+      laborCostPaisa: serializer.fromJson<int>(json['laborCostPaisa']),
+      partsCostPaisa: serializer.fromJson<int>(json['partsCostPaisa']),
+      totalCostPaisa: serializer.fromJson<int>(json['totalCostPaisa']),
+      nextDueDate: serializer.fromJson<DateTime?>(json['nextDueDate']),
+      nextDueOdometer: serializer.fromJson<int?>(json['nextDueOdometer']),
+      note: serializer.fromJson<String?>(json['note']),
+      createdAt: serializer.fromJson<DateTime>(json['createdAt']),
+      updatedAt: serializer.fromJson<DateTime>(json['updatedAt']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<String>(id),
+      'vehicleId': serializer.toJson<String>(vehicleId),
+      'serviceDate': serializer.toJson<DateTime>(serviceDate),
+      'odometer': serializer.toJson<int>(odometer),
+      'vendorName': serializer.toJson<String?>(vendorName),
+      'laborCostPaisa': serializer.toJson<int>(laborCostPaisa),
+      'partsCostPaisa': serializer.toJson<int>(partsCostPaisa),
+      'totalCostPaisa': serializer.toJson<int>(totalCostPaisa),
+      'nextDueDate': serializer.toJson<DateTime?>(nextDueDate),
+      'nextDueOdometer': serializer.toJson<int?>(nextDueOdometer),
+      'note': serializer.toJson<String?>(note),
+      'createdAt': serializer.toJson<DateTime>(createdAt),
+      'updatedAt': serializer.toJson<DateTime>(updatedAt),
+    };
+  }
+
+  ServiceRecordRow copyWith({
+    String? id,
+    String? vehicleId,
+    DateTime? serviceDate,
+    int? odometer,
+    Value<String?> vendorName = const Value.absent(),
+    int? laborCostPaisa,
+    int? partsCostPaisa,
+    int? totalCostPaisa,
+    Value<DateTime?> nextDueDate = const Value.absent(),
+    Value<int?> nextDueOdometer = const Value.absent(),
+    Value<String?> note = const Value.absent(),
+    DateTime? createdAt,
+    DateTime? updatedAt,
+  }) => ServiceRecordRow(
+    id: id ?? this.id,
+    vehicleId: vehicleId ?? this.vehicleId,
+    serviceDate: serviceDate ?? this.serviceDate,
+    odometer: odometer ?? this.odometer,
+    vendorName: vendorName.present ? vendorName.value : this.vendorName,
+    laborCostPaisa: laborCostPaisa ?? this.laborCostPaisa,
+    partsCostPaisa: partsCostPaisa ?? this.partsCostPaisa,
+    totalCostPaisa: totalCostPaisa ?? this.totalCostPaisa,
+    nextDueDate: nextDueDate.present ? nextDueDate.value : this.nextDueDate,
+    nextDueOdometer: nextDueOdometer.present
+        ? nextDueOdometer.value
+        : this.nextDueOdometer,
+    note: note.present ? note.value : this.note,
+    createdAt: createdAt ?? this.createdAt,
+    updatedAt: updatedAt ?? this.updatedAt,
+  );
+  ServiceRecordRow copyWithCompanion(ServiceRecordsCompanion data) {
+    return ServiceRecordRow(
+      id: data.id.present ? data.id.value : this.id,
+      vehicleId: data.vehicleId.present ? data.vehicleId.value : this.vehicleId,
+      serviceDate: data.serviceDate.present
+          ? data.serviceDate.value
+          : this.serviceDate,
+      odometer: data.odometer.present ? data.odometer.value : this.odometer,
+      vendorName: data.vendorName.present
+          ? data.vendorName.value
+          : this.vendorName,
+      laborCostPaisa: data.laborCostPaisa.present
+          ? data.laborCostPaisa.value
+          : this.laborCostPaisa,
+      partsCostPaisa: data.partsCostPaisa.present
+          ? data.partsCostPaisa.value
+          : this.partsCostPaisa,
+      totalCostPaisa: data.totalCostPaisa.present
+          ? data.totalCostPaisa.value
+          : this.totalCostPaisa,
+      nextDueDate: data.nextDueDate.present
+          ? data.nextDueDate.value
+          : this.nextDueDate,
+      nextDueOdometer: data.nextDueOdometer.present
+          ? data.nextDueOdometer.value
+          : this.nextDueOdometer,
+      note: data.note.present ? data.note.value : this.note,
+      createdAt: data.createdAt.present ? data.createdAt.value : this.createdAt,
+      updatedAt: data.updatedAt.present ? data.updatedAt.value : this.updatedAt,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('ServiceRecordRow(')
+          ..write('id: $id, ')
+          ..write('vehicleId: $vehicleId, ')
+          ..write('serviceDate: $serviceDate, ')
+          ..write('odometer: $odometer, ')
+          ..write('vendorName: $vendorName, ')
+          ..write('laborCostPaisa: $laborCostPaisa, ')
+          ..write('partsCostPaisa: $partsCostPaisa, ')
+          ..write('totalCostPaisa: $totalCostPaisa, ')
+          ..write('nextDueDate: $nextDueDate, ')
+          ..write('nextDueOdometer: $nextDueOdometer, ')
+          ..write('note: $note, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('updatedAt: $updatedAt')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(
+    id,
+    vehicleId,
+    serviceDate,
+    odometer,
+    vendorName,
+    laborCostPaisa,
+    partsCostPaisa,
+    totalCostPaisa,
+    nextDueDate,
+    nextDueOdometer,
+    note,
+    createdAt,
+    updatedAt,
+  );
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is ServiceRecordRow &&
+          other.id == this.id &&
+          other.vehicleId == this.vehicleId &&
+          other.serviceDate == this.serviceDate &&
+          other.odometer == this.odometer &&
+          other.vendorName == this.vendorName &&
+          other.laborCostPaisa == this.laborCostPaisa &&
+          other.partsCostPaisa == this.partsCostPaisa &&
+          other.totalCostPaisa == this.totalCostPaisa &&
+          other.nextDueDate == this.nextDueDate &&
+          other.nextDueOdometer == this.nextDueOdometer &&
+          other.note == this.note &&
+          other.createdAt == this.createdAt &&
+          other.updatedAt == this.updatedAt);
+}
+
+class ServiceRecordsCompanion extends UpdateCompanion<ServiceRecordRow> {
+  final Value<String> id;
+  final Value<String> vehicleId;
+  final Value<DateTime> serviceDate;
+  final Value<int> odometer;
+  final Value<String?> vendorName;
+  final Value<int> laborCostPaisa;
+  final Value<int> partsCostPaisa;
+  final Value<int> totalCostPaisa;
+  final Value<DateTime?> nextDueDate;
+  final Value<int?> nextDueOdometer;
+  final Value<String?> note;
+  final Value<DateTime> createdAt;
+  final Value<DateTime> updatedAt;
+  final Value<int> rowid;
+  const ServiceRecordsCompanion({
+    this.id = const Value.absent(),
+    this.vehicleId = const Value.absent(),
+    this.serviceDate = const Value.absent(),
+    this.odometer = const Value.absent(),
+    this.vendorName = const Value.absent(),
+    this.laborCostPaisa = const Value.absent(),
+    this.partsCostPaisa = const Value.absent(),
+    this.totalCostPaisa = const Value.absent(),
+    this.nextDueDate = const Value.absent(),
+    this.nextDueOdometer = const Value.absent(),
+    this.note = const Value.absent(),
+    this.createdAt = const Value.absent(),
+    this.updatedAt = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  ServiceRecordsCompanion.insert({
+    required String id,
+    required String vehicleId,
+    required DateTime serviceDate,
+    required int odometer,
+    this.vendorName = const Value.absent(),
+    this.laborCostPaisa = const Value.absent(),
+    this.partsCostPaisa = const Value.absent(),
+    this.totalCostPaisa = const Value.absent(),
+    this.nextDueDate = const Value.absent(),
+    this.nextDueOdometer = const Value.absent(),
+    this.note = const Value.absent(),
+    required DateTime createdAt,
+    required DateTime updatedAt,
+    this.rowid = const Value.absent(),
+  }) : id = Value(id),
+       vehicleId = Value(vehicleId),
+       serviceDate = Value(serviceDate),
+       odometer = Value(odometer),
+       createdAt = Value(createdAt),
+       updatedAt = Value(updatedAt);
+  static Insertable<ServiceRecordRow> custom({
+    Expression<String>? id,
+    Expression<String>? vehicleId,
+    Expression<DateTime>? serviceDate,
+    Expression<int>? odometer,
+    Expression<String>? vendorName,
+    Expression<int>? laborCostPaisa,
+    Expression<int>? partsCostPaisa,
+    Expression<int>? totalCostPaisa,
+    Expression<DateTime>? nextDueDate,
+    Expression<int>? nextDueOdometer,
+    Expression<String>? note,
+    Expression<DateTime>? createdAt,
+    Expression<DateTime>? updatedAt,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (vehicleId != null) 'vehicle_id': vehicleId,
+      if (serviceDate != null) 'service_date': serviceDate,
+      if (odometer != null) 'odometer': odometer,
+      if (vendorName != null) 'vendor_name': vendorName,
+      if (laborCostPaisa != null) 'labor_cost_paisa': laborCostPaisa,
+      if (partsCostPaisa != null) 'parts_cost_paisa': partsCostPaisa,
+      if (totalCostPaisa != null) 'total_cost_paisa': totalCostPaisa,
+      if (nextDueDate != null) 'next_due_date': nextDueDate,
+      if (nextDueOdometer != null) 'next_due_odometer': nextDueOdometer,
+      if (note != null) 'note': note,
+      if (createdAt != null) 'created_at': createdAt,
+      if (updatedAt != null) 'updated_at': updatedAt,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  ServiceRecordsCompanion copyWith({
+    Value<String>? id,
+    Value<String>? vehicleId,
+    Value<DateTime>? serviceDate,
+    Value<int>? odometer,
+    Value<String?>? vendorName,
+    Value<int>? laborCostPaisa,
+    Value<int>? partsCostPaisa,
+    Value<int>? totalCostPaisa,
+    Value<DateTime?>? nextDueDate,
+    Value<int?>? nextDueOdometer,
+    Value<String?>? note,
+    Value<DateTime>? createdAt,
+    Value<DateTime>? updatedAt,
+    Value<int>? rowid,
+  }) {
+    return ServiceRecordsCompanion(
+      id: id ?? this.id,
+      vehicleId: vehicleId ?? this.vehicleId,
+      serviceDate: serviceDate ?? this.serviceDate,
+      odometer: odometer ?? this.odometer,
+      vendorName: vendorName ?? this.vendorName,
+      laborCostPaisa: laborCostPaisa ?? this.laborCostPaisa,
+      partsCostPaisa: partsCostPaisa ?? this.partsCostPaisa,
+      totalCostPaisa: totalCostPaisa ?? this.totalCostPaisa,
+      nextDueDate: nextDueDate ?? this.nextDueDate,
+      nextDueOdometer: nextDueOdometer ?? this.nextDueOdometer,
+      note: note ?? this.note,
+      createdAt: createdAt ?? this.createdAt,
+      updatedAt: updatedAt ?? this.updatedAt,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<String>(id.value);
+    }
+    if (vehicleId.present) {
+      map['vehicle_id'] = Variable<String>(vehicleId.value);
+    }
+    if (serviceDate.present) {
+      map['service_date'] = Variable<DateTime>(serviceDate.value);
+    }
+    if (odometer.present) {
+      map['odometer'] = Variable<int>(odometer.value);
+    }
+    if (vendorName.present) {
+      map['vendor_name'] = Variable<String>(vendorName.value);
+    }
+    if (laborCostPaisa.present) {
+      map['labor_cost_paisa'] = Variable<int>(laborCostPaisa.value);
+    }
+    if (partsCostPaisa.present) {
+      map['parts_cost_paisa'] = Variable<int>(partsCostPaisa.value);
+    }
+    if (totalCostPaisa.present) {
+      map['total_cost_paisa'] = Variable<int>(totalCostPaisa.value);
+    }
+    if (nextDueDate.present) {
+      map['next_due_date'] = Variable<DateTime>(nextDueDate.value);
+    }
+    if (nextDueOdometer.present) {
+      map['next_due_odometer'] = Variable<int>(nextDueOdometer.value);
+    }
+    if (note.present) {
+      map['note'] = Variable<String>(note.value);
+    }
+    if (createdAt.present) {
+      map['created_at'] = Variable<DateTime>(createdAt.value);
+    }
+    if (updatedAt.present) {
+      map['updated_at'] = Variable<DateTime>(updatedAt.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('ServiceRecordsCompanion(')
+          ..write('id: $id, ')
+          ..write('vehicleId: $vehicleId, ')
+          ..write('serviceDate: $serviceDate, ')
+          ..write('odometer: $odometer, ')
+          ..write('vendorName: $vendorName, ')
+          ..write('laborCostPaisa: $laborCostPaisa, ')
+          ..write('partsCostPaisa: $partsCostPaisa, ')
+          ..write('totalCostPaisa: $totalCostPaisa, ')
+          ..write('nextDueDate: $nextDueDate, ')
+          ..write('nextDueOdometer: $nextDueOdometer, ')
+          ..write('note: $note, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('updatedAt: $updatedAt, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
+class $ServiceItemsTable extends ServiceItems
+    with TableInfo<$ServiceItemsTable, ServiceItemRow> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $ServiceItemsTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<String> id = GeneratedColumn<String>(
+    'id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _serviceRecordIdMeta = const VerificationMeta(
+    'serviceRecordId',
+  );
+  @override
+  late final GeneratedColumn<String> serviceRecordId = GeneratedColumn<String>(
+    'service_record_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'REFERENCES service_records (id) ON DELETE CASCADE',
+    ),
+  );
+  static const VerificationMeta _templateIdMeta = const VerificationMeta(
+    'templateId',
+  );
+  @override
+  late final GeneratedColumn<String> templateId = GeneratedColumn<String>(
+    'template_id',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'REFERENCES maintenance_templates (id)',
+    ),
+  );
+  static const VerificationMeta _maintenanceTypeMeta = const VerificationMeta(
+    'maintenanceType',
+  );
+  @override
+  late final GeneratedColumn<String> maintenanceType = GeneratedColumn<String>(
+    'maintenance_type',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _titleMeta = const VerificationMeta('title');
+  @override
+  late final GeneratedColumn<String> title = GeneratedColumn<String>(
+    'title',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _costPaisaMeta = const VerificationMeta(
+    'costPaisa',
+  );
+  @override
+  late final GeneratedColumn<int> costPaisa = GeneratedColumn<int>(
+    'cost_paisa',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _quantityMeta = const VerificationMeta(
+    'quantity',
+  );
+  @override
+  late final GeneratedColumn<double> quantity = GeneratedColumn<double>(
+    'quantity',
+    aliasedName,
+    false,
+    type: DriftSqlType.double,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(1.0),
+  );
+  static const VerificationMeta _noteMeta = const VerificationMeta('note');
+  @override
+  late final GeneratedColumn<String> note = GeneratedColumn<String>(
+    'note',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [
+    id,
+    serviceRecordId,
+    templateId,
+    maintenanceType,
+    title,
+    costPaisa,
+    quantity,
+    note,
+  ];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'service_items';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<ServiceItemRow> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    } else if (isInserting) {
+      context.missing(_idMeta);
+    }
+    if (data.containsKey('service_record_id')) {
+      context.handle(
+        _serviceRecordIdMeta,
+        serviceRecordId.isAcceptableOrUnknown(
+          data['service_record_id']!,
+          _serviceRecordIdMeta,
+        ),
+      );
+    } else if (isInserting) {
+      context.missing(_serviceRecordIdMeta);
+    }
+    if (data.containsKey('template_id')) {
+      context.handle(
+        _templateIdMeta,
+        templateId.isAcceptableOrUnknown(data['template_id']!, _templateIdMeta),
+      );
+    }
+    if (data.containsKey('maintenance_type')) {
+      context.handle(
+        _maintenanceTypeMeta,
+        maintenanceType.isAcceptableOrUnknown(
+          data['maintenance_type']!,
+          _maintenanceTypeMeta,
+        ),
+      );
+    } else if (isInserting) {
+      context.missing(_maintenanceTypeMeta);
+    }
+    if (data.containsKey('title')) {
+      context.handle(
+        _titleMeta,
+        title.isAcceptableOrUnknown(data['title']!, _titleMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_titleMeta);
+    }
+    if (data.containsKey('cost_paisa')) {
+      context.handle(
+        _costPaisaMeta,
+        costPaisa.isAcceptableOrUnknown(data['cost_paisa']!, _costPaisaMeta),
+      );
+    }
+    if (data.containsKey('quantity')) {
+      context.handle(
+        _quantityMeta,
+        quantity.isAcceptableOrUnknown(data['quantity']!, _quantityMeta),
+      );
+    }
+    if (data.containsKey('note')) {
+      context.handle(
+        _noteMeta,
+        note.isAcceptableOrUnknown(data['note']!, _noteMeta),
+      );
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  ServiceItemRow map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return ServiceItemRow(
+      id: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}id'],
+      )!,
+      serviceRecordId: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}service_record_id'],
+      )!,
+      templateId: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}template_id'],
+      ),
+      maintenanceType: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}maintenance_type'],
+      )!,
+      title: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}title'],
+      )!,
+      costPaisa: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}cost_paisa'],
+      )!,
+      quantity: attachedDatabase.typeMapping.read(
+        DriftSqlType.double,
+        data['${effectivePrefix}quantity'],
+      )!,
+      note: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}note'],
+      ),
+    );
+  }
+
+  @override
+  $ServiceItemsTable createAlias(String alias) {
+    return $ServiceItemsTable(attachedDatabase, alias);
+  }
+}
+
+class ServiceItemRow extends DataClass implements Insertable<ServiceItemRow> {
+  final String id;
+  final String serviceRecordId;
+  final String? templateId;
+  final String maintenanceType;
+  final String title;
+  final int costPaisa;
+  final double quantity;
+  final String? note;
+  const ServiceItemRow({
+    required this.id,
+    required this.serviceRecordId,
+    this.templateId,
+    required this.maintenanceType,
+    required this.title,
+    required this.costPaisa,
+    required this.quantity,
+    this.note,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<String>(id);
+    map['service_record_id'] = Variable<String>(serviceRecordId);
+    if (!nullToAbsent || templateId != null) {
+      map['template_id'] = Variable<String>(templateId);
+    }
+    map['maintenance_type'] = Variable<String>(maintenanceType);
+    map['title'] = Variable<String>(title);
+    map['cost_paisa'] = Variable<int>(costPaisa);
+    map['quantity'] = Variable<double>(quantity);
+    if (!nullToAbsent || note != null) {
+      map['note'] = Variable<String>(note);
+    }
+    return map;
+  }
+
+  ServiceItemsCompanion toCompanion(bool nullToAbsent) {
+    return ServiceItemsCompanion(
+      id: Value(id),
+      serviceRecordId: Value(serviceRecordId),
+      templateId: templateId == null && nullToAbsent
+          ? const Value.absent()
+          : Value(templateId),
+      maintenanceType: Value(maintenanceType),
+      title: Value(title),
+      costPaisa: Value(costPaisa),
+      quantity: Value(quantity),
+      note: note == null && nullToAbsent ? const Value.absent() : Value(note),
+    );
+  }
+
+  factory ServiceItemRow.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return ServiceItemRow(
+      id: serializer.fromJson<String>(json['id']),
+      serviceRecordId: serializer.fromJson<String>(json['serviceRecordId']),
+      templateId: serializer.fromJson<String?>(json['templateId']),
+      maintenanceType: serializer.fromJson<String>(json['maintenanceType']),
+      title: serializer.fromJson<String>(json['title']),
+      costPaisa: serializer.fromJson<int>(json['costPaisa']),
+      quantity: serializer.fromJson<double>(json['quantity']),
+      note: serializer.fromJson<String?>(json['note']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<String>(id),
+      'serviceRecordId': serializer.toJson<String>(serviceRecordId),
+      'templateId': serializer.toJson<String?>(templateId),
+      'maintenanceType': serializer.toJson<String>(maintenanceType),
+      'title': serializer.toJson<String>(title),
+      'costPaisa': serializer.toJson<int>(costPaisa),
+      'quantity': serializer.toJson<double>(quantity),
+      'note': serializer.toJson<String?>(note),
+    };
+  }
+
+  ServiceItemRow copyWith({
+    String? id,
+    String? serviceRecordId,
+    Value<String?> templateId = const Value.absent(),
+    String? maintenanceType,
+    String? title,
+    int? costPaisa,
+    double? quantity,
+    Value<String?> note = const Value.absent(),
+  }) => ServiceItemRow(
+    id: id ?? this.id,
+    serviceRecordId: serviceRecordId ?? this.serviceRecordId,
+    templateId: templateId.present ? templateId.value : this.templateId,
+    maintenanceType: maintenanceType ?? this.maintenanceType,
+    title: title ?? this.title,
+    costPaisa: costPaisa ?? this.costPaisa,
+    quantity: quantity ?? this.quantity,
+    note: note.present ? note.value : this.note,
+  );
+  ServiceItemRow copyWithCompanion(ServiceItemsCompanion data) {
+    return ServiceItemRow(
+      id: data.id.present ? data.id.value : this.id,
+      serviceRecordId: data.serviceRecordId.present
+          ? data.serviceRecordId.value
+          : this.serviceRecordId,
+      templateId: data.templateId.present
+          ? data.templateId.value
+          : this.templateId,
+      maintenanceType: data.maintenanceType.present
+          ? data.maintenanceType.value
+          : this.maintenanceType,
+      title: data.title.present ? data.title.value : this.title,
+      costPaisa: data.costPaisa.present ? data.costPaisa.value : this.costPaisa,
+      quantity: data.quantity.present ? data.quantity.value : this.quantity,
+      note: data.note.present ? data.note.value : this.note,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('ServiceItemRow(')
+          ..write('id: $id, ')
+          ..write('serviceRecordId: $serviceRecordId, ')
+          ..write('templateId: $templateId, ')
+          ..write('maintenanceType: $maintenanceType, ')
+          ..write('title: $title, ')
+          ..write('costPaisa: $costPaisa, ')
+          ..write('quantity: $quantity, ')
+          ..write('note: $note')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(
+    id,
+    serviceRecordId,
+    templateId,
+    maintenanceType,
+    title,
+    costPaisa,
+    quantity,
+    note,
+  );
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is ServiceItemRow &&
+          other.id == this.id &&
+          other.serviceRecordId == this.serviceRecordId &&
+          other.templateId == this.templateId &&
+          other.maintenanceType == this.maintenanceType &&
+          other.title == this.title &&
+          other.costPaisa == this.costPaisa &&
+          other.quantity == this.quantity &&
+          other.note == this.note);
+}
+
+class ServiceItemsCompanion extends UpdateCompanion<ServiceItemRow> {
+  final Value<String> id;
+  final Value<String> serviceRecordId;
+  final Value<String?> templateId;
+  final Value<String> maintenanceType;
+  final Value<String> title;
+  final Value<int> costPaisa;
+  final Value<double> quantity;
+  final Value<String?> note;
+  final Value<int> rowid;
+  const ServiceItemsCompanion({
+    this.id = const Value.absent(),
+    this.serviceRecordId = const Value.absent(),
+    this.templateId = const Value.absent(),
+    this.maintenanceType = const Value.absent(),
+    this.title = const Value.absent(),
+    this.costPaisa = const Value.absent(),
+    this.quantity = const Value.absent(),
+    this.note = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  ServiceItemsCompanion.insert({
+    required String id,
+    required String serviceRecordId,
+    this.templateId = const Value.absent(),
+    required String maintenanceType,
+    required String title,
+    this.costPaisa = const Value.absent(),
+    this.quantity = const Value.absent(),
+    this.note = const Value.absent(),
+    this.rowid = const Value.absent(),
+  }) : id = Value(id),
+       serviceRecordId = Value(serviceRecordId),
+       maintenanceType = Value(maintenanceType),
+       title = Value(title);
+  static Insertable<ServiceItemRow> custom({
+    Expression<String>? id,
+    Expression<String>? serviceRecordId,
+    Expression<String>? templateId,
+    Expression<String>? maintenanceType,
+    Expression<String>? title,
+    Expression<int>? costPaisa,
+    Expression<double>? quantity,
+    Expression<String>? note,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (serviceRecordId != null) 'service_record_id': serviceRecordId,
+      if (templateId != null) 'template_id': templateId,
+      if (maintenanceType != null) 'maintenance_type': maintenanceType,
+      if (title != null) 'title': title,
+      if (costPaisa != null) 'cost_paisa': costPaisa,
+      if (quantity != null) 'quantity': quantity,
+      if (note != null) 'note': note,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  ServiceItemsCompanion copyWith({
+    Value<String>? id,
+    Value<String>? serviceRecordId,
+    Value<String?>? templateId,
+    Value<String>? maintenanceType,
+    Value<String>? title,
+    Value<int>? costPaisa,
+    Value<double>? quantity,
+    Value<String?>? note,
+    Value<int>? rowid,
+  }) {
+    return ServiceItemsCompanion(
+      id: id ?? this.id,
+      serviceRecordId: serviceRecordId ?? this.serviceRecordId,
+      templateId: templateId ?? this.templateId,
+      maintenanceType: maintenanceType ?? this.maintenanceType,
+      title: title ?? this.title,
+      costPaisa: costPaisa ?? this.costPaisa,
+      quantity: quantity ?? this.quantity,
+      note: note ?? this.note,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<String>(id.value);
+    }
+    if (serviceRecordId.present) {
+      map['service_record_id'] = Variable<String>(serviceRecordId.value);
+    }
+    if (templateId.present) {
+      map['template_id'] = Variable<String>(templateId.value);
+    }
+    if (maintenanceType.present) {
+      map['maintenance_type'] = Variable<String>(maintenanceType.value);
+    }
+    if (title.present) {
+      map['title'] = Variable<String>(title.value);
+    }
+    if (costPaisa.present) {
+      map['cost_paisa'] = Variable<int>(costPaisa.value);
+    }
+    if (quantity.present) {
+      map['quantity'] = Variable<double>(quantity.value);
+    }
+    if (note.present) {
+      map['note'] = Variable<String>(note.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('ServiceItemsCompanion(')
+          ..write('id: $id, ')
+          ..write('serviceRecordId: $serviceRecordId, ')
+          ..write('templateId: $templateId, ')
+          ..write('maintenanceType: $maintenanceType, ')
+          ..write('title: $title, ')
+          ..write('costPaisa: $costPaisa, ')
+          ..write('quantity: $quantity, ')
+          ..write('note: $note, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
+class $OilChangesTable extends OilChanges
+    with TableInfo<$OilChangesTable, OilChangeRow> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $OilChangesTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<String> id = GeneratedColumn<String>(
+    'id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _vehicleIdMeta = const VerificationMeta(
+    'vehicleId',
+  );
+  @override
+  late final GeneratedColumn<String> vehicleId = GeneratedColumn<String>(
+    'vehicle_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'REFERENCES vehicles (id)',
+    ),
+  );
+  static const VerificationMeta _occurredOnMeta = const VerificationMeta(
+    'occurredOn',
+  );
+  @override
+  late final GeneratedColumn<DateTime> occurredOn = GeneratedColumn<DateTime>(
+    'occurred_on',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _odometerMeta = const VerificationMeta(
+    'odometer',
+  );
+  @override
+  late final GeneratedColumn<int> odometer = GeneratedColumn<int>(
+    'odometer',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _brandMeta = const VerificationMeta('brand');
+  @override
+  late final GeneratedColumn<String> brand = GeneratedColumn<String>(
+    'brand',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _productNameMeta = const VerificationMeta(
+    'productName',
+  );
+  @override
+  late final GeneratedColumn<String> productName = GeneratedColumn<String>(
+    'product_name',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _viscosityMeta = const VerificationMeta(
+    'viscosity',
+  );
+  @override
+  late final GeneratedColumn<String> viscosity = GeneratedColumn<String>(
+    'viscosity',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _quantityMlMeta = const VerificationMeta(
+    'quantityMl',
+  );
+  @override
+  late final GeneratedColumn<int> quantityMl = GeneratedColumn<int>(
+    'quantity_ml',
+    aliasedName,
+    true,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _costPaisaMeta = const VerificationMeta(
+    'costPaisa',
+  );
+  @override
+  late final GeneratedColumn<int> costPaisa = GeneratedColumn<int>(
+    'cost_paisa',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _filterChangedMeta = const VerificationMeta(
+    'filterChanged',
+  );
+  @override
+  late final GeneratedColumn<bool> filterChanged = GeneratedColumn<bool>(
+    'filter_changed',
+    aliasedName,
+    false,
+    type: DriftSqlType.bool,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'CHECK ("filter_changed" IN (0, 1))',
+    ),
+    defaultValue: const Constant(false),
+  );
+  static const VerificationMeta _vendorNameMeta = const VerificationMeta(
+    'vendorName',
+  );
+  @override
+  late final GeneratedColumn<String> vendorName = GeneratedColumn<String>(
+    'vendor_name',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _nextDueDateMeta = const VerificationMeta(
+    'nextDueDate',
+  );
+  @override
+  late final GeneratedColumn<DateTime> nextDueDate = GeneratedColumn<DateTime>(
+    'next_due_date',
+    aliasedName,
+    true,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _nextDueOdometerMeta = const VerificationMeta(
+    'nextDueOdometer',
+  );
+  @override
+  late final GeneratedColumn<int> nextDueOdometer = GeneratedColumn<int>(
+    'next_due_odometer',
+    aliasedName,
+    true,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _noteMeta = const VerificationMeta('note');
+  @override
+  late final GeneratedColumn<String> note = GeneratedColumn<String>(
+    'note',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _serviceRecordIdMeta = const VerificationMeta(
+    'serviceRecordId',
+  );
+  @override
+  late final GeneratedColumn<String> serviceRecordId = GeneratedColumn<String>(
+    'service_record_id',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'REFERENCES service_records (id)',
+    ),
+  );
+  static const VerificationMeta _createdAtMeta = const VerificationMeta(
+    'createdAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> createdAt = GeneratedColumn<DateTime>(
+    'created_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _updatedAtMeta = const VerificationMeta(
+    'updatedAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> updatedAt = GeneratedColumn<DateTime>(
+    'updated_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [
+    id,
+    vehicleId,
+    occurredOn,
+    odometer,
+    brand,
+    productName,
+    viscosity,
+    quantityMl,
+    costPaisa,
+    filterChanged,
+    vendorName,
+    nextDueDate,
+    nextDueOdometer,
+    note,
+    serviceRecordId,
+    createdAt,
+    updatedAt,
+  ];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'oil_changes';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<OilChangeRow> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    } else if (isInserting) {
+      context.missing(_idMeta);
+    }
+    if (data.containsKey('vehicle_id')) {
+      context.handle(
+        _vehicleIdMeta,
+        vehicleId.isAcceptableOrUnknown(data['vehicle_id']!, _vehicleIdMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_vehicleIdMeta);
+    }
+    if (data.containsKey('occurred_on')) {
+      context.handle(
+        _occurredOnMeta,
+        occurredOn.isAcceptableOrUnknown(data['occurred_on']!, _occurredOnMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_occurredOnMeta);
+    }
+    if (data.containsKey('odometer')) {
+      context.handle(
+        _odometerMeta,
+        odometer.isAcceptableOrUnknown(data['odometer']!, _odometerMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_odometerMeta);
+    }
+    if (data.containsKey('brand')) {
+      context.handle(
+        _brandMeta,
+        brand.isAcceptableOrUnknown(data['brand']!, _brandMeta),
+      );
+    }
+    if (data.containsKey('product_name')) {
+      context.handle(
+        _productNameMeta,
+        productName.isAcceptableOrUnknown(
+          data['product_name']!,
+          _productNameMeta,
+        ),
+      );
+    }
+    if (data.containsKey('viscosity')) {
+      context.handle(
+        _viscosityMeta,
+        viscosity.isAcceptableOrUnknown(data['viscosity']!, _viscosityMeta),
+      );
+    }
+    if (data.containsKey('quantity_ml')) {
+      context.handle(
+        _quantityMlMeta,
+        quantityMl.isAcceptableOrUnknown(data['quantity_ml']!, _quantityMlMeta),
+      );
+    }
+    if (data.containsKey('cost_paisa')) {
+      context.handle(
+        _costPaisaMeta,
+        costPaisa.isAcceptableOrUnknown(data['cost_paisa']!, _costPaisaMeta),
+      );
+    }
+    if (data.containsKey('filter_changed')) {
+      context.handle(
+        _filterChangedMeta,
+        filterChanged.isAcceptableOrUnknown(
+          data['filter_changed']!,
+          _filterChangedMeta,
+        ),
+      );
+    }
+    if (data.containsKey('vendor_name')) {
+      context.handle(
+        _vendorNameMeta,
+        vendorName.isAcceptableOrUnknown(data['vendor_name']!, _vendorNameMeta),
+      );
+    }
+    if (data.containsKey('next_due_date')) {
+      context.handle(
+        _nextDueDateMeta,
+        nextDueDate.isAcceptableOrUnknown(
+          data['next_due_date']!,
+          _nextDueDateMeta,
+        ),
+      );
+    }
+    if (data.containsKey('next_due_odometer')) {
+      context.handle(
+        _nextDueOdometerMeta,
+        nextDueOdometer.isAcceptableOrUnknown(
+          data['next_due_odometer']!,
+          _nextDueOdometerMeta,
+        ),
+      );
+    }
+    if (data.containsKey('note')) {
+      context.handle(
+        _noteMeta,
+        note.isAcceptableOrUnknown(data['note']!, _noteMeta),
+      );
+    }
+    if (data.containsKey('service_record_id')) {
+      context.handle(
+        _serviceRecordIdMeta,
+        serviceRecordId.isAcceptableOrUnknown(
+          data['service_record_id']!,
+          _serviceRecordIdMeta,
+        ),
+      );
+    }
+    if (data.containsKey('created_at')) {
+      context.handle(
+        _createdAtMeta,
+        createdAt.isAcceptableOrUnknown(data['created_at']!, _createdAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_createdAtMeta);
+    }
+    if (data.containsKey('updated_at')) {
+      context.handle(
+        _updatedAtMeta,
+        updatedAt.isAcceptableOrUnknown(data['updated_at']!, _updatedAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_updatedAtMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  OilChangeRow map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return OilChangeRow(
+      id: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}id'],
+      )!,
+      vehicleId: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}vehicle_id'],
+      )!,
+      occurredOn: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}occurred_on'],
+      )!,
+      odometer: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}odometer'],
+      )!,
+      brand: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}brand'],
+      ),
+      productName: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}product_name'],
+      ),
+      viscosity: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}viscosity'],
+      ),
+      quantityMl: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}quantity_ml'],
+      ),
+      costPaisa: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}cost_paisa'],
+      )!,
+      filterChanged: attachedDatabase.typeMapping.read(
+        DriftSqlType.bool,
+        data['${effectivePrefix}filter_changed'],
+      )!,
+      vendorName: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}vendor_name'],
+      ),
+      nextDueDate: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}next_due_date'],
+      ),
+      nextDueOdometer: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}next_due_odometer'],
+      ),
+      note: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}note'],
+      ),
+      serviceRecordId: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}service_record_id'],
+      ),
+      createdAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}created_at'],
+      )!,
+      updatedAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}updated_at'],
+      )!,
+    );
+  }
+
+  @override
+  $OilChangesTable createAlias(String alias) {
+    return $OilChangesTable(attachedDatabase, alias);
+  }
+}
+
+class OilChangeRow extends DataClass implements Insertable<OilChangeRow> {
+  final String id;
+  final String vehicleId;
+  final DateTime occurredOn;
+  final int odometer;
+  final String? brand;
+  final String? productName;
+  final String? viscosity;
+
+  /// Quantity in milliliters.
+  final int? quantityMl;
+  final int costPaisa;
+  final bool filterChanged;
+  final String? vendorName;
+  final DateTime? nextDueDate;
+  final int? nextDueOdometer;
+  final String? note;
+  final String? serviceRecordId;
+  final DateTime createdAt;
+  final DateTime updatedAt;
+  const OilChangeRow({
+    required this.id,
+    required this.vehicleId,
+    required this.occurredOn,
+    required this.odometer,
+    this.brand,
+    this.productName,
+    this.viscosity,
+    this.quantityMl,
+    required this.costPaisa,
+    required this.filterChanged,
+    this.vendorName,
+    this.nextDueDate,
+    this.nextDueOdometer,
+    this.note,
+    this.serviceRecordId,
+    required this.createdAt,
+    required this.updatedAt,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<String>(id);
+    map['vehicle_id'] = Variable<String>(vehicleId);
+    map['occurred_on'] = Variable<DateTime>(occurredOn);
+    map['odometer'] = Variable<int>(odometer);
+    if (!nullToAbsent || brand != null) {
+      map['brand'] = Variable<String>(brand);
+    }
+    if (!nullToAbsent || productName != null) {
+      map['product_name'] = Variable<String>(productName);
+    }
+    if (!nullToAbsent || viscosity != null) {
+      map['viscosity'] = Variable<String>(viscosity);
+    }
+    if (!nullToAbsent || quantityMl != null) {
+      map['quantity_ml'] = Variable<int>(quantityMl);
+    }
+    map['cost_paisa'] = Variable<int>(costPaisa);
+    map['filter_changed'] = Variable<bool>(filterChanged);
+    if (!nullToAbsent || vendorName != null) {
+      map['vendor_name'] = Variable<String>(vendorName);
+    }
+    if (!nullToAbsent || nextDueDate != null) {
+      map['next_due_date'] = Variable<DateTime>(nextDueDate);
+    }
+    if (!nullToAbsent || nextDueOdometer != null) {
+      map['next_due_odometer'] = Variable<int>(nextDueOdometer);
+    }
+    if (!nullToAbsent || note != null) {
+      map['note'] = Variable<String>(note);
+    }
+    if (!nullToAbsent || serviceRecordId != null) {
+      map['service_record_id'] = Variable<String>(serviceRecordId);
+    }
+    map['created_at'] = Variable<DateTime>(createdAt);
+    map['updated_at'] = Variable<DateTime>(updatedAt);
+    return map;
+  }
+
+  OilChangesCompanion toCompanion(bool nullToAbsent) {
+    return OilChangesCompanion(
+      id: Value(id),
+      vehicleId: Value(vehicleId),
+      occurredOn: Value(occurredOn),
+      odometer: Value(odometer),
+      brand: brand == null && nullToAbsent
+          ? const Value.absent()
+          : Value(brand),
+      productName: productName == null && nullToAbsent
+          ? const Value.absent()
+          : Value(productName),
+      viscosity: viscosity == null && nullToAbsent
+          ? const Value.absent()
+          : Value(viscosity),
+      quantityMl: quantityMl == null && nullToAbsent
+          ? const Value.absent()
+          : Value(quantityMl),
+      costPaisa: Value(costPaisa),
+      filterChanged: Value(filterChanged),
+      vendorName: vendorName == null && nullToAbsent
+          ? const Value.absent()
+          : Value(vendorName),
+      nextDueDate: nextDueDate == null && nullToAbsent
+          ? const Value.absent()
+          : Value(nextDueDate),
+      nextDueOdometer: nextDueOdometer == null && nullToAbsent
+          ? const Value.absent()
+          : Value(nextDueOdometer),
+      note: note == null && nullToAbsent ? const Value.absent() : Value(note),
+      serviceRecordId: serviceRecordId == null && nullToAbsent
+          ? const Value.absent()
+          : Value(serviceRecordId),
+      createdAt: Value(createdAt),
+      updatedAt: Value(updatedAt),
+    );
+  }
+
+  factory OilChangeRow.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return OilChangeRow(
+      id: serializer.fromJson<String>(json['id']),
+      vehicleId: serializer.fromJson<String>(json['vehicleId']),
+      occurredOn: serializer.fromJson<DateTime>(json['occurredOn']),
+      odometer: serializer.fromJson<int>(json['odometer']),
+      brand: serializer.fromJson<String?>(json['brand']),
+      productName: serializer.fromJson<String?>(json['productName']),
+      viscosity: serializer.fromJson<String?>(json['viscosity']),
+      quantityMl: serializer.fromJson<int?>(json['quantityMl']),
+      costPaisa: serializer.fromJson<int>(json['costPaisa']),
+      filterChanged: serializer.fromJson<bool>(json['filterChanged']),
+      vendorName: serializer.fromJson<String?>(json['vendorName']),
+      nextDueDate: serializer.fromJson<DateTime?>(json['nextDueDate']),
+      nextDueOdometer: serializer.fromJson<int?>(json['nextDueOdometer']),
+      note: serializer.fromJson<String?>(json['note']),
+      serviceRecordId: serializer.fromJson<String?>(json['serviceRecordId']),
+      createdAt: serializer.fromJson<DateTime>(json['createdAt']),
+      updatedAt: serializer.fromJson<DateTime>(json['updatedAt']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<String>(id),
+      'vehicleId': serializer.toJson<String>(vehicleId),
+      'occurredOn': serializer.toJson<DateTime>(occurredOn),
+      'odometer': serializer.toJson<int>(odometer),
+      'brand': serializer.toJson<String?>(brand),
+      'productName': serializer.toJson<String?>(productName),
+      'viscosity': serializer.toJson<String?>(viscosity),
+      'quantityMl': serializer.toJson<int?>(quantityMl),
+      'costPaisa': serializer.toJson<int>(costPaisa),
+      'filterChanged': serializer.toJson<bool>(filterChanged),
+      'vendorName': serializer.toJson<String?>(vendorName),
+      'nextDueDate': serializer.toJson<DateTime?>(nextDueDate),
+      'nextDueOdometer': serializer.toJson<int?>(nextDueOdometer),
+      'note': serializer.toJson<String?>(note),
+      'serviceRecordId': serializer.toJson<String?>(serviceRecordId),
+      'createdAt': serializer.toJson<DateTime>(createdAt),
+      'updatedAt': serializer.toJson<DateTime>(updatedAt),
+    };
+  }
+
+  OilChangeRow copyWith({
+    String? id,
+    String? vehicleId,
+    DateTime? occurredOn,
+    int? odometer,
+    Value<String?> brand = const Value.absent(),
+    Value<String?> productName = const Value.absent(),
+    Value<String?> viscosity = const Value.absent(),
+    Value<int?> quantityMl = const Value.absent(),
+    int? costPaisa,
+    bool? filterChanged,
+    Value<String?> vendorName = const Value.absent(),
+    Value<DateTime?> nextDueDate = const Value.absent(),
+    Value<int?> nextDueOdometer = const Value.absent(),
+    Value<String?> note = const Value.absent(),
+    Value<String?> serviceRecordId = const Value.absent(),
+    DateTime? createdAt,
+    DateTime? updatedAt,
+  }) => OilChangeRow(
+    id: id ?? this.id,
+    vehicleId: vehicleId ?? this.vehicleId,
+    occurredOn: occurredOn ?? this.occurredOn,
+    odometer: odometer ?? this.odometer,
+    brand: brand.present ? brand.value : this.brand,
+    productName: productName.present ? productName.value : this.productName,
+    viscosity: viscosity.present ? viscosity.value : this.viscosity,
+    quantityMl: quantityMl.present ? quantityMl.value : this.quantityMl,
+    costPaisa: costPaisa ?? this.costPaisa,
+    filterChanged: filterChanged ?? this.filterChanged,
+    vendorName: vendorName.present ? vendorName.value : this.vendorName,
+    nextDueDate: nextDueDate.present ? nextDueDate.value : this.nextDueDate,
+    nextDueOdometer: nextDueOdometer.present
+        ? nextDueOdometer.value
+        : this.nextDueOdometer,
+    note: note.present ? note.value : this.note,
+    serviceRecordId: serviceRecordId.present
+        ? serviceRecordId.value
+        : this.serviceRecordId,
+    createdAt: createdAt ?? this.createdAt,
+    updatedAt: updatedAt ?? this.updatedAt,
+  );
+  OilChangeRow copyWithCompanion(OilChangesCompanion data) {
+    return OilChangeRow(
+      id: data.id.present ? data.id.value : this.id,
+      vehicleId: data.vehicleId.present ? data.vehicleId.value : this.vehicleId,
+      occurredOn: data.occurredOn.present
+          ? data.occurredOn.value
+          : this.occurredOn,
+      odometer: data.odometer.present ? data.odometer.value : this.odometer,
+      brand: data.brand.present ? data.brand.value : this.brand,
+      productName: data.productName.present
+          ? data.productName.value
+          : this.productName,
+      viscosity: data.viscosity.present ? data.viscosity.value : this.viscosity,
+      quantityMl: data.quantityMl.present
+          ? data.quantityMl.value
+          : this.quantityMl,
+      costPaisa: data.costPaisa.present ? data.costPaisa.value : this.costPaisa,
+      filterChanged: data.filterChanged.present
+          ? data.filterChanged.value
+          : this.filterChanged,
+      vendorName: data.vendorName.present
+          ? data.vendorName.value
+          : this.vendorName,
+      nextDueDate: data.nextDueDate.present
+          ? data.nextDueDate.value
+          : this.nextDueDate,
+      nextDueOdometer: data.nextDueOdometer.present
+          ? data.nextDueOdometer.value
+          : this.nextDueOdometer,
+      note: data.note.present ? data.note.value : this.note,
+      serviceRecordId: data.serviceRecordId.present
+          ? data.serviceRecordId.value
+          : this.serviceRecordId,
+      createdAt: data.createdAt.present ? data.createdAt.value : this.createdAt,
+      updatedAt: data.updatedAt.present ? data.updatedAt.value : this.updatedAt,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('OilChangeRow(')
+          ..write('id: $id, ')
+          ..write('vehicleId: $vehicleId, ')
+          ..write('occurredOn: $occurredOn, ')
+          ..write('odometer: $odometer, ')
+          ..write('brand: $brand, ')
+          ..write('productName: $productName, ')
+          ..write('viscosity: $viscosity, ')
+          ..write('quantityMl: $quantityMl, ')
+          ..write('costPaisa: $costPaisa, ')
+          ..write('filterChanged: $filterChanged, ')
+          ..write('vendorName: $vendorName, ')
+          ..write('nextDueDate: $nextDueDate, ')
+          ..write('nextDueOdometer: $nextDueOdometer, ')
+          ..write('note: $note, ')
+          ..write('serviceRecordId: $serviceRecordId, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('updatedAt: $updatedAt')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(
+    id,
+    vehicleId,
+    occurredOn,
+    odometer,
+    brand,
+    productName,
+    viscosity,
+    quantityMl,
+    costPaisa,
+    filterChanged,
+    vendorName,
+    nextDueDate,
+    nextDueOdometer,
+    note,
+    serviceRecordId,
+    createdAt,
+    updatedAt,
+  );
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is OilChangeRow &&
+          other.id == this.id &&
+          other.vehicleId == this.vehicleId &&
+          other.occurredOn == this.occurredOn &&
+          other.odometer == this.odometer &&
+          other.brand == this.brand &&
+          other.productName == this.productName &&
+          other.viscosity == this.viscosity &&
+          other.quantityMl == this.quantityMl &&
+          other.costPaisa == this.costPaisa &&
+          other.filterChanged == this.filterChanged &&
+          other.vendorName == this.vendorName &&
+          other.nextDueDate == this.nextDueDate &&
+          other.nextDueOdometer == this.nextDueOdometer &&
+          other.note == this.note &&
+          other.serviceRecordId == this.serviceRecordId &&
+          other.createdAt == this.createdAt &&
+          other.updatedAt == this.updatedAt);
+}
+
+class OilChangesCompanion extends UpdateCompanion<OilChangeRow> {
+  final Value<String> id;
+  final Value<String> vehicleId;
+  final Value<DateTime> occurredOn;
+  final Value<int> odometer;
+  final Value<String?> brand;
+  final Value<String?> productName;
+  final Value<String?> viscosity;
+  final Value<int?> quantityMl;
+  final Value<int> costPaisa;
+  final Value<bool> filterChanged;
+  final Value<String?> vendorName;
+  final Value<DateTime?> nextDueDate;
+  final Value<int?> nextDueOdometer;
+  final Value<String?> note;
+  final Value<String?> serviceRecordId;
+  final Value<DateTime> createdAt;
+  final Value<DateTime> updatedAt;
+  final Value<int> rowid;
+  const OilChangesCompanion({
+    this.id = const Value.absent(),
+    this.vehicleId = const Value.absent(),
+    this.occurredOn = const Value.absent(),
+    this.odometer = const Value.absent(),
+    this.brand = const Value.absent(),
+    this.productName = const Value.absent(),
+    this.viscosity = const Value.absent(),
+    this.quantityMl = const Value.absent(),
+    this.costPaisa = const Value.absent(),
+    this.filterChanged = const Value.absent(),
+    this.vendorName = const Value.absent(),
+    this.nextDueDate = const Value.absent(),
+    this.nextDueOdometer = const Value.absent(),
+    this.note = const Value.absent(),
+    this.serviceRecordId = const Value.absent(),
+    this.createdAt = const Value.absent(),
+    this.updatedAt = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  OilChangesCompanion.insert({
+    required String id,
+    required String vehicleId,
+    required DateTime occurredOn,
+    required int odometer,
+    this.brand = const Value.absent(),
+    this.productName = const Value.absent(),
+    this.viscosity = const Value.absent(),
+    this.quantityMl = const Value.absent(),
+    this.costPaisa = const Value.absent(),
+    this.filterChanged = const Value.absent(),
+    this.vendorName = const Value.absent(),
+    this.nextDueDate = const Value.absent(),
+    this.nextDueOdometer = const Value.absent(),
+    this.note = const Value.absent(),
+    this.serviceRecordId = const Value.absent(),
+    required DateTime createdAt,
+    required DateTime updatedAt,
+    this.rowid = const Value.absent(),
+  }) : id = Value(id),
+       vehicleId = Value(vehicleId),
+       occurredOn = Value(occurredOn),
+       odometer = Value(odometer),
+       createdAt = Value(createdAt),
+       updatedAt = Value(updatedAt);
+  static Insertable<OilChangeRow> custom({
+    Expression<String>? id,
+    Expression<String>? vehicleId,
+    Expression<DateTime>? occurredOn,
+    Expression<int>? odometer,
+    Expression<String>? brand,
+    Expression<String>? productName,
+    Expression<String>? viscosity,
+    Expression<int>? quantityMl,
+    Expression<int>? costPaisa,
+    Expression<bool>? filterChanged,
+    Expression<String>? vendorName,
+    Expression<DateTime>? nextDueDate,
+    Expression<int>? nextDueOdometer,
+    Expression<String>? note,
+    Expression<String>? serviceRecordId,
+    Expression<DateTime>? createdAt,
+    Expression<DateTime>? updatedAt,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (vehicleId != null) 'vehicle_id': vehicleId,
+      if (occurredOn != null) 'occurred_on': occurredOn,
+      if (odometer != null) 'odometer': odometer,
+      if (brand != null) 'brand': brand,
+      if (productName != null) 'product_name': productName,
+      if (viscosity != null) 'viscosity': viscosity,
+      if (quantityMl != null) 'quantity_ml': quantityMl,
+      if (costPaisa != null) 'cost_paisa': costPaisa,
+      if (filterChanged != null) 'filter_changed': filterChanged,
+      if (vendorName != null) 'vendor_name': vendorName,
+      if (nextDueDate != null) 'next_due_date': nextDueDate,
+      if (nextDueOdometer != null) 'next_due_odometer': nextDueOdometer,
+      if (note != null) 'note': note,
+      if (serviceRecordId != null) 'service_record_id': serviceRecordId,
+      if (createdAt != null) 'created_at': createdAt,
+      if (updatedAt != null) 'updated_at': updatedAt,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  OilChangesCompanion copyWith({
+    Value<String>? id,
+    Value<String>? vehicleId,
+    Value<DateTime>? occurredOn,
+    Value<int>? odometer,
+    Value<String?>? brand,
+    Value<String?>? productName,
+    Value<String?>? viscosity,
+    Value<int?>? quantityMl,
+    Value<int>? costPaisa,
+    Value<bool>? filterChanged,
+    Value<String?>? vendorName,
+    Value<DateTime?>? nextDueDate,
+    Value<int?>? nextDueOdometer,
+    Value<String?>? note,
+    Value<String?>? serviceRecordId,
+    Value<DateTime>? createdAt,
+    Value<DateTime>? updatedAt,
+    Value<int>? rowid,
+  }) {
+    return OilChangesCompanion(
+      id: id ?? this.id,
+      vehicleId: vehicleId ?? this.vehicleId,
+      occurredOn: occurredOn ?? this.occurredOn,
+      odometer: odometer ?? this.odometer,
+      brand: brand ?? this.brand,
+      productName: productName ?? this.productName,
+      viscosity: viscosity ?? this.viscosity,
+      quantityMl: quantityMl ?? this.quantityMl,
+      costPaisa: costPaisa ?? this.costPaisa,
+      filterChanged: filterChanged ?? this.filterChanged,
+      vendorName: vendorName ?? this.vendorName,
+      nextDueDate: nextDueDate ?? this.nextDueDate,
+      nextDueOdometer: nextDueOdometer ?? this.nextDueOdometer,
+      note: note ?? this.note,
+      serviceRecordId: serviceRecordId ?? this.serviceRecordId,
+      createdAt: createdAt ?? this.createdAt,
+      updatedAt: updatedAt ?? this.updatedAt,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<String>(id.value);
+    }
+    if (vehicleId.present) {
+      map['vehicle_id'] = Variable<String>(vehicleId.value);
+    }
+    if (occurredOn.present) {
+      map['occurred_on'] = Variable<DateTime>(occurredOn.value);
+    }
+    if (odometer.present) {
+      map['odometer'] = Variable<int>(odometer.value);
+    }
+    if (brand.present) {
+      map['brand'] = Variable<String>(brand.value);
+    }
+    if (productName.present) {
+      map['product_name'] = Variable<String>(productName.value);
+    }
+    if (viscosity.present) {
+      map['viscosity'] = Variable<String>(viscosity.value);
+    }
+    if (quantityMl.present) {
+      map['quantity_ml'] = Variable<int>(quantityMl.value);
+    }
+    if (costPaisa.present) {
+      map['cost_paisa'] = Variable<int>(costPaisa.value);
+    }
+    if (filterChanged.present) {
+      map['filter_changed'] = Variable<bool>(filterChanged.value);
+    }
+    if (vendorName.present) {
+      map['vendor_name'] = Variable<String>(vendorName.value);
+    }
+    if (nextDueDate.present) {
+      map['next_due_date'] = Variable<DateTime>(nextDueDate.value);
+    }
+    if (nextDueOdometer.present) {
+      map['next_due_odometer'] = Variable<int>(nextDueOdometer.value);
+    }
+    if (note.present) {
+      map['note'] = Variable<String>(note.value);
+    }
+    if (serviceRecordId.present) {
+      map['service_record_id'] = Variable<String>(serviceRecordId.value);
+    }
+    if (createdAt.present) {
+      map['created_at'] = Variable<DateTime>(createdAt.value);
+    }
+    if (updatedAt.present) {
+      map['updated_at'] = Variable<DateTime>(updatedAt.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('OilChangesCompanion(')
+          ..write('id: $id, ')
+          ..write('vehicleId: $vehicleId, ')
+          ..write('occurredOn: $occurredOn, ')
+          ..write('odometer: $odometer, ')
+          ..write('brand: $brand, ')
+          ..write('productName: $productName, ')
+          ..write('viscosity: $viscosity, ')
+          ..write('quantityMl: $quantityMl, ')
+          ..write('costPaisa: $costPaisa, ')
+          ..write('filterChanged: $filterChanged, ')
+          ..write('vendorName: $vendorName, ')
+          ..write('nextDueDate: $nextDueDate, ')
+          ..write('nextDueOdometer: $nextDueOdometer, ')
+          ..write('note: $note, ')
+          ..write('serviceRecordId: $serviceRecordId, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('updatedAt: $updatedAt, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
 abstract class _$AppDatabase extends GeneratedDatabase {
   _$AppDatabase(QueryExecutor e) : super(e);
   $AppDatabaseManager get managers => $AppDatabaseManager(this);
@@ -4569,6 +7587,11 @@ abstract class _$AppDatabase extends GeneratedDatabase {
   late final $ExpenseCategoriesTable expenseCategories =
       $ExpenseCategoriesTable(this);
   late final $ExpensesTable expenses = $ExpensesTable(this);
+  late final $MaintenanceTemplatesTable maintenanceTemplates =
+      $MaintenanceTemplatesTable(this);
+  late final $ServiceRecordsTable serviceRecords = $ServiceRecordsTable(this);
+  late final $ServiceItemsTable serviceItems = $ServiceItemsTable(this);
+  late final $OilChangesTable oilChanges = $OilChangesTable(this);
   late final Index idxOdometerVehicleRecorded = Index(
     'idx_odometer_vehicle_recorded',
     'CREATE INDEX idx_odometer_vehicle_recorded ON odometer_entries (vehicle_id, recorded_at)',
@@ -4593,6 +7616,18 @@ abstract class _$AppDatabase extends GeneratedDatabase {
     'idx_expense_source',
     'CREATE INDEX idx_expense_source ON expenses (source_type, source_record_id)',
   );
+  late final Index idxServiceVehicleDate = Index(
+    'idx_service_vehicle_date',
+    'CREATE INDEX idx_service_vehicle_date ON service_records (vehicle_id, service_date)',
+  );
+  late final Index idxServiceItemsRecord = Index(
+    'idx_service_items_record',
+    'CREATE INDEX idx_service_items_record ON service_items (service_record_id)',
+  );
+  late final Index idxOilVehicleDate = Index(
+    'idx_oil_vehicle_date',
+    'CREATE INDEX idx_oil_vehicle_date ON oil_changes (vehicle_id, occurred_on)',
+  );
   @override
   Iterable<TableInfo<Table, Object?>> get allTables =>
       allSchemaEntities.whereType<TableInfo<Table, Object?>>();
@@ -4604,13 +7639,30 @@ abstract class _$AppDatabase extends GeneratedDatabase {
     fuelEntries,
     expenseCategories,
     expenses,
+    maintenanceTemplates,
+    serviceRecords,
+    serviceItems,
+    oilChanges,
     idxOdometerVehicleRecorded,
     idxOdometerVehicleOdometer,
     idxFuelVehicleDatetime,
     idxFuelVehicleOdometer,
     idxExpenseVehicleDate,
     idxExpenseSource,
+    idxServiceVehicleDate,
+    idxServiceItemsRecord,
+    idxOilVehicleDate,
   ];
+  @override
+  StreamQueryUpdateRules get streamUpdateRules => const StreamQueryUpdateRules([
+    WritePropagation(
+      on: TableUpdateQuery.onTableName(
+        'service_records',
+        limitUpdateKind: UpdateKind.delete,
+      ),
+      result: [TableUpdate('service_items', kind: UpdateKind.delete)],
+    ),
+  ]);
 }
 
 typedef $$SettingsTableCreateCompanionBuilder = SettingsCompanion Function({
@@ -4887,6 +7939,42 @@ final class $$VehiclesTableReferences
       manager.$state.copyWith(prefetchedData: cache),
     );
   }
+
+  static MultiTypedResultKey<$ServiceRecordsTable, List<ServiceRecordRow>>
+  _serviceRecordsRefsTable(_$AppDatabase db) => MultiTypedResultKey.fromTable(
+    db.serviceRecords,
+    aliasName: 'vehicles__id__service_records__vehicle_id',
+  );
+
+  $$ServiceRecordsTableProcessedTableManager get serviceRecordsRefs {
+    final manager = $$ServiceRecordsTableTableManager(
+      $_db,
+      $_db.serviceRecords,
+    ).filter((f) => f.vehicleId.id.sqlEquals($_itemColumn<String>('id')!));
+
+    final cache = $_typedResult.readTableOrNull(_serviceRecordsRefsTable($_db));
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: cache),
+    );
+  }
+
+  static MultiTypedResultKey<$OilChangesTable, List<OilChangeRow>>
+  _oilChangesRefsTable(_$AppDatabase db) => MultiTypedResultKey.fromTable(
+    db.oilChanges,
+    aliasName: 'vehicles__id__oil_changes__vehicle_id',
+  );
+
+  $$OilChangesTableProcessedTableManager get oilChangesRefs {
+    final manager = $$OilChangesTableTableManager(
+      $_db,
+      $_db.oilChanges,
+    ).filter((f) => f.vehicleId.id.sqlEquals($_itemColumn<String>('id')!));
+
+    final cache = $_typedResult.readTableOrNull(_oilChangesRefsTable($_db));
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: cache),
+    );
+  }
 }
 
 class $$VehiclesTableFilterComposer
@@ -5069,6 +8157,56 @@ class $$VehiclesTableFilterComposer
           }) => $$ExpensesTableFilterComposer(
             $db: $db,
             $table: $db.expenses,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
+
+  Expression<bool> serviceRecordsRefs(
+    Expression<bool> Function($$ServiceRecordsTableFilterComposer f) f,
+  ) {
+    final $$ServiceRecordsTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.serviceRecords,
+      getReferencedColumn: (t) => t.vehicleId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$ServiceRecordsTableFilterComposer(
+            $db: $db,
+            $table: $db.serviceRecords,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
+
+  Expression<bool> oilChangesRefs(
+    Expression<bool> Function($$OilChangesTableFilterComposer f) f,
+  ) {
+    final $$OilChangesTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.oilChanges,
+      getReferencedColumn: (t) => t.vehicleId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$OilChangesTableFilterComposer(
+            $db: $db,
+            $table: $db.oilChanges,
             $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
             joinBuilder: joinBuilder,
             $removeJoinBuilderFromRootComposer:
@@ -5360,6 +8498,56 @@ class $$VehiclesTableAnnotationComposer
     );
     return f(composer);
   }
+
+  Expression<T> serviceRecordsRefs<T extends Object>(
+    Expression<T> Function($$ServiceRecordsTableAnnotationComposer a) f,
+  ) {
+    final $$ServiceRecordsTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.serviceRecords,
+      getReferencedColumn: (t) => t.vehicleId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$ServiceRecordsTableAnnotationComposer(
+            $db: $db,
+            $table: $db.serviceRecords,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
+
+  Expression<T> oilChangesRefs<T extends Object>(
+    Expression<T> Function($$OilChangesTableAnnotationComposer a) f,
+  ) {
+    final $$OilChangesTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.oilChanges,
+      getReferencedColumn: (t) => t.vehicleId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$OilChangesTableAnnotationComposer(
+            $db: $db,
+            $table: $db.oilChanges,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
 }
 
 class $$VehiclesTableTableManager
@@ -5379,6 +8567,8 @@ class $$VehiclesTableTableManager
             bool odometerEntriesRefs,
             bool fuelEntriesRefs,
             bool expensesRefs,
+            bool serviceRecordsRefs,
+            bool oilChangesRefs,
           })
         > {
   $$VehiclesTableTableManager(_$AppDatabase db, $VehiclesTable table)
@@ -5501,6 +8691,8 @@ class $$VehiclesTableTableManager
                 odometerEntriesRefs = false,
                 fuelEntriesRefs = false,
                 expensesRefs = false,
+                serviceRecordsRefs = false,
+                oilChangesRefs = false,
               }) {
                 return PrefetchHooks(
                   db: db,
@@ -5508,6 +8700,8 @@ class $$VehiclesTableTableManager
                     if (odometerEntriesRefs) db.odometerEntries,
                     if (fuelEntriesRefs) db.fuelEntries,
                     if (expensesRefs) db.expenses,
+                    if (serviceRecordsRefs) db.serviceRecords,
+                    if (oilChangesRefs) db.oilChanges,
                   ],
                   addJoins: null,
                   getPrefetchedDataCallback: (items) async {
@@ -5575,6 +8769,48 @@ class $$VehiclesTableTableManager
                               ),
                           typedResults: items,
                         ),
+                      if (serviceRecordsRefs)
+                        await $_getPrefetchedData<
+                          VehicleRow,
+                          $VehiclesTable,
+                          ServiceRecordRow
+                        >(
+                          currentTable: table,
+                          referencedTable: $$VehiclesTableReferences
+                              ._serviceRecordsRefsTable(db),
+                          managerFromTypedResult: (p0) =>
+                              $$VehiclesTableReferences(
+                                db,
+                                table,
+                                p0,
+                              ).serviceRecordsRefs,
+                          referencedItemsForCurrentItem:
+                              (item, referencedItems) => referencedItems.where(
+                                (e) => e.vehicleId == item.id,
+                              ),
+                          typedResults: items,
+                        ),
+                      if (oilChangesRefs)
+                        await $_getPrefetchedData<
+                          VehicleRow,
+                          $VehiclesTable,
+                          OilChangeRow
+                        >(
+                          currentTable: table,
+                          referencedTable: $$VehiclesTableReferences
+                              ._oilChangesRefsTable(db),
+                          managerFromTypedResult: (p0) =>
+                              $$VehiclesTableReferences(
+                                db,
+                                table,
+                                p0,
+                              ).oilChangesRefs,
+                          referencedItemsForCurrentItem:
+                              (item, referencedItems) => referencedItems.where(
+                                (e) => e.vehicleId == item.id,
+                              ),
+                          typedResults: items,
+                        ),
                     ];
                   },
                 );
@@ -5599,6 +8835,8 @@ typedef $$VehiclesTableProcessedTableManager =
         bool odometerEntriesRefs,
         bool fuelEntriesRefs,
         bool expensesRefs,
+        bool serviceRecordsRefs,
+        bool oilChangesRefs,
       })
     >;
 typedef $$OdometerEntriesTableCreateCompanionBuilder =
@@ -7587,6 +10825,2252 @@ typedef $$ExpensesTableProcessedTableManager =
       ExpenseRow,
       PrefetchHooks Function({bool vehicleId, bool categoryId})
     >;
+typedef $$MaintenanceTemplatesTableCreateCompanionBuilder =
+    MaintenanceTemplatesCompanion Function({
+      required String id,
+      required String code,
+      required String nameEn,
+      required String nameBn,
+      Value<String> vehicleType,
+      Value<int?> defaultKmInterval,
+      Value<int?> defaultDayInterval,
+      Value<String> iconKey,
+      Value<bool> isSystem,
+      Value<bool> isActive,
+      Value<int> sortOrder,
+      required DateTime createdAt,
+      Value<int> rowid,
+    });
+typedef $$MaintenanceTemplatesTableUpdateCompanionBuilder =
+    MaintenanceTemplatesCompanion Function({
+      Value<String> id,
+      Value<String> code,
+      Value<String> nameEn,
+      Value<String> nameBn,
+      Value<String> vehicleType,
+      Value<int?> defaultKmInterval,
+      Value<int?> defaultDayInterval,
+      Value<String> iconKey,
+      Value<bool> isSystem,
+      Value<bool> isActive,
+      Value<int> sortOrder,
+      Value<DateTime> createdAt,
+      Value<int> rowid,
+    });
+
+final class $$MaintenanceTemplatesTableReferences
+    extends
+        BaseReferences<
+          _$AppDatabase,
+          $MaintenanceTemplatesTable,
+          MaintenanceTemplateRow
+        > {
+  $$MaintenanceTemplatesTableReferences(
+    super.$_db,
+    super.$_table,
+    super.$_typedResult,
+  );
+
+  static MultiTypedResultKey<$ServiceItemsTable, List<ServiceItemRow>>
+  _serviceItemsRefsTable(_$AppDatabase db) => MultiTypedResultKey.fromTable(
+    db.serviceItems,
+    aliasName: 'maintenance_templates__id__service_items__template_id',
+  );
+
+  $$ServiceItemsTableProcessedTableManager get serviceItemsRefs {
+    final manager = $$ServiceItemsTableTableManager(
+      $_db,
+      $_db.serviceItems,
+    ).filter((f) => f.templateId.id.sqlEquals($_itemColumn<String>('id')!));
+
+    final cache = $_typedResult.readTableOrNull(_serviceItemsRefsTable($_db));
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: cache),
+    );
+  }
+}
+
+class $$MaintenanceTemplatesTableFilterComposer
+    extends Composer<_$AppDatabase, $MaintenanceTemplatesTable> {
+  $$MaintenanceTemplatesTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get code => $composableBuilder(
+    column: $table.code,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get nameEn => $composableBuilder(
+    column: $table.nameEn,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get nameBn => $composableBuilder(
+    column: $table.nameBn,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get vehicleType => $composableBuilder(
+    column: $table.vehicleType,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get defaultKmInterval => $composableBuilder(
+    column: $table.defaultKmInterval,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get defaultDayInterval => $composableBuilder(
+    column: $table.defaultDayInterval,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get iconKey => $composableBuilder(
+    column: $table.iconKey,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<bool> get isSystem => $composableBuilder(
+    column: $table.isSystem,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<bool> get isActive => $composableBuilder(
+    column: $table.isActive,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get sortOrder => $composableBuilder(
+    column: $table.sortOrder,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  Expression<bool> serviceItemsRefs(
+    Expression<bool> Function($$ServiceItemsTableFilterComposer f) f,
+  ) {
+    final $$ServiceItemsTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.serviceItems,
+      getReferencedColumn: (t) => t.templateId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$ServiceItemsTableFilterComposer(
+            $db: $db,
+            $table: $db.serviceItems,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
+}
+
+class $$MaintenanceTemplatesTableOrderingComposer
+    extends Composer<_$AppDatabase, $MaintenanceTemplatesTable> {
+  $$MaintenanceTemplatesTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get code => $composableBuilder(
+    column: $table.code,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get nameEn => $composableBuilder(
+    column: $table.nameEn,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get nameBn => $composableBuilder(
+    column: $table.nameBn,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get vehicleType => $composableBuilder(
+    column: $table.vehicleType,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get defaultKmInterval => $composableBuilder(
+    column: $table.defaultKmInterval,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get defaultDayInterval => $composableBuilder(
+    column: $table.defaultDayInterval,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get iconKey => $composableBuilder(
+    column: $table.iconKey,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<bool> get isSystem => $composableBuilder(
+    column: $table.isSystem,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<bool> get isActive => $composableBuilder(
+    column: $table.isActive,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get sortOrder => $composableBuilder(
+    column: $table.sortOrder,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+}
+
+class $$MaintenanceTemplatesTableAnnotationComposer
+    extends Composer<_$AppDatabase, $MaintenanceTemplatesTable> {
+  $$MaintenanceTemplatesTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<String> get code =>
+      $composableBuilder(column: $table.code, builder: (column) => column);
+
+  GeneratedColumn<String> get nameEn =>
+      $composableBuilder(column: $table.nameEn, builder: (column) => column);
+
+  GeneratedColumn<String> get nameBn =>
+      $composableBuilder(column: $table.nameBn, builder: (column) => column);
+
+  GeneratedColumn<String> get vehicleType => $composableBuilder(
+    column: $table.vehicleType,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get defaultKmInterval => $composableBuilder(
+    column: $table.defaultKmInterval,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get defaultDayInterval => $composableBuilder(
+    column: $table.defaultDayInterval,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get iconKey =>
+      $composableBuilder(column: $table.iconKey, builder: (column) => column);
+
+  GeneratedColumn<bool> get isSystem =>
+      $composableBuilder(column: $table.isSystem, builder: (column) => column);
+
+  GeneratedColumn<bool> get isActive =>
+      $composableBuilder(column: $table.isActive, builder: (column) => column);
+
+  GeneratedColumn<int> get sortOrder =>
+      $composableBuilder(column: $table.sortOrder, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
+
+  Expression<T> serviceItemsRefs<T extends Object>(
+    Expression<T> Function($$ServiceItemsTableAnnotationComposer a) f,
+  ) {
+    final $$ServiceItemsTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.serviceItems,
+      getReferencedColumn: (t) => t.templateId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$ServiceItemsTableAnnotationComposer(
+            $db: $db,
+            $table: $db.serviceItems,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
+}
+
+class $$MaintenanceTemplatesTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $MaintenanceTemplatesTable,
+          MaintenanceTemplateRow,
+          $$MaintenanceTemplatesTableFilterComposer,
+          $$MaintenanceTemplatesTableOrderingComposer,
+          $$MaintenanceTemplatesTableAnnotationComposer,
+          $$MaintenanceTemplatesTableCreateCompanionBuilder,
+          $$MaintenanceTemplatesTableUpdateCompanionBuilder,
+          (MaintenanceTemplateRow, $$MaintenanceTemplatesTableReferences),
+          MaintenanceTemplateRow,
+          PrefetchHooks Function({bool serviceItemsRefs})
+        > {
+  $$MaintenanceTemplatesTableTableManager(
+    _$AppDatabase db,
+    $MaintenanceTemplatesTable table,
+  ) : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$MaintenanceTemplatesTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$MaintenanceTemplatesTableOrderingComposer(
+                $db: db,
+                $table: table,
+              ),
+          createComputedFieldComposer: () =>
+              $$MaintenanceTemplatesTableAnnotationComposer(
+                $db: db,
+                $table: table,
+              ),
+          updateCompanionCallback:
+              ({
+                Value<String> id = const Value.absent(),
+                Value<String> code = const Value.absent(),
+                Value<String> nameEn = const Value.absent(),
+                Value<String> nameBn = const Value.absent(),
+                Value<String> vehicleType = const Value.absent(),
+                Value<int?> defaultKmInterval = const Value.absent(),
+                Value<int?> defaultDayInterval = const Value.absent(),
+                Value<String> iconKey = const Value.absent(),
+                Value<bool> isSystem = const Value.absent(),
+                Value<bool> isActive = const Value.absent(),
+                Value<int> sortOrder = const Value.absent(),
+                Value<DateTime> createdAt = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => MaintenanceTemplatesCompanion(
+                id: id,
+                code: code,
+                nameEn: nameEn,
+                nameBn: nameBn,
+                vehicleType: vehicleType,
+                defaultKmInterval: defaultKmInterval,
+                defaultDayInterval: defaultDayInterval,
+                iconKey: iconKey,
+                isSystem: isSystem,
+                isActive: isActive,
+                sortOrder: sortOrder,
+                createdAt: createdAt,
+                rowid: rowid,
+              ),
+          createCompanionCallback:
+              ({
+                required String id,
+                required String code,
+                required String nameEn,
+                required String nameBn,
+                Value<String> vehicleType = const Value.absent(),
+                Value<int?> defaultKmInterval = const Value.absent(),
+                Value<int?> defaultDayInterval = const Value.absent(),
+                Value<String> iconKey = const Value.absent(),
+                Value<bool> isSystem = const Value.absent(),
+                Value<bool> isActive = const Value.absent(),
+                Value<int> sortOrder = const Value.absent(),
+                required DateTime createdAt,
+                Value<int> rowid = const Value.absent(),
+              }) => MaintenanceTemplatesCompanion.insert(
+                id: id,
+                code: code,
+                nameEn: nameEn,
+                nameBn: nameBn,
+                vehicleType: vehicleType,
+                defaultKmInterval: defaultKmInterval,
+                defaultDayInterval: defaultDayInterval,
+                iconKey: iconKey,
+                isSystem: isSystem,
+                isActive: isActive,
+                sortOrder: sortOrder,
+                createdAt: createdAt,
+                rowid: rowid,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map(
+                (e) => (
+                  e.readTable<
+                    $MaintenanceTemplatesTable,
+                    MaintenanceTemplateRow
+                  >(table),
+                  $$MaintenanceTemplatesTableReferences(db, table, e),
+                ),
+              )
+              .toList(),
+          prefetchHooksCallback: ({serviceItemsRefs = false}) {
+            return PrefetchHooks(
+              db: db,
+              explicitlyWatchedTables: [if (serviceItemsRefs) db.serviceItems],
+              addJoins: null,
+              getPrefetchedDataCallback: (items) async {
+                return [
+                  if (serviceItemsRefs)
+                    await $_getPrefetchedData<
+                      MaintenanceTemplateRow,
+                      $MaintenanceTemplatesTable,
+                      ServiceItemRow
+                    >(
+                      currentTable: table,
+                      referencedTable: $$MaintenanceTemplatesTableReferences
+                          ._serviceItemsRefsTable(db),
+                      managerFromTypedResult: (p0) =>
+                          $$MaintenanceTemplatesTableReferences(
+                            db,
+                            table,
+                            p0,
+                          ).serviceItemsRefs,
+                      referencedItemsForCurrentItem: (item, referencedItems) =>
+                          referencedItems.where((e) => e.templateId == item.id),
+                      typedResults: items,
+                    ),
+                ];
+              },
+            );
+          },
+        ),
+      );
+}
+
+typedef $$MaintenanceTemplatesTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $MaintenanceTemplatesTable,
+      MaintenanceTemplateRow,
+      $$MaintenanceTemplatesTableFilterComposer,
+      $$MaintenanceTemplatesTableOrderingComposer,
+      $$MaintenanceTemplatesTableAnnotationComposer,
+      $$MaintenanceTemplatesTableCreateCompanionBuilder,
+      $$MaintenanceTemplatesTableUpdateCompanionBuilder,
+      (MaintenanceTemplateRow, $$MaintenanceTemplatesTableReferences),
+      MaintenanceTemplateRow,
+      PrefetchHooks Function({bool serviceItemsRefs})
+    >;
+typedef $$ServiceRecordsTableCreateCompanionBuilder =
+    ServiceRecordsCompanion Function({
+      required String id,
+      required String vehicleId,
+      required DateTime serviceDate,
+      required int odometer,
+      Value<String?> vendorName,
+      Value<int> laborCostPaisa,
+      Value<int> partsCostPaisa,
+      Value<int> totalCostPaisa,
+      Value<DateTime?> nextDueDate,
+      Value<int?> nextDueOdometer,
+      Value<String?> note,
+      required DateTime createdAt,
+      required DateTime updatedAt,
+      Value<int> rowid,
+    });
+typedef $$ServiceRecordsTableUpdateCompanionBuilder =
+    ServiceRecordsCompanion Function({
+      Value<String> id,
+      Value<String> vehicleId,
+      Value<DateTime> serviceDate,
+      Value<int> odometer,
+      Value<String?> vendorName,
+      Value<int> laborCostPaisa,
+      Value<int> partsCostPaisa,
+      Value<int> totalCostPaisa,
+      Value<DateTime?> nextDueDate,
+      Value<int?> nextDueOdometer,
+      Value<String?> note,
+      Value<DateTime> createdAt,
+      Value<DateTime> updatedAt,
+      Value<int> rowid,
+    });
+
+final class $$ServiceRecordsTableReferences
+    extends
+        BaseReferences<_$AppDatabase, $ServiceRecordsTable, ServiceRecordRow> {
+  $$ServiceRecordsTableReferences(
+    super.$_db,
+    super.$_table,
+    super.$_typedResult,
+  );
+
+  static $VehiclesTable _vehicleIdTable(_$AppDatabase db) =>
+      db.vehicles.createAlias('service_records__vehicle_id__vehicles__id');
+
+  $$VehiclesTableProcessedTableManager get vehicleId {
+    final $_column = $_itemColumn<String>('vehicle_id')!;
+
+    final manager = $$VehiclesTableTableManager(
+      $_db,
+      $_db.vehicles,
+    ).filter((f) => f.id.sqlEquals($_column));
+    final item = $_typedResult.readTableOrNull(_vehicleIdTable($_db));
+    if (item == null) return manager;
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: [item]),
+    );
+  }
+
+  static MultiTypedResultKey<$ServiceItemsTable, List<ServiceItemRow>>
+  _serviceItemsRefsTable(_$AppDatabase db) => MultiTypedResultKey.fromTable(
+    db.serviceItems,
+    aliasName: 'service_records__id__service_items__service_record_id',
+  );
+
+  $$ServiceItemsTableProcessedTableManager get serviceItemsRefs {
+    final manager = $$ServiceItemsTableTableManager($_db, $_db.serviceItems)
+        .filter(
+          (f) => f.serviceRecordId.id.sqlEquals($_itemColumn<String>('id')!),
+        );
+
+    final cache = $_typedResult.readTableOrNull(_serviceItemsRefsTable($_db));
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: cache),
+    );
+  }
+
+  static MultiTypedResultKey<$OilChangesTable, List<OilChangeRow>>
+  _oilChangesRefsTable(_$AppDatabase db) => MultiTypedResultKey.fromTable(
+    db.oilChanges,
+    aliasName: 'service_records__id__oil_changes__service_record_id',
+  );
+
+  $$OilChangesTableProcessedTableManager get oilChangesRefs {
+    final manager = $$OilChangesTableTableManager($_db, $_db.oilChanges).filter(
+      (f) => f.serviceRecordId.id.sqlEquals($_itemColumn<String>('id')!),
+    );
+
+    final cache = $_typedResult.readTableOrNull(_oilChangesRefsTable($_db));
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: cache),
+    );
+  }
+}
+
+class $$ServiceRecordsTableFilterComposer
+    extends Composer<_$AppDatabase, $ServiceRecordsTable> {
+  $$ServiceRecordsTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get serviceDate => $composableBuilder(
+    column: $table.serviceDate,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get odometer => $composableBuilder(
+    column: $table.odometer,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get vendorName => $composableBuilder(
+    column: $table.vendorName,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get laborCostPaisa => $composableBuilder(
+    column: $table.laborCostPaisa,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get partsCostPaisa => $composableBuilder(
+    column: $table.partsCostPaisa,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get totalCostPaisa => $composableBuilder(
+    column: $table.totalCostPaisa,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get nextDueDate => $composableBuilder(
+    column: $table.nextDueDate,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get nextDueOdometer => $composableBuilder(
+    column: $table.nextDueOdometer,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get note => $composableBuilder(
+    column: $table.note,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get updatedAt => $composableBuilder(
+    column: $table.updatedAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  $$VehiclesTableFilterComposer get vehicleId {
+    final $$VehiclesTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.vehicleId,
+      referencedTable: $db.vehicles,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$VehiclesTableFilterComposer(
+            $db: $db,
+            $table: $db.vehicles,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+
+  Expression<bool> serviceItemsRefs(
+    Expression<bool> Function($$ServiceItemsTableFilterComposer f) f,
+  ) {
+    final $$ServiceItemsTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.serviceItems,
+      getReferencedColumn: (t) => t.serviceRecordId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$ServiceItemsTableFilterComposer(
+            $db: $db,
+            $table: $db.serviceItems,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
+
+  Expression<bool> oilChangesRefs(
+    Expression<bool> Function($$OilChangesTableFilterComposer f) f,
+  ) {
+    final $$OilChangesTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.oilChanges,
+      getReferencedColumn: (t) => t.serviceRecordId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$OilChangesTableFilterComposer(
+            $db: $db,
+            $table: $db.oilChanges,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
+}
+
+class $$ServiceRecordsTableOrderingComposer
+    extends Composer<_$AppDatabase, $ServiceRecordsTable> {
+  $$ServiceRecordsTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get serviceDate => $composableBuilder(
+    column: $table.serviceDate,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get odometer => $composableBuilder(
+    column: $table.odometer,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get vendorName => $composableBuilder(
+    column: $table.vendorName,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get laborCostPaisa => $composableBuilder(
+    column: $table.laborCostPaisa,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get partsCostPaisa => $composableBuilder(
+    column: $table.partsCostPaisa,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get totalCostPaisa => $composableBuilder(
+    column: $table.totalCostPaisa,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get nextDueDate => $composableBuilder(
+    column: $table.nextDueDate,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get nextDueOdometer => $composableBuilder(
+    column: $table.nextDueOdometer,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get note => $composableBuilder(
+    column: $table.note,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get updatedAt => $composableBuilder(
+    column: $table.updatedAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  $$VehiclesTableOrderingComposer get vehicleId {
+    final $$VehiclesTableOrderingComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.vehicleId,
+      referencedTable: $db.vehicles,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$VehiclesTableOrderingComposer(
+            $db: $db,
+            $table: $db.vehicles,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$ServiceRecordsTableAnnotationComposer
+    extends Composer<_$AppDatabase, $ServiceRecordsTable> {
+  $$ServiceRecordsTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get serviceDate => $composableBuilder(
+    column: $table.serviceDate,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get odometer =>
+      $composableBuilder(column: $table.odometer, builder: (column) => column);
+
+  GeneratedColumn<String> get vendorName => $composableBuilder(
+    column: $table.vendorName,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get laborCostPaisa => $composableBuilder(
+    column: $table.laborCostPaisa,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get partsCostPaisa => $composableBuilder(
+    column: $table.partsCostPaisa,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get totalCostPaisa => $composableBuilder(
+    column: $table.totalCostPaisa,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<DateTime> get nextDueDate => $composableBuilder(
+    column: $table.nextDueDate,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get nextDueOdometer => $composableBuilder(
+    column: $table.nextDueOdometer,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get note =>
+      $composableBuilder(column: $table.note, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get updatedAt =>
+      $composableBuilder(column: $table.updatedAt, builder: (column) => column);
+
+  $$VehiclesTableAnnotationComposer get vehicleId {
+    final $$VehiclesTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.vehicleId,
+      referencedTable: $db.vehicles,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$VehiclesTableAnnotationComposer(
+            $db: $db,
+            $table: $db.vehicles,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+
+  Expression<T> serviceItemsRefs<T extends Object>(
+    Expression<T> Function($$ServiceItemsTableAnnotationComposer a) f,
+  ) {
+    final $$ServiceItemsTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.serviceItems,
+      getReferencedColumn: (t) => t.serviceRecordId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$ServiceItemsTableAnnotationComposer(
+            $db: $db,
+            $table: $db.serviceItems,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
+
+  Expression<T> oilChangesRefs<T extends Object>(
+    Expression<T> Function($$OilChangesTableAnnotationComposer a) f,
+  ) {
+    final $$OilChangesTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.oilChanges,
+      getReferencedColumn: (t) => t.serviceRecordId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$OilChangesTableAnnotationComposer(
+            $db: $db,
+            $table: $db.oilChanges,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
+}
+
+class $$ServiceRecordsTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $ServiceRecordsTable,
+          ServiceRecordRow,
+          $$ServiceRecordsTableFilterComposer,
+          $$ServiceRecordsTableOrderingComposer,
+          $$ServiceRecordsTableAnnotationComposer,
+          $$ServiceRecordsTableCreateCompanionBuilder,
+          $$ServiceRecordsTableUpdateCompanionBuilder,
+          (ServiceRecordRow, $$ServiceRecordsTableReferences),
+          ServiceRecordRow,
+          PrefetchHooks Function({
+            bool vehicleId,
+            bool serviceItemsRefs,
+            bool oilChangesRefs,
+          })
+        > {
+  $$ServiceRecordsTableTableManager(
+    _$AppDatabase db,
+    $ServiceRecordsTable table,
+  ) : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$ServiceRecordsTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$ServiceRecordsTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$ServiceRecordsTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<String> id = const Value.absent(),
+                Value<String> vehicleId = const Value.absent(),
+                Value<DateTime> serviceDate = const Value.absent(),
+                Value<int> odometer = const Value.absent(),
+                Value<String?> vendorName = const Value.absent(),
+                Value<int> laborCostPaisa = const Value.absent(),
+                Value<int> partsCostPaisa = const Value.absent(),
+                Value<int> totalCostPaisa = const Value.absent(),
+                Value<DateTime?> nextDueDate = const Value.absent(),
+                Value<int?> nextDueOdometer = const Value.absent(),
+                Value<String?> note = const Value.absent(),
+                Value<DateTime> createdAt = const Value.absent(),
+                Value<DateTime> updatedAt = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => ServiceRecordsCompanion(
+                id: id,
+                vehicleId: vehicleId,
+                serviceDate: serviceDate,
+                odometer: odometer,
+                vendorName: vendorName,
+                laborCostPaisa: laborCostPaisa,
+                partsCostPaisa: partsCostPaisa,
+                totalCostPaisa: totalCostPaisa,
+                nextDueDate: nextDueDate,
+                nextDueOdometer: nextDueOdometer,
+                note: note,
+                createdAt: createdAt,
+                updatedAt: updatedAt,
+                rowid: rowid,
+              ),
+          createCompanionCallback:
+              ({
+                required String id,
+                required String vehicleId,
+                required DateTime serviceDate,
+                required int odometer,
+                Value<String?> vendorName = const Value.absent(),
+                Value<int> laborCostPaisa = const Value.absent(),
+                Value<int> partsCostPaisa = const Value.absent(),
+                Value<int> totalCostPaisa = const Value.absent(),
+                Value<DateTime?> nextDueDate = const Value.absent(),
+                Value<int?> nextDueOdometer = const Value.absent(),
+                Value<String?> note = const Value.absent(),
+                required DateTime createdAt,
+                required DateTime updatedAt,
+                Value<int> rowid = const Value.absent(),
+              }) => ServiceRecordsCompanion.insert(
+                id: id,
+                vehicleId: vehicleId,
+                serviceDate: serviceDate,
+                odometer: odometer,
+                vendorName: vendorName,
+                laborCostPaisa: laborCostPaisa,
+                partsCostPaisa: partsCostPaisa,
+                totalCostPaisa: totalCostPaisa,
+                nextDueDate: nextDueDate,
+                nextDueOdometer: nextDueOdometer,
+                note: note,
+                createdAt: createdAt,
+                updatedAt: updatedAt,
+                rowid: rowid,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map(
+                (e) => (
+                  e.readTable<$ServiceRecordsTable, ServiceRecordRow>(table),
+                  $$ServiceRecordsTableReferences(db, table, e),
+                ),
+              )
+              .toList(),
+          prefetchHooksCallback:
+              ({
+                vehicleId = false,
+                serviceItemsRefs = false,
+                oilChangesRefs = false,
+              }) {
+                return PrefetchHooks(
+                  db: db,
+                  explicitlyWatchedTables: [
+                    if (serviceItemsRefs) db.serviceItems,
+                    if (oilChangesRefs) db.oilChanges,
+                  ],
+                  addJoins:
+                      <
+                        T extends TableManagerState<
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic
+                        >
+                      >(state) {
+                        if (vehicleId) {
+                          state = state.withJoin(
+                            currentTable: table,
+                            currentColumn: table.vehicleId,
+                            referencedTable: $$ServiceRecordsTableReferences
+                                ._vehicleIdTable(db),
+                            referencedColumn: $$ServiceRecordsTableReferences
+                                ._vehicleIdTable(db)
+                                .id,
+                          ) as T;
+                        }
+
+                        return state;
+                      },
+                  getPrefetchedDataCallback: (items) async {
+                    return [
+                      if (serviceItemsRefs)
+                        await $_getPrefetchedData<
+                          ServiceRecordRow,
+                          $ServiceRecordsTable,
+                          ServiceItemRow
+                        >(
+                          currentTable: table,
+                          referencedTable: $$ServiceRecordsTableReferences
+                              ._serviceItemsRefsTable(db),
+                          managerFromTypedResult: (p0) =>
+                              $$ServiceRecordsTableReferences(
+                                db,
+                                table,
+                                p0,
+                              ).serviceItemsRefs,
+                          referencedItemsForCurrentItem:
+                              (item, referencedItems) => referencedItems.where(
+                                (e) => e.serviceRecordId == item.id,
+                              ),
+                          typedResults: items,
+                        ),
+                      if (oilChangesRefs)
+                        await $_getPrefetchedData<
+                          ServiceRecordRow,
+                          $ServiceRecordsTable,
+                          OilChangeRow
+                        >(
+                          currentTable: table,
+                          referencedTable: $$ServiceRecordsTableReferences
+                              ._oilChangesRefsTable(db),
+                          managerFromTypedResult: (p0) =>
+                              $$ServiceRecordsTableReferences(
+                                db,
+                                table,
+                                p0,
+                              ).oilChangesRefs,
+                          referencedItemsForCurrentItem:
+                              (item, referencedItems) => referencedItems.where(
+                                (e) => e.serviceRecordId == item.id,
+                              ),
+                          typedResults: items,
+                        ),
+                    ];
+                  },
+                );
+              },
+        ),
+      );
+}
+
+typedef $$ServiceRecordsTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $ServiceRecordsTable,
+      ServiceRecordRow,
+      $$ServiceRecordsTableFilterComposer,
+      $$ServiceRecordsTableOrderingComposer,
+      $$ServiceRecordsTableAnnotationComposer,
+      $$ServiceRecordsTableCreateCompanionBuilder,
+      $$ServiceRecordsTableUpdateCompanionBuilder,
+      (ServiceRecordRow, $$ServiceRecordsTableReferences),
+      ServiceRecordRow,
+      PrefetchHooks Function({
+        bool vehicleId,
+        bool serviceItemsRefs,
+        bool oilChangesRefs,
+      })
+    >;
+typedef $$ServiceItemsTableCreateCompanionBuilder =
+    ServiceItemsCompanion Function({
+      required String id,
+      required String serviceRecordId,
+      Value<String?> templateId,
+      required String maintenanceType,
+      required String title,
+      Value<int> costPaisa,
+      Value<double> quantity,
+      Value<String?> note,
+      Value<int> rowid,
+    });
+typedef $$ServiceItemsTableUpdateCompanionBuilder =
+    ServiceItemsCompanion Function({
+      Value<String> id,
+      Value<String> serviceRecordId,
+      Value<String?> templateId,
+      Value<String> maintenanceType,
+      Value<String> title,
+      Value<int> costPaisa,
+      Value<double> quantity,
+      Value<String?> note,
+      Value<int> rowid,
+    });
+
+final class $$ServiceItemsTableReferences
+    extends BaseReferences<_$AppDatabase, $ServiceItemsTable, ServiceItemRow> {
+  $$ServiceItemsTableReferences(super.$_db, super.$_table, super.$_typedResult);
+
+  static $ServiceRecordsTable _serviceRecordIdTable(_$AppDatabase db) => db
+      .serviceRecords
+      .createAlias('service_items__service_record_id__service_records__id');
+
+  $$ServiceRecordsTableProcessedTableManager get serviceRecordId {
+    final $_column = $_itemColumn<String>('service_record_id')!;
+
+    final manager = $$ServiceRecordsTableTableManager(
+      $_db,
+      $_db.serviceRecords,
+    ).filter((f) => f.id.sqlEquals($_column));
+    final item = $_typedResult.readTableOrNull(_serviceRecordIdTable($_db));
+    if (item == null) return manager;
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: [item]),
+    );
+  }
+
+  static $MaintenanceTemplatesTable _templateIdTable(_$AppDatabase db) => db
+      .maintenanceTemplates
+      .createAlias('service_items__template_id__maintenance_templates__id');
+
+  $$MaintenanceTemplatesTableProcessedTableManager? get templateId {
+    final $_column = $_itemColumn<String>('template_id');
+    if ($_column == null) return null;
+    final manager = $$MaintenanceTemplatesTableTableManager(
+      $_db,
+      $_db.maintenanceTemplates,
+    ).filter((f) => f.id.sqlEquals($_column));
+    final item = $_typedResult.readTableOrNull(_templateIdTable($_db));
+    if (item == null) return manager;
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: [item]),
+    );
+  }
+}
+
+class $$ServiceItemsTableFilterComposer
+    extends Composer<_$AppDatabase, $ServiceItemsTable> {
+  $$ServiceItemsTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get maintenanceType => $composableBuilder(
+    column: $table.maintenanceType,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get title => $composableBuilder(
+    column: $table.title,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get costPaisa => $composableBuilder(
+    column: $table.costPaisa,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<double> get quantity => $composableBuilder(
+    column: $table.quantity,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get note => $composableBuilder(
+    column: $table.note,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  $$ServiceRecordsTableFilterComposer get serviceRecordId {
+    final $$ServiceRecordsTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.serviceRecordId,
+      referencedTable: $db.serviceRecords,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$ServiceRecordsTableFilterComposer(
+            $db: $db,
+            $table: $db.serviceRecords,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+
+  $$MaintenanceTemplatesTableFilterComposer get templateId {
+    final $$MaintenanceTemplatesTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.templateId,
+      referencedTable: $db.maintenanceTemplates,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$MaintenanceTemplatesTableFilterComposer(
+            $db: $db,
+            $table: $db.maintenanceTemplates,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$ServiceItemsTableOrderingComposer
+    extends Composer<_$AppDatabase, $ServiceItemsTable> {
+  $$ServiceItemsTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get maintenanceType => $composableBuilder(
+    column: $table.maintenanceType,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get title => $composableBuilder(
+    column: $table.title,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get costPaisa => $composableBuilder(
+    column: $table.costPaisa,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<double> get quantity => $composableBuilder(
+    column: $table.quantity,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get note => $composableBuilder(
+    column: $table.note,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  $$ServiceRecordsTableOrderingComposer get serviceRecordId {
+    final $$ServiceRecordsTableOrderingComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.serviceRecordId,
+      referencedTable: $db.serviceRecords,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$ServiceRecordsTableOrderingComposer(
+            $db: $db,
+            $table: $db.serviceRecords,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+
+  $$MaintenanceTemplatesTableOrderingComposer get templateId {
+    final $$MaintenanceTemplatesTableOrderingComposer composer =
+        $composerBuilder(
+          composer: this,
+          getCurrentColumn: (t) => t.templateId,
+          referencedTable: $db.maintenanceTemplates,
+          getReferencedColumn: (t) => t.id,
+          builder:
+              (
+                joinBuilder, {
+                $addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer,
+              }) => $$MaintenanceTemplatesTableOrderingComposer(
+                $db: $db,
+                $table: $db.maintenanceTemplates,
+                $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+                joinBuilder: joinBuilder,
+                $removeJoinBuilderFromRootComposer:
+                    $removeJoinBuilderFromRootComposer,
+              ),
+        );
+    return composer;
+  }
+}
+
+class $$ServiceItemsTableAnnotationComposer
+    extends Composer<_$AppDatabase, $ServiceItemsTable> {
+  $$ServiceItemsTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<String> get maintenanceType => $composableBuilder(
+    column: $table.maintenanceType,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get title =>
+      $composableBuilder(column: $table.title, builder: (column) => column);
+
+  GeneratedColumn<int> get costPaisa =>
+      $composableBuilder(column: $table.costPaisa, builder: (column) => column);
+
+  GeneratedColumn<double> get quantity =>
+      $composableBuilder(column: $table.quantity, builder: (column) => column);
+
+  GeneratedColumn<String> get note =>
+      $composableBuilder(column: $table.note, builder: (column) => column);
+
+  $$ServiceRecordsTableAnnotationComposer get serviceRecordId {
+    final $$ServiceRecordsTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.serviceRecordId,
+      referencedTable: $db.serviceRecords,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$ServiceRecordsTableAnnotationComposer(
+            $db: $db,
+            $table: $db.serviceRecords,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+
+  $$MaintenanceTemplatesTableAnnotationComposer get templateId {
+    final $$MaintenanceTemplatesTableAnnotationComposer composer =
+        $composerBuilder(
+          composer: this,
+          getCurrentColumn: (t) => t.templateId,
+          referencedTable: $db.maintenanceTemplates,
+          getReferencedColumn: (t) => t.id,
+          builder:
+              (
+                joinBuilder, {
+                $addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer,
+              }) => $$MaintenanceTemplatesTableAnnotationComposer(
+                $db: $db,
+                $table: $db.maintenanceTemplates,
+                $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+                joinBuilder: joinBuilder,
+                $removeJoinBuilderFromRootComposer:
+                    $removeJoinBuilderFromRootComposer,
+              ),
+        );
+    return composer;
+  }
+}
+
+class $$ServiceItemsTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $ServiceItemsTable,
+          ServiceItemRow,
+          $$ServiceItemsTableFilterComposer,
+          $$ServiceItemsTableOrderingComposer,
+          $$ServiceItemsTableAnnotationComposer,
+          $$ServiceItemsTableCreateCompanionBuilder,
+          $$ServiceItemsTableUpdateCompanionBuilder,
+          (ServiceItemRow, $$ServiceItemsTableReferences),
+          ServiceItemRow,
+          PrefetchHooks Function({bool serviceRecordId, bool templateId})
+        > {
+  $$ServiceItemsTableTableManager(_$AppDatabase db, $ServiceItemsTable table)
+    : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$ServiceItemsTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$ServiceItemsTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$ServiceItemsTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<String> id = const Value.absent(),
+                Value<String> serviceRecordId = const Value.absent(),
+                Value<String?> templateId = const Value.absent(),
+                Value<String> maintenanceType = const Value.absent(),
+                Value<String> title = const Value.absent(),
+                Value<int> costPaisa = const Value.absent(),
+                Value<double> quantity = const Value.absent(),
+                Value<String?> note = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => ServiceItemsCompanion(
+                id: id,
+                serviceRecordId: serviceRecordId,
+                templateId: templateId,
+                maintenanceType: maintenanceType,
+                title: title,
+                costPaisa: costPaisa,
+                quantity: quantity,
+                note: note,
+                rowid: rowid,
+              ),
+          createCompanionCallback:
+              ({
+                required String id,
+                required String serviceRecordId,
+                Value<String?> templateId = const Value.absent(),
+                required String maintenanceType,
+                required String title,
+                Value<int> costPaisa = const Value.absent(),
+                Value<double> quantity = const Value.absent(),
+                Value<String?> note = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => ServiceItemsCompanion.insert(
+                id: id,
+                serviceRecordId: serviceRecordId,
+                templateId: templateId,
+                maintenanceType: maintenanceType,
+                title: title,
+                costPaisa: costPaisa,
+                quantity: quantity,
+                note: note,
+                rowid: rowid,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map(
+                (e) => (
+                  e.readTable<$ServiceItemsTable, ServiceItemRow>(table),
+                  $$ServiceItemsTableReferences(db, table, e),
+                ),
+              )
+              .toList(),
+          prefetchHooksCallback:
+              ({serviceRecordId = false, templateId = false}) {
+                return PrefetchHooks(
+                  db: db,
+                  explicitlyWatchedTables: [],
+                  addJoins:
+                      <
+                        T extends TableManagerState<
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic
+                        >
+                      >(state) {
+                        if (serviceRecordId) {
+                          state = state.withJoin(
+                            currentTable: table,
+                            currentColumn: table.serviceRecordId,
+                            referencedTable: $$ServiceItemsTableReferences
+                                ._serviceRecordIdTable(db),
+                            referencedColumn: $$ServiceItemsTableReferences
+                                ._serviceRecordIdTable(db)
+                                .id,
+                          ) as T;
+                        }
+                        if (templateId) {
+                          state = state.withJoin(
+                            currentTable: table,
+                            currentColumn: table.templateId,
+                            referencedTable: $$ServiceItemsTableReferences
+                                ._templateIdTable(db),
+                            referencedColumn: $$ServiceItemsTableReferences
+                                ._templateIdTable(db)
+                                .id,
+                          ) as T;
+                        }
+
+                        return state;
+                      },
+                  getPrefetchedDataCallback: (items) async {
+                    return [];
+                  },
+                );
+              },
+        ),
+      );
+}
+
+typedef $$ServiceItemsTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $ServiceItemsTable,
+      ServiceItemRow,
+      $$ServiceItemsTableFilterComposer,
+      $$ServiceItemsTableOrderingComposer,
+      $$ServiceItemsTableAnnotationComposer,
+      $$ServiceItemsTableCreateCompanionBuilder,
+      $$ServiceItemsTableUpdateCompanionBuilder,
+      (ServiceItemRow, $$ServiceItemsTableReferences),
+      ServiceItemRow,
+      PrefetchHooks Function({bool serviceRecordId, bool templateId})
+    >;
+typedef $$OilChangesTableCreateCompanionBuilder = OilChangesCompanion Function({
+  required String id,
+  required String vehicleId,
+  required DateTime occurredOn,
+  required int odometer,
+  Value<String?> brand,
+  Value<String?> productName,
+  Value<String?> viscosity,
+  Value<int?> quantityMl,
+  Value<int> costPaisa,
+  Value<bool> filterChanged,
+  Value<String?> vendorName,
+  Value<DateTime?> nextDueDate,
+  Value<int?> nextDueOdometer,
+  Value<String?> note,
+  Value<String?> serviceRecordId,
+  required DateTime createdAt,
+  required DateTime updatedAt,
+  Value<int> rowid,
+});
+typedef $$OilChangesTableUpdateCompanionBuilder = OilChangesCompanion Function({
+  Value<String> id,
+  Value<String> vehicleId,
+  Value<DateTime> occurredOn,
+  Value<int> odometer,
+  Value<String?> brand,
+  Value<String?> productName,
+  Value<String?> viscosity,
+  Value<int?> quantityMl,
+  Value<int> costPaisa,
+  Value<bool> filterChanged,
+  Value<String?> vendorName,
+  Value<DateTime?> nextDueDate,
+  Value<int?> nextDueOdometer,
+  Value<String?> note,
+  Value<String?> serviceRecordId,
+  Value<DateTime> createdAt,
+  Value<DateTime> updatedAt,
+  Value<int> rowid,
+});
+
+final class $$OilChangesTableReferences
+    extends BaseReferences<_$AppDatabase, $OilChangesTable, OilChangeRow> {
+  $$OilChangesTableReferences(super.$_db, super.$_table, super.$_typedResult);
+
+  static $VehiclesTable _vehicleIdTable(_$AppDatabase db) =>
+      db.vehicles.createAlias('oil_changes__vehicle_id__vehicles__id');
+
+  $$VehiclesTableProcessedTableManager get vehicleId {
+    final $_column = $_itemColumn<String>('vehicle_id')!;
+
+    final manager = $$VehiclesTableTableManager(
+      $_db,
+      $_db.vehicles,
+    ).filter((f) => f.id.sqlEquals($_column));
+    final item = $_typedResult.readTableOrNull(_vehicleIdTable($_db));
+    if (item == null) return manager;
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: [item]),
+    );
+  }
+
+  static $ServiceRecordsTable _serviceRecordIdTable(_$AppDatabase db) => db
+      .serviceRecords
+      .createAlias('oil_changes__service_record_id__service_records__id');
+
+  $$ServiceRecordsTableProcessedTableManager? get serviceRecordId {
+    final $_column = $_itemColumn<String>('service_record_id');
+    if ($_column == null) return null;
+    final manager = $$ServiceRecordsTableTableManager(
+      $_db,
+      $_db.serviceRecords,
+    ).filter((f) => f.id.sqlEquals($_column));
+    final item = $_typedResult.readTableOrNull(_serviceRecordIdTable($_db));
+    if (item == null) return manager;
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: [item]),
+    );
+  }
+}
+
+class $$OilChangesTableFilterComposer
+    extends Composer<_$AppDatabase, $OilChangesTable> {
+  $$OilChangesTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get occurredOn => $composableBuilder(
+    column: $table.occurredOn,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get odometer => $composableBuilder(
+    column: $table.odometer,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get brand => $composableBuilder(
+    column: $table.brand,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get productName => $composableBuilder(
+    column: $table.productName,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get viscosity => $composableBuilder(
+    column: $table.viscosity,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get quantityMl => $composableBuilder(
+    column: $table.quantityMl,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get costPaisa => $composableBuilder(
+    column: $table.costPaisa,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<bool> get filterChanged => $composableBuilder(
+    column: $table.filterChanged,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get vendorName => $composableBuilder(
+    column: $table.vendorName,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get nextDueDate => $composableBuilder(
+    column: $table.nextDueDate,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get nextDueOdometer => $composableBuilder(
+    column: $table.nextDueOdometer,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get note => $composableBuilder(
+    column: $table.note,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get updatedAt => $composableBuilder(
+    column: $table.updatedAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  $$VehiclesTableFilterComposer get vehicleId {
+    final $$VehiclesTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.vehicleId,
+      referencedTable: $db.vehicles,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$VehiclesTableFilterComposer(
+            $db: $db,
+            $table: $db.vehicles,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+
+  $$ServiceRecordsTableFilterComposer get serviceRecordId {
+    final $$ServiceRecordsTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.serviceRecordId,
+      referencedTable: $db.serviceRecords,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$ServiceRecordsTableFilterComposer(
+            $db: $db,
+            $table: $db.serviceRecords,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$OilChangesTableOrderingComposer
+    extends Composer<_$AppDatabase, $OilChangesTable> {
+  $$OilChangesTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get occurredOn => $composableBuilder(
+    column: $table.occurredOn,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get odometer => $composableBuilder(
+    column: $table.odometer,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get brand => $composableBuilder(
+    column: $table.brand,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get productName => $composableBuilder(
+    column: $table.productName,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get viscosity => $composableBuilder(
+    column: $table.viscosity,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get quantityMl => $composableBuilder(
+    column: $table.quantityMl,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get costPaisa => $composableBuilder(
+    column: $table.costPaisa,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<bool> get filterChanged => $composableBuilder(
+    column: $table.filterChanged,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get vendorName => $composableBuilder(
+    column: $table.vendorName,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get nextDueDate => $composableBuilder(
+    column: $table.nextDueDate,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get nextDueOdometer => $composableBuilder(
+    column: $table.nextDueOdometer,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get note => $composableBuilder(
+    column: $table.note,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get updatedAt => $composableBuilder(
+    column: $table.updatedAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  $$VehiclesTableOrderingComposer get vehicleId {
+    final $$VehiclesTableOrderingComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.vehicleId,
+      referencedTable: $db.vehicles,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$VehiclesTableOrderingComposer(
+            $db: $db,
+            $table: $db.vehicles,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+
+  $$ServiceRecordsTableOrderingComposer get serviceRecordId {
+    final $$ServiceRecordsTableOrderingComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.serviceRecordId,
+      referencedTable: $db.serviceRecords,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$ServiceRecordsTableOrderingComposer(
+            $db: $db,
+            $table: $db.serviceRecords,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$OilChangesTableAnnotationComposer
+    extends Composer<_$AppDatabase, $OilChangesTable> {
+  $$OilChangesTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get occurredOn => $composableBuilder(
+    column: $table.occurredOn,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get odometer =>
+      $composableBuilder(column: $table.odometer, builder: (column) => column);
+
+  GeneratedColumn<String> get brand =>
+      $composableBuilder(column: $table.brand, builder: (column) => column);
+
+  GeneratedColumn<String> get productName => $composableBuilder(
+    column: $table.productName,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get viscosity =>
+      $composableBuilder(column: $table.viscosity, builder: (column) => column);
+
+  GeneratedColumn<int> get quantityMl => $composableBuilder(
+    column: $table.quantityMl,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get costPaisa =>
+      $composableBuilder(column: $table.costPaisa, builder: (column) => column);
+
+  GeneratedColumn<bool> get filterChanged => $composableBuilder(
+    column: $table.filterChanged,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get vendorName => $composableBuilder(
+    column: $table.vendorName,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<DateTime> get nextDueDate => $composableBuilder(
+    column: $table.nextDueDate,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get nextDueOdometer => $composableBuilder(
+    column: $table.nextDueOdometer,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get note =>
+      $composableBuilder(column: $table.note, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get updatedAt =>
+      $composableBuilder(column: $table.updatedAt, builder: (column) => column);
+
+  $$VehiclesTableAnnotationComposer get vehicleId {
+    final $$VehiclesTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.vehicleId,
+      referencedTable: $db.vehicles,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$VehiclesTableAnnotationComposer(
+            $db: $db,
+            $table: $db.vehicles,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+
+  $$ServiceRecordsTableAnnotationComposer get serviceRecordId {
+    final $$ServiceRecordsTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.serviceRecordId,
+      referencedTable: $db.serviceRecords,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$ServiceRecordsTableAnnotationComposer(
+            $db: $db,
+            $table: $db.serviceRecords,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$OilChangesTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $OilChangesTable,
+          OilChangeRow,
+          $$OilChangesTableFilterComposer,
+          $$OilChangesTableOrderingComposer,
+          $$OilChangesTableAnnotationComposer,
+          $$OilChangesTableCreateCompanionBuilder,
+          $$OilChangesTableUpdateCompanionBuilder,
+          (OilChangeRow, $$OilChangesTableReferences),
+          OilChangeRow,
+          PrefetchHooks Function({bool vehicleId, bool serviceRecordId})
+        > {
+  $$OilChangesTableTableManager(_$AppDatabase db, $OilChangesTable table)
+    : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$OilChangesTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$OilChangesTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$OilChangesTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<String> id = const Value.absent(),
+                Value<String> vehicleId = const Value.absent(),
+                Value<DateTime> occurredOn = const Value.absent(),
+                Value<int> odometer = const Value.absent(),
+                Value<String?> brand = const Value.absent(),
+                Value<String?> productName = const Value.absent(),
+                Value<String?> viscosity = const Value.absent(),
+                Value<int?> quantityMl = const Value.absent(),
+                Value<int> costPaisa = const Value.absent(),
+                Value<bool> filterChanged = const Value.absent(),
+                Value<String?> vendorName = const Value.absent(),
+                Value<DateTime?> nextDueDate = const Value.absent(),
+                Value<int?> nextDueOdometer = const Value.absent(),
+                Value<String?> note = const Value.absent(),
+                Value<String?> serviceRecordId = const Value.absent(),
+                Value<DateTime> createdAt = const Value.absent(),
+                Value<DateTime> updatedAt = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => OilChangesCompanion(
+                id: id,
+                vehicleId: vehicleId,
+                occurredOn: occurredOn,
+                odometer: odometer,
+                brand: brand,
+                productName: productName,
+                viscosity: viscosity,
+                quantityMl: quantityMl,
+                costPaisa: costPaisa,
+                filterChanged: filterChanged,
+                vendorName: vendorName,
+                nextDueDate: nextDueDate,
+                nextDueOdometer: nextDueOdometer,
+                note: note,
+                serviceRecordId: serviceRecordId,
+                createdAt: createdAt,
+                updatedAt: updatedAt,
+                rowid: rowid,
+              ),
+          createCompanionCallback:
+              ({
+                required String id,
+                required String vehicleId,
+                required DateTime occurredOn,
+                required int odometer,
+                Value<String?> brand = const Value.absent(),
+                Value<String?> productName = const Value.absent(),
+                Value<String?> viscosity = const Value.absent(),
+                Value<int?> quantityMl = const Value.absent(),
+                Value<int> costPaisa = const Value.absent(),
+                Value<bool> filterChanged = const Value.absent(),
+                Value<String?> vendorName = const Value.absent(),
+                Value<DateTime?> nextDueDate = const Value.absent(),
+                Value<int?> nextDueOdometer = const Value.absent(),
+                Value<String?> note = const Value.absent(),
+                Value<String?> serviceRecordId = const Value.absent(),
+                required DateTime createdAt,
+                required DateTime updatedAt,
+                Value<int> rowid = const Value.absent(),
+              }) => OilChangesCompanion.insert(
+                id: id,
+                vehicleId: vehicleId,
+                occurredOn: occurredOn,
+                odometer: odometer,
+                brand: brand,
+                productName: productName,
+                viscosity: viscosity,
+                quantityMl: quantityMl,
+                costPaisa: costPaisa,
+                filterChanged: filterChanged,
+                vendorName: vendorName,
+                nextDueDate: nextDueDate,
+                nextDueOdometer: nextDueOdometer,
+                note: note,
+                serviceRecordId: serviceRecordId,
+                createdAt: createdAt,
+                updatedAt: updatedAt,
+                rowid: rowid,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map(
+                (e) => (
+                  e.readTable<$OilChangesTable, OilChangeRow>(table),
+                  $$OilChangesTableReferences(db, table, e),
+                ),
+              )
+              .toList(),
+          prefetchHooksCallback:
+              ({vehicleId = false, serviceRecordId = false}) {
+                return PrefetchHooks(
+                  db: db,
+                  explicitlyWatchedTables: [],
+                  addJoins:
+                      <
+                        T extends TableManagerState<
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic
+                        >
+                      >(state) {
+                        if (vehicleId) {
+                          state = state.withJoin(
+                            currentTable: table,
+                            currentColumn: table.vehicleId,
+                            referencedTable: $$OilChangesTableReferences
+                                ._vehicleIdTable(db),
+                            referencedColumn: $$OilChangesTableReferences
+                                ._vehicleIdTable(db)
+                                .id,
+                          ) as T;
+                        }
+                        if (serviceRecordId) {
+                          state = state.withJoin(
+                            currentTable: table,
+                            currentColumn: table.serviceRecordId,
+                            referencedTable: $$OilChangesTableReferences
+                                ._serviceRecordIdTable(db),
+                            referencedColumn: $$OilChangesTableReferences
+                                ._serviceRecordIdTable(db)
+                                .id,
+                          ) as T;
+                        }
+
+                        return state;
+                      },
+                  getPrefetchedDataCallback: (items) async {
+                    return [];
+                  },
+                );
+              },
+        ),
+      );
+}
+
+typedef $$OilChangesTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $OilChangesTable,
+      OilChangeRow,
+      $$OilChangesTableFilterComposer,
+      $$OilChangesTableOrderingComposer,
+      $$OilChangesTableAnnotationComposer,
+      $$OilChangesTableCreateCompanionBuilder,
+      $$OilChangesTableUpdateCompanionBuilder,
+      (OilChangeRow, $$OilChangesTableReferences),
+      OilChangeRow,
+      PrefetchHooks Function({bool vehicleId, bool serviceRecordId})
+    >;
 
 class $AppDatabaseManager {
   final _$AppDatabase _db;
@@ -7603,4 +13087,12 @@ class $AppDatabaseManager {
       $$ExpenseCategoriesTableTableManager(_db, _db.expenseCategories);
   $$ExpensesTableTableManager get expenses =>
       $$ExpensesTableTableManager(_db, _db.expenses);
+  $$MaintenanceTemplatesTableTableManager get maintenanceTemplates =>
+      $$MaintenanceTemplatesTableTableManager(_db, _db.maintenanceTemplates);
+  $$ServiceRecordsTableTableManager get serviceRecords =>
+      $$ServiceRecordsTableTableManager(_db, _db.serviceRecords);
+  $$ServiceItemsTableTableManager get serviceItems =>
+      $$ServiceItemsTableTableManager(_db, _db.serviceItems);
+  $$OilChangesTableTableManager get oilChanges =>
+      $$OilChangesTableTableManager(_db, _db.oilChanges);
 }

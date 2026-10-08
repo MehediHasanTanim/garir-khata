@@ -1393,6 +1393,276 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'This cannot be undone.'**
   String get deleteExpenseMessage;
+
+  /// No description provided for @commonAdd.
+  ///
+  /// In en, this message translates to:
+  /// **'Add'**
+  String get commonAdd;
+
+  /// No description provided for @commonYes.
+  ///
+  /// In en, this message translates to:
+  /// **'Yes'**
+  String get commonYes;
+
+  /// No description provided for @commonNo.
+  ///
+  /// In en, this message translates to:
+  /// **'No'**
+  String get commonNo;
+
+  /// No description provided for @optional.
+  ///
+  /// In en, this message translates to:
+  /// **'Optional'**
+  String get optional;
+
+  /// No description provided for @serviceHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Service History'**
+  String get serviceHistory;
+
+  /// No description provided for @serviceDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Service Details'**
+  String get serviceDetails;
+
+  /// No description provided for @editService.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Service'**
+  String get editService;
+
+  /// No description provided for @saveService.
+  ///
+  /// In en, this message translates to:
+  /// **'Save Service'**
+  String get saveService;
+
+  /// No description provided for @serviceHistoryEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No service history yet'**
+  String get serviceHistoryEmpty;
+
+  /// No description provided for @serviceHistoryEmptyHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Log your first service to track next due dates.'**
+  String get serviceHistoryEmptyHint;
+
+  /// No description provided for @serviceItems.
+  ///
+  /// In en, this message translates to:
+  /// **'Service items'**
+  String get serviceItems;
+
+  /// No description provided for @serviceItemsEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No service items selected'**
+  String get serviceItemsEmpty;
+
+  /// No description provided for @addServiceItem.
+  ///
+  /// In en, this message translates to:
+  /// **'Add service item'**
+  String get addServiceItem;
+
+  /// No description provided for @fieldWorkshop.
+  ///
+  /// In en, this message translates to:
+  /// **'Workshop / service center'**
+  String get fieldWorkshop;
+
+  /// No description provided for @fieldLaborCost.
+  ///
+  /// In en, this message translates to:
+  /// **'Labor cost'**
+  String get fieldLaborCost;
+
+  /// No description provided for @fieldPartsCost.
+  ///
+  /// In en, this message translates to:
+  /// **'Parts cost'**
+  String get fieldPartsCost;
+
+  /// No description provided for @fieldTotalCost.
+  ///
+  /// In en, this message translates to:
+  /// **'Total cost'**
+  String get fieldTotalCost;
+
+  /// No description provided for @fieldNextDueDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Next due date'**
+  String get fieldNextDueDate;
+
+  /// No description provided for @fieldNextDueOdometer.
+  ///
+  /// In en, this message translates to:
+  /// **'Next due odometer'**
+  String get fieldNextDueOdometer;
+
+  /// No description provided for @serviceCostUpdateWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'Updating cost will also update the linked expense.'**
+  String get serviceCostUpdateWarning;
+
+  /// No description provided for @totalServices.
+  ///
+  /// In en, this message translates to:
+  /// **'Total services'**
+  String get totalServices;
+
+  /// No description provided for @totalSpent.
+  ///
+  /// In en, this message translates to:
+  /// **'Total spent'**
+  String get totalSpent;
+
+  /// No description provided for @deleteServiceTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete this service?'**
+  String get deleteServiceTitle;
+
+  /// No description provided for @deleteServiceMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Linked expense and odometer entries will also be removed.'**
+  String get deleteServiceMessage;
+
+  /// No description provided for @addOilChange.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Oil Change'**
+  String get addOilChange;
+
+  /// No description provided for @saveOilChange.
+  ///
+  /// In en, this message translates to:
+  /// **'Save Oil Change'**
+  String get saveOilChange;
+
+  /// No description provided for @oilHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Oil Change History'**
+  String get oilHistory;
+
+  /// No description provided for @oilDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Oil Change Details'**
+  String get oilDetails;
+
+  /// No description provided for @oilHistoryEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No oil change recorded'**
+  String get oilHistoryEmpty;
+
+  /// No description provided for @oilHistoryEmptyHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Record oil changes to track intervals and next due.'**
+  String get oilHistoryEmptyHint;
+
+  /// No description provided for @fieldOilBrand.
+  ///
+  /// In en, this message translates to:
+  /// **'Oil brand'**
+  String get fieldOilBrand;
+
+  /// No description provided for @fieldOilProduct.
+  ///
+  /// In en, this message translates to:
+  /// **'Product name'**
+  String get fieldOilProduct;
+
+  /// No description provided for @fieldViscosity.
+  ///
+  /// In en, this message translates to:
+  /// **'Viscosity'**
+  String get fieldViscosity;
+
+  /// No description provided for @fieldOilQuantity.
+  ///
+  /// In en, this message translates to:
+  /// **'Quantity (L)'**
+  String get fieldOilQuantity;
+
+  /// No description provided for @oilFilterChanged.
+  ///
+  /// In en, this message translates to:
+  /// **'Oil filter changed?'**
+  String get oilFilterChanged;
+
+  /// No description provided for @autoSuggestHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Auto from template if empty'**
+  String get autoSuggestHint;
+
+  /// No description provided for @totalOilChanges.
+  ///
+  /// In en, this message translates to:
+  /// **'Oil changes'**
+  String get totalOilChanges;
+
+  /// No description provided for @avgOilInterval.
+  ///
+  /// In en, this message translates to:
+  /// **'Avg interval'**
+  String get avgOilInterval;
+
+  /// No description provided for @avgOilCost.
+  ///
+  /// In en, this message translates to:
+  /// **'Avg cost'**
+  String get avgOilCost;
+
+  /// No description provided for @latestOilBrand.
+  ///
+  /// In en, this message translates to:
+  /// **'Latest brand'**
+  String get latestOilBrand;
+
+  /// No description provided for @deleteOilTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete this oil change?'**
+  String get deleteOilTitle;
+
+  /// No description provided for @deleteOilMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Linked service and expense records will also be removed.'**
+  String get deleteOilMessage;
+
+  /// No description provided for @noMaintenanceDue.
+  ///
+  /// In en, this message translates to:
+  /// **'No maintenance due yet'**
+  String get noMaintenanceDue;
+
+  /// No description provided for @dueSoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Due soon'**
+  String get dueSoon;
+
+  /// No description provided for @overdue.
+  ///
+  /// In en, this message translates to:
+  /// **'Overdue'**
+  String get overdue;
 }
 
 class _AppLocalizationsDelegate

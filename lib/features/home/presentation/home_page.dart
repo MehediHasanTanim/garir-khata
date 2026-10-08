@@ -6,6 +6,8 @@ import 'package:garir_khata/app/theme/app_spacing.dart';
 import 'package:garir_khata/core/formatting/currency_formatter.dart';
 import 'package:garir_khata/features/dashboard/application/dashboard_providers.dart';
 import 'package:garir_khata/features/dashboard/domain/dashboard_summary.dart';
+import 'package:garir_khata/features/maintenance/application/maintenance_providers.dart';
+import 'package:garir_khata/features/maintenance/domain/entities/service_record.dart';
 import 'package:garir_khata/features/mileage/domain/cost_per_km_calculator.dart';
 import 'package:garir_khata/features/mileage/domain/mileage_result.dart';
 import 'package:garir_khata/features/vehicles/application/vehicle_providers.dart';
@@ -85,7 +87,7 @@ class HomePage extends ConsumerWidget {
                     l10n: l10n,
                   ),
                   const SizedBox(height: AppSpacing.md),
-                  _UpcomingPlaceholder(l10n: l10n),
+                  _UpcomingSection(l10n: l10n),
                   const SizedBox(height: AppSpacing.md),
                   _QuickActions(l10n: l10n),
                   const SizedBox(height: AppSpacing.md),
@@ -478,27 +480,73 @@ class _Metric extends StatelessWidget {
   }
 }
 
-class _UpcomingPlaceholder extends StatelessWidget {
-  const _UpcomingPlaceholder({required this.l10n});
+class _UpcomingSection extends ConsumerWidget {
+  const _UpcomingSection({required this.l10n});
 
   final AppLocalizations l10n;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final dueAsync = ref.watch(dueServicesProvider);
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(AppSpacing.md),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              l10n.upcoming,
-              style: Theme.of(context).textTheme.titleMedium,
+            Row(
+              children: [
+                Text(
+                  l10n.upcoming,
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
+                const Spacer(),
+                TextButton(
+                  onPressed: () => context.push('/services'),
+                  child: Text(l10n.seeAll),
+                ),
+              ],
             ),
             const SizedBox(height: AppSpacing.sm),
-            Text(
-              l10n.upcomingPlaceholder,
-              style: Theme.of(context).textTheme.bodyMedium,
+            dueAsync.when(
+              loading: () => const LinearProgressIndicator(),
+              error: (_, _) => Text(l10n.commonError),
+              data: (items) {
+                if (items.isEmpty) {
+                  return Text(l10n.noMaintenanceDue);
+                }
+                return Column(
+                  children: items.take(3).map((DueServiceItem item) {
+                    final bool overdue =
+                        (item.remainingKm != null && item.remainingKm! <= 0) ||
+                        (item.remainingDays != null && item.remainingDays! <= 0);
+                    return ListTile(
+                      contentPadding: EdgeInsets.zero,
+                      leading: Icon(
+                        item.sourceType == 'oil'
+                            ? Icons.water_drop
+                            : Icons.build_circle_outlined,
+                        color: overdue ? AppColors.destructive : AppColors.warning,
+                      ),
+                      title: Text(item.title),
+                      subtitle: Text(
+                        [
+                          if (item.remainingKm != null)
+                            '${item.remainingKm} km',
+                          if (item.remainingDays != null)
+                            '${item.remainingDays} days',
+                        ].join(' · '),
+                      ),
+                      trailing: Text(overdue ? l10n.overdue : l10n.dueSoon),
+                      onTap: () => context.push(
+                        item.sourceType == 'oil'
+                            ? '/oil/${item.sourceId}'
+                            : '/services/${item.sourceId}',
+                      ),
+                    );
+                  }).toList(),
+                );
+              },
             ),
           ],
         ),
@@ -551,20 +599,16 @@ class _QuickActions extends StatelessWidget {
                 icon: Icons.build_outlined,
                 label: l10n.addService,
                 color: AppColors.success,
-                onTap: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text(l10n.comingSoon)),
-                  );
-                },
+                onTap: () => context.push('/services/add'),
               ),
             ),
             const SizedBox(width: AppSpacing.sm),
             Expanded(
               child: _QuickAction(
-                icon: Icons.handyman_outlined,
-                label: l10n.addRepair,
-                color: AppColors.repair,
-                onTap: () => context.push('/expenses/add?category=repair'),
+                icon: Icons.water_drop_outlined,
+                label: l10n.addOilChange,
+                color: AppColors.maintenance,
+                onTap: () => context.push('/oil/add'),
               ),
             ),
           ],

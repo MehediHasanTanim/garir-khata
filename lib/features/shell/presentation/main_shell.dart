@@ -63,7 +63,18 @@ class MainShell extends ConsumerWidget {
                 ListTile(
                   leading: const Icon(Icons.build_outlined),
                   title: Text(l10n.addService),
-                  onTap: () => Navigator.of(context).pop(),
+                  onTap: () {
+                    Navigator.of(context).pop();
+                    context.push('/services/add');
+                  },
+                ),
+                ListTile(
+                  leading: const Icon(Icons.water_drop_outlined),
+                  title: Text(l10n.addOilChange),
+                  onTap: () {
+                    Navigator.of(context).pop();
+                    context.push('/oil/add');
+                  },
                 ),
                 ListTile(
                   leading: const Icon(Icons.settings_suggest_outlined),

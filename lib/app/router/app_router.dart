@@ -8,6 +8,12 @@ import 'package:garir_khata/features/fuel/presentation/fuel_details_page.dart';
 import 'package:garir_khata/features/fuel/presentation/fuel_history_page.dart';
 import 'package:garir_khata/features/history/presentation/history_page.dart';
 import 'package:garir_khata/features/home/presentation/home_page.dart';
+import 'package:garir_khata/features/maintenance/presentation/add_edit_service_page.dart';
+import 'package:garir_khata/features/maintenance/presentation/add_oil_change_page.dart';
+import 'package:garir_khata/features/maintenance/presentation/oil_details_page.dart';
+import 'package:garir_khata/features/maintenance/presentation/oil_history_page.dart';
+import 'package:garir_khata/features/maintenance/presentation/service_details_page.dart';
+import 'package:garir_khata/features/maintenance/presentation/service_history_page.dart';
 import 'package:garir_khata/features/more/presentation/more_page.dart';
 import 'package:garir_khata/features/odometer/presentation/odometer_history_page.dart';
 import 'package:garir_khata/features/odometer/presentation/update_odometer_page.dart';
@@ -223,6 +229,52 @@ final appRouterProvider = Provider<GoRouter>((ref) {
                     AddEditExpensePage(expenseId: state.pathParameters['id']),
               ),
             ],
+          ),
+        ],
+      ),
+      GoRoute(
+        path: '/services',
+        name: 'serviceHistory',
+        parentNavigatorKey: _rootNavigatorKey,
+        builder: (context, state) => const ServiceHistoryPage(),
+        routes: [
+          GoRoute(
+            path: 'add',
+            name: 'serviceAdd',
+            builder: (context, state) => const AddEditServicePage(),
+          ),
+          GoRoute(
+            path: ':id',
+            name: 'serviceDetails',
+            builder: (context, state) =>
+                ServiceDetailsPage(serviceId: state.pathParameters['id']!),
+            routes: [
+              GoRoute(
+                path: 'edit',
+                name: 'serviceEdit',
+                builder: (context, state) =>
+                    AddEditServicePage(serviceId: state.pathParameters['id']),
+              ),
+            ],
+          ),
+        ],
+      ),
+      GoRoute(
+        path: '/oil',
+        name: 'oilHistory',
+        parentNavigatorKey: _rootNavigatorKey,
+        builder: (context, state) => const OilHistoryPage(),
+        routes: [
+          GoRoute(
+            path: 'add',
+            name: 'oilAdd',
+            builder: (context, state) => const AddOilChangePage(),
+          ),
+          GoRoute(
+            path: ':id',
+            name: 'oilDetails',
+            builder: (context, state) =>
+                OilDetailsPage(oilId: state.pathParameters['id']!),
           ),
         ],
       ),

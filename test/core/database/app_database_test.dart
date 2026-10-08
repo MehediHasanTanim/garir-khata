@@ -15,12 +15,12 @@ void main() {
     await db.close();
   });
 
-  test('database initializes with schema version 3', () async {
-    expect(db.schemaVersion, 3);
+  test('database initializes with schema version 4', () async {
+    expect(db.schemaVersion, 4);
     final QueryRow row = await db
         .customSelect('PRAGMA user_version')
         .getSingle();
-    expect(row.read<int>('user_version'), 3);
+    expect(row.read<int>('user_version'), 4);
   });
 
   test('settings insert and read works', () async {
@@ -91,5 +91,9 @@ void main() {
     expect(names.contains('fuel_entries'), isTrue);
     expect(names.contains('expenses'), isTrue);
     expect(names.contains('expense_categories'), isTrue);
+    expect(names.contains('maintenance_templates'), isTrue);
+    expect(names.contains('service_records'), isTrue);
+    expect(names.contains('service_items'), isTrue);
+    expect(names.contains('oil_changes'), isTrue);
   });
 }

@@ -676,4 +676,144 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get deleteExpenseMessage => 'This cannot be undone.';
+
+  @override
+  String get commonAdd => 'Add';
+
+  @override
+  String get commonYes => 'Yes';
+
+  @override
+  String get commonNo => 'No';
+
+  @override
+  String get optional => 'Optional';
+
+  @override
+  String get serviceHistory => 'Service History';
+
+  @override
+  String get serviceDetails => 'Service Details';
+
+  @override
+  String get editService => 'Edit Service';
+
+  @override
+  String get saveService => 'Save Service';
+
+  @override
+  String get serviceHistoryEmpty => 'No service history yet';
+
+  @override
+  String get serviceHistoryEmptyHint =>
+      'Log your first service to track next due dates.';
+
+  @override
+  String get serviceItems => 'Service items';
+
+  @override
+  String get serviceItemsEmpty => 'No service items selected';
+
+  @override
+  String get addServiceItem => 'Add service item';
+
+  @override
+  String get fieldWorkshop => 'Workshop / service center';
+
+  @override
+  String get fieldLaborCost => 'Labor cost';
+
+  @override
+  String get fieldPartsCost => 'Parts cost';
+
+  @override
+  String get fieldTotalCost => 'Total cost';
+
+  @override
+  String get fieldNextDueDate => 'Next due date';
+
+  @override
+  String get fieldNextDueOdometer => 'Next due odometer';
+
+  @override
+  String get serviceCostUpdateWarning =>
+      'Updating cost will also update the linked expense.';
+
+  @override
+  String get totalServices => 'Total services';
+
+  @override
+  String get totalSpent => 'Total spent';
+
+  @override
+  String get deleteServiceTitle => 'Delete this service?';
+
+  @override
+  String get deleteServiceMessage =>
+      'Linked expense and odometer entries will also be removed.';
+
+  @override
+  String get addOilChange => 'Add Oil Change';
+
+  @override
+  String get saveOilChange => 'Save Oil Change';
+
+  @override
+  String get oilHistory => 'Oil Change History';
+
+  @override
+  String get oilDetails => 'Oil Change Details';
+
+  @override
+  String get oilHistoryEmpty => 'No oil change recorded';
+
+  @override
+  String get oilHistoryEmptyHint =>
+      'Record oil changes to track intervals and next due.';
+
+  @override
+  String get fieldOilBrand => 'Oil brand';
+
+  @override
+  String get fieldOilProduct => 'Product name';
+
+  @override
+  String get fieldViscosity => 'Viscosity';
+
+  @override
+  String get fieldOilQuantity => 'Quantity (L)';
+
+  @override
+  String get oilFilterChanged => 'Oil filter changed?';
+
+  @override
+  String get autoSuggestHint => 'Auto from template if empty';
+
+  @override
+  String get totalOilChanges => 'Oil changes';
+
+  @override
+  String get avgOilInterval => 'Avg interval';
+
+  @override
+  String get avgOilCost => 'Avg cost';
+
+  @override
+  String get latestOilBrand => 'Latest brand';
+
+  @override
+  String get deleteOilTitle => 'Delete this oil change?';
+
+  @override
+  String get deleteOilMessage =>
+      'Linked service and expense records will also be removed.';
+
+  @override
+  String get noMaintenanceDue => 'No maintenance due yet';
+
+  @override
+  String get dueSoon => 'Due soon';
+
+  @override
+  String get overdue => 'Overdue';
 }
