@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:garir_khata/app/localization/l10n_extension.dart';
 import 'package:garir_khata/app/theme/app_spacing.dart';
 import 'package:garir_khata/core/ui/app_states.dart';
+import 'package:garir_khata/core/ui/async_result_feedback.dart';
 import 'package:garir_khata/features/settings/application/app_lock_controller.dart';
 import 'package:go_router/go_router.dart';
 
@@ -89,13 +90,15 @@ class _SetPinPageState extends ConsumerState<SetPinPage> {
     if (!mounted) {
       return;
     }
-    showSaveFeedback(
+    presentAsyncResult(
       context,
-      success: result.isSuccess,
-      message: result.isSuccess ? l10n.commonSuccess : result.errorOrNull?.message,
+      result,
+      successMessage: l10n.commonSuccess,
+      onSuccess: () {
+        if (mounted) {
+          context.pop();
+        }
+      },
     );
-    if (result.isSuccess) {
-      context.pop();
-    }
   }
 }

@@ -56,6 +56,35 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get commonOk => 'OK';
+  @override
+  String get commonDiscard => 'Discard';
+
+  @override
+  String get commonKeepEditing => 'Keep editing';
+
+  @override
+  String get commonOpenSettings => 'Open settings';
+
+  @override
+  String get unsavedChangesTitle => 'Unsaved changes';
+
+  @override
+  String get unsavedChangesBody => 'Discard your changes?';
+
+  @override
+  String get errorStorageFailed => 'Could not save. Check device storage and try again.';
+
+  @override
+  String get errorUnexpected => 'Something went wrong. Please try again.';
+  @override
+  String get noSearchResults => 'No results';
+
+  @override
+  String noSearchResultsFor(String query) {
+    return 'Nothing matched “$query”.';
+  }
+
+
 
   @override
   String get commonSearch => 'Search';

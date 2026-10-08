@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:garir_khata/app/localization/l10n_extension.dart';
 import 'package:garir_khata/app/theme/app_colors.dart';
 import 'package:garir_khata/app/theme/app_spacing.dart';
 
-/// Reusable empty / loading / error / permission surfaces for Sprint 10.
+/// Reusable empty / loading / error / permission surfaces.
 class AppLoadingState extends StatelessWidget {
   const AppLoadingState({this.message, super.key});
 
@@ -12,7 +13,7 @@ class AppLoadingState extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Semantics(
-        label: message ?? 'Loading',
+        label: message ?? context.l10n.commonLoading,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -109,9 +110,10 @@ class AppNoSearchResult extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return AppEmptyState(
-      title: 'No results',
-      subtitle: 'Nothing matched “$query”.',
+      title: l10n.noSearchResults,
+      subtitle: l10n.noSearchResultsFor(query),
       icon: Icons.search_off_outlined,
     );
   }
@@ -129,6 +131,7 @@ class AppErrorState extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return Center(
       child: Padding(
         padding: const EdgeInsets.all(AppSpacing.lg),
@@ -143,7 +146,7 @@ class AppErrorState extends StatelessWidget {
               Text(message, textAlign: TextAlign.center),
               if (onRetry != null) ...[
                 const SizedBox(height: AppSpacing.md),
-                FilledButton(onPressed: onRetry, child: const Text('Retry')),
+                FilledButton(onPressed: onRetry, child: Text(l10n.commonRetry)),
               ],
             ],
           ),
@@ -172,7 +175,7 @@ class AppPermissionDeniedState extends StatelessWidget {
           ? null
           : OutlinedButton(
               onPressed: onOpenSettings,
-              child: const Text('Open settings'),
+              child: Text(context.l10n.commonOpenSettings),
             ),
     );
   }
@@ -194,7 +197,7 @@ class CalculationUnavailableBanner extends StatelessWidget {
           TextButton(
             onPressed: () =>
                 ScaffoldMessenger.of(context).hideCurrentMaterialBanner(),
-            child: const Text('OK'),
+            child: Text(context.l10n.commonOk),
           ),
         ],
       ),
@@ -206,9 +209,10 @@ Future<bool> showAppDeleteConfirmation(
   BuildContext context, {
   required String title,
   required String message,
-  String confirmLabel = 'Delete',
-  String cancelLabel = 'Cancel',
+  String? confirmLabel,
+  String? cancelLabel,
 }) async {
+  final l10n = context.l10n;
   final result = await showDialog<bool>(
     context: context,
     builder: (ctx) => AlertDialog(
@@ -217,14 +221,14 @@ Future<bool> showAppDeleteConfirmation(
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(ctx, false),
-          child: Text(cancelLabel),
+          child: Text(cancelLabel ?? l10n.commonCancel),
         ),
         FilledButton(
           style: FilledButton.styleFrom(
             backgroundColor: AppColors.destructive,
           ),
           onPressed: () => Navigator.pop(ctx, true),
-          child: Text(confirmLabel),
+          child: Text(confirmLabel ?? l10n.commonDelete),
         ),
       ],
     ),
@@ -233,19 +237,20 @@ Future<bool> showAppDeleteConfirmation(
 }
 
 Future<bool> showUnsavedChangesDialog(BuildContext context) async {
+  final l10n = context.l10n;
   final result = await showDialog<bool>(
     context: context,
     builder: (ctx) => AlertDialog(
-      title: const Text('Unsaved changes'),
-      content: const Text('Discard your changes?'),
+      title: Text(l10n.unsavedChangesTitle),
+      content: Text(l10n.unsavedChangesBody),
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(ctx, false),
-          child: const Text('Keep editing'),
+          child: Text(l10n.commonKeepEditing),
         ),
         FilledButton(
           onPressed: () => Navigator.pop(ctx, true),
-          child: const Text('Discard'),
+          child: Text(l10n.commonDiscard),
         ),
       ],
     ),
@@ -258,12 +263,14 @@ void showSaveFeedback(
   required bool success,
   String? message,
 }) {
+  final l10n = context.l10n;
   final messenger = ScaffoldMessenger.of(context);
   messenger.clearSnackBars();
   messenger.showSnackBar(
     SnackBar(
       content: Text(
-        message ?? (success ? 'Saved successfully' : 'Save failed'),
+        message ??
+            (success ? l10n.commonSuccess : l10n.errorUnexpected),
       ),
       backgroundColor: success ? AppColors.success : AppColors.destructive,
     ),

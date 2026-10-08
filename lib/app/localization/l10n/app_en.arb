@@ -16,6 +16,22 @@
   "commonError": "Something went wrong",
   "commonSuccess": "Saved successfully",
   "commonOk": "OK",
+  "commonDiscard": "Discard",
+  "commonKeepEditing": "Keep editing",
+  "commonOpenSettings": "Open settings",
+  "unsavedChangesTitle": "Unsaved changes",
+  "unsavedChangesBody": "Discard your changes?",
+  "errorStorageFailed": "Could not save. Check device storage and try again.",
+  "errorUnexpected": "Something went wrong. Please try again.",
+  "noSearchResults": "No results",
+  "noSearchResultsFor": "Nothing matched “{query}”.",
+  "@noSearchResultsFor": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
   "commonSearch": "Search",
   "commonEdit": "Edit",
   "vehicle": "Vehicle",

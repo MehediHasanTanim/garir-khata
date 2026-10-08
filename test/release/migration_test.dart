@@ -72,6 +72,12 @@ void main() {
       "VALUES ('veh-old', 'Legacy Bike', 'motorcycle', 'petrol', 1000, 0, ?, ?)",
       [now, now],
     );
+    raw.execute(
+      'INSERT INTO odometer_entries (id, vehicle_id, recorded_at, odometer, '
+      'source_type, is_manual_correction, created_at) '
+      "VALUES ('odo-old', 'veh-old', ?, 1000, 'manual', 0, ?)",
+      [now, now],
+    );
     raw.execute('PRAGMA user_version = 1');
     raw.dispose();
 
@@ -97,6 +103,14 @@ void main() {
         .getSingle();
     expect(vehicle.nickname, 'Legacy Bike');
     expect(vehicle.currentOdometer, 1000);
+
+    // Existing-data test: pre-migration odometer row survives upgrade.
+    final odo = await (db.select(db.odometerEntries)
+          ..where((t) => t.id.equals('odo-old')))
+        .getSingle();
+    expect(odo.odometer, 1000);
+    expect(odo.vehicleId, 'veh-old');
+    expect(odo.isDiscontinuity, isFalse);
 
     // Column added in v2 migration
     final cols = await db

@@ -15,6 +15,8 @@ Offline-first vehicle expense, mileage, maintenance, and document tracker for Ba
 | Sprint plan | `docs/plan/` |
 | **UX & icons (source of truth)** | `docs/UX/` |
 | Architecture notes | `docs/architecture/ARCHITECTURE.md` |
+| Cross-sprint standards | `docs/architecture/CROSS_SPRINT_STANDARDS.md` |
+| Release | `docs/release/` |
 
 UI and app icons must follow designs in `docs/UX/`.
 
@@ -65,6 +67,7 @@ lib/
 - ✅ Sprint 9 — Attachments, export, backup & restore
 - ✅ Sprint 10 — Settings, security & UX hardening
 - ✅ Sprint 11 — Release hardening & store readiness
+- ✅ Cross-sprint standards — localization, tests, migrations, errors, analytics privacy
 
 ## Release
 

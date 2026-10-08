@@ -56,6 +56,35 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get commonOk => 'ঠিক আছে';
+  @override
+  String get commonDiscard => 'বাতিল করুন';
+
+  @override
+  String get commonKeepEditing => 'সম্পাদনা চালিয়ে যান';
+
+  @override
+  String get commonOpenSettings => 'সেটিংস খুলুন';
+
+  @override
+  String get unsavedChangesTitle => 'সংরক্ষণ হয়নি';
+
+  @override
+  String get unsavedChangesBody => 'পরিবর্তনগুলো বাতিল করবেন?';
+
+  @override
+  String get errorStorageFailed => 'সংরক্ষণ করা যায়নি। স্টোরেজ দেখে আবার চেষ্টা করুন।';
+
+  @override
+  String get errorUnexpected => 'কিছু ভুল হয়েছে। আবার চেষ্টা করুন।';
+  @override
+  String get noSearchResults => 'কোনো ফলাফল নেই';
+
+  @override
+  String noSearchResultsFor(String query) {
+    return '“$query” এর সাথে কিছু মেলেনি।';
+  }
+
+
 
   @override
   String get commonSearch => 'খুঁজুন';

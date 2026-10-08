@@ -1,4 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:garir_khata/core/analytics/privacy_safe_analytics.dart';
 import 'package:garir_khata/core/formatting/currency_formatter.dart';
 import 'package:garir_khata/core/formatting/date_formatter.dart';
 import 'package:garir_khata/core/formatting/distance_formatter.dart';
@@ -35,3 +36,6 @@ final distanceFormatterProvider = Provider<DistanceFormatter>(
 final odometerFormatterProvider = Provider<OdometerFormatter>(
   (ref) => OdometerFormatter(),
 );
+
+/// Default: no-op. Wrap a real SDK with [PrivacySafeAnalytics] before enabling.
+final analyticsProvider = Provider<Analytics>((ref) => const NoOpAnalytics());

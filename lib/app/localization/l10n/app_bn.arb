@@ -16,6 +16,22 @@
   "commonError": "কিছু একটা ভুল হয়েছে",
   "commonSuccess": "সফলভাবে সংরক্ষণ হয়েছে",
   "commonOk": "ঠিক আছে",
+  "commonDiscard": "বাতিল করুন",
+  "commonKeepEditing": "সম্পাদনা চালিয়ে যান",
+  "commonOpenSettings": "সেটিংস খুলুন",
+  "unsavedChangesTitle": "সংরক্ষণ হয়নি",
+  "unsavedChangesBody": "পরিবর্তনগুলো বাতিল করবেন?",
+  "errorStorageFailed": "সংরক্ষণ করা যায়নি। স্টোরেজ দেখে আবার চেষ্টা করুন।",
+  "errorUnexpected": "কিছু ভুল হয়েছে। আবার চেষ্টা করুন।",
+  "noSearchResults": "কোনো ফলাফল নেই",
+  "noSearchResultsFor": "“{query}” এর সাথে কিছু মেলেনি।",
+  "@noSearchResultsFor": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
   "commonSearch": "খুঁজুন",
   "commonEdit": "সম্পাদনা",
   "vehicle": "গাড়ি",

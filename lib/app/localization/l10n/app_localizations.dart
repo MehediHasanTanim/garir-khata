@@ -193,6 +193,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'OK'**
   String get commonOk;
+  /// No description provided for @commonDiscard.
+  ///
+  /// In en, this message translates to:
+  /// **'Discard'**
+  String get commonDiscard;
+
+  /// No description provided for @commonKeepEditing.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep editing'**
+  String get commonKeepEditing;
+
+  /// No description provided for @commonOpenSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Open settings'**
+  String get commonOpenSettings;
+
+  /// No description provided for @unsavedChangesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Unsaved changes'**
+  String get unsavedChangesTitle;
+
+  /// No description provided for @unsavedChangesBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Discard your changes?'**
+  String get unsavedChangesBody;
+
+  /// No description provided for @errorStorageFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save. Check device storage and try again.'**
+  String get errorStorageFailed;
+
+  /// No description provided for @errorUnexpected.
+  ///
+  /// In en, this message translates to:
+  /// **'Something went wrong. Please try again.'**
+  String get errorUnexpected;
+  /// No description provided for @noSearchResults.
+  ///
+  /// In en, this message translates to:
+  /// **'No results'**
+  String get noSearchResults;
+
+  /// No description provided for @noSearchResultsFor.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing matched “{query}”.'**
+  String noSearchResultsFor(String query);
+
+
 
   /// No description provided for @commonSearch.
   ///
