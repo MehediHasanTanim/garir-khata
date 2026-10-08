@@ -537,6 +537,7 @@
   "appVersion": "Version",
   "privacyTitle": "Privacy",
   "privacyBody": "Your vehicle data stays on this device. Backups you create are encrypted when you set a password.",
+  "privacyPolicyLink": "Privacy policy",
   "helpTitle": "Help",
   "helpBody": "Use More → Settings to change language, appearance, reminders, and security.",
   "openSourceLicenses": "Open-source licenses",

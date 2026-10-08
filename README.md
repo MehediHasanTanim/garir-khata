@@ -64,3 +64,18 @@ lib/
 - ✅ Sprint 8 — Reports, analytics & unified history
 - ✅ Sprint 9 — Attachments, export, backup & restore
 - ✅ Sprint 10 — Settings, security & UX hardening
+- ✅ Sprint 11 — Release hardening & store readiness
+
+## Release
+
+See `docs/release/RELEASE_CHECKLIST.md` for the production checklist.
+
+```bash
+# Android App Bundle (requires android/key.properties for upload signing)
+flutter build appbundle --release
+
+# iOS archive (signing via Xcode)
+flutter build ipa
+```
+
+Store privacy / metadata drafts live under `docs/release/`.

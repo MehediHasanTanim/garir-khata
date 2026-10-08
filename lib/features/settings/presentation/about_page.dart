@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:garir_khata/app/localization/l10n_extension.dart';
 import 'package:garir_khata/app/theme/app_spacing.dart';
-
-/// Keep in sync with `pubspec.yaml` version.
-const String kAppVersionLabel = '1.0.0+1';
+import 'package:garir_khata/core/release/release_info.dart';
 
 class AboutPage extends StatelessWidget {
   const AboutPage({super.key});
@@ -25,12 +23,17 @@ class AboutPage extends StatelessWidget {
           ListTile(
             contentPadding: EdgeInsets.zero,
             title: Text(l10n.appVersion),
-            subtitle: const Text(kAppVersionLabel),
+            subtitle: const Text(ReleaseInfo.versionLabel),
           ),
           ListTile(
             contentPadding: EdgeInsets.zero,
             title: Text(l10n.privacyTitle),
             subtitle: Text(l10n.privacyBody),
+          ),
+          ListTile(
+            contentPadding: EdgeInsets.zero,
+            title: Text(l10n.privacyPolicyLink),
+            subtitle: const Text(ReleaseInfo.privacyPolicyPath),
           ),
           ListTile(
             contentPadding: EdgeInsets.zero,

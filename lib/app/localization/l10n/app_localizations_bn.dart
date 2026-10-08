@@ -1607,6 +1607,9 @@ class AppLocalizationsBn extends AppLocalizations {
       'আপনার গাড়ির ডেটা এই ডিভাইসেই থাকে। পাসওয়ার্ড দিলে ব্যাকআপ এনক্রিপ্ট হয়।';
 
   @override
+  String get privacyPolicyLink => 'গোপনীয়তা নীতি';
+
+  @override
   String get helpTitle => 'সাহায্য';
 
   @override

@@ -3230,6 +3230,12 @@ abstract class AppLocalizations {
   /// **'Your vehicle data stays on this device. Backups you create are encrypted when you set a password.'**
   String get privacyBody;
 
+  /// No description provided for @privacyPolicyLink.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy policy'**
+  String get privacyPolicyLink;
+
   /// No description provided for @helpTitle.
   ///
   /// In en, this message translates to:

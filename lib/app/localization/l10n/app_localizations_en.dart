@@ -1613,6 +1613,9 @@ class AppLocalizationsEn extends AppLocalizations {
       'Your vehicle data stays on this device. Backups you create are encrypted when you set a password.';
 
   @override
+  String get privacyPolicyLink => 'Privacy policy';
+
+  @override
   String get helpTitle => 'Help';
 
   @override
