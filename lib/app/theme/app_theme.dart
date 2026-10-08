@@ -6,21 +6,34 @@ import 'package:garir_khata/app/theme/app_spacing.dart';
 import 'package:garir_khata/app/theme/app_typography.dart';
 
 abstract final class AppTheme {
-  static ThemeData light() => _build(Brightness.light);
+  static ThemeData light({bool highContrast = false}) =>
+      _build(Brightness.light, highContrast: highContrast);
 
-  static ThemeData dark() => _build(Brightness.dark);
+  static ThemeData dark({bool highContrast = false}) =>
+      _build(Brightness.dark, highContrast: highContrast);
 
-  static ThemeData _build(Brightness brightness) {
+  static ThemeData _build(
+    Brightness brightness, {
+    bool highContrast = false,
+  }) {
     final bool isDark = brightness == Brightness.dark;
-    final ColorScheme scheme = ColorScheme.fromSeed(
+    final ColorScheme baseScheme = ColorScheme.fromSeed(
       seedColor: AppColors.primary,
       brightness: brightness,
-      primary: AppColors.primary,
+      primary: highContrast
+          ? (isDark ? AppColors.primaryLight : AppColors.primaryDark)
+          : AppColors.primary,
       onPrimary: AppColors.textOnPrimary,
       secondary: AppColors.brandEmerald,
       error: AppColors.destructive,
       surface: isDark ? AppColors.surfaceDark : AppColors.surface,
     );
+    final ColorScheme scheme = highContrast
+        ? baseScheme.copyWith(
+            onSurface: isDark ? Colors.white : Colors.black,
+            onSurfaceVariant: isDark ? Colors.white70 : Colors.black87,
+          )
+        : baseScheme;
 
     final TextTheme textTheme = AppTypography.textTheme(brightness: brightness);
 
@@ -166,7 +179,12 @@ abstract final class AppTheme {
         backgroundColor: AppColors.primary,
         foregroundColor: AppColors.textOnPrimary,
       ),
-      dividerColor: isDark ? AppColors.dividerDark : AppColors.divider,
+      dividerColor: highContrast
+          ? (isDark ? Colors.white54 : Colors.black54)
+          : (isDark ? AppColors.dividerDark : AppColors.divider),
+      visualDensity: highContrast
+          ? VisualDensity.comfortable
+          : VisualDensity.standard,
     );
   }
 }

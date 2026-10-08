@@ -6,6 +6,7 @@ import 'package:garir_khata/app/app.dart';
 import 'package:garir_khata/core/database/app_database.dart';
 import 'package:garir_khata/core/database/database_provider.dart';
 import 'package:garir_khata/core/providers/core_providers.dart';
+import 'package:garir_khata/features/settings/application/settings_controller.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
@@ -66,7 +67,7 @@ void main() {
   });
 
   testWidgets('language switching updates navigation labels', (tester) async {
-    await pumpApp(
+    final container = await pumpApp(
       tester,
       prefs: {
         'settings.onboardingCompleted': true,
@@ -76,16 +77,9 @@ void main() {
     );
     await tester.pumpAndSettle();
 
-    await tester.tap(find.text('More'));
-    await tester.pumpAndSettle();
-
-    await tester.dragUntilVisible(
-      find.text('Bangla'),
-      find.byType(ListView).first,
-      const Offset(0, -200),
-    );
-    await tester.pumpAndSettle();
-    await tester.tap(find.text('Bangla'));
+    await container
+        .read(settingsControllerProvider.notifier)
+        .setLocale(const Locale('bn'));
     await tester.pumpAndSettle();
 
     expect(find.text('হোম'), findsWidgets);

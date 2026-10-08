@@ -52,5 +52,10 @@ app.*.map.json
 .env.local
 .env.*.local
 
+# Agent/local tooling scratch
+.agent_home/
+tools/flutter_overlay/
+tools/flutter_shim/
+
 # Generated Drift outputs are committed only if needed; regenerate in CI
 # *.g.dart is generated via build_runner and should be produced before analyze/test

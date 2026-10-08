@@ -1428,4 +1428,205 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get restorePhaseUnsupported => 'অসমর্থিত ব্যাকআপ সংস্করণ';
+
+  @override
+  String get settingsTitle => 'সেটিংস';
+
+  @override
+  String get settingsGeneral => 'সাধারণ';
+
+  @override
+  String get settingsAppearance => 'চেহারা';
+
+  @override
+  String get settingsNotifications => 'রিমাইন্ডার';
+
+  @override
+  String get settingsDataBackup => 'ডেটা ও ব্যাকআপ';
+
+  @override
+  String get settingsSecurity => 'নিরাপত্তা';
+
+  @override
+  String get settingsAbout => 'সম্পর্কে';
+
+  @override
+  String get currency => 'মুদ্রা';
+
+  @override
+  String get distanceUnit => 'দূরত্বের একক';
+
+  @override
+  String get fuelUnit => 'জ্বালানির একক';
+
+  @override
+  String get unitKm => 'কিমি';
+
+  @override
+  String get unitMile => 'মাইল';
+
+  @override
+  String get unitLiter => 'লিটার';
+
+  @override
+  String get unitGallon => 'গ্যালন';
+
+  @override
+  String get dateFormat => 'তারিখের ফরম্যাট';
+
+  @override
+  String get dateFormatShort => 'সংক্ষিপ্ত';
+
+  @override
+  String get dateFormatMedium => 'মাঝারি';
+
+  @override
+  String get dateFormatLong => 'বিস্তারিত';
+
+  @override
+  String get largerText => 'বড় অক্ষর';
+
+  @override
+  String get largerTextHint => 'অ্যাপে লেখার আকার বাড়ান';
+
+  @override
+  String get highContrast => 'উচ্চ কনট্রাস্ট';
+
+  @override
+  String get highContrastHint => 'পড়ার সুবিধার জন্য শক্তিশালী কনট্রাস্ট';
+
+  @override
+  String get appearancePreviewSample =>
+      'পঠনযোগ্যতা যাচাইয়ের নমুনা ইংরেজি টেক্সট';
+
+  @override
+  String get notificationPermissionDenied =>
+      'এই অ্যাপের জন্য নোটিফিকেশন বন্ধ আছে';
+
+  @override
+  String get openSystemSettings => 'সেটিংস খুলুন';
+
+  @override
+  String get notifMaintenance => 'রক্ষণাবেক্ষণ রিমাইন্ডার';
+
+  @override
+  String get notifDocuments => 'ডকুমেন্ট মেয়াদ রিমাইন্ডার';
+
+  @override
+  String get notifBackupReminder => 'ব্যাকআপ রিমাইন্ডার';
+
+  @override
+  String get commonDecrease => 'কমান';
+
+  @override
+  String get commonIncrease => 'বাড়ান';
+
+  @override
+  String get appLockPin => 'অ্যাপ লক (পিন)';
+
+  @override
+  String get appLockEnabled => 'পিন লক চালু আছে';
+
+  @override
+  String get appLockDisabled => 'পিন লক বন্ধ আছে';
+
+  @override
+  String get verifyPinTitle => 'বর্তমান পিন দিন';
+
+  @override
+  String get changePin => 'পিন পরিবর্তন';
+
+  @override
+  String get setPinTitle => 'পিন সেট করুন';
+
+  @override
+  String get currentPin => 'বর্তমান পিন';
+
+  @override
+  String get newPin => 'নতুন পিন';
+
+  @override
+  String get confirmPin => 'পিন নিশ্চিত করুন';
+
+  @override
+  String get pinMismatch => 'পিন মিলছে না';
+
+  @override
+  String get pinTooShort => 'পিন কমপক্ষে ৪ সংখ্যার হতে হবে';
+
+  @override
+  String get biometrics => 'বায়োমেট্রিক্স';
+
+  @override
+  String get biometricsHint => 'Face ID / আঙুলের ছাপ দিয়ে আনলক';
+
+  @override
+  String get biometricsUnavailable => 'এই ডিভাইসে বায়োমেট্রিক্স নেই';
+
+  @override
+  String get autoLock => 'অটো-লক';
+
+  @override
+  String get autoLockImmediately => 'তৎক্ষণাৎ';
+
+  @override
+  String get autoLockThirtySeconds => '৩০ সেকেন্ড পর';
+
+  @override
+  String get autoLockOneMinute => '১ মিনিট পর';
+
+  @override
+  String get autoLockFiveMinutes => '৫ মিনিট পর';
+
+  @override
+  String get autoLockNever => 'কখনো নয়';
+
+  @override
+  String get hideSensitivePreview => 'অ্যাপ প্রিভিউ লুকান';
+
+  @override
+  String get hideSensitivePreviewHint => 'অ্যাপ বদলালে স্ক্রিন ঢেকে রাখুন';
+
+  @override
+  String get lockNow => 'এখনই লক করুন';
+
+  @override
+  String get unlockTitle => 'পিন দিন';
+
+  @override
+  String get unlockWithBiometrics => 'বায়োমেট্রিক্স দিয়ে আনলক';
+
+  @override
+  String get appVersion => 'ভার্সন';
+
+  @override
+  String get privacyTitle => 'গোপনীয়তা';
+
+  @override
+  String get privacyBody =>
+      'আপনার গাড়ির ডেটা এই ডিভাইসেই থাকে। পাসওয়ার্ড দিলে ব্যাকআপ এনক্রিপ্ট হয়।';
+
+  @override
+  String get helpTitle => 'সাহায্য';
+
+  @override
+  String get helpBody =>
+      'ভাষা, চেহারা, রিমাইন্ডার ও নিরাপত্তা বদলাতে আরও → সেটিংস ব্যবহার করুন।';
+
+  @override
+  String get openSourceLicenses => 'ওপেন-সোর্স লাইসেন্স';
+
+  @override
+  String get databaseSize => 'ডাটাবেসের আকার';
+
+  @override
+  String get attachmentsSize => 'অ্যাটাচমেন্টের আকার';
+
+  @override
+  String get clearTempFiles => 'অস্থায়ী ফাইল মুছুন';
+
+  @override
+  String tempFilesCleared(int count) {
+    return '$countটি অস্থায়ী ফাইল মুছেছে';
+  }
 }

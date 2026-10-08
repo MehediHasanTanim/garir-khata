@@ -1434,4 +1434,205 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get restorePhaseUnsupported => 'Unsupported backup version';
+
+  @override
+  String get settingsTitle => 'Settings';
+
+  @override
+  String get settingsGeneral => 'General';
+
+  @override
+  String get settingsAppearance => 'Appearance';
+
+  @override
+  String get settingsNotifications => 'Reminders';
+
+  @override
+  String get settingsDataBackup => 'Data & backup';
+
+  @override
+  String get settingsSecurity => 'Security';
+
+  @override
+  String get settingsAbout => 'About';
+
+  @override
+  String get currency => 'Currency';
+
+  @override
+  String get distanceUnit => 'Distance unit';
+
+  @override
+  String get fuelUnit => 'Fuel unit';
+
+  @override
+  String get unitKm => 'km';
+
+  @override
+  String get unitMile => 'mile';
+
+  @override
+  String get unitLiter => 'liter';
+
+  @override
+  String get unitGallon => 'gallon';
+
+  @override
+  String get dateFormat => 'Date format';
+
+  @override
+  String get dateFormatShort => 'Short';
+
+  @override
+  String get dateFormatMedium => 'Medium';
+
+  @override
+  String get dateFormatLong => 'Long';
+
+  @override
+  String get largerText => 'Larger text';
+
+  @override
+  String get largerTextHint => 'Increase text size across the app';
+
+  @override
+  String get highContrast => 'High contrast';
+
+  @override
+  String get highContrastHint => 'Stronger contrast for readability';
+
+  @override
+  String get appearancePreviewSample =>
+      'Sample English text for readability check';
+
+  @override
+  String get notificationPermissionDenied =>
+      'Notifications are disabled for this app';
+
+  @override
+  String get openSystemSettings => 'Open settings';
+
+  @override
+  String get notifMaintenance => 'Maintenance reminders';
+
+  @override
+  String get notifDocuments => 'Document expiry reminders';
+
+  @override
+  String get notifBackupReminder => 'Backup reminder';
+
+  @override
+  String get commonDecrease => 'Decrease';
+
+  @override
+  String get commonIncrease => 'Increase';
+
+  @override
+  String get appLockPin => 'App lock (PIN)';
+
+  @override
+  String get appLockEnabled => 'PIN lock is on';
+
+  @override
+  String get appLockDisabled => 'PIN lock is off';
+
+  @override
+  String get verifyPinTitle => 'Enter current PIN';
+
+  @override
+  String get changePin => 'Change PIN';
+
+  @override
+  String get setPinTitle => 'Set PIN';
+
+  @override
+  String get currentPin => 'Current PIN';
+
+  @override
+  String get newPin => 'New PIN';
+
+  @override
+  String get confirmPin => 'Confirm PIN';
+
+  @override
+  String get pinMismatch => 'PINs do not match';
+
+  @override
+  String get pinTooShort => 'PIN must be at least 4 digits';
+
+  @override
+  String get biometrics => 'Biometrics';
+
+  @override
+  String get biometricsHint => 'Unlock with Face ID / fingerprint';
+
+  @override
+  String get biometricsUnavailable => 'Biometrics not available on this device';
+
+  @override
+  String get autoLock => 'Auto-lock';
+
+  @override
+  String get autoLockImmediately => 'Immediately';
+
+  @override
+  String get autoLockThirtySeconds => 'After 30 seconds';
+
+  @override
+  String get autoLockOneMinute => 'After 1 minute';
+
+  @override
+  String get autoLockFiveMinutes => 'After 5 minutes';
+
+  @override
+  String get autoLockNever => 'Never';
+
+  @override
+  String get hideSensitivePreview => 'Hide app preview';
+
+  @override
+  String get hideSensitivePreviewHint => 'Cover the screen when switching apps';
+
+  @override
+  String get lockNow => 'Lock now';
+
+  @override
+  String get unlockTitle => 'Enter PIN';
+
+  @override
+  String get unlockWithBiometrics => 'Unlock with biometrics';
+
+  @override
+  String get appVersion => 'Version';
+
+  @override
+  String get privacyTitle => 'Privacy';
+
+  @override
+  String get privacyBody =>
+      'Your vehicle data stays on this device. Backups you create are encrypted when you set a password.';
+
+  @override
+  String get helpTitle => 'Help';
+
+  @override
+  String get helpBody =>
+      'Use More → Settings to change language, appearance, reminders, and security.';
+
+  @override
+  String get openSourceLicenses => 'Open-source licenses';
+
+  @override
+  String get databaseSize => 'Database size';
+
+  @override
+  String get attachmentsSize => 'Attachments size';
+
+  @override
+  String get clearTempFiles => 'Clear temporary files';
+
+  @override
+  String tempFilesCleared(int count) {
+    return 'Cleared $count temporary file(s)';
+  }
 }

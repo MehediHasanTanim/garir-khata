@@ -63,3 +63,4 @@ lib/
 - ✅ Sprint 7 — Documents, reminders & notifications
 - ✅ Sprint 8 — Reports, analytics & unified history
 - ✅ Sprint 9 — Attachments, export, backup & restore
+- ✅ Sprint 10 — Settings, security & UX hardening

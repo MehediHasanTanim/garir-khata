@@ -2881,6 +2881,396 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Unsupported backup version'**
   String get restorePhaseUnsupported;
+
+  /// No description provided for @settingsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get settingsTitle;
+
+  /// No description provided for @settingsGeneral.
+  ///
+  /// In en, this message translates to:
+  /// **'General'**
+  String get settingsGeneral;
+
+  /// No description provided for @settingsAppearance.
+  ///
+  /// In en, this message translates to:
+  /// **'Appearance'**
+  String get settingsAppearance;
+
+  /// No description provided for @settingsNotifications.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminders'**
+  String get settingsNotifications;
+
+  /// No description provided for @settingsDataBackup.
+  ///
+  /// In en, this message translates to:
+  /// **'Data & backup'**
+  String get settingsDataBackup;
+
+  /// No description provided for @settingsSecurity.
+  ///
+  /// In en, this message translates to:
+  /// **'Security'**
+  String get settingsSecurity;
+
+  /// No description provided for @settingsAbout.
+  ///
+  /// In en, this message translates to:
+  /// **'About'**
+  String get settingsAbout;
+
+  /// No description provided for @currency.
+  ///
+  /// In en, this message translates to:
+  /// **'Currency'**
+  String get currency;
+
+  /// No description provided for @distanceUnit.
+  ///
+  /// In en, this message translates to:
+  /// **'Distance unit'**
+  String get distanceUnit;
+
+  /// No description provided for @fuelUnit.
+  ///
+  /// In en, this message translates to:
+  /// **'Fuel unit'**
+  String get fuelUnit;
+
+  /// No description provided for @unitKm.
+  ///
+  /// In en, this message translates to:
+  /// **'km'**
+  String get unitKm;
+
+  /// No description provided for @unitMile.
+  ///
+  /// In en, this message translates to:
+  /// **'mile'**
+  String get unitMile;
+
+  /// No description provided for @unitLiter.
+  ///
+  /// In en, this message translates to:
+  /// **'liter'**
+  String get unitLiter;
+
+  /// No description provided for @unitGallon.
+  ///
+  /// In en, this message translates to:
+  /// **'gallon'**
+  String get unitGallon;
+
+  /// No description provided for @dateFormat.
+  ///
+  /// In en, this message translates to:
+  /// **'Date format'**
+  String get dateFormat;
+
+  /// No description provided for @dateFormatShort.
+  ///
+  /// In en, this message translates to:
+  /// **'Short'**
+  String get dateFormatShort;
+
+  /// No description provided for @dateFormatMedium.
+  ///
+  /// In en, this message translates to:
+  /// **'Medium'**
+  String get dateFormatMedium;
+
+  /// No description provided for @dateFormatLong.
+  ///
+  /// In en, this message translates to:
+  /// **'Long'**
+  String get dateFormatLong;
+
+  /// No description provided for @largerText.
+  ///
+  /// In en, this message translates to:
+  /// **'Larger text'**
+  String get largerText;
+
+  /// No description provided for @largerTextHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Increase text size across the app'**
+  String get largerTextHint;
+
+  /// No description provided for @highContrast.
+  ///
+  /// In en, this message translates to:
+  /// **'High contrast'**
+  String get highContrast;
+
+  /// No description provided for @highContrastHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Stronger contrast for readability'**
+  String get highContrastHint;
+
+  /// No description provided for @appearancePreviewSample.
+  ///
+  /// In en, this message translates to:
+  /// **'Sample English text for readability check'**
+  String get appearancePreviewSample;
+
+  /// No description provided for @notificationPermissionDenied.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications are disabled for this app'**
+  String get notificationPermissionDenied;
+
+  /// No description provided for @openSystemSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Open settings'**
+  String get openSystemSettings;
+
+  /// No description provided for @notifMaintenance.
+  ///
+  /// In en, this message translates to:
+  /// **'Maintenance reminders'**
+  String get notifMaintenance;
+
+  /// No description provided for @notifDocuments.
+  ///
+  /// In en, this message translates to:
+  /// **'Document expiry reminders'**
+  String get notifDocuments;
+
+  /// No description provided for @notifBackupReminder.
+  ///
+  /// In en, this message translates to:
+  /// **'Backup reminder'**
+  String get notifBackupReminder;
+
+  /// No description provided for @commonDecrease.
+  ///
+  /// In en, this message translates to:
+  /// **'Decrease'**
+  String get commonDecrease;
+
+  /// No description provided for @commonIncrease.
+  ///
+  /// In en, this message translates to:
+  /// **'Increase'**
+  String get commonIncrease;
+
+  /// No description provided for @appLockPin.
+  ///
+  /// In en, this message translates to:
+  /// **'App lock (PIN)'**
+  String get appLockPin;
+
+  /// No description provided for @appLockEnabled.
+  ///
+  /// In en, this message translates to:
+  /// **'PIN lock is on'**
+  String get appLockEnabled;
+
+  /// No description provided for @appLockDisabled.
+  ///
+  /// In en, this message translates to:
+  /// **'PIN lock is off'**
+  String get appLockDisabled;
+
+  /// No description provided for @verifyPinTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter current PIN'**
+  String get verifyPinTitle;
+
+  /// No description provided for @changePin.
+  ///
+  /// In en, this message translates to:
+  /// **'Change PIN'**
+  String get changePin;
+
+  /// No description provided for @setPinTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Set PIN'**
+  String get setPinTitle;
+
+  /// No description provided for @currentPin.
+  ///
+  /// In en, this message translates to:
+  /// **'Current PIN'**
+  String get currentPin;
+
+  /// No description provided for @newPin.
+  ///
+  /// In en, this message translates to:
+  /// **'New PIN'**
+  String get newPin;
+
+  /// No description provided for @confirmPin.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm PIN'**
+  String get confirmPin;
+
+  /// No description provided for @pinMismatch.
+  ///
+  /// In en, this message translates to:
+  /// **'PINs do not match'**
+  String get pinMismatch;
+
+  /// No description provided for @pinTooShort.
+  ///
+  /// In en, this message translates to:
+  /// **'PIN must be at least 4 digits'**
+  String get pinTooShort;
+
+  /// No description provided for @biometrics.
+  ///
+  /// In en, this message translates to:
+  /// **'Biometrics'**
+  String get biometrics;
+
+  /// No description provided for @biometricsHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock with Face ID / fingerprint'**
+  String get biometricsHint;
+
+  /// No description provided for @biometricsUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Biometrics not available on this device'**
+  String get biometricsUnavailable;
+
+  /// No description provided for @autoLock.
+  ///
+  /// In en, this message translates to:
+  /// **'Auto-lock'**
+  String get autoLock;
+
+  /// No description provided for @autoLockImmediately.
+  ///
+  /// In en, this message translates to:
+  /// **'Immediately'**
+  String get autoLockImmediately;
+
+  /// No description provided for @autoLockThirtySeconds.
+  ///
+  /// In en, this message translates to:
+  /// **'After 30 seconds'**
+  String get autoLockThirtySeconds;
+
+  /// No description provided for @autoLockOneMinute.
+  ///
+  /// In en, this message translates to:
+  /// **'After 1 minute'**
+  String get autoLockOneMinute;
+
+  /// No description provided for @autoLockFiveMinutes.
+  ///
+  /// In en, this message translates to:
+  /// **'After 5 minutes'**
+  String get autoLockFiveMinutes;
+
+  /// No description provided for @autoLockNever.
+  ///
+  /// In en, this message translates to:
+  /// **'Never'**
+  String get autoLockNever;
+
+  /// No description provided for @hideSensitivePreview.
+  ///
+  /// In en, this message translates to:
+  /// **'Hide app preview'**
+  String get hideSensitivePreview;
+
+  /// No description provided for @hideSensitivePreviewHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Cover the screen when switching apps'**
+  String get hideSensitivePreviewHint;
+
+  /// No description provided for @lockNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Lock now'**
+  String get lockNow;
+
+  /// No description provided for @unlockTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter PIN'**
+  String get unlockTitle;
+
+  /// No description provided for @unlockWithBiometrics.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock with biometrics'**
+  String get unlockWithBiometrics;
+
+  /// No description provided for @appVersion.
+  ///
+  /// In en, this message translates to:
+  /// **'Version'**
+  String get appVersion;
+
+  /// No description provided for @privacyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy'**
+  String get privacyTitle;
+
+  /// No description provided for @privacyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Your vehicle data stays on this device. Backups you create are encrypted when you set a password.'**
+  String get privacyBody;
+
+  /// No description provided for @helpTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Help'**
+  String get helpTitle;
+
+  /// No description provided for @helpBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Use More → Settings to change language, appearance, reminders, and security.'**
+  String get helpBody;
+
+  /// No description provided for @openSourceLicenses.
+  ///
+  /// In en, this message translates to:
+  /// **'Open-source licenses'**
+  String get openSourceLicenses;
+
+  /// No description provided for @databaseSize.
+  ///
+  /// In en, this message translates to:
+  /// **'Database size'**
+  String get databaseSize;
+
+  /// No description provided for @attachmentsSize.
+  ///
+  /// In en, this message translates to:
+  /// **'Attachments size'**
+  String get attachmentsSize;
+
+  /// No description provided for @clearTempFiles.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear temporary files'**
+  String get clearTempFiles;
+
+  /// No description provided for @tempFilesCleared.
+  ///
+  /// In en, this message translates to:
+  /// **'Cleared {count} temporary file(s)'**
+  String tempFilesCleared(int count);
 }
 
 class _AppLocalizationsDelegate

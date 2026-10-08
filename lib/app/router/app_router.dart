@@ -53,6 +53,14 @@ import 'package:garir_khata/features/reports/presentation/repair_report_page.dar
 import 'package:garir_khata/features/reports/presentation/reports_page.dart';
 import 'package:garir_khata/features/reports/presentation/yearly_expense_report_page.dart';
 import 'package:garir_khata/features/settings/application/settings_controller.dart';
+import 'package:garir_khata/features/settings/presentation/about_page.dart';
+import 'package:garir_khata/features/settings/presentation/appearance_settings_page.dart';
+import 'package:garir_khata/features/settings/presentation/data_storage_page.dart';
+import 'package:garir_khata/features/settings/presentation/general_settings_page.dart';
+import 'package:garir_khata/features/settings/presentation/notification_settings_page.dart';
+import 'package:garir_khata/features/settings/presentation/security_settings_page.dart';
+import 'package:garir_khata/features/settings/presentation/set_pin_page.dart';
+import 'package:garir_khata/features/settings/presentation/settings_home_page.dart';
 import 'package:garir_khata/features/shell/presentation/main_shell.dart';
 import 'package:garir_khata/features/shell/presentation/route_not_found_page.dart';
 import 'package:garir_khata/features/vehicles/presentation/vehicle_form_page.dart';
@@ -502,6 +510,57 @@ final appRouterProvider = Provider<GoRouter>((ref) {
             path: 'restore',
             name: 'backupRestoreFlow',
             builder: (context, state) => const RestoreBackupPage(),
+          ),
+        ],
+      ),
+      GoRoute(
+        path: '/settings',
+        name: 'settings',
+        parentNavigatorKey: _rootNavigatorKey,
+        builder: (context, state) => const SettingsHomePage(),
+        routes: [
+          GoRoute(
+            path: 'general',
+            name: 'settingsGeneral',
+            builder: (context, state) => const GeneralSettingsPage(),
+          ),
+          GoRoute(
+            path: 'appearance',
+            name: 'settingsAppearance',
+            builder: (context, state) => const AppearanceSettingsPage(),
+          ),
+          GoRoute(
+            path: 'notifications',
+            name: 'settingsNotifications',
+            builder: (context, state) => const NotificationSettingsPage(),
+          ),
+          GoRoute(
+            path: 'data',
+            name: 'settingsData',
+            builder: (context, state) => const DataStoragePage(),
+          ),
+          GoRoute(
+            path: 'security',
+            name: 'settingsSecurity',
+            builder: (context, state) => const SecuritySettingsPage(),
+            routes: [
+              GoRoute(
+                path: 'set-pin',
+                name: 'settingsSetPin',
+                builder: (context, state) => const SetPinPage(),
+              ),
+              GoRoute(
+                path: 'change-pin',
+                name: 'settingsChangePin',
+                builder: (context, state) =>
+                    const SetPinPage(changeMode: true),
+              ),
+            ],
+          ),
+          GoRoute(
+            path: 'about',
+            name: 'settingsAbout',
+            builder: (context, state) => const AboutPage(),
           ),
         ],
       ),
